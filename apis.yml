@@ -1,32 +1,39 @@
 aid: lane-api
-name: Lane API
-description: >-
-  Lane is a pure-play SaaS product with a secure RESTful API. The API can be
-  consumed by invoking the methods available in the subscription using this
-  OpenAPI ...
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2024-11-13'
-modified: '2024-11-13'
 url: https://raw.githubusercontent.com/api-search/lane-api/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
   - aid: lane-api:lane-api
     name: Lane API
-    description: >-
+    tags:
+      - API
+    humanURL: https://docs.netsolapp.io/lane/index.html
+    properties:
+      - url: https://docs.netsolapp.io/lane/index.html
+        type: Documentation
+    description: |-
+
       Lane is a pure-play SaaS product with a secure RESTful API. The API can be
       consumed by invoking the methods available in the subscription using this
       OpenAPI ...
-    humanURL: https://docs.netsolapp.io/lane/index.html
-    tags:
-      - API
-    properties:
-      - type: Documentation
-        url: https://docs.netsolapp.io/lane/index.html
+name: Lane API
+tags:
+  - Asset Leasing
+  - Loans
+  - Credit
+type: Contract
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2024-11-13'
+modified: '2025-01-01'
+position: Consuming
+description: >-
+  Lane offers a feature-rich, end-to-end order management system for asset
+  leasing, loans and credit companies. Our platform covers all aspects, from
+  conducting end-to-end sales to performing dealer and partner-related tasks and
+  marketing-related activities. The system offers a variety of dashboards that
+  provide vital information for dealers and partners while enabling quick order
+  management and providing a way for users to record and submit a complete
+  credit application for their clients. 
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
