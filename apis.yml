@@ -9,11 +9,13 @@ apis:
     properties:
       - url: https://docs.netsolapp.io/lane/index.html
         type: Documentation
-    description: |-
-
-      Lane is a pure-play SaaS product with a secure RESTful API. The API can be
-      consumed by invoking the methods available in the subscription using this
-      OpenAPI ...
+      - type: OpenAPI
+        url: properties/lane-api-openapi.yml
+    description: >-
+      Lane offers a feature-rich, end-to-end order management system for asset
+      leasing, loans and credit companies. Our platform covers all aspects, from
+      conducting end-to-end sales to performing dealer and partner-related tasks
+      and marketing-related activities.
 name: Lane API
 tags:
   - Asset Leasing
