@@ -70,7 +70,8 @@ paths:
   /dms/health:
     get:
       tags:
-        - root
+        - Health
+        - Root
       summary: Health
       description: Health
       operationId: health_dms_health_get
@@ -86,7 +87,8 @@ paths:
   /dms/version:
     get:
       tags:
-        - root
+        - Version
+        - Root
       summary: Version
       description: version
       operationId: version_dms_version_get
@@ -99,7 +101,7 @@ paths:
   /dms/customer/:
     post:
       tags:
-        - Customer Management
+        - Customers
       summary: Creates customer
       description: Create single customer record
       operationId: add_customer_dms_customer__post
@@ -128,7 +130,10 @@ paths:
   /dms/customer/send-email-to-customer:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Send
+        - Email
+        - Customer
       summary: send email to customer
       description: send email to customer
       operationId: send_on_boarding_email_dms_customer_send_email_to_customer_post
@@ -156,7 +161,7 @@ paths:
   /dms/customer/all-customers:
     get:
       tags:
-        - Customer Management
+        - Customers
       summary: Get all customer records
       description: Get all record against customers
       operationId: get_all_customer_dms_customer_all_customers_get
@@ -207,7 +212,9 @@ paths:
   /dms/customer/all-customers-dynamic-search:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Dynamic
+        - Search
       summary: Get all customer records dynamic search
       description: Get all customer records dynamic search
       operationId: >-
@@ -281,7 +288,8 @@ paths:
   /dms/customer/customer-history:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - History
       summary: Get all customers records history
       description: Get all customers records history
       operationId: get_customer_history_dms_customer_customer_history_get
@@ -334,7 +342,9 @@ paths:
   /dms/check-customer-by-email:
     patch:
       tags:
-        - Customer Management
+        - Checks
+        - Customers
+        - Email
       summary: Check customer, create if does not exist
       description: Check customer, create if does not exist
       operationId: check_customer_dms_check_customer_by_email_patch
@@ -363,7 +373,8 @@ paths:
   /dms/update-dms-customer:
     patch:
       tags:
-        - Customer Management
+        - Dms
+        - Customers
       summary: Update Dms Customer
       operationId: update_dms_customer_dms_update_dms_customer_patch
       parameters:
@@ -397,7 +408,7 @@ paths:
   /dms/customer:
     get:
       tags:
-        - Customer Management
+        - Customers
       summary: Get customer record
       description: Get customer record by customer ID
       operationId: find_customer_by_reference_dms_customer_get
@@ -439,7 +450,7 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
       summary: Deprecate customer delete enpoint. Use [delete-customer] instead
       description: Delete customer record by  customer ID
       operationId: remove_customer_deprecated_dms_customer_delete
@@ -475,7 +486,7 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
       summary: Updates customer
       description: Update customer record by customer ID
       operationId: update_customer_dms_customer_patch
@@ -517,7 +528,8 @@ paths:
   /dms/check-dms-customer:
     get:
       tags:
-        - Customer Management
+        - Checks
+        - Customers
       summary: Get customer record
       description: Get customer record by customer ID
       operationId: fetch_dms_customer_dms_check_dms_customer_get
@@ -552,7 +564,8 @@ paths:
   /dms/customer-by-email:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Email
       summary: Get Customer Record by email
       description: Gets a customer record by email
       operationId: find_customer_info_by_email_dms_customer_by_email_get
@@ -582,7 +595,7 @@ paths:
   /dms/delete-customer:
     patch:
       tags:
-        - Customer Management
+        - Customer
       summary: Delete customer
       description: Delete customer record by  customer ID
       operationId: remove_customer_dms_delete_customer_patch
@@ -618,7 +631,9 @@ paths:
   /dms/customer/license-info:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Licenses
+        - Information
       summary: Get license info record by reference id
       description: Get license info record by reference id
       operationId: findone_license_info_dms_customer_license_info_get
@@ -653,7 +668,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Licenses
+        - Information
       summary: Creates license information
       description: Create license information against customer
       operationId: add_license_info_dms_customer_license_info_post
@@ -688,7 +705,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Licenses
+        - Information
       summary: Delete single license information record
       description: Delete customer license information record of customer record ID
       operationId: delete_license_by_reference_id_dms_customer_license_info_delete
@@ -717,7 +736,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Licenses
+        - Information
       summary: Updates License Info Record
       description: Updates a  license info setup record by license id
       operationId: update_license_info_dms_customer_license_info_patch
@@ -766,7 +787,7 @@ paths:
   /dms/customers:
     get:
       tags:
-        - Customer Management
+        - Customers
       summary: Gets customer names by customer reference ids
       description: Gets customer names by reference ids
       operationId: find_customer_names_dms_customers_get
@@ -796,7 +817,7 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
       summary: Gets customer names by customer reference ids
       description: Gets customer names by reference ids
       operationId: find_customer_data_dms_customers_post
@@ -824,7 +845,10 @@ paths:
   /dms/customer/license-info-history:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Licenses
+        - Information
+        - History
       summary: Get all customer license information history
       description: Get all customer license information history
       operationId: get_license_information_history_dms_customer_license_info_history_get
@@ -883,7 +907,10 @@ paths:
   /dms/customer/third-party-response-history:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Party
+        - Response
+        - History
       summary: Get third party response history
       description: Get third party response history
       operationId: >-
@@ -941,7 +968,9 @@ paths:
   /dms/customer/employment-info:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Employment
+        - Information
       summary: Get single employment information record
       description: Get employment information by customer ID
       operationId: findone_employment_info_dms_customer_employment_info_get
@@ -970,7 +999,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Employment
+        - Information
       summary: Creates employment information
       description: Create employment information against customer
       operationId: add_customer_employment_info_dms_customer_employment_info_post
@@ -1005,7 +1036,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Employment
+        - Information
       summary: Delete single employment information record
       description: Delete employment information record of customer employment record ID
       operationId: delete_employment_info_by_id_dms_customer_employment_info_delete
@@ -1034,7 +1067,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Employment
+        - Information
       summary: Updates employment information
       description: Update employment information against customer
       operationId: update_customer_employment_info_dms_customer_employment_info_patch
@@ -1076,7 +1111,9 @@ paths:
   /dms/customer/personal-finance:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Personal
+        - Finance
       summary: Get single personal finance  information record
       description: Get personal finance  information by customer ID
       operationId: findone_personal_finance_info_dms_customer_personal_finance_get
@@ -1106,7 +1143,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Personal
+        - Finance
       summary: Creates personal finance information
       description: Create personal finance information against customer
       operationId: add_personal_finance_info_dms_customer_personal_finance_post
@@ -1141,7 +1180,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Personal
+        - Finance
       summary: Delete single personal finance  information record
       description: >-
         Delete personal finance information record of customer employment record
@@ -1173,7 +1214,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Personal
+        - Finance
       summary: Updates personal finance information
       description: Update personal finance information against customer
       operationId: update_personal_finance_info_dms_customer_personal_finance_patch
@@ -1215,7 +1258,9 @@ paths:
   /dms/customer/payment-information:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Payments
+        - Information
       summary: Get customer payment information
       description: Get customer payment information
       operationId: get_customer_payment_info_by_dms_customer_payment_information_get
@@ -1250,7 +1295,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Payments
+        - Information
       summary: Create customer payment information
       description: Create customer payment information
       operationId: add_customer_payment_info_dms_customer_payment_information_post
@@ -1278,7 +1325,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Payments
+        - Information
       summary: Delete customer payment information
       description: Delete all customer payment information
       operationId: >-
@@ -1309,7 +1358,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Payments
+        - Information
       summary: Update customer payment information
       description: Update customer payment information
       operationId: update_customer_payment_dms_customer_payment_information_patch
@@ -1338,7 +1389,8 @@ paths:
   /dms/customer/signature:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Signatures
       summary: Gets a customer signature record by customer signature id
       description: Gets a customer signature record by customer signature id
       operationId: findone_customer_signature_dms_customer_signature_get
@@ -1367,7 +1419,8 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Signatures
       summary: 'Creates customer signature '
       description: 'Creates customer signature '
       operationId: add_customer_signature_dms_customer_signature_post
@@ -1395,7 +1448,8 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Signatures
       summary: Deprecate signature delete enpoint. Use [delete-signature] instead
       description: Delete single customer signature  record
       operationId: delete_customer_signature_deprecated_dms_customer_signature_delete
@@ -1431,7 +1485,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Signatures
       summary: 'Updates customer signature '
       description: 'Updates customer signature '
       operationId: update_customer_signature_dms_customer_signature_patch
@@ -1473,7 +1528,8 @@ paths:
   /dms/customer/delete-signature:
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Signature
       summary: Delete single customer signature  record
       description: Delete single customer signature  record
       operationId: delete_customer_signature_dms_customer_delete_signature_patch
@@ -1509,7 +1565,9 @@ paths:
   /dms/customer/signature/by-dealer-id:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Signatures
+        - Dealer
       summary: Gets a customer signature record by dealer id
       description: Gets a customer signature record by dealer id
       operationId: >-
@@ -1540,7 +1598,7 @@ paths:
   /dms/address:
     get:
       tags:
-        - Customer Management
+        - Address
       summary: Get existing record of address
       description: Get existing record of address
       operationId: get_addresses_by_customer_or_reference_id_dms_address_get
@@ -1574,7 +1632,7 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Address
       summary: Create an address
       description: Create single address record
       operationId: add_customer_address_dms_address_post
@@ -1602,7 +1660,7 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Address
       summary: Delete existing record of address
       description: Delete existing record of address
       operationId: delete_address_by_address_id_dms_address_delete
@@ -1635,7 +1693,7 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Address
       summary: Update an address
       description: Update an existing record of address
       operationId: update_customer_address_dms_address_patch
@@ -1671,7 +1729,8 @@ paths:
   /dms/address/history:
     get:
       tags:
-        - Customer Management
+        - Address
+        - History
       summary: Delete existing record of address
       description: Delete existing record of address
       operationId: address_history_dms_address_history_get
@@ -1709,7 +1768,9 @@ paths:
   /dms/customer/insurance-information:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
       summary: >-
         Get customer insurance information by customer reference id and order
         reference number
@@ -1755,7 +1816,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
       summary: Create customer insurance information
       description: Create customer insurance information
       operationId: create_insurance_information_dms_customer_insurance_information_post
@@ -1783,7 +1846,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
       summary: Delete single customer insurance information
       description: Delete single customer insurance information
       operationId: delete_insurance_information_dms_customer_insurance_information_delete
@@ -1813,7 +1878,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
       summary: Updates customer insurance information
       description: Updates customer insurance information
       operationId: update_insurance_information_dms_customer_insurance_information_patch
@@ -1855,7 +1922,9 @@ paths:
   /dms/customer/update-insurance-information:
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
       summary: Updates customer insurance information
       description: Updates customer insurance information
       operationId: update_insurance_dms_customer_update_insurance_information_patch
@@ -1897,7 +1966,10 @@ paths:
   /dms/customer/insurance-information-history:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - History
       summary: Get customer insurance information history
       description: Get customer insurance information history
       operationId: >-
@@ -1960,7 +2032,10 @@ paths:
   /dms/customer/insurance-information-by-customer:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - Customer
       summary: Get customer insurance information by customer reference id
       description: Get customer insurance information by customer reference id
       operationId: >-
@@ -1991,7 +2066,10 @@ paths:
   /dms/customer/insurance-information-by-order:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - Order
       summary: Get customer insurance information by order reference number
       description: Get customer insurance information by order reference number
       operationId: >-
@@ -2022,7 +2100,11 @@ paths:
   /dms/customer/insurance-information/document-history:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - Documents
+        - History
       summary: Get customer insurance information document history
       description: Get customer insurance information document history
       operationId: >-
@@ -2061,7 +2143,9 @@ paths:
   /dms/customer/delete-insurance-information:
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
       summary: Delete single customer insurance information
       description: Delete single customer insurance information
       operationId: delete_insurance_info_dms_customer_delete_insurance_information_patch
@@ -2097,7 +2181,11 @@ paths:
   /dms/customer/insurance-information/add-document:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - Add
+        - Documents
       summary: Add insurance document
       description: Add insurance document
       operationId: >-
@@ -2139,7 +2227,10 @@ paths:
   /dms/customer/insurance-information/remove-document:
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - Documents
       summary: 'Delete insurance document '
       description: 'Delete insurance document '
       operationId: >-
@@ -2177,7 +2268,10 @@ paths:
   /dms/customer/insurance-information/remove-insurance-document:
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Insurance
+        - Information
+        - Documents
       summary: 'Delete insurance document '
       description: 'Delete insurance document '
       operationId: >-
@@ -2220,7 +2314,9 @@ paths:
   /dms/customer/status-flag:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Status
+        - Flags
       summary: Get all customer status flag
       description: Get all customer status flag
       operationId: get_all_status_flag_dms_customer_status_flag_get
@@ -2252,7 +2348,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Status
+        - Flags
       summary: Create customer status flag
       description: Create customer status flag
       operationId: add_status_flag_dms_customer_status_flag_post
@@ -2280,7 +2378,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Management
+        - Customers
+        - Status
+        - Flags
       summary: Remove customer status flag
       description: Remove customer status flag
       operationId: delete_status_dms_customer_status_flag_delete
@@ -2311,7 +2411,9 @@ paths:
   /dms/customer/remove-status-flag:
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Status
+        - Flags
       summary: Remove customer status flag
       description: Remove customer status flag
       operationId: delete_status_flag_dms_customer_remove_status_flag_patch
@@ -2347,7 +2449,8 @@ paths:
   /dms/customer/comment:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Comments
       summary: Create customer comment diary
       description: Create customer comment diary
       operationId: add_comment_dms_customer_comment_post
@@ -2375,7 +2478,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Management
+        - Customers
+        - Comments
       summary: Update customer comment diary
       description: Update customer comment diary
       operationId: update_comment_dms_customer_comment_patch
@@ -2411,7 +2515,8 @@ paths:
   /dms/customer/comments:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - Comments
       summary: Get customer comment diary
       description: Get customer comment diary
       operationId: get_all_comments_dms_customer_comments_get
@@ -2477,7 +2582,9 @@ paths:
   /dms/customer/license-verification:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Licenses
+        - Verifications
       summary: License verification through MiTek
       description: license-verification through MiTek
       operationId: verify_license_dms_customer_license_verification_post
@@ -2505,7 +2612,9 @@ paths:
   /dms/customer/fraud-check:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Fraud
+        - Checks
       summary: Creates personal finance information
       description: Create personal finance information against customer
       operationId: add_customer_fraud_check_dms_customer_fraud_check_post
@@ -2533,7 +2642,10 @@ paths:
   /dms/customer/all-customers-orders-dynamic-search:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Orders
+        - Dynamic
+        - Search
       summary: Get all customer records along with its orders  dynamic search
       description: Get all customer records along with order dynamic search
       operationId: >-
@@ -2614,7 +2726,10 @@ paths:
   /dms/customer/send-order-link:
     post:
       tags:
-        - Customer Management
+        - Customers
+        - Send
+        - Order
+        - Links
       summary: send order link
       description: send order link
       operationId: send_order_link_dms_customer_send_order_link_post
@@ -2643,7 +2758,8 @@ paths:
   /dms/customers/reference-id:
     get:
       tags:
-        - Customer Management
+        - Customers
+        - References
       summary: Get reference id by email
       description: Retrieve the reference id associated with the given email of customer.
       operationId: get_reference_number_dms_customers_reference_id_get
@@ -2672,7 +2788,9 @@ paths:
   /dms/send-notification-email-sqs:
     post:
       tags:
+        - Send
         - Notifications
+        - Email
       summary: Send Email Notification Through SQS
       description: Send Email Notification Through SQS
       operationId: send_sqs_message_dms_send_notification_email_sqs_post
@@ -2700,7 +2818,9 @@ paths:
   /dms/send-notification-email:
     post:
       tags:
+        - Send
         - Notifications
+        - Email
       summary: Send Email Notification
       description: Send Email Notification
       operationId: send_notification_email_dms_send_notification_email_post
@@ -2728,7 +2848,9 @@ paths:
   /dms/order/expiry/{order_stage}/{dealer_id}:
     get:
       tags:
-        - Order Management
+        - Order
+        - Expiry
+        - Dealer_id
       summary: Order expiry date
       description: Get order expiry date
       operationId: get_order_expiry_dms_order_expiry__order_stage___dealer_id__get
@@ -2763,7 +2885,8 @@ paths:
   /dms/configure/quotation:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
       summary: Get Specific quotation
       description: Get Specific quotation
       operationId: get_order_quotation_by_reference_number_dms_configure_quotation_get
@@ -2793,7 +2916,9 @@ paths:
   /dms/configure/all-quotation/{reference_number}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
+        - Order  Management
       summary: Get Specific quotation
       description: Get Specific quotation
       operationId: >-
@@ -2823,7 +2948,8 @@ paths:
   /dms/configure/all-quotations:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order  Management
       summary: Get Specific quotation
       description: Get Specific quotation
       operationId: get_all_order_quotation_dms_configure_all_quotations_get
@@ -2845,7 +2971,9 @@ paths:
   /dms/configure/quotation/{identifier}:
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
+        - Order  Management
       summary: Update an configured quotation
       description: Update an configured quotation
       operationId: update_order_quotation_dms_configure_quotation__identifier__patch
@@ -2880,7 +3008,9 @@ paths:
   /dms/configure/save-quotation:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Save
+        - Quotation
       summary: Save a new order quotation
       description: >-
         Save a new order quotation and child objects orderoffer,        
@@ -2917,7 +3047,9 @@ paths:
   /dms/configure/order-fees:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Fees
       summary: Creates fee record for order
       description: Creates fee record for order
       operationId: add_order_fee_dms_configure_order_fees_post
@@ -2946,7 +3078,10 @@ paths:
   /dms/configure/order-fees/{identifier}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Fees
+        - Order  Management
       summary: Get all order fees for order
       description: Get all order fees for order
       operationId: get_order_fee_by_id_dms_configure_order_fees__identifier__get
@@ -2980,7 +3115,10 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Fees
+        - Order  Management
       summary: Delete all orders fees filtered on identifier
       description: Delete all orders fees filtered on identifier
       operationId: delete_order_fees_dms_configure_order_fees__identifier__delete
@@ -3009,7 +3147,10 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Fees
+        - Order  Management
       summary: Update fee record for order
       description: Update fee record for order
       operationId: update_order_fee_dms_configure_order_fees__identifier__patch
@@ -3045,7 +3186,9 @@ paths:
   /dms/configure/order-options:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Options
       summary: Create a new order option record
       description: Create a new order option record
       operationId: add_order_option_dms_configure_order_options_post
@@ -3074,7 +3217,10 @@ paths:
   /dms/configure/order-options/{identifier}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Options
+        - Order  Management
       summary: Get order option details
       description: Get order all options against an identifier
       operationId: >-
@@ -3109,7 +3255,10 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Options
+        - Order  Management
       summary: Delete order option record
       description: Delete all order option records against identifier
       operationId: delete_order_option_dms_configure_order_options__identifier__delete
@@ -3138,7 +3287,10 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Options
+        - Order  Management
       summary: Update an order option record
       description: Update an order option record
       operationId: update_order_option_dms_configure_order_options__identifier__patch
@@ -3174,7 +3326,9 @@ paths:
   /dms/configure/order-fni:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Order  Management
       summary: Create finance insurance product record for order
       description: Create finance insurance product record for order
       operationId: add_order_fni_dms_configure_order_fni_post
@@ -3203,7 +3357,9 @@ paths:
   /dms/configure/order-fni/{identifier}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Identifiers
       summary: Get orders finance insurance product filtered on identifier
       description: Get orders finance insurance product filtered on identifier
       operationId: get_order_fni_by_identifier_dms_configure_order_fni__identifier__get
@@ -3237,7 +3393,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Identifiers
       summary: Delete all orders finance insurance product filtered on identifier
       description: Delete all orders finance insurance product filtered on identifier
       operationId: delete_order_fni_dms_configure_order_fni__identifier__delete
@@ -3266,7 +3424,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Identifiers
       summary: Update finance insurance product record for order
       description: Update finance insurance product record for order
       operationId: update_order_fni_dms_configure_order_fni__identifier__patch
@@ -3302,7 +3462,9 @@ paths:
   /dms/configure/order/tradein:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Order  Management
       summary: Creates an order tradein info setup record
       description: Creates an order tradein info setup record
       operationId: add_order_tradein_dms_configure_order_tradein_post
@@ -3331,7 +3493,9 @@ paths:
   /dms/configure/order/tradein/{identifier}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Identifiers
       summary: Get a order tradein info setup record
       description: Get a order tradein info setup record identifier
       operationId: get_order_tradein_dms_configure_order_tradein__identifier__get
@@ -3360,7 +3524,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Identifiers
       summary: Delete order tradein info setup record
       description: Delete order tradein info setup record identifier
       operationId: delete_order_tradein_dms_configure_order_tradein__identifier__delete
@@ -3389,7 +3555,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Identifiers
       summary: Updates a order tradei info setup record
       description: Updates a order tradei info setup record by identifier
       operationId: update_order_tradein_dms_configure_order_tradein__identifier__patch
@@ -3425,7 +3593,8 @@ paths:
   /dms/configure/orders:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Orders
       summary: Get all order record
       description: Get all order record
       operationId: get_orders_dms_configure_orders_get
@@ -3466,7 +3635,9 @@ paths:
   /dms/configure/order/filter:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Filter
       summary: Search orders based on filters
       description: Search orders based on filters
       operationId: get_filter_order_dms_configure_order_filter_get
@@ -3543,7 +3714,9 @@ paths:
   /dms/configure/order-status/:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Status
       summary: Get orders record filtered on order status
       description: Get orders record filtered on order status
       operationId: get_orders_by_status_dms_configure_order_status__post
@@ -3571,7 +3744,10 @@ paths:
   /dms/configure/order/update-status/{reference_number}:
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Status
+        - Order  Management
       summary: Update order status record by order reference number
       description: Update order status record by order reference number
       operationId: >-
@@ -3614,7 +3790,10 @@ paths:
   /dms/configure/order-to-quotation/{identifier}/{reference_number}:
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Quotation
+        - Reference_number
       summary: Convert specific Order to Quotation
       description: Update order record from application to quotation
       operationId: >-
@@ -3648,7 +3827,9 @@ paths:
   /dms/configure/order/status/:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Status
       summary: Update order status history record by order reference number
       description: Update order status history record by order reference number
       operationId: get_orders_status_history_dms_configure_order_status__post
@@ -3673,7 +3854,11 @@ paths:
   /dms/configure/assets-by-trim-code/{trim_code}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Assets
+        - Trim
+        - Code
+        - Order  Management
       summary: Get assets by trim code
       description: Get assets by trim code
       operationId: quote_comparison_dms_configure_assets_by_trim_code__trim_code__get
@@ -3704,7 +3889,10 @@ paths:
   /dms/configure/order/status-by-dealer:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Order
+        - Status
+        - Dealer
       summary: Get order status by dealer
       description: Get order status by dealer
       operationId: >-
@@ -3741,7 +3929,8 @@ paths:
   /dms/order/order_information_for_submitted_order:
     get:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Get order by order status
       description: Get order by order status
       operationId: get_order_details_dms_order_order_information_for_submitted_order_get
@@ -3817,7 +4006,8 @@ paths:
   /dms/order/order_information/{reference_number}:
     get:
       tags:
-        - Order Management
+        - Order
+        - Reference_number
       summary: Get order by order status
       description: Get order by order status
       operationId: get_order_information_dms_order_order_information__reference_number__get
@@ -3846,7 +4036,8 @@ paths:
   /dms/order/order_insurance_documents/{reference_number}:
     get:
       tags:
-        - Order Management
+        - Order
+        - Reference_number
       summary: Get order insurance documents by order ID
       description: Get order insurance documents by order ID
       operationId: >-
@@ -3873,7 +4064,9 @@ paths:
   /dms/order/credit-decision:
     get:
       tags:
-        - Order Management
+        - Order
+        - Credit
+        - Decisions
       summary: Get credit decision
       description: Get credit decision
       operationId: get_credit_decision_dms_order_credit_decision_get
@@ -3901,7 +4094,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Order Management
+        - Order
+        - Credit
+        - Decisions
       summary: Add credit decision
       description: Add credit decision
       operationId: create_credit_decision_dms_order_credit_decision_post
@@ -3934,7 +4129,8 @@ paths:
   /dms/order/order-checklist:
     get:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Get Order checklist
       description: Get Order checklist
       operationId: get_order_checklist_dms_order_order_checklist_get
@@ -3978,7 +4174,8 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Add Order checklist
       description: Add Order checklist
       operationId: add_order_checklist_dms_order_order_checklist_post
@@ -4012,7 +4209,8 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Delete Order checklist
       description: Delete Order checklist
       operationId: delete_order_checklist_dms_order_order_checklist_delete
@@ -4046,7 +4244,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Update Order checklist
       description: Update Order checklist
       operationId: update_order_checklist_dms_order_order_checklist_patch
@@ -4090,7 +4289,8 @@ paths:
   /dms/order/order-checklist-update-history:
     get:
       tags:
-        - Order Management
+        - Order
+        - History
       summary: Get Order Checklist Update History
       operationId: >-
         get_order_checklist_update_history_dms_order_order_checklist_update_history_get
@@ -4131,7 +4331,10 @@ paths:
   /dms/order/update-credit-approver-decision/{reference_number}:
     patch:
       tags:
-        - Order Management
+        - Order
+        - Credit
+        - Decisions
+        - Order  Management
       summary: Update decision status after receiving decision from credit approver
       description: Update an configured quotation
       operationId: >-
@@ -4162,7 +4365,10 @@ paths:
   /dms/order/update-payment-status/{reference_number}:
     patch:
       tags:
-        - Order Management
+        - Order
+        - Payment
+        - Status
+        - Order  Management
       summary: Update Payment Status
       operationId: >-
         update_payment_status_dms_order_update_payment_status__reference_number__patch
@@ -4200,7 +4406,10 @@ paths:
   /dms/order/order-verify-document/{identifier}:
     post:
       tags:
-        - Order Management
+        - Order
+        - Verify
+        - Documents
+        - Order  Management
       summary: Verify Order Documents
       description: Verify Order Documents
       operationId: verify_order_document_dms_order_order_verify_document__identifier__post
@@ -4229,7 +4438,11 @@ paths:
   /dms/order/upload-signed-document/{identifier}:
     post:
       tags:
-        - Order Management
+        - Order
+        - Uploads
+        - Signed
+        - Documents
+        - Order  Management
       summary: Upload Signed Document
       description: Upload Signed Document
       operationId: >-
@@ -4265,7 +4478,10 @@ paths:
   /dms/configure/quotation-to-order/{identifier}:
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
+        - Order
+        - Order  Management
       summary: Convert specific Quotation to Application
       description: >-
         Convert specific Quotation stage to Application and save all financial
@@ -4303,7 +4519,8 @@ paths:
   /dms/configure/insurance:
     post:
       tags:
-        - Order Management
+        - Configure
+        - Insurance
       summary: Add insurance
       description: Add insurance information
       operationId: create_insurance_information_dms_configure_insurance_post
@@ -4332,7 +4549,9 @@ paths:
   /dms/configure/quotation-by-customers:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
+        - Customers
       summary: Get all orders of a customer
       description: Get all orders of a customer
       operationId: get_orders_by_customers_dms_configure_quotation_by_customers_get
@@ -4379,7 +4598,9 @@ paths:
   /dms/all-quotation-by-reference-number/:
     get:
       tags:
-        - Order Management
+        - Quotation
+        - Reference
+        - Numbers
       summary: Get all quotations based on reference number
       description: Get all quotations based on reference number
       operationId: >-
@@ -4410,7 +4631,8 @@ paths:
   /dms/order/quick_quotation:
     post:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Save Single Quotation
       description: Save Single Quotation
       operationId: save_quotations_dms_order_quick_quotation_post
@@ -4438,7 +4660,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Update Quotation
       description: Update Quotation
       operationId: update_quotations_dms_order_quick_quotation_patch
@@ -4474,7 +4697,9 @@ paths:
   /dms/configure/quick-quotation-by-identifier/{identifier}:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
+        - Identifiers
       summary: Get Specific quotation
       description: Get Specific quotation
       operationId: >-
@@ -4505,7 +4730,9 @@ paths:
   /dms/configure/quick-quotation-by-vendor:
     get:
       tags:
-        - Order Management
+        - Configure
+        - Quotation
+        - Vendor
       summary: Get all orders of a customer
       description: Get all orders of a customer
       operationId: get_orders_by_customer_data_dms_configure_quick_quotation_by_vendor_get
@@ -4673,7 +4900,8 @@ paths:
   /dms/order/workqueue:
     get:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Get all orders for workqueue.
       description: Get all orders for workqueue.
       operationId: get_orders_workqueue_dms_order_workqueue_get
@@ -4848,7 +5076,9 @@ paths:
   /dms/get-reference-data/{dealer_code}:
     get:
       tags:
-        - Order Management
+        - Reference
+        - Data
+        - Order  Management
       summary: Get Reference Data By Dealer Code
       description: >-
         This method returns the data of inventory from Configuration By Dealer
@@ -4879,7 +5109,7 @@ paths:
   /dms/get-inventory:
     get:
       tags:
-        - Order Management
+        - Inventory
       summary: Get Filtered Inventory
       description: 'This will get filtered inventory '
       operationId: get_filtered_inventory_dms_get_inventory_get
@@ -5042,7 +5272,8 @@ paths:
   /dms/get-setup-data:
     get:
       tags:
-        - Order Management
+        - Setup
+        - Data
       summary: Setup Data
       description: This method will return setup data.
       operationId: get_setup_data_dms_get_setup_data_get
@@ -5080,7 +5311,8 @@ paths:
   /dms/an-order-statuses:
     get:
       tags:
-        - AN Order Statuses
+        - Order
+        - Statuses
       summary: Get AN Order Statuses
       description: Get AN Order Statuses
       operationId: get_an_order_statuses_dms_an_order_statuses_get
@@ -5093,7 +5325,9 @@ paths:
   /dms/order/asset/{reference_number}:
     patch:
       tags:
-        - Order Management
+        - Order
+        - Assets
+        - Order  Management
       summary: Updates an order asset record
       description: Updates an order asset record
       operationId: update_order_asset_dms_order_asset__reference_number__patch
@@ -5128,7 +5362,8 @@ paths:
   /dms/update-order-submission:
     post:
       tags:
-        - Order Management
+        - Order
+        - Order  Management
       summary: Update Order Submission Status
       description: Updates an order submission status by hubex response
       operationId: update_order_submission_dms_update_order_submission_post
@@ -5144,7 +5379,10 @@ paths:
   /dms/order/approve-order-by-lender/{reference_number}/{lender_id}:
     patch:
       tags:
-        - Order Management
+        - Order
+        - Approve
+        - Lender
+        - Lender_id
       summary: Update Order Status and Lender Id
       description: Update the order status to approve and replace lender id
       operationId: >-
@@ -5186,7 +5424,10 @@ paths:
   /dms/order/get-customer-order-submissions/{customer_reference_id}/{submission_status}:
     post:
       tags:
-        - Order Management
+        - Order
+        - Customer
+        - Customer_reference_id
+        - Order  Management
       summary: Get order lender submissions of customer by status and Lender ids
       description: Get order lender submission records of customer by status and lender ids
       operationId: >-
@@ -5222,7 +5463,8 @@ paths:
   /dms/order/get-order-submission-by-id/{submission_id}:
     get:
       tags:
-        - Order Management
+        - Order
+        - Submission_id
       summary: Get single order submission by primary key
       description: Gets single order submission record against given id
       operationId: >-
@@ -5249,7 +5491,9 @@ paths:
   /dms/order/re-submit/{identifier}:
     patch:
       tags:
-        - Order Management
+        - Order
+        - Submit
+        - Order  Management
       summary: Update order and re-send deal to lender
       description: >-
         Update the order and resubmit deal to lenders with deffering existing
@@ -5285,7 +5529,8 @@ paths:
   /dms/configure/individualized-agreement:
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Agreement
       summary: Creates an order individualized agreement info setup record
       description: Creates an order individualized agreement info setup record
       operationId: >-
@@ -5314,7 +5559,10 @@ paths:
   /dms/configure/update-financial-indicator/{reference_number}/{is_payment_updated}:
     patch:
       tags:
-        - Order Management
+        - Configure
+        - Financial
+        - Indicators
+        - Is_payment_updated
       summary: Update Financial Indicator
       description: Update Financial Indicator
       operationId: >-
@@ -5350,7 +5598,8 @@ paths:
   /dms/order/proposal:
     post:
       tags:
-        - Proposal Management
+        - Order
+        - Proposals
       summary: Create new order proposal for broker
       operationId: save_proposal_dms_order_proposal_post
       requestBody:
@@ -5377,7 +5626,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Proposal Management
+        - Order
+        - Proposals
       summary: Update order proposal for broker
       operationId: update_proposal_dms_order_proposal_patch
       parameters:
@@ -5412,7 +5662,10 @@ paths:
   /dms/order/change-proposal-status:
     patch:
       tags:
-        - Proposal Management
+        - Order
+        - Changes
+        - Proposals
+        - Status
       summary: Update order proposal status
       operationId: update_proposal_status_dms_order_change_proposal_status_patch
       requestBody:
@@ -5439,7 +5692,10 @@ paths:
   /dms/order/proposal-dashboard-analytics:
     get:
       tags:
-        - Proposal Analytics
+        - Order
+        - Proposals
+        - Dashboard
+        - Analytics
       summary: Get order proposal analytics for broker dashboard
       operationId: >-
         get_proposal_dashboard_analytics_dms_order_proposal_dashboard_analytics_get
@@ -5584,7 +5840,10 @@ paths:
   /dms/order/generate-document/{event_name}:
     post:
       tags:
-        - Document Generation
+        - Order
+        - Generate
+        - Documents
+        - Document  Generation
       summary: Generate Document for respective event
       operationId: generate_documents_dms_order_generate_document__event_name__post
       parameters:
@@ -5617,7 +5876,8 @@ paths:
   /dms/order/download_document_by_event/{event_name}:
     post:
       tags:
-        - Document Generation
+        - Order
+        - Event_name
       summary: Get generated document(s) key(s) against specific event
       operationId: >-
         get_document_key_by_event_dms_order_download_document_by_event__event_name__post
@@ -5651,7 +5911,10 @@ paths:
   /dms/order/send-email/{event_name}:
     post:
       tags:
-        - Send Email Notification
+        - Order
+        - Send
+        - Email
+        - Send  Email  Notification
       summary: send Email notification
       operationId: send_email_dms_order_send_email__event_name__post
       parameters:
@@ -5684,7 +5947,8 @@ paths:
   /dms/order/stakeholder/:
     get:
       tags:
-        - Order Stakeholder Management
+        - Order
+        - Order  Stakeholder  Management
       summary: Get order stakeholder
       operationId: get_order_stakeholder_dms_order_stakeholder__get
       parameters:
@@ -5758,7 +6022,8 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
     post:
       tags:
-        - Order Stakeholder Management
+        - Order
+        - Order  Stakeholder  Management
       summary: Create new order stakeholder
       operationId: create_order_stakeholder_dms_order_stakeholder__post
       requestBody:
@@ -5782,7 +6047,8 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
     delete:
       tags:
-        - Order Stakeholder Management
+        - Order
+        - Order  Stakeholder  Management
       summary: Update order stakeholder
       operationId: delete_order_stakeholder_dms_order_stakeholder__delete
       parameters:
@@ -5806,7 +6072,8 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
     patch:
       tags:
-        - Order Stakeholder Management
+        - Order
+        - Order  Stakeholder  Management
       summary: Update order stakeholder
       operationId: update_order_stakeholder_dms_order_stakeholder__patch
       parameters:
@@ -5838,7 +6105,8 @@ paths:
   /dms/configure/disclaimer:
     get:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
       summary: Get Disclaimer Details by Disclaimer Name and Disclaimer Version
       operationId: get_disclaimer_details_by_id_version_dms_configure_disclaimer_get
       parameters:
@@ -5872,7 +6140,8 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
       summary: Create disclaimer
       operationId: create_disclaimer_dms_configure_disclaimer_post
       requestBody:
@@ -5900,7 +6169,9 @@ paths:
   /dms/configure/disclaimer-by-name/{name}:
     get:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Name
       summary: Get Disclaimer by Name
       operationId: get_disclaimer_by_name_dms_configure_disclaimer_by_name__name__get
       parameters:
@@ -5934,7 +6205,9 @@ paths:
   /dms/configure/customer-mandatory-disclaimers:
     get:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Customers
+        - Disclaimers
       summary: Get customer mandatory Disclaimers
       operationId: >-
         get_mandatory_disclaimers_dms_configure_customer_mandatory_disclaimers_get
@@ -5956,7 +6229,8 @@ paths:
   /dms/configure/all-disclaimer:
     get:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimer
       summary: Get all Disclaimers
       operationId: get_all_disclaimer_dms_configure_all_disclaimer_get
       parameters:
@@ -5988,7 +6262,9 @@ paths:
   /dms/configure/disclaimer-status:
     patch:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Status
       summary: Update Disclaimer status
       operationId: update_disclaimer_status_by_id_dms_configure_disclaimer_status_patch
       parameters:
@@ -6026,7 +6302,9 @@ paths:
   /dms/configure/disclaimer-accord:
     patch:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Accord
       summary: Update Disclaimer accord
       operationId: update_disclaimer_accord_by_name_dms_configure_disclaimer_accord_patch
       parameters:
@@ -6064,7 +6342,9 @@ paths:
   /dms/configure/disclaimer/{name}:
     patch:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Name
       summary: Update Disclaimer details
       operationId: update_disclaimer_by_identifier_dms_configure_disclaimer__name__patch
       parameters:
@@ -6099,7 +6379,9 @@ paths:
   /dms/configure/disclaimer-agreement:
     get:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Agreement
       summary: Get Saved Disclaimer Agreement
       operationId: >-
         get_disclaimer_acceptance_agreement_dms_configure_disclaimer_agreement_get
@@ -6139,7 +6421,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Agreement
       summary: Create Disclaimer Agreement
       operationId: create_disclaimer_acceptance_dms_configure_disclaimer_agreement_post
       requestBody:
@@ -6166,7 +6450,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Agreement
       summary: Delete Disclaimer Agreement
       operationId: remove_disclaimer_acceptance_dms_configure_disclaimer_agreement_delete
       parameters:
@@ -6200,7 +6486,10 @@ paths:
   /dms/configure/disclaimer-agreement-datetime:
     get:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
+        - Agreement
+        - Disclaimer  Management
       summary: Get Disclaimer Agreement Date Time by Customer ID/Order ID
       operationId: >-
         get_disclaimer_acceptance_date_time_dms_configure_disclaimer_agreement_datetime_get
@@ -6240,7 +6529,8 @@ paths:
   /dms/configure/multiple-disclaimers:
     post:
       tags:
-        - Disclaimer Management
+        - Configure
+        - Disclaimers
       summary: Create multiple disclaimers
       operationId: create_multiple_disclaimers_dms_configure_multiple_disclaimers_post
       requestBody:
@@ -6276,7 +6566,8 @@ paths:
   /dms/configure/workqueue:
     post:
       tags:
-        - Workqueue Management
+        - Configure
+        - Workqueue  Management
       summary: Creates workqueue after Order creation
       description: Creates workqueue after Order creation
       operationId: create_appointment_dms_configure_workqueue_post
@@ -6304,7 +6595,8 @@ paths:
   /dms/configure/workqueue/search:
     get:
       tags:
-        - Workqueue Management
+        - Configure
+        - Search
       summary: Search workqueue based on filters
       description: Search workqueue based on filters
       operationId: get_filter_workqueue_dms_configure_workqueue_search_get
@@ -6497,7 +6789,9 @@ paths:
   /dms/configure/workqueue/create_application/{workqueue_id}:
     patch:
       tags:
-        - Workqueue Management
+        - Configure
+        - Create_application
+        - Workqueue  Management
       summary: Creates workqueue after Order stage change to application
       description: Creates workqueue after Order stage change to application
       operationId: >-
@@ -6527,7 +6821,8 @@ paths:
   /dms/quote/calculation:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculations
       summary: Calculate Quotation
       description: Calculate Quotation
       operationId: calculate_order_dms_quote_calculation_post
@@ -6560,7 +6855,9 @@ paths:
   /dms/quote/calculate-order:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculate
+        - Order
       summary: Calculate Quotation
       description: Calculate Quotation
       operationId: calculate_order2_dms_quote_calculate_order_post
@@ -6588,7 +6885,9 @@ paths:
   /dms/quote/calculate-nfa:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculate
+        - Order  Calculations
       summary: Calculate NFA [Net Financed Amount]
       description: Calculate NFA [Net Financed Amount]
       operationId: calculate_nfa_dms_quote_calculate_nfa_post
@@ -6617,7 +6916,8 @@ paths:
   /dms/quote/calculation/V2:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculations
       summary: Calculate Rental
       description: Calculate Rental
       operationId: calculate_v2_dms_quote_calculation_V2_post
@@ -6646,7 +6946,7 @@ paths:
   /dms/quote/create:
     post:
       tags:
-        - Order Calculations
+        - Quote
       summary: Create Quote
       description: Create Quote
       operationId: create_quote_dms_quote_create_post
@@ -6671,7 +6971,7 @@ paths:
   /dms/an-dealers:
     get:
       tags:
-        - AN Dealers
+        - Dealers
       summary: Get Dealers
       description: Get Dealers
       operationId: get_an_dealers_dms_an_dealers_get
@@ -6684,7 +6984,10 @@ paths:
   /dms/quote/calculation/multi-assets:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculations
+        - Multi
+        - Assets
       summary: Calculate Quotation for Multiple Assets
       description: Calculate Quotation for Multiple Assets
       operationId: calculate_order_multi_assets_dms_quote_calculation_multi_assets_post
@@ -6715,7 +7018,9 @@ paths:
   /dms/quote/calculation/quantity:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculations
+        - Quantity
       summary: Calculate Quotation
       description: Calculate Quotation
       operationId: calculate_order_with_quantity_dms_quote_calculation_quantity_post
@@ -6743,7 +7048,9 @@ paths:
   /dms/quote/calculation/monthlyImpact:
     post:
       tags:
-        - Order Calculations
+        - Quote
+        - Calculations
+        - Impact
       summary: Calculate Monthly Impact
       description: Calculate Monthly Impact
       operationId: calculate_monthly_impact_dms_quote_calculation_monthlyImpact_post
@@ -6771,7 +7078,8 @@ paths:
   /dms/configure/appointment:
     post:
       tags:
-        - Appointment Management
+        - Configure
+        - Appointment
       summary: Creates Appointment after Order Confirmation
       description: Creates an appointment after order confirmation
       operationId: create_appointment_dms_configure_appointment_post
@@ -6799,7 +7107,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Appointment Management
+        - Configure
+        - Appointment
       summary: Update an created appointment
       description: Update an created appointment
       operationId: update_appointment_dms_configure_appointment_patch
@@ -6827,7 +7136,9 @@ paths:
   /dms/configure/appointment/{appointment_id}:
     get:
       tags:
-        - Appointment Management
+        - Configure
+        - Appointment
+        - Appointment  Management
       summary: Get Appointment by id
       description: Get Appointment by id
       operationId: get_appointment_dms_configure_appointment__appointment_id__get
@@ -6855,7 +7166,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Appointment Management
+        - Configure
+        - Appointment
+        - Appointment  Management
       summary: Delete created appointment
       description: Delete created appointment
       operationId: delete_appointment_dms_configure_appointment__appointment_id__patch
@@ -6884,7 +7197,8 @@ paths:
   /dms/configure/appointments:
     post:
       tags:
-        - Appointment Management
+        - Configure
+        - Appointment  Management
       summary: Get paginated list of Appointments
       description: Get paginated list of Appointments
       operationId: filter_appointments_dms_configure_appointments_post
@@ -6912,7 +7226,7 @@ paths:
   /dms/email/:
     post:
       tags:
-        - Customer Consent
+        - Email
       summary: Get customer record
       description: Get customer record by customer email
       operationId: find_customer_by_email_dms_email__post
@@ -6940,7 +7254,7 @@ paths:
   /dms/consents:
     post:
       tags:
-        - Customer Consent
+        - Consents
       summary: Create consents
       description: Create consents record
       operationId: add_consent_dms_consents_post
@@ -6969,7 +7283,7 @@ paths:
   /dms/consents/:
     get:
       tags:
-        - Customer Consent
+        - Consents
       summary: Get all consents records
       description: Get all record of consents
       operationId: get_all_consents_dms_consents__get
@@ -6988,7 +7302,7 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Consent
+        - Consents
       summary: Delete consents
       description: Delete consents record by consents ID
       operationId: remove_consent_dms_consents__post
@@ -7017,7 +7331,8 @@ paths:
   /dms/consents/{consents_id}:
     get:
       tags:
-        - Customer Consent
+        - Consents
+        - Customer  Consent
       summary: Get consents record
       description: Get consents record by consents ID
       operationId: find_one_consent_dms_consents__consents_id__get
@@ -7045,7 +7360,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Consent
+        - Consents
+        - Customer  Consent
       summary: Update consents
       description: Update consents record by consents ID
       operationId: update_consent_dms_consents__consents_id__patch
@@ -7081,7 +7397,8 @@ paths:
   /dms/customer/document:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
       summary: Get customer documents
       operationId: get_customer_documents_dms_customer_document_get
       parameters:
@@ -7147,7 +7464,8 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
       summary: Creates customer document
       operationId: add_customer_document_dms_customer_document_post
       requestBody:
@@ -7174,7 +7492,8 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
       summary: Delete customer document by identifier
       operationId: delete_customer_document_dms_customer_document_delete
       parameters:
@@ -7203,7 +7522,8 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
       summary: Update customer document by identifier
       operationId: update_customer_document_dms_customer_document_patch
       parameters:
@@ -7238,7 +7558,9 @@ paths:
   /dms/customer/document/status:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Status
       summary: Get customer document by identifier
       operationId: get_customer_document_identifier_dms_customer_document_status_get
       parameters:
@@ -7266,7 +7588,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Status
       summary: Update customer document status
       operationId: update_customer_document_status_dms_customer_document_status_patch
       parameters:
@@ -7301,7 +7625,9 @@ paths:
   /dms/customer/document-history:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - History
       summary: Get customer document history
       operationId: get_customer_document_history_dms_customer_document_history_get
       parameters:
@@ -7361,7 +7687,9 @@ paths:
   /dms/customer/documents/{customer_reference_id}:
     patch:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Customer  Document
       summary: Update customer document by identifier
       operationId: >-
         get_customer_document_dms_customer_documents__customer_reference_id__patch
@@ -7399,7 +7727,8 @@ paths:
   /dms/customer/delete-document:
     patch:
       tags:
-        - Customer Document
+        - Customers
+        - Document
       summary: Delete customer document by identifier
       operationId: >-
         delete_customer_document_by_identifier_dms_customer_delete_document_patch
@@ -7435,7 +7764,9 @@ paths:
   /dms/customer/document/review:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Reviews
       summary: Get customer document reviews
       operationId: >-
         get_customer_document_reviews_by_identifier_dms_customer_document_review_get
@@ -7469,7 +7800,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Reviews
       summary: Add customer document review
       operationId: add_customer_document_review_dms_customer_document_review_post
       parameters:
@@ -7504,7 +7837,10 @@ paths:
   /dms/customer/document/uploading-status:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Uploading
+        - Status
       summary: Get customer document upload status
       operationId: >-
         get_customer_document_upload_status_dms_customer_document_uploading_status_get
@@ -7533,7 +7869,10 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Uploading
+        - Status
       summary: Update customer document upload status
       operationId: >-
         update_customer_document_uploading_status_dms_customer_document_uploading_status_patch
@@ -7569,7 +7908,9 @@ paths:
   /dms/customer/document/download:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Downloads
       summary: Get customer document url by artifect_id
       description: Get customer document url by artifect_id
       operationId: >-
@@ -7599,7 +7940,10 @@ paths:
   /dms/customer/document/download-stream:
     get:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Downloads
+        - Stream
       summary: Get customer document stream by artifect_id
       description: Get customer document stream by artifect_id
       operationId: >-
@@ -7629,7 +7973,9 @@ paths:
   /dms/customer/document/signature-document:
     post:
       tags:
-        - Customer Document
+        - Customers
+        - Documents
+        - Signatures
       summary: Customer Document Signature
       operationId: signature_document_dms_customer_document_signature_document_post
       requestBody:
@@ -7656,7 +8002,9 @@ paths:
   /dms/customer/additional-document:
     post:
       tags:
-        - Customer Document
+        - Customers
+        - Additional
+        - Documents
       summary: Creates customer document
       operationId: add_customer_additional_document_dms_customer_additional_document_post
       requestBody:
@@ -7684,7 +8032,9 @@ paths:
   /dms/get-an-signed-url:
     get:
       tags:
-        - Get AN Signed URL
+        - An
+        - Signed
+        - Get  A N  Signed  U R L
       summary: Get AN Signed URL to Upload
       description: Get AN Signed URL to upload document
       operationId: get_an_signed_url_dms_get_an_signed_url_get
@@ -7716,7 +8066,9 @@ paths:
   /dms/configure/document-package:
     get:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Packages
       summary: Get document package by identifier
       operationId: get_document_package_dms_configure_document_package_get
       parameters:
@@ -7746,7 +8098,9 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Packages
       summary: Create document package
       operationId: create_document_package_new_dms_configure_document_package_post
       parameters:
@@ -7793,7 +8147,9 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Packages
       summary: Cancel document package and document by identifier
       operationId: cancel_document_package_dms_configure_document_package_delete
       parameters:
@@ -7821,7 +8177,10 @@ paths:
   /dms/configure/document-package-by-reference-id:
     get:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Packages
+        - Reference
       summary: Get document package by reference_id
       operationId: >-
         get_document_package_by_reference_id_dms_configure_document_package_by_reference_id_get
@@ -7857,7 +8216,10 @@ paths:
   /dms/configure/all-document-packages-by-reference-id:
     get:
       tags:
-        - Document Package Management
+        - Configure
+        - Document
+        - Packages
+        - Reference
       summary: Get document package by reference_id
       operationId: >-
         get_all_document_packages_by_reference_id_dms_configure_all_document_packages_by_reference_id_get
@@ -7915,7 +8277,9 @@ paths:
   /dms/configure/document-package/document:
     get:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Packages
       summary: Get document from document package by identifier
       operationId: get_document_dms_configure_document_package_document_get
       parameters:
@@ -7952,7 +8316,9 @@ paths:
   /dms/configure/{document_package_id}/{document_id}/{signature_id}:
     post:
       tags:
-        - Document Package Management
+        - Configure
+        - Document_id
+        - Document  Package  Management
       summary: Sign document
       operationId: >-
         sign_document_dms_configure__document_package_id___document_id___signature_id__post
@@ -8011,7 +8377,10 @@ paths:
   /dms/configure/by-role/{document_package_identifier}/{document_identifier}/{signature_id}/{signer_role}:
     post:
       tags:
-        - Document Package Management
+        - Configure
+        - Role
+        - Document_identifier
+        - Signer_role
       summary: Sign document
       operationId: >-
         sign_document_by_role_dms_configure_by_role__document_package_identifier___document_identifier___signature_id___signer_role__post
@@ -8075,7 +8444,11 @@ paths:
   /dms/configure/document-pre-signed-url/{key}:
     get:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Pre
+        - Signed
+        - Keys
       summary: Get document package by identifier
       operationId: >-
         get_document_pre_signed_url_dms_configure_document_pre_signed_url__key__get
@@ -8104,7 +8477,8 @@ paths:
   /dms/configure/metadata:
     patch:
       tags:
-        - Document Package Management
+        - Configure
+        - Metadata
       summary: Add Meta Data
       operationId: add_meta_data_dms_configure_metadata_patch
       parameters:
@@ -8150,7 +8524,10 @@ paths:
   /dms/configure/document-notification-bookmarks:
     get:
       tags:
-        - Document Package Management
+        - Configure
+        - Documents
+        - Notifications
+        - Bookmarks
       summary: Get bookmarks of documents and notifications
       operationId: >-
         get_document_notification_bookmarks_dms_configure_document_notification_bookmarks_get
@@ -8176,7 +8553,8 @@ paths:
   /dms/submit-order:
     post:
       tags:
-        - Credit Approval
+        - Submit
+        - Order
       summary: Mock Credit Approver API & Fraud Check
       description: Mock Request
       operationId: get_submit_order_dms_submit_order_post
@@ -8211,7 +8589,8 @@ paths:
   /dms/credit-request:
     post:
       tags:
-        - Credit Approval
+        - Credit
+        - Request
       summary: Mock Credit Approver Request
       description: Mock Request
       operationId: get_credit_approver_request_dms_credit_request_post
@@ -8269,10 +8648,13 @@ paths:
       security:
         - APIKeyHeader: []
         - OAuth2PasswordBearer: []
+      tags:
+        - Contract
+        - Documents
   /dms/contract:
     get:
       tags:
-        - Customer Contract
+        - Contract
       summary: Get active contract
       description: Get active contract
       operationId: get_active_contract_dms_contract_get
@@ -8313,7 +8695,7 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Customer Contract
+        - Contract
       summary: Create contract
       description: Create contract
       operationId: create_contract_dms_contract_post
@@ -8341,7 +8723,7 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Customer Contract
+        - Contract
       summary: Update contract
       description: Update contract
       operationId: update_contract_dms_contract_patch
@@ -8377,7 +8759,10 @@ paths:
   /dms/contract/past-due-webhook:
     patch:
       tags:
-        - Customer Contract
+        - Contract
+        - Past
+        - Due
+        - Webhooks
       summary: Past due webhook
       description: Past due webhook
       operationId: past_due_webhook_dms_contract_past_due_webhook_patch
@@ -8403,7 +8788,7 @@ paths:
   /dms/contract/all:
     get:
       tags:
-        - Customer Contract
+        - Contract
       summary: Get all contract records
       description: Get all contract records
       operationId: get_all_contracts_dms_contract_all_get
@@ -8467,7 +8852,7 @@ paths:
   /dms/contracts:
     get:
       tags:
-        - Customer Contract
+        - Contracts
       summary: Get contracts by external order ids
       description: Get contracts by external order ids
       operationId: find_contracts_dms_contracts_get
@@ -8498,7 +8883,8 @@ paths:
   /dms/contracts/search:
     get:
       tags:
-        - Customer Contract
+        - Contracts
+        - Search
       summary: Get contracts by external order ids
       description: Get contracts by external order ids
       operationId: search_contracts_dms_contracts_search_get
@@ -8575,7 +8961,8 @@ paths:
   /dms/stipulation/fulfillment:
     get:
       tags:
-        - Stipulation Fulfillment
+        - Stipulation
+        - Fulfillment
       summary: Get All Stipulation Fulfillments
       description: Get All Stipulation Fulfillments
       operationId: get_all_stipulation_fulfillment_dms_stipulation_fulfillment_get
@@ -8588,7 +8975,8 @@ paths:
                 $ref: '#/components/schemas/StipulationFulfillmentResponseModel'
     post:
       tags:
-        - Stipulation Fulfillment
+        - Stipulation
+        - Fulfillment
       summary: Create Stipulation Fulfillment
       description: Create Stipulation Fulfillment
       operationId: add_stipulation_fulfillment_dms_stipulation_fulfillment_post
@@ -8616,7 +9004,8 @@ paths:
         - OAuth2PasswordBearer: []
     delete:
       tags:
-        - Stipulation Fulfillment
+        - Stipulation
+        - Fulfillment
       summary: Delete Stipulation Fulfillments
       description: Delete Stipulation Fulfillments
       operationId: delete_stipulation_fulfillment_dms_stipulation_fulfillment_delete
@@ -8641,7 +9030,8 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
     patch:
       tags:
-        - Stipulation Fulfillment
+        - Stipulation
+        - Fulfillment
       summary: Delete Stipulation Fulfillments
       description: Delete Stipulation Fulfillments
       operationId: update_stipulation_fulfillment_dms_stipulation_fulfillment_patch
@@ -8676,7 +9066,8 @@ paths:
   /dms/stipulation/fulfillment/:
     get:
       tags:
-        - Stipulation Fulfillment
+        - Stipulation
+        - Fulfillment
       summary: Get Stipulation Fulfillments
       description: Get Stipulation Fulfillments
       operationId: get_stipulation_fulfillment_dms_stipulation_fulfillment__get
@@ -8957,6 +9348,7 @@ paths:
     get:
       tags:
         - Stipulation
+        - Financial
       summary: Get Financial Stipulation
       operationId: get_financial_stipulations_dms_stipulation_financial_get
       parameters:
@@ -8996,6 +9388,7 @@ paths:
     post:
       tags:
         - Stipulation
+        - Financial
       summary: Create Financial Stipulation
       operationId: add_financial_stipulation_dms_stipulation_financial_post
       requestBody:
@@ -9024,6 +9417,7 @@ paths:
     get:
       tags:
         - Stipulation
+        - Lender
       summary: Get Financial Stipulation
       operationId: get_order_fee_by_id_dms_stipulation_stipulation_by_lender_get
       parameters:
@@ -9054,7 +9448,8 @@ paths:
   /dms/external-orders/all:
     get:
       tags:
-        - External Order Management
+        - External
+        - Orders
       summary: Get External Orders
       description: Get All External Orders
       operationId: get_all_external_orders_dms_external_orders_all_get
@@ -9084,7 +9479,8 @@ paths:
   /dms/external-keys/all:
     get:
       tags:
-        - External Keys
+        - External
+        - Keys
       summary: Get Keys
       description: Get All External Keys
       operationId: get_external_subscription_key_dms_external_keys_all_get
@@ -9098,7 +9494,9 @@ paths:
   /dms/external-orders/push-deal:
     post:
       tags:
-        - External Order Management
+        - External
+        - Orders
+        - Deal
       summary: Push Deal to Third Party
       description: Push Deal to Third Party
       operationId: push_deal_external_dms_dms_external_orders_push_deal_post
@@ -9126,7 +9524,8 @@ paths:
   /dms/theme-builder:
     get:
       tags:
-        - Index Wrapper
+        - Theme
+        - Builder
       summary: Get Theme
       operationId: get_theme_dms_theme_builder_get
       parameters:
@@ -9153,7 +9552,8 @@ paths:
         - OAuth2PasswordBearer: []
     post:
       tags:
-        - Theme Builder
+        - Theme
+        - Builder
       summary: Post Theme Builder Record
       description: >-
         This method creates theme builder record to be configured for
@@ -9183,7 +9583,9 @@ paths:
   /dms/theme-builder/{user_email}:
     get:
       tags:
-        - Theme Builder
+        - Theme
+        - Builder
+        - Theme  Builder
       summary: Get theme by user email
       description: This method returns the theme of application with respect to user email
       operationId: get_theme_by_user_email_dms_theme_builder__user_email__get
@@ -9212,7 +9614,9 @@ paths:
         - OAuth2PasswordBearer: []
     patch:
       tags:
-        - Theme Builder
+        - Theme
+        - Builder
+        - Theme  Builder
       summary: Updates a theme builder record
       description: This method updates theme builder record provided by user_email
       operationId: update_theme_builder_record_dms_theme_builder__user_email__patch
@@ -9248,7 +9652,8 @@ paths:
   /dms/affordability-check/:
     post:
       tags:
-        - Affordability Check
+        - Affordability
+        - Checks
       summary: Affordability Check
       operationId: affordability_check_dms_affordability_check__post
       requestBody:
@@ -9275,7 +9680,10 @@ paths:
   /dms/affordability-check/monthly-payment-calculation/V2/:
     post:
       tags:
-        - Affordability Check
+        - Affordability
+        - Checks
+        - Payments
+        - Calculations
       summary: Monthly Payment Calculation V2
       operationId: >-
         monthly_payment_calculation_v2_dms_affordability_check_monthly_payment_calculation_V2__post
@@ -9303,7 +9711,7 @@ paths:
   /dms/currencies:
     get:
       tags:
-        - Index Wrapper
+        - Currencies
       summary: Get All Currencies
       operationId: get_all_currencies_dms_currencies_get
       responses:
@@ -9318,7 +9726,9 @@ paths:
   /dms/company/by-tenant-id/{tenant_id}:
     get:
       tags:
-        - Index Wrapper
+        - Company
+        - Tenant
+        - Index  Wrapper
       summary: Find Company By Tenant Id
       operationId: find_company_by_tenant_id_dms_company_by_tenant_id__tenant_id__get
       parameters:
@@ -9346,7 +9756,9 @@ paths:
   /dms/dealer/find/by-tenant:
     get:
       tags:
-        - Index Wrapper
+        - Dealer
+        - Find
+        - Tenant
       summary: Get Dealer By Tenant Id
       operationId: get_dealer_by_tenant_id_dms_dealer_find_by_tenant_get
       parameters:
@@ -9380,7 +9792,12 @@ paths:
   /dms/inventory/reference-data-by-dealer-code/{dealer_code}:
     get:
       tags:
-        - Index Wrapper
+        - Inventory
+        - References
+        - Data
+        - Dealer
+        - Code
+        - Index  Wrapper
       summary: Get Inventory Reference Data
       operationId: >-
         get_inventory_reference_data_dms_inventory_reference_data_by_dealer_code__dealer_code__get
@@ -9409,7 +9826,8 @@ paths:
   /dms/inventory/filter:
     get:
       tags:
-        - Index Wrapper
+        - Inventory
+        - Filter
       summary: Get Inventory Data
       operationId: get_inventory_data_dms_inventory_filter_get
       parameters:
@@ -9545,7 +9963,7 @@ paths:
   /dms/state:
     get:
       tags:
-        - Index Wrapper
+        - State
       summary: Get All States
       operationId: get_all_states_dms_state_get
       responses:
@@ -9560,7 +9978,8 @@ paths:
   /dms/contract-term:
     get:
       tags:
-        - Index Wrapper
+        - Contract
+        - Term
       summary: Get All Contract Terms
       operationId: get_all_contract_terms_dms_contract_term_get
       parameters:
@@ -9588,7 +10007,8 @@ paths:
   /dms/credit-ratings:
     get:
       tags:
-        - Index Wrapper
+        - Credit
+        - Ratings
       summary: Get All Credit Rating
       operationId: get_all_credit_rating_dms_credit_ratings_get
       parameters:
@@ -9616,7 +10036,8 @@ paths:
   /dms/integration/company:
     get:
       tags:
-        - Index Wrapper
+        - Integrations
+        - Company
       summary: Get All Company Integration
       operationId: get_all_company_integration_dms_integration_company_get
       parameters:
@@ -9644,7 +10065,10 @@ paths:
   /dms/dealer/preference-by-dealer-code/{dealer_code}:
     get:
       tags:
-        - Index Wrapper
+        - Dealer
+        - Preferences
+        - Code
+        - Index  Wrapper
       summary: Get Dealer Preference By Dealer Code
       operationId: >-
         get_dealer_preference_by_dealer_code_dms_dealer_preference_by_dealer_code__dealer_code__get
@@ -9673,7 +10097,9 @@ paths:
   /dms/integration/by_provider_name/{dealer_code}/{integration_type}/{provider_name}:
     get:
       tags:
-        - Index Wrapper
+        - Integrations
+        - Dealer_code
+        - Provider_name
       summary: Get Integration By Provider Name
       operationId: >-
         get_integration_by_provider_name_dms_integration_by_provider_name__dealer_code___integration_type___provider_name__get
@@ -9720,7 +10146,10 @@ paths:
   /dms/integration/configuration/{dealer_code}/{integration_type}/{provider_name}:
     get:
       tags:
-        - Index Wrapper
+        - Integrations
+        - Configuration
+        - Integration_type
+        - Index  Wrapper
       summary: Get Hubex Configuration By Provider Name
       operationId: >-
         get_hubex_configuration_by_provider_name_dms_integration_configuration__dealer_code___integration_type___provider_name__get
@@ -9767,7 +10196,8 @@ paths:
   /dms/vehicle-detail/{vin}:
     get:
       tags:
-        - Index Wrapper
+        - Vehicle
+        - Index  Wrapper
       summary: Get Vehicle Detail By Vin
       operationId: get_vehicle_detail_by_vin_dms_vehicle_detail__vin__get
       parameters:
@@ -9795,7 +10225,7 @@ paths:
   /dms/countries:
     get:
       tags:
-        - Index Wrapper
+        - Countries
       summary: Get All Countries
       operationId: get_all_countries_dms_countries_get
       responses:
@@ -9810,7 +10240,9 @@ paths:
   /dms/dealer/profile/{dealer_code}:
     get:
       tags:
-        - Index Wrapper
+        - Dealer
+        - Profiles
+        - Index  Wrapper
       summary: Get Dealer Profile By Dealer Code
       operationId: get_dealer_profile_by_dealer_code_dms_dealer_profile__dealer_code__get
       parameters:
@@ -9838,7 +10270,8 @@ paths:
   /dms/vehicle/{vin}:
     get:
       tags:
-        - Index Wrapper
+        - Vehicle
+        - Index  Wrapper
       summary: Get Vehicle By Vin
       operationId: get_vehicle_by_vin_dms_vehicle__vin__get
       parameters:
@@ -9866,7 +10299,9 @@ paths:
   /dms/contract-allowed-annum-mileage:
     get:
       tags:
-        - Index Wrapper
+        - Contract
+        - Allowed
+        - Mileage
       summary: Get All Contract Allowed Mileages
       operationId: get_all_contract_allowed_mileages_dms_contract_allowed_annum_mileage_get
       parameters:
@@ -9894,7 +10329,10 @@ paths:
   /dms/dealer/fee/dealer-code/{dealer_code}:
     get:
       tags:
-        - Index Wrapper
+        - Dealer
+        - Fee
+        - Code
+        - Index  Wrapper
       summary: Get All Dealer Fee By Code
       operationId: get_all_dealer_fee_by_code_dms_dealer_fee_dealer_code__dealer_code__get
       parameters:
@@ -9928,7 +10366,9 @@ paths:
   /dms/asset-usage/active:
     get:
       tags:
-        - Index Wrapper
+        - Assets
+        - Usage
+        - Index  Wrapper
       summary: Get Active Asset Usages
       operationId: get_active_asset_usages_dms_asset_usage_active_get
       parameters:
@@ -9956,7 +10396,7 @@ paths:
   /dms/vehicle:
     get:
       tags:
-        - Index Wrapper
+        - Vehicle
       summary: Get All Vehicles
       operationId: get_all_vehicles_dms_vehicle_get
       responses:
@@ -9971,7 +10411,8 @@ paths:
   /dms/financial-insurances/filter:
     get:
       tags:
-        - Index Wrapper
+        - Financial
+        - Filter
       summary: Get Financial Insurance Product By Filter
       operationId: >-
         get_financial_insurance_product_by_filter_dms_financial_insurances_filter_get
@@ -10020,7 +10461,10 @@ paths:
   /dms/dealer/option-model-name:
     get:
       tags:
-        - Index Wrapper
+        - Dealer
+        - Options
+        - Model
+        - Name
       summary: Get All Dealer Options By Model Name
       operationId: get_all_dealer_options_by_model_name_dms_dealer_option_model_name_get
       parameters:
@@ -10054,7 +10498,7 @@ paths:
   /dms/programs/all/:
     post:
       tags:
-        - Index Wrapper
+        - Programs
       summary: Get All Evaluated Programs
       operationId: get_all_evaluated_programs_dms_programs_all__post
       requestBody:
@@ -10081,6 +10525,8 @@ paths:
   /dms/get-payment-methods/{reference_number}:
     get:
       tags:
+        - Payment
+        - Methods
         - Payments
       summary: Get Payment Methods & Get Paid Amount
       description: Get Payment Methods & Get Paid Amount
@@ -10110,6 +10556,8 @@ paths:
   /dms/plaid-link-token/:
     post:
       tags:
+        - Plaid
+        - Links
         - Payments
       summary: Create Link Token
       description: >-
@@ -10141,6 +10589,7 @@ paths:
   /dms/create-payment/:
     post:
       tags:
+        - Payment
         - Payments
       summary: Create payment for new Order
       description: Create payment for new Order
@@ -10170,6 +10619,7 @@ paths:
   /dms/update-payment/:
     post:
       tags:
+        - Payment
         - Payments
       summary: Update Order Payment
       description: This end point will be used to handle webhook.
@@ -10186,6 +10636,7 @@ paths:
   /dms/add-payment-details/:
     post:
       tags:
+        - Add
         - Payments
       summary: Add Payment Details from dealer side
       description: Add Payment Details from dealer side
@@ -10214,6 +10665,7 @@ paths:
   /dms/remove-payment-details/{order_payment_detail_id}:
     put:
       tags:
+        - Removes
         - Payments
       summary: Remove the order payment detail
       description: Remove the order payment detail
@@ -10244,7 +10696,8 @@ paths:
   /dms/dealer/all-dealer-distance:
     get:
       tags:
-        - Dealer Management
+        - Dealer
+        - Distance
       summary: Get All Dealer Distance
       description: Get All Dealer Distance
       operationId: dealer_distance_dms_dealer_all_dealer_distance_get
@@ -10286,7 +10739,9 @@ paths:
   /dms/dealer/get-associated-dealers:
     get:
       tags:
-        - Dealer Management
+        - Dealer
+        - Associated
+        - Dealer  Management
       summary: Get All Dealer Distance
       description: Get All Dealer Distance
       operationId: get_associated_dealer_dms_dealer_get_associated_dealers_get
@@ -10314,7 +10769,9 @@ paths:
   /dms/dealer/check-actively-order:
     get:
       tags:
-        - Dealer Management
+        - Dealer
+        - Checks
+        - Order
       summary: Check Dealer actively order
       description: Check Dealer actively order
       operationId: check_dealer_order_dms_dealer_check_actively_order_get
@@ -10343,7 +10800,8 @@ paths:
   /dms/get-trade-in-year/:
     post:
       tags:
-        - Trade-In
+        - Trade
+        - Year
       summary: Get all the year from KBB
       description: This method will get all the year from KBB
       operationId: get_trade_in_year_dms_get_trade_in_year__post
@@ -10396,7 +10854,8 @@ paths:
   /dms/get-trade-in-make/:
     post:
       tags:
-        - Trade-In
+        - Trade
+        - Make
       summary: Get all the make from KBB
       description: This method will get all the make from KBB
       operationId: get_trade_in_make_dms_get_trade_in_make__post
@@ -10449,7 +10908,8 @@ paths:
   /dms/get-trade-in-model/:
     post:
       tags:
-        - Trade-In
+        - Trade
+        - Model
       summary: Get all the models from KBB
       description: This method will get all the models from KBB
       operationId: get_trade_in_model_dms_get_trade_in_model__post
@@ -10502,7 +10962,8 @@ paths:
   /dms/get-trade-in-trim/:
     post:
       tags:
-        - Trade-In
+        - Trade
+        - Trim
       summary: Get all the trims from KBB
       description: This method will get all the trims from KBB
       operationId: get_trade_in_trim_dms_get_trade_in_trim__post
@@ -10555,7 +11016,8 @@ paths:
   /dms/get-trade-in-vehicle_value/:
     post:
       tags:
-        - Trade-In
+        - Trade
+        - Trade- In
       summary: Get vehicle estimation from KBB
       description: This method will provide vehicle estimation from KBB
       operationId: get_trade_in_vehicle_value_dms_get_trade_in_vehicle_value__post
@@ -10608,7 +11070,8 @@ paths:
   /dms/get-trade-in-vehicle_detail/:
     post:
       tags:
-        - Trade-In
+        - Trade
+        - Trade- In
       summary: Get vehicle details from KBB
       description: This will give vehicle details from KBB
       operationId: get_trade_in_vehicle_detail_dms_get_trade_in_vehicle_detail__post
@@ -10661,7 +11124,8 @@ paths:
   /dms/get-vehicle-detail-by-vin/:
     post:
       tags:
-        - Trade-In
+        - Vehicle
+        - Vin
       summary: Get vehicle details through VIN
       description: This method will provide vehicle details through VIN
       operationId: get_vehicle_details_by_vin_dms_get_vehicle_detail_by_vin__post
@@ -10714,7 +11178,11 @@ paths:
   /dms/set-trade-in-inspection-status/{order_id}:
     patch:
       tags:
-        - Trade-In
+        - Set
+        - Trade
+        - Inspection
+        - Status
+        - Trade- In
       summary: Set Trade-in inspection status
       description: This method will set Trade-in inspection status
       operationId: >-
@@ -10749,7 +11217,8 @@ paths:
   /dms/get-trade_in_history/{order_id}:
     get:
       tags:
-        - Trade-In
+        - Trade_in_history
+        - Trade- In
       summary: Get trade in history
       description: This method will get all the trade in history
       operationId: get_trade_in_history_dms_get_trade_in_history__order_id__get
@@ -10778,7 +11247,8 @@ paths:
   /dms/get-tradein-options/:
     post:
       tags:
-        - Trade-In
+        - Tradein
+        - Options
       summary: Get trade in options linked with vehicles
       description: This method will get all the options related to vehicle
       operationId: get_trade_in_options_dms_get_tradein_options__post
@@ -10831,7 +11301,7 @@ paths:
   /dms/event_analytic:
     post:
       tags:
-        - Event-Analytic
+        - Event_analytic
       summary: Create Event
       operationId: create_event_dms_event_analytic_post
       requestBody:
@@ -10855,7 +11325,7 @@ paths:
   /dms/get_event_associated_checklist/:
     post:
       tags:
-        - Checklist Management
+        - Get_event_associated_checklist
       summary: >-
         This API helps to evaluate given criteria and retrieve configured
         checklist(s)
@@ -10896,7 +11366,8 @@ paths:
   /dms/lead/{dealer_id}:
     get:
       tags:
-        - Lead-Management
+        - Lead
+        - Lead- Management
       summary: Get dealer's lead
       description: This method will get a dealer's leads
       operationId: get_leads_dms_lead__dealer_id__get
@@ -11023,7 +11494,7 @@ paths:
   /dms/lead:
     patch:
       tags:
-        - Lead-Management
+        - Lead
       summary: Update exisitng Draft/Active lead otherwise create new Lead
       description: >-
         This method will update exisitng Draft/Active lead otherwise create new
@@ -11053,7 +11524,10 @@ paths:
   /dms/lead/change-status/{lead_id}:
     patch:
       tags:
-        - Lead-Management
+        - Lead
+        - Changes
+        - Status
+        - Lead- Management
       summary: Update exisitng lead status
       description: >-
         This method will update exisitng lead status along with any other param
@@ -11090,7 +11564,8 @@ paths:
   /dms/insurance/add-insurance:
     post:
       tags:
-        - Insurance Management
+        - Insurance
+        - Add
       summary: Add Insurance
       description: Storing Transaction id
       operationId: add_insurance_dms_insurance_add_insurance_post
