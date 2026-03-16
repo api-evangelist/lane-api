@@ -201,7 +201,7 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-13'
-modified: '2025-01-01'
+modified: '2026-03-16'
 position: Consuming
 description: >-
   Lane offers a feature-rich, end-to-end order management system for asset
@@ -213,5 +213,5 @@ description: >-
   credit application for their clients. 
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'
