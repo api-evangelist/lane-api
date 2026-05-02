@@ -185,7 +185,7 @@ apis:
     properties:
       - url: https://docs.netsolapp.io/lane/index.html
         type: Documentation
-      - url: properties/lane-api-openapi.yml
+      - url: openapi/lane-api-openapi.yml
         type: OpenAPI
     description: >-
       Lane offers a feature-rich, end-to-end order management system for asset
@@ -201,7 +201,7 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-13'
-modified: '2026-03-16'
+modified: '2026-04-28'
 position: Consuming
 description: >-
   Lane offers a feature-rich, end-to-end order management system for asset leasing,
