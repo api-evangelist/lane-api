@@ -214,3 +214,6 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 specificationVersion: '0.19'
+common:
+- type: DomainSecurity
+  url: security/lane-api-domain-security.yml
