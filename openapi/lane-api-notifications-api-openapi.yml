@@ -1,0 +1,213 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Notifications API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Notifications
+paths:
+  /dms/send-notification-email-sqs:
+    post:
+      tags:
+      - Notifications
+      summary: Send Email Notification Through SQS
+      description: Send Email Notification Through SQS
+      operationId: send_sqs_message_dms_send_notification_email_sqs_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailSqsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/send-notification-email:
+    post:
+      tags:
+      - Notifications
+      summary: Send Email Notification
+      description: Send Email Notification
+      operationId: send_notification_email_dms_send_notification_email_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailSqsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-notification-bookmarks:
+    get:
+      tags:
+      - Notifications
+      summary: Get bookmarks of documents and notifications
+      operationId: get_document_notification_bookmarks_dms_configure_document_notification_bookmarks_get
+      parameters:
+      - required: false
+        schema:
+          title: Event Name
+          type: string
+        name: event_name
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    EmailSqsModel:
+      title: EmailSqsModel
+      required:
+      - event_name
+      - recipients
+      type: object
+      properties:
+        event_name:
+          $ref: '#/components/schemas/Events'
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        customer_id:
+          title: Customer Id
+          type: integer
+        order_reference:
+          title: Order Reference
+          type: string
+        custom_email:
+          title: Custom Email
+          type: string
+        recipients:
+          title: Recipients
+          type: array
+          items: {}
+    Events:
+      title: Events
+      enum:
+      - Customer Verification
+      - Customer Sign up completion
+      - Send Invitation Email
+      - Send Order Link
+      - Credit Application Submission
+      - Credit Application Resubmission
+      - Credit Application Approved
+      - Credit Application Conditioned
+      - Order Cancellation
+      - Order Declined
+      - Order Withdrawn
+      - Payment Successful
+      - Payment Decline
+      - Order Completion
+      - Lead Creation
+      - Asset Inspection Requested
+      - Asset Inspection Completed
+      - Driver License Verification Successful
+      - Driver License Verification Failed
+      - Credit Decision Rejected
+      - Customer Vehicle Pickup/Delivery
+      - Customer Order Created
+      - Customer Order Placed
+      - Car not Available
+      - Lead generation
+      - Order TimeSlots Proposed
+      - Customer Order Availability Confirmed
+      - Generate Compliance Documents
+      - Email Quotation
+      - Email Compliance Documents
+      - Download Quotation
+      - Download Proposal
+      - Email Proposal
+      - Email Proposal to Customer
+      - Customer Order Scheduled
+      - Customer Order Reschedule
+      - Trade in offer rejected
+      - Trade in offer accepted
+      - Trade in offer updated
+      - Availability Confirmed with special price
+      type: string
+      description: An enumeration.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

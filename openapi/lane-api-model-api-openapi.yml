@@ -1,0 +1,199 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Model API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Model
+paths:
+  /dms/dealer/option-model-name:
+    get:
+      tags:
+      - Model
+      summary: Get All Dealer Options By Model Name
+      operationId: get_all_dealer_options_by_model_name_dms_dealer_option_model_name_get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      - required: true
+        schema:
+          title: Model Name
+          type: string
+        name: model_name
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/get-trade-in-model/:
+    post:
+      tags:
+      - Model
+      summary: Get all the models from KBB
+      description: This method will get all the models from KBB
+      operationId: get_trade_in_model_dms_get_trade_in_model__post
+      parameters:
+      - description: Vehicle valuation service to use
+        required: false
+        schema:
+          allOf:
+          - $ref: '#/components/schemas/VehicleValuationProviders'
+          description: Vehicle valuation service to use
+        name: x-service-provider
+        in: header
+      - description: Dealer code from the header
+        required: false
+        schema:
+          title: X-Dealer-Code
+          type: string
+          description: Dealer code from the header
+        name: x-dealer-code
+        in: header
+      - description: Company ID from the dealer
+        required: false
+        schema:
+          title: Company-Id
+          type: string
+          description: Company ID from the dealer
+        name: company-id
+        in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TradeInModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    VehicleValuationProviders:
+      title: VehicleValuationProviders
+      enum:
+      - KBB
+      - JDPower
+      type: string
+      description: An enumeration.
+    TradeInModel:
+      title: TradeInModel
+      type: object
+      properties:
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        year_id:
+          title: Year Id
+          type: integer
+          default: 0
+        start_year:
+          title: Start Year
+          type: integer
+          default: 0
+        end_year:
+          title: End Year
+          type: integer
+          default: 0
+        category_id:
+          title: Category Id
+          type: integer
+          default: 0
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+        make_name:
+          title: Make Name
+          type: string
+          default: ''
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
+    PlateformVehicleType:
+      title: PlateformVehicleType
+      enum:
+      - Car
+      - NewCar
+      - UsedCar
+      - MotorBike
+      type: string
+      description: An enumeration.
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

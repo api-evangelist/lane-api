@@ -1,0 +1,146 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Customer  Consent API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Customer  Consent
+paths:
+  /dms/consents/{consents_id}:
+    get:
+      tags:
+      - Customer  Consent
+      summary: Get consents record
+      description: Get consents record by consents ID
+      operationId: find_one_consent_dms_consents__consents_id__get
+      parameters:
+      - required: true
+        schema:
+          title: Consents Id
+        name: consents_id
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentsModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customer  Consent
+      summary: Update consents
+      description: Update consents record by consents ID
+      operationId: update_consent_dms_consents__consents_id__patch
+      parameters:
+      - required: true
+        schema:
+          title: Consents Id
+          type: integer
+        name: consents_id
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsentsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsentsModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    ConsentsModel:
+      title: ConsentsModel
+      required:
+      - dealer_id
+      - customer_id
+      - lender_id
+      type: object
+      properties:
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer ID for consent
+        customer_id:
+          title: Customer Id
+          type: integer
+          description: Customer ID for consent
+        lender_id:
+          title: Lender Id
+          type: integer
+          description: Lender ID for consent
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

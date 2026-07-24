@@ -1,0 +1,789 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Licenses API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Licenses
+paths:
+  /dms/customer/license-info:
+    get:
+      tags:
+      - Licenses
+      summary: Get license info record by reference id
+      description: Get license info record by reference id
+      operationId: findone_license_info_dms_customer_license_info_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Is Presigned Url Required
+          type: boolean
+          default: false
+        name: is_presigned_url_required
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Licenses
+      summary: Creates license information
+      description: Create license information against customer
+      operationId: add_license_info_dms_customer_license_info_post
+      parameters:
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LisenceInfoWithAdress'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseInfoResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Licenses
+      summary: Delete single license information record
+      description: Delete customer license information record of customer record ID
+      operationId: delete_license_by_reference_id_dms_customer_license_info_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Licenses
+      summary: Updates License Info Record
+      description: Updates a  license info setup record by license id
+      operationId: update_license_info_dms_customer_license_info_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Is Presigned Url Required
+          type: boolean
+          default: false
+        name: is_presigned_url_required
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LisenceInfoUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseInfoUpdateResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/license-info-history:
+    get:
+      tags:
+      - Licenses
+      summary: Get all customer license information history
+      description: Get all customer license information history
+      operationId: get_license_information_history_dms_customer_license_info_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+        name: to_date
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseInfoPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/license-verification:
+    post:
+      tags:
+      - Licenses
+      summary: License verification through MiTek
+      description: license-verification through MiTek
+      operationId: verify_license_dms_customer_license_verification_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LicenseVerificationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    LicenseInfoResponseModel:
+      title: LicenseInfoResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressBasicModel'
+    CustomerAddressWithoutAddressTypeModel:
+      title: CustomerAddressWithoutAddressTypeModel
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    LisenceInfoWithAdress:
+      title: LisenceInfoWithAdress
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        mitek_response:
+          title: Mitek Response
+          type: string
+        address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    LisenceInfoUpdateModel:
+      title: LisenceInfoUpdateModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        mitek_response:
+          title: Mitek Response
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    CallType:
+      title: CallType
+      enum:
+      - manual
+      - auto
+      type: string
+      description: An enumeration.
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    LicenseVerificationModel:
+      title: LicenseVerificationModel
+      required:
+      - front_image
+      - back_image
+      - customer_id
+      type: object
+      properties:
+        front_image:
+          title: Front Image
+          type: string
+        back_image:
+          title: Back Image
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        dealer_code:
+          title: Dealer Code
+          type: string
+        api_version:
+          title: Api Version
+          type: string
+          default: '1.2'
+    LicenseInfoPaginationResponse:
+      title: LicenseInfoPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/LicenseInfoResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    LicenseInfoUpdateResponseModel:
+      title: LicenseInfoUpdateResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressBasicModel'
+    AddressBasicModel:
+      title: AddressBasicModel
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

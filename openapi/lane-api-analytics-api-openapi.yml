@@ -1,0 +1,300 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Analytics API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Analytics
+paths:
+  /dms/order/proposal-dashboard-analytics:
+    get:
+      tags:
+      - Analytics
+      summary: Get order proposal analytics for broker dashboard
+      operationId: get_proposal_dashboard_analytics_dms_order_proposal_dashboard_analytics_get
+      parameters:
+      - description: Accepts only string values
+        required: false
+        schema:
+          title: statuses
+          type: array
+          items:
+            type: string
+          description: Accepts only string values
+        name: statuses
+        in: query
+      - required: false
+        schema:
+          title: Dealer Id
+          type: string
+        name: dealer_id
+        in: query
+      - required: false
+        schema:
+          title: Broker Id
+          type: string
+        name: broker_id
+        in: query
+      - required: false
+        schema:
+          title: Name
+          type: string
+        name: name
+        in: query
+      - required: false
+        schema:
+          title: Product Type
+          type: string
+        name: product_type
+        in: query
+      - required: false
+        schema:
+          title: Finance Type
+          type: string
+        name: finance_type
+        in: query
+      - required: false
+        schema:
+          title: Customer Name
+          type: string
+        name: customer_name
+        in: query
+      - required: false
+        schema:
+          title: Lender Name
+          type: string
+        name: lender_name
+        in: query
+      - required: false
+        schema:
+          title: Dealer Name
+          type: string
+        name: dealer_name
+        in: query
+      - required: false
+        schema:
+          title: Introducer Name
+          type: string
+        name: introducer_name
+        in: query
+      - required: false
+        schema:
+          title: Date Submitted
+          type: string
+        name: date_submitted
+        in: query
+      - required: false
+        schema:
+          title: Start Date
+          type: string
+        name: start_date
+        in: query
+      - required: false
+        schema:
+          title: End Date
+          type: string
+        name: end_date
+        in: query
+      - required: false
+        schema:
+          title: Finance Amount
+          type: number
+        name: finance_amount
+        in: query
+      - required: false
+        schema:
+          title: Updated At
+          type: string
+        name: updated_at
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortByQuickQuotation'
+        name: sort_by
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortEnum'
+        name: sort_order
+        in: query
+      - required: false
+        schema:
+          title: Updated At From
+          type: string
+        name: updated_at_from
+        in: query
+      - required: false
+        schema:
+          title: Updated At To
+          type: string
+        name: updated_at_to
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Proposal Dashboard Analytics Dms Order Proposal Dashboard Analytics Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProposalDashboardAnalyticsModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    SortEnum:
+      title: SortEnum
+      enum:
+      - asc
+      - desc
+      type: string
+      description: An enumeration.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    ProposalDashboardAnalyticsModel:
+      title: ProposalDashboardAnalyticsModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date
+        status:
+          title: Status
+          type: string
+        name:
+          title: Name
+          type: string
+        product_type:
+          title: Product Type
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        customer_name:
+          title: Customer Name
+          type: string
+        introducer_name:
+          title: Introducer Name
+          type: string
+        lender_name:
+          title: Lender Name
+          type: string
+        dealer_name:
+          title: Dealer Name
+          type: string
+        date_submitted:
+          title: Date Submitted
+          type: string
+          format: date
+        finance_amount:
+          title: Finance Amount
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date
+        end_date:
+          title: End Date
+          type: string
+          format: date
+        age_in_seconds:
+          title: Age In Seconds
+          type: string
+        company_name:
+          title: Company Name
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        customer_type:
+          title: Customer Type
+          type: string
+        running_id:
+          title: Running Id
+          type: string
+    SortByQuickQuotation:
+      title: SortByQuickQuotation
+      enum:
+      - customer_name
+      - lender_name
+      - dealer_name
+      - introducer_name
+      - name
+      - finance_type
+      - product_type
+      - finance_amount
+      - updated_at
+      - date_submitted
+      - start_date
+      - end_date
+      - statuses
+      type: string
+      description: An enumeration.
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

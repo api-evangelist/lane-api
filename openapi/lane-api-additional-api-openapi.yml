@@ -1,0 +1,235 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Additional API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Additional
+paths:
+  /dms/customer/additional-document:
+    post:
+      tags:
+      - Additional
+      summary: Creates customer document
+      operationId: add_customer_additional_document_dms_customer_additional_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerAdditionalDocumentModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    CustomerAdditionalDocumentModel:
+      title: CustomerAdditionalDocumentModel
+      required:
+      - customer_reference_id
+      - document_type
+      - created_by
+      - content_type
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        document:
+          title: Document
+          type: string
+        comment:
+          title: Comment
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+    CustomerDocumentResponseModel:
+      title: CustomerDocumentResponseModel
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          title: Category
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        document_url:
+          title: Document Url
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_at:
+          title: Created At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        deleted_at:
+          title: Deleted At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        deleted_by:
+          title: Deleted By
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+          default: false
+        identifier:
+          title: Identifier
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

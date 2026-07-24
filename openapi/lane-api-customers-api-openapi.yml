@@ -1,0 +1,6213 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Customers API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Customers
+paths:
+  /dms/customer/:
+    post:
+      tags:
+      - Customers
+      summary: Creates customer
+      description: Create single customer record
+      operationId: add_customer_dms_customer__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerProfileModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfileModelResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/send-email-to-customer:
+    post:
+      tags:
+      - Customers
+      summary: send email to customer
+      description: send email to customer
+      operationId: send_on_boarding_email_dms_customer_send_email_to_customer_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendCustomerEmailModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/all-customers:
+    get:
+      tags:
+      - Customers
+      summary: Get all customer records
+      description: Get all record against customers
+      operationId: get_all_customer_dms_customer_all_customers_get
+      parameters:
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - required: false
+        schema:
+          allOf:
+          - $ref: '#/components/schemas/SortEnum'
+          default: asc
+        name: sort
+        in: query
+      - required: false
+        schema:
+          allOf:
+          - $ref: '#/components/schemas/SortByEnum'
+          default: created_at
+        name: sort_by
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfilePaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/all-customers-dynamic-search:
+    post:
+      tags:
+      - Customers
+      summary: Get all customer records dynamic search
+      description: Get all customer records dynamic search
+      operationId: get_all_customer_dynamic_search_dms_customer_all_customers_dynamic_search_post
+      parameters:
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortEnum'
+        name: sort
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortByEnum'
+        name: sort_by
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: to_date
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Filters
+              type: array
+              items:
+                $ref: '#/components/schemas/FilterModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/customer-history:
+    get:
+      tags:
+      - Customers
+      summary: Get all customers records history
+      description: Get all customers records history
+      operationId: get_customer_history_dms_customer_customer_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: to_date
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer History Dms Customer Customer History Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerProfileModelResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/check-customer-by-email:
+    patch:
+      tags:
+      - Customers
+      summary: Check customer, create if does not exist
+      description: Check customer, create if does not exist
+      operationId: check_customer_dms_check_customer_by_email_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomerModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfileModelResponseWithID'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/update-dms-customer:
+    patch:
+      tags:
+      - Customers
+      summary: Update Dms Customer
+      operationId: update_dms_customer_dms_update_dms_customer_patch
+      parameters:
+      - required: false
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer:
+    get:
+      tags:
+      - Customers
+      summary: Get customer record
+      description: Get customer record by customer ID
+      operationId: find_customer_by_reference_dms_customer_get
+      parameters:
+      - required: false
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Ssn
+          type: string
+        name: ssn
+        in: query
+      - required: false
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfileModelResponseWithDisclaimer'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Deprecate customer delete enpoint. Use [delete-customer] instead
+      description: Delete customer record by  customer ID
+      operationId: remove_customer_deprecated_dms_customer_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Updates customer
+      description: Update customer record by customer ID
+      operationId: update_customer_dms_customer_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerProfileUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfileModelResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/check-dms-customer:
+    get:
+      tags:
+      - Customers
+      summary: Get customer record
+      description: Get customer record by customer ID
+      operationId: fetch_dms_customer_dms_check_dms_customer_get
+      parameters:
+      - required: false
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer-by-email:
+    get:
+      tags:
+      - Customers
+      summary: Get Customer Record by email
+      description: Gets a customer record by email
+      operationId: find_customer_info_by_email_dms_customer_by_email_get
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfileModelResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/license-info:
+    get:
+      tags:
+      - Customers
+      summary: Get license info record by reference id
+      description: Get license info record by reference id
+      operationId: findone_license_info_dms_customer_license_info_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Is Presigned Url Required
+          type: boolean
+          default: false
+        name: is_presigned_url_required
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Creates license information
+      description: Create license information against customer
+      operationId: add_license_info_dms_customer_license_info_post
+      parameters:
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LisenceInfoWithAdress'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseInfoResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Delete single license information record
+      description: Delete customer license information record of customer record ID
+      operationId: delete_license_by_reference_id_dms_customer_license_info_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Updates License Info Record
+      description: Updates a  license info setup record by license id
+      operationId: update_license_info_dms_customer_license_info_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Is Presigned Url Required
+          type: boolean
+          default: false
+        name: is_presigned_url_required
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LisenceInfoUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseInfoUpdateResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customers:
+    get:
+      tags:
+      - Customers
+      summary: Gets customer names by customer reference ids
+      description: Gets customer names by reference ids
+      operationId: find_customer_names_dms_customers_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Ids
+          type: array
+          items:
+            type: string
+        name: reference_ids
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Gets customer names by customer reference ids
+      description: Gets customer names by reference ids
+      operationId: find_customer_data_dms_customers_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomersParamsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/license-info-history:
+    get:
+      tags:
+      - Customers
+      summary: Get all customer license information history
+      description: Get all customer license information history
+      operationId: get_license_information_history_dms_customer_license_info_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+        name: to_date
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LicenseInfoPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/third-party-response-history:
+    get:
+      tags:
+      - Customers
+      summary: Get third party response history
+      description: Get third party response history
+      operationId: get_third_part_response_history_dms_customer_third_party_response_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      - required: false
+        schema:
+          title: Include Images
+          type: boolean
+          default: false
+        name: include_images
+        in: query
+      - required: false
+        schema:
+          title: Include Response
+          type: boolean
+          default: false
+        name: include_response
+        in: query
+      - required: false
+        schema:
+          title: Type List
+          type: array
+          items:
+            type: string
+        name: type_list
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/employment-info:
+    get:
+      tags:
+      - Customers
+      summary: Get single employment information record
+      description: Get employment information by customer ID
+      operationId: findone_employment_info_dms_customer_employment_info_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentInfoResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Creates employment information
+      description: Create employment information against customer
+      operationId: add_customer_employment_info_dms_customer_employment_info_post
+      parameters:
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmploymentInfoCreateModelEmpTypeMendatory'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentInfoResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Delete single employment information record
+      description: Delete employment information record of customer employment record ID
+      operationId: delete_employment_info_by_id_dms_customer_employment_info_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Updates employment information
+      description: Update employment information against customer
+      operationId: update_customer_employment_info_dms_customer_employment_info_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmploymentInfoUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmploymentInfoResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/personal-finance:
+    get:
+      tags:
+      - Customers
+      summary: Get single personal finance  information record
+      description: Get personal finance  information by customer ID
+      operationId: findone_personal_finance_info_dms_customer_personal_finance_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPersonalFinanceResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Creates personal finance information
+      description: Create personal finance information against customer
+      operationId: add_personal_finance_info_dms_customer_personal_finance_post
+      parameters:
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalFinanceModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPersonalFinanceResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Delete single personal finance  information record
+      description: Delete personal finance information record of customer employment record ID
+      operationId: delete_personal_finance_info_by_id_dms_customer_personal_finance_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Updates personal finance information
+      description: Update personal finance information against customer
+      operationId: update_personal_finance_info_dms_customer_personal_finance_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalFinanceUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPersonalFinanceResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/payment-information:
+    get:
+      tags:
+      - Customers
+      summary: Get customer payment information
+      description: Get customer payment information
+      operationId: get_customer_payment_info_by_dms_customer_payment_information_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer Payment Info By Dms Customer Payment Information Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerPaymentInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Create customer payment information
+      description: Create customer payment information
+      operationId: add_customer_payment_info_dms_customer_payment_information_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerPaymentModelTypeMandatory'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPaymentInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Delete customer payment information
+      description: Delete all customer payment information
+      operationId: delete_customer_payment_info_by_id_dms_customer_payment_information_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Update customer payment information
+      description: Update customer payment information
+      operationId: update_customer_payment_dms_customer_payment_information_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerPaymentModelTypeMandatory'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPaymentInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/signature:
+    get:
+      tags:
+      - Customers
+      summary: Gets a customer signature record by customer signature id
+      description: Gets a customer signature record by customer signature id
+      operationId: findone_customer_signature_dms_customer_signature_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSignatureResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: 'Creates customer signature '
+      description: 'Creates customer signature '
+      operationId: add_customer_signature_dms_customer_signature_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerSignatureModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSignatureResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Deprecate signature delete enpoint. Use [delete-signature] instead
+      description: Delete single customer signature  record
+      operationId: delete_customer_signature_deprecated_dms_customer_signature_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: 'Updates customer signature '
+      description: 'Updates customer signature '
+      operationId: update_customer_signature_dms_customer_signature_patch
+      parameters:
+      - required: false
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Id
+          type: string
+        name: dealer_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerSignatureUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSignatureResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/delete-signature:
+    patch:
+      tags:
+      - Customers
+      summary: Delete single customer signature  record
+      description: Delete single customer signature  record
+      operationId: delete_customer_signature_dms_customer_delete_signature_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/signature/by-dealer-id:
+    get:
+      tags:
+      - Customers
+      summary: Gets a customer signature record by dealer id
+      description: Gets a customer signature record by dealer id
+      operationId: findone_customer_signature_by_dealer_dms_customer_signature_by_dealer_id_get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Id
+          type: string
+        name: dealer_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSignatureResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information:
+    get:
+      tags:
+      - Customers
+      summary: Get customer insurance information by customer reference id and order reference number
+      description: Get customer insurance information by customer reference id and order reference number
+      operationId: get_insurance_info_by_order_and_customer_reference_number_dms_customer_insurance_information_get
+      parameters:
+      - description: provide valid reference_id
+        required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: provide valid reference_id
+        name: reference_id
+        in: query
+      - description: provide valid order_reference_id
+        required: true
+        schema:
+          title: Order Reference Id
+          minLength: 1
+          type: string
+          description: provide valid order_reference_id
+        name: order_reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Create customer insurance information
+      description: Create customer insurance information
+      operationId: create_insurance_information_dms_customer_insurance_information_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Delete single customer insurance information
+      description: Delete single customer insurance information
+      operationId: delete_insurance_information_dms_customer_insurance_information_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Updates customer insurance information
+      description: Updates customer insurance information
+      operationId: update_insurance_information_dms_customer_insurance_information_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceInformationUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/update-insurance-information:
+    patch:
+      tags:
+      - Customers
+      summary: Updates customer insurance information
+      description: Updates customer insurance information
+      operationId: update_insurance_dms_customer_update_insurance_information_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceInformationUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information-history:
+    get:
+      tags:
+      - Customers
+      summary: Get customer insurance information history
+      description: Get customer insurance information history
+      operationId: get_insurance_information_history_dms_customer_insurance_information_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: to_date
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInfoPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information-by-customer:
+    get:
+      tags:
+      - Customers
+      summary: Get customer insurance information by customer reference id
+      description: Get customer insurance information by customer reference id
+      operationId: get_insurance_information_by_reference_id_dms_customer_insurance_information_by_customer_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information-by-order:
+    get:
+      tags:
+      - Customers
+      summary: Get customer insurance information by order reference number
+      description: Get customer insurance information by order reference number
+      operationId: get_insurance_information_by_order_reference_number_dms_customer_insurance_information_by_order_get
+      parameters:
+      - required: true
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/document-history:
+    get:
+      tags:
+      - Customers
+      summary: Get customer insurance information document history
+      description: Get customer insurance information document history
+      operationId: get_insurance_documents_dms_customer_insurance_information_document_history_get
+      parameters:
+      - description: provide valid reference_id
+        required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: provide valid reference_id
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Insurance Documents Dms Customer Insurance Information Document History Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/delete-insurance-information:
+    patch:
+      tags:
+      - Customers
+      summary: Delete single customer insurance information
+      description: Delete single customer insurance information
+      operationId: delete_insurance_info_dms_customer_delete_insurance_information_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/add-document:
+    post:
+      tags:
+      - Customers
+      summary: Add insurance document
+      description: Add insurance document
+      operationId: add_insurance_document_dms_customer_insurance_information_add_document_post
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceDocumentsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Add Insurance Document Dms Customer Insurance Information Add Document Post
+                type: array
+                items:
+                  $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/remove-document:
+    delete:
+      tags:
+      - Customers
+      summary: 'Delete insurance document '
+      description: 'Delete insurance document '
+      operationId: remove_insurance_document_depreceted_dms_customer_insurance_information_remove_document_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/remove-insurance-document:
+    patch:
+      tags:
+      - Customers
+      summary: 'Delete insurance document '
+      description: 'Delete insurance document '
+      operationId: remove_insurance_document_dms_customer_insurance_information_remove_insurance_document_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/status-flag:
+    get:
+      tags:
+      - Customers
+      summary: Get all customer status flag
+      description: Get all customer status flag
+      operationId: get_all_status_flag_dms_customer_status_flag_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get All Status Flag Dms Customer Status Flag Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerStatusFlagResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Create customer status flag
+      description: Create customer status flag
+      operationId: add_status_flag_dms_customer_status_flag_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerStatusFlagModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerStatusFlagResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Remove customer status flag
+      description: Remove customer status flag
+      operationId: delete_status_dms_customer_status_flag_delete
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDeleteModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/remove-status-flag:
+    patch:
+      tags:
+      - Customers
+      summary: Remove customer status flag
+      description: Remove customer status flag
+      operationId: delete_status_flag_dms_customer_remove_status_flag_patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDeleteModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/comment:
+    post:
+      tags:
+      - Customers
+      summary: Create customer comment diary
+      description: Create customer comment diary
+      operationId: add_comment_dms_customer_comment_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCommentDiaryModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerCommentDiaryResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Update customer comment diary
+      description: Update customer comment diary
+      operationId: update_comment_dms_customer_comment_patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCommentDiaryUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerCommentDiaryResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/comments:
+    get:
+      tags:
+      - Customers
+      summary: Get customer comment diary
+      description: Get customer comment diary
+      operationId: get_all_comments_dms_customer_comments_get
+      parameters:
+      - required: false
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: false
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      - required: false
+        schema:
+          title: Comment
+          type: string
+        name: comment
+        in: query
+      - description: Accepts only string values
+        required: false
+        schema:
+          title: Comment Category
+          type: array
+          items:
+            type: string
+          description: Accepts only string values
+        name: category
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerCommentDiaryPaginatedResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/license-verification:
+    post:
+      tags:
+      - Customers
+      summary: License verification through MiTek
+      description: license-verification through MiTek
+      operationId: verify_license_dms_customer_license_verification_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LicenseVerificationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/fraud-check:
+    post:
+      tags:
+      - Customers
+      summary: Creates personal finance information
+      description: Create personal finance information against customer
+      operationId: add_customer_fraud_check_dms_customer_fraud_check_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FraudCheckModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/all-customers-orders-dynamic-search:
+    post:
+      tags:
+      - Customers
+      summary: Get all customer records along with its orders  dynamic search
+      description: Get all customer records along with order dynamic search
+      operationId: get_all_customer_order_dynamic_search_dms_customer_all_customers_orders_dynamic_search_post
+      parameters:
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortEnum'
+        name: sort
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortByEnum'
+        name: sort_by
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: to_date
+        in: query
+      - required: false
+        schema:
+          title: Is Dealer
+          type: boolean
+          default: true
+        name: is_dealer
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Filters
+              type: array
+              items:
+                $ref: '#/components/schemas/FilterModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/send-order-link:
+    post:
+      tags:
+      - Customers
+      summary: send order link
+      description: send order link
+      operationId: send_order_link_dms_customer_send_order_link_post
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customers/reference-id:
+    get:
+      tags:
+      - Customers
+      summary: Get reference id by email
+      description: Retrieve the reference id associated with the given email of customer.
+      operationId: get_reference_number_dms_customers_reference_id_get
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/quotation-by-customers:
+    get:
+      tags:
+      - Customers
+      summary: Get all orders of a customer
+      description: Get all orders of a customer
+      operationId: get_orders_by_customers_dms_configure_quotation_by_customers_get
+      parameters:
+      - required: true
+        schema:
+          title: Email
+          type: string
+        name: email
+        in: query
+      - required: false
+        schema:
+          title: Finance Type
+          type: string
+        name: finance_type
+        in: query
+      - required: false
+        schema:
+          title: Dealer Id
+          type: string
+        name: dealer_id
+        in: query
+      - required: false
+        schema:
+          title: Order Status
+          type: string
+        name: order_status
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/customer-mandatory-disclaimers:
+    get:
+      tags:
+      - Customers
+      summary: Get customer mandatory Disclaimers
+      operationId: get_mandatory_disclaimers_dms_configure_customer_mandatory_disclaimers_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Mandatory Disclaimers Dms Configure Customer Mandatory Disclaimers Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/DisclaimerResponseModel'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document:
+    get:
+      tags:
+      - Customers
+      summary: Get customer documents
+      operationId: get_customer_documents_dms_customer_document_get
+      parameters:
+      - required: false
+        schema:
+          title: External Reference Id
+          type: string
+        name: external_reference_id
+        in: query
+      - required: false
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: false
+        schema:
+          title: Stipulation Code
+          type: string
+        name: stipulation_code
+        in: query
+      - required: false
+        schema:
+          title: Category
+          type: string
+        name: category
+        in: query
+      - required: false
+        schema:
+          title: Document Type
+          type: string
+        name: document_type
+        in: query
+      - description: Accepts only string values
+        required: false
+        schema:
+          title: document_status
+          type: array
+          items:
+            type: string
+          description: Accepts only string values
+        name: document_status
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer Documents Dms Customer Document Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerDocumentWithReviewsResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Creates customer document
+      operationId: add_customer_document_dms_customer_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Customers
+      summary: Delete customer document by identifier
+      operationId: delete_customer_document_dms_customer_document_delete
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDeleteModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Update customer document by identifier
+      operationId: update_customer_document_dms_customer_document_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/status:
+    get:
+      tags:
+      - Customers
+      summary: Get customer document by identifier
+      operationId: get_customer_document_identifier_dms_customer_document_status_get
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Update customer document status
+      operationId: update_customer_document_status_dms_customer_document_status_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentStatus'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document-history:
+    get:
+      tags:
+      - Customers
+      summary: Get customer document history
+      operationId: get_customer_document_history_dms_customer_document_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: to_date
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerStipulationPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/documents/{customer_reference_id}:
+    patch:
+      tags:
+      - Customers
+      summary: Update customer document by identifier
+      operationId: get_customer_document_dms_customer_documents__customer_reference_id__patch
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Item
+              type: array
+              items:
+                $ref: '#/components/schemas/CustomerDocumentUpdateDMSModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/delete-document:
+    patch:
+      tags:
+      - Customers
+      summary: Delete customer document by identifier
+      operationId: delete_customer_document_by_identifier_dms_customer_delete_document_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDeleteModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/review:
+    get:
+      tags:
+      - Customers
+      summary: Get customer document reviews
+      operationId: get_customer_document_reviews_by_identifier_dms_customer_document_review_get
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer Document Reviews By Identifier Dms Customer Document Review Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerDocumentReviewResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Customers
+      summary: Add customer document review
+      operationId: add_customer_document_review_dms_customer_document_review_post
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentReviewModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentReviewResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/uploading-status:
+    get:
+      tags:
+      - Customers
+      summary: Get customer document upload status
+      operationId: get_customer_document_upload_status_dms_customer_document_uploading_status_get
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentUploadStatus'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Customers
+      summary: Update customer document upload status
+      operationId: update_customer_document_uploading_status_dms_customer_document_uploading_status_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentUploadStatus'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/download:
+    get:
+      tags:
+      - Customers
+      summary: Get customer document url by artifect_id
+      description: Get customer document url by artifect_id
+      operationId: get_customer_document_url_by_artifect_id_dms_customer_document_download_get
+      parameters:
+      - required: true
+        schema:
+          title: Artifect Id
+          type: string
+        name: artifect_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/download-stream:
+    get:
+      tags:
+      - Customers
+      summary: Get customer document stream by artifect_id
+      description: Get customer document stream by artifect_id
+      operationId: get_customer_document_stream_by_artifect_id_dms_customer_document_download_stream_get
+      parameters:
+      - required: true
+        schema:
+          title: Artifect Id
+          type: string
+        name: artifect_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/signature-document:
+    post:
+      tags:
+      - Customers
+      summary: Customer Document Signature
+      operationId: signature_document_dms_customer_document_signature_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignatureCustomerDocument'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/additional-document:
+    post:
+      tags:
+      - Customers
+      summary: Creates customer document
+      operationId: add_customer_additional_document_dms_customer_additional_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerAdditionalDocumentModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    CustomerAddressWithoutAddressTypeModel:
+      title: CustomerAddressWithoutAddressTypeModel
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    CustomerSignatureResponseModel:
+      title: CustomerSignatureResponseModel
+      type: object
+      properties:
+        signature_image:
+          title: Signature Image
+          type: string
+        initial_image:
+          title: Initial Image
+          type: string
+        ip:
+          title: Ip
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerProfileUpdateModel:
+      title: CustomerProfileUpdateModel
+      type: object
+      properties:
+        customer_profile:
+          $ref: '#/components/schemas/CustomerUpdateModel'
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerProfileIncomeInfoModel'
+    CustomerStatusFlagResponseModel:
+      title: CustomerStatusFlagResponseModel
+      type: object
+      properties:
+        reference_id:
+          title: Reference Id
+          type: string
+        flag_name:
+          title: Flag Name
+          type: string
+        category:
+          title: Category
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+    CustomerProfileModelResponseWithID:
+      title: CustomerProfileModelResponseWithID
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        email:
+          title: Email
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        id:
+          title: Id
+          type: integer
+        consent:
+          title: Consent
+    LicenseInfoResponseModel:
+      title: LicenseInfoResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressBasicModel'
+    CustomerPaymentInfoResponseModel:
+      title: CustomerPaymentInfoResponseModel
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    DisclaimerResponseModel:
+      title: DisclaimerResponseModel
+      type: object
+      properties:
+        version:
+          title: Version
+          type: string
+        name:
+          title: Name
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        description:
+          title: Description
+          type: string
+        type:
+          title: Type
+          type: string
+        applicable_for:
+          title: Applicable For
+          type: string
+        required_by:
+          title: Required By
+          type: string
+        status:
+          title: Status
+          type: string
+        change_type:
+          title: Change Type
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        effectiveDate:
+          title: Effectivedate
+          type: string
+          format: date-time
+        meta_data:
+          title: Meta Data
+          type: object
+        disclaimer_accord:
+          title: Disclaimer Accord
+          type: boolean
+    CustomerProfileModel:
+      title: CustomerProfileModel
+      type: object
+      properties:
+        customer_profile:
+          $ref: '#/components/schemas/CustomerRequiredEmailModel'
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerProfileIncomeInfoModel'
+        customer_license:
+          title: Customer License
+          type: array
+          items:
+            $ref: '#/components/schemas/LisenceInfoWithAdress'
+        customer_insurance:
+          title: Customer Insurance
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
+    CustomerStatusFlagModel:
+      title: CustomerStatusFlagModel
+      required:
+      - reference_id
+      - flag_name
+      - category
+      - created_by
+      type: object
+      properties:
+        reference_id:
+          title: Reference Id
+          type: string
+        flag_name:
+          title: Flag Name
+          minLength: 1
+          type: string
+        category:
+          title: Category
+          minLength: 1
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    DisclaimerAcceptanceModel:
+      title: DisclaimerAcceptanceModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        disclaimer_name:
+          title: Disclaimer Name
+          type: string
+        disclaimer_version:
+          title: Disclaimer Version
+          type: string
+        disclaimer_details:
+          title: Disclaimer Details
+          type: string
+        disclaimer_acceptance_date:
+          title: Disclaimer Acceptance Date
+          type: string
+          format: date-time
+    DocumentUploadStatus:
+      title: DocumentUploadStatus
+      enum:
+      - Draft
+      - InProgress
+      - Approved
+      - SoftReject
+      - Reject
+      type: string
+      description: An enumeration.
+    InsuranceInformationWithAddressesModel:
+      title: InsuranceInformationWithAddressesModel
+      required:
+      - created_by
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        insurer_name:
+          title: Insurer Name
+          type: string
+        agent_phone:
+          title: Agent Phone
+          type: string
+        subscription_id:
+          title: Subscription Id
+          type: string
+        agent_name:
+          title: Agent Name
+          type: string
+        policy_number:
+          title: Policy Number
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        created_by:
+          title: Created By
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
+        insurance_documents:
+          title: Insurance Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceDocumentsModel'
+        insurer_address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    CustomerDocumentUpdateModel:
+      title: CustomerDocumentUpdateModel
+      required:
+      - customer_reference_id
+      - content_type
+      - updated_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        document:
+          title: Document
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          $ref: '#/components/schemas/StipulationCategory'
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+    CustomerSignatureModel:
+      title: CustomerSignatureModel
+      type: object
+      properties:
+        signature_image:
+          title: Signature Image
+          type: string
+        initial_image:
+          title: Initial Image
+          type: string
+        ip:
+          title: Ip
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: integer
+    FilterModel:
+      title: FilterModel
+      required:
+      - field
+      - operator
+      type: object
+      properties:
+        field:
+          $ref: '#/components/schemas/DynamicFieldModel'
+        operator:
+          $ref: '#/components/schemas/Operators'
+        value:
+          title: Value
+        and_or:
+          $ref: '#/components/schemas/AndOr'
+    InsuranceDetailStatus:
+      title: InsuranceDetailStatus
+      enum:
+      - Verified
+      - Unverified
+      - Expired
+      type: string
+      description: An enumeration.
+    CustomerUpdateAddressModel:
+      title: CustomerUpdateAddressModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+    CustomerDocumentReviewModel:
+      title: CustomerDocumentReviewModel
+      required:
+      - review_notes
+      - review_status
+      - reviewed_by
+      type: object
+      properties:
+        review_notes:
+          title: Review Notes
+          type: string
+        review_status:
+          $ref: '#/components/schemas/DocumentUploadStatus'
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    InsuranceInfoPaginationResponse:
+      title: InsuranceInfoPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    CustomerDocumentUploadStatus:
+      title: CustomerDocumentUploadStatus
+      required:
+      - document_upload_indicator
+      type: object
+      properties:
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+    Operators:
+      title: Operators
+      enum:
+      - Equals
+      - Not_equals
+      - Less_than
+      - Greater_than
+      - Less_than_and_equal
+      - Greater_than_and_equal
+      - Is_null
+      - Not_null
+      - Contains
+      type: string
+      description: An enumeration.
+    DeleteRequestModel:
+      title: DeleteRequestModel
+      required:
+      - deleted_by
+      type: object
+      properties:
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerCommentDiaryUpdateModel:
+      title: CustomerCommentDiaryUpdateModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        category:
+          title: Category
+          type: string
+        comment:
+          title: Comment
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    LicenseInfoCustomerResponseModel:
+      title: LicenseInfoCustomerResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        status:
+          title: Status
+          type: string
+        license_number:
+          title: License Number
+          type: string
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+    CustomerAdditionalDocumentModel:
+      title: CustomerAdditionalDocumentModel
+      required:
+      - customer_reference_id
+      - document_type
+      - created_by
+      - content_type
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        document:
+          title: Document
+          type: string
+        comment:
+          title: Comment
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+    AddressTypes:
+      title: AddressTypes
+      enum:
+      - Mailing
+      - Invoice
+      - Office
+      - Garaging
+      - DealerAddress
+      - DrivingLicense
+      - Billing
+      - InsuranceAddress
+      - Residential
+      - Employment
+      type: string
+      description: An enumeration.
+    SendEMailCallType:
+      title: SendEMailCallType
+      enum:
+      - create_customer
+      - create_order
+      type: string
+      description: An enumeration.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    CustomerCommentDiaryModel:
+      title: CustomerCommentDiaryModel
+      required:
+      - category
+      - comment
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        category:
+          title: Category
+          minLength: 1
+          type: string
+        comment:
+          title: Comment
+          minLength: 1
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    InsuranceInformationResponseModel:
+      title: InsuranceInformationResponseModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        insurer_name:
+          title: Insurer Name
+          type: string
+        agent_phone:
+          title: Agent Phone
+          type: string
+        subscription_id:
+          title: Subscription Id
+          type: string
+        agent_name:
+          title: Agent Name
+          type: string
+        policy_number:
+          title: Policy Number
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        created_by:
+          title: Created By
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
+        insurance_documents:
+          title: Insurance Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
+        insurer_address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+        status:
+          $ref: '#/components/schemas/InsuranceDetailStatus'
+        is_active:
+          title: Is Active
+          type: boolean
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date
+        deleted_by:
+          title: Deleted By
+          type: string
+    LisenceInfoUpdateModel:
+      title: LisenceInfoUpdateModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        mitek_response:
+          title: Mitek Response
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    CustomerDocumentReviewResponseModel:
+      title: CustomerDocumentReviewResponseModel
+      type: object
+      properties:
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        review_date_time:
+          title: Review Date Time
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        review_status:
+          title: Review Status
+          type: string
+        review_notes:
+          title: Review Notes
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        document_identifier:
+          title: Document Identifier
+          type: string
+    SendCustomerEmailModel:
+      title: SendCustomerEmailModel
+      required:
+      - subject
+      - email
+      - email_type
+      - dealership_name
+      type: object
+      properties:
+        subject:
+          title: Subject
+          type: string
+          description: Subject of Email
+        email:
+          title: Email
+          type: string
+          description: Recipient Email
+          format: email
+        full_name:
+          title: Full Name
+          type: string
+          description: Customer full name
+        email_type:
+          allOf:
+          - $ref: '#/components/schemas/SendEMailCallType'
+          description: allowed values create_customer or create_order
+        reference_number:
+          title: Reference Number
+          type: string
+          description: Reference number
+        dealership_name:
+          title: Dealership Name
+          type: string
+          description: Dealership name
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    LisenceInfoWithAdress:
+      title: LisenceInfoWithAdress
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        mitek_response:
+          title: Mitek Response
+          type: string
+        address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    CustomerAddressPreResponseModel:
+      title: CustomerAddressPreResponseModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerDeleteModel:
+      title: CustomerDeleteModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    LicenseInfoPaginationResponse:
+      title: LicenseInfoPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/LicenseInfoResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    LicenseInfoUpdateResponseModel:
+      title: LicenseInfoUpdateResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressBasicModel'
+    CustomerProfileModelResponseWithDisclaimer:
+      title: CustomerProfileModelResponseWithDisclaimer
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        email:
+          title: Email
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressPreResponseModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerEmploymentInfoPreResponseModel'
+        payments_info:
+          title: Payments Info
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerPaymentInfoResponseModel'
+        license_info:
+          $ref: '#/components/schemas/LicenseInfoCustomerResponseModel'
+        disclaimer_info:
+          title: Disclaimer Info
+          type: array
+          items:
+            $ref: '#/components/schemas/DisclaimerAcceptanceModel'
+    CustomerProfileModelResponse:
+      title: CustomerProfileModelResponse
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        email:
+          title: Email
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressPreResponseModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerEmploymentInfoPreResponseModel'
+        payments_info:
+          title: Payments Info
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerPaymentInfoResponseModel'
+        license_info:
+          $ref: '#/components/schemas/LicenseInfoCustomerResponseModel'
+    CustomerEmploymentInfoPreResponseModel:
+      title: CustomerEmploymentInfoPreResponseModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    CallType:
+      title: CallType
+      enum:
+      - manual
+      - auto
+      type: string
+      description: An enumeration.
+    CustomerDocumentUpdateDMSModel:
+      title: CustomerDocumentUpdateDMSModel
+      required:
+      - customer_reference_id
+      - content_type
+      - updated_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        document:
+          title: Document
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          $ref: '#/components/schemas/StipulationCategory'
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    CustomerPaymentModelTypeMandatory:
+      title: CustomerPaymentModelTypeMandatory
+      required:
+      - type
+      - reference_id
+      type: object
+      properties:
+        type:
+          title: Type
+          minLength: 1
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+    EmploymentInfoUpdateModel:
+      title: EmploymentInfoUpdateModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        address:
+          $ref: '#/components/schemas/CustomerUpdateAddressModel'
+    CustomerPersonalFinanceResponseModel:
+      title: CustomerPersonalFinanceResponseModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        residence:
+          title: Residence
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference Id
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    FraudCheckModel:
+      title: FraudCheckModel
+      required:
+      - user_id
+      - order_reference_number
+      - reference_id
+      - dealer_code
+      type: object
+      properties:
+        user_id:
+          title: User Id
+          type: integer
+        order_reference_number:
+          title: Order Reference Number
+          minLength: 1
+          type: string
+          description: Order Reference Id
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Customer Reference Id
+        dealer_code:
+          title: Dealer Code
+          type: string
+    CustomerDocumentStatus:
+      title: CustomerDocumentStatus
+      required:
+      - document_status
+      type: object
+      properties:
+        document_status:
+          $ref: '#/components/schemas/DocumentUploadStatus'
+    CustomerStipulationPaginationResponse:
+      title: CustomerStipulationPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerDocumentWithReviewsResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    CustomerCommentDiaryPaginatedResponseModel:
+      title: CustomerCommentDiaryPaginatedResponseModel
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerCommentDiaryResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    StipulationCategory:
+      title: StipulationCategory
+      enum:
+      - STIP
+      - NON_STIP
+      type: string
+      description: An enumeration.
+    PersonalFinanceUpdateModel:
+      title: PersonalFinanceUpdateModel
+      type: object
+      properties:
+        residence:
+          title: Residence
+          minLength: 1
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+    CustomerCommentDiaryResponseModel:
+      title: CustomerCommentDiaryResponseModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        category:
+          title: Category
+          type: string
+        comment:
+          title: Comment
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    SortEnum:
+      title: SortEnum
+      enum:
+      - asc
+      - desc
+      type: string
+      description: An enumeration.
+    CustomerUpdateModel:
+      title: CustomerUpdateModel
+      required:
+      - updated_by
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    CustomerPaymentInformationResponseModel:
+      title: CustomerPaymentInformationResponseModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        reference_id:
+          title: Reference Id
+          type: string
+          description: Reference Id
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    SignatureCustomerDocument:
+      title: SignatureCustomerDocument
+      required:
+      - document_url
+      - document_name
+      - customer_id
+      - identifier
+      type: object
+      properties:
+        document_url:
+          title: Document Url
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    SortByEnum:
+      title: SortByEnum
+      enum:
+      - updated_at
+      - created_at
+      - full_name
+      - first_name
+      - email
+      - date_of_birth
+      - mobile_number
+      - state
+      - reference_id
+      - license_no
+      - identifier
+      - order_identifier
+      - order_status
+      - vin
+      - dealer_id
+      - order_updated_at
+      type: string
+      description: An enumeration.
+    InsuranceInformationUpdateModel:
+      title: InsuranceInformationUpdateModel
+      required:
+      - updated_by
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        insurer_name:
+          title: Insurer Name
+          type: string
+        agent_phone:
+          title: Agent Phone
+          type: string
+        subscription_id:
+          title: Subscription Id
+          type: string
+        agent_name:
+          title: Agent Name
+          type: string
+        status:
+          $ref: '#/components/schemas/InsuranceDetailStatus'
+        policy_number:
+          title: Policy Number
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
+        updated_by:
+          title: Updated By
+          type: string
+        insurer_address:
+          $ref: '#/components/schemas/AddressBasicModel'
+        insurance_documents:
+          title: Insurance Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceDocumentsModel'
+    PersonalFinanceModel:
+      title: PersonalFinanceModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        residence:
+          title: Residence
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference Id
+    InsuranceDocumentsModel:
+      title: InsuranceDocumentsModel
+      required:
+      - content_type
+      - name
+      - file_size
+      type: object
+      properties:
+        document:
+          title: Document
+          type: string
+        content_type:
+          title: Content Type
+          minLength: 1
+          type: string
+          description: 'format: application/pdf, image/png '
+        name:
+          title: Name
+          minLength: 1
+          type: string
+        file_size:
+          title: File Size
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        doucment_reference_id:
+          title: Doucment Reference Id
+          type: string
+    CustomerRequiredEmailModel:
+      title: CustomerRequiredEmailModel
+      required:
+      - email
+      - created_by
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        email:
+          title: Email
+          type: string
+          format: email
+        created_by:
+          title: Created By
+          type: string
+    CustomerSignatureUpdateModel:
+      title: CustomerSignatureUpdateModel
+      type: object
+      properties:
+        signature_image:
+          title: Signature Image
+          type: string
+        initial_image:
+          title: Initial Image
+          type: string
+        ip:
+          title: Ip
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    CustomersParamsModel:
+      title: CustomersParamsModel
+      required:
+      - reference_ids
+      type: object
+      properties:
+        reference_ids:
+          title: Reference Ids
+          type: array
+          items:
+            type: string
+          description: Reference IDs of the customers to be returned
+    AddressResponseModel:
+      title: AddressResponseModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+    CustomerProfileIncomeInfoModel:
+      title: CustomerProfileIncomeInfoModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+    EmploymentInfoCreateModelEmpTypeMendatory:
+      title: EmploymentInfoCreateModelEmpTypeMendatory
+      required:
+      - employment_type
+      - reference_id
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          minLength: 1
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference ID for Employment
+        address:
+          $ref: '#/components/schemas/CustomerAddressModel'
+    CustomerAddressModel:
+      title: CustomerAddressModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    InsuranceDocumentsResponseModel:
+      title: InsuranceDocumentsResponseModel
+      type: object
+      properties:
+        document_uri:
+          title: Document Uri
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        name:
+          title: Name
+          type: string
+        file_size:
+          title: File Size
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerDocumentResponseModel:
+      title: CustomerDocumentResponseModel
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          title: Category
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        document_url:
+          title: Document Url
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_at:
+          title: Created At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        deleted_at:
+          title: Deleted At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        deleted_by:
+          title: Deleted By
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+          default: false
+        identifier:
+          title: Identifier
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+    CustomerDocumentModel:
+      title: CustomerDocumentModel
+      required:
+      - customer_reference_id
+      - external_reference_id
+      - document_type
+      - created_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        comment:
+          title: Comment
+          type: string
+    DynamicFieldModel:
+      title: DynamicFieldModel
+      enum:
+      - prefix
+      - first_name
+      - middle_name
+      - last_name
+      - full_name
+      - suffix
+      - ssn
+      - identifier
+      - mobile_number
+      - mobile_number_verified_status
+      - home_number
+      - home_number_verified_status
+      - customer_type
+      - date_of_birth
+      - stripe_customer_id
+      - reference_id
+      - email
+      - address_line_1
+      - address_line_2
+      - state_name
+      - zip_code
+      - county
+      - city
+      - contact_number
+      - verified
+      - address_type
+      - license_number
+      - order_identifier
+      - order_status
+      - stock_number
+      - vin
+      - dealer_id
+      type: string
+      description: An enumeration.
+    LicenseVerificationModel:
+      title: LicenseVerificationModel
+      required:
+      - front_image
+      - back_image
+      - customer_id
+      type: object
+      properties:
+        front_image:
+          title: Front Image
+          type: string
+        back_image:
+          title: Back Image
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        dealer_code:
+          title: Dealer Code
+          type: string
+        api_version:
+          title: Api Version
+          type: string
+          default: '1.2'
+    AndOr:
+      title: AndOr
+      enum:
+      - And
+      - Or
+      type: string
+      description: An enumeration.
+    CustomerProfilePaginationResponse:
+      title: CustomerProfilePaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerProfileModelResponse'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    CustomerDocumentWithReviewsResponseModel:
+      title: CustomerDocumentWithReviewsResponseModel
+      required:
+      - document_reviews
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          title: Category
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        document_url:
+          title: Document Url
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_at:
+          title: Created At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        deleted_at:
+          title: Deleted At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        deleted_by:
+          title: Deleted By
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+          default: false
+        identifier:
+          title: Identifier
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        document_reviews:
+          title: Document Reviews
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerDocumentReviewPreResponseModel'
+    CustomerDocumentReviewPreResponseModel:
+      title: CustomerDocumentReviewPreResponseModel
+      type: object
+      properties:
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        review_date_time:
+          title: Review Date Time
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        review_status:
+          title: Review Status
+          type: string
+        review_notes:
+          title: Review Notes
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    EmploymentInfoResponseModel:
+      title: EmploymentInfoResponseModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressResponseModel'
+    CreateCustomerModel:
+      title: CreateCustomerModel
+      required:
+      - dealer_id
+      - email
+      type: object
+      properties:
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer ID for Customer
+        email:
+          title: Email
+          type: string
+          format: email
+    AddressBasicModel:
+      title: AddressBasicModel
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

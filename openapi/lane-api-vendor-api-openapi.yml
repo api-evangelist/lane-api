@@ -1,0 +1,582 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Vendor API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Vendor
+paths:
+  /dms/configure/quick-quotation-by-vendor:
+    get:
+      tags:
+      - Vendor
+      summary: Get all orders of a customer
+      description: Get all orders of a customer
+      operationId: get_orders_by_customer_data_dms_configure_quick_quotation_by_vendor_get
+      parameters:
+      - description: Accepts only string values
+        required: false
+        schema:
+          title: statuses
+          type: array
+          items:
+            type: string
+          description: Accepts only string values
+        name: statuses
+        in: query
+      - required: false
+        schema:
+          title: Dealer Id
+          type: integer
+        name: dealer_id
+        in: query
+      - required: false
+        schema:
+          title: Broker Id
+          type: integer
+        name: broker_id
+        in: query
+      - required: false
+        schema:
+          title: Customer Email
+          type: string
+        name: customer_email
+        in: query
+      - required: false
+        schema:
+          title: Customer Name
+          type: string
+        name: customer_name
+        in: query
+      - required: false
+        schema:
+          title: Lender Name
+          type: string
+        name: lender_name
+        in: query
+      - required: false
+        schema:
+          title: Dealer Name
+          type: string
+        name: dealer_name
+        in: query
+      - required: false
+        schema:
+          title: Contact Number
+          type: string
+        name: contact_number
+        in: query
+      - required: false
+        schema:
+          title: Vendor Name
+          type: string
+        name: vendor_name
+        in: query
+      - required: false
+        schema:
+          title: Introducer Name
+          type: string
+        name: introducer_name
+        in: query
+      - required: false
+        schema:
+          title: Vendor Email
+          type: string
+        name: vendor_email
+        in: query
+      - required: false
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: query
+      - required: false
+        schema:
+          title: Name
+          type: string
+        name: name
+        in: query
+      - required: false
+        schema:
+          title: Finance Type
+          type: string
+        name: finance_type
+        in: query
+      - required: false
+        schema:
+          title: Product Type
+          type: string
+        name: product_type
+        in: query
+      - required: false
+        schema:
+          title: Finance Amount
+          type: number
+        name: finance_amount
+        in: query
+      - required: false
+        schema:
+          title: Updated At
+          type: string
+        name: updated_at
+        in: query
+      - required: false
+        schema:
+          title: Date Submitted
+          type: string
+        name: date_submitted
+        in: query
+      - required: false
+        schema:
+          title: Start Date
+          type: string
+        name: start_date
+        in: query
+      - required: false
+        schema:
+          title: End Date
+          type: string
+        name: end_date
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortByQuickQuotation'
+        name: sort_by
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortEnum'
+        name: sort_order
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/OrderStageTypes'
+        name: order_stage
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Orders By Customer Data Dms Configure Quick Quotation By Vendor Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuickQuotationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    QuickQuoteCustomerModel:
+      title: QuickQuoteCustomerModel
+      type: object
+      properties:
+        company_name:
+          title: Company Name
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        customer_type:
+          title: Customer Type
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        email:
+          title: Email
+          type: string
+          format: email
+        reference_id:
+          title: Reference Id
+          type: string
+    SortEnum:
+      title: SortEnum
+      enum:
+      - asc
+      - desc
+      type: string
+      description: An enumeration.
+    QuickQuoteFeeModel:
+      title: QuickQuoteFeeModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        dealer_fee_name:
+          title: Dealer Fee Name
+          type: string
+        applied_price:
+          title: Applied Price
+          type: number
+        order_id:
+          title: Order Id
+          type: integer
+        fee_frequency:
+          title: Fee Frequency
+          type: string
+        fee_occurance:
+          title: Fee Occurance
+          type: string
+        fee_first_due_date:
+          title: Fee First Due Date
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    SortByQuickQuotation:
+      title: SortByQuickQuotation
+      enum:
+      - customer_name
+      - lender_name
+      - dealer_name
+      - introducer_name
+      - name
+      - finance_type
+      - product_type
+      - finance_amount
+      - updated_at
+      - date_submitted
+      - start_date
+      - end_date
+      - statuses
+      type: string
+      description: An enumeration.
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    QuickQuotationResponseModel:
+      title: QuickQuotationResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        name:
+          title: Name
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date
+        end_date:
+          title: End Date
+          type: string
+          format: date
+        updated_at:
+          title: Updated At
+          type: string
+          format: date
+        external_order_id:
+          title: External Order Id
+          type: string
+        status:
+          title: Status
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: string
+        calculations_type:
+          title: Calculations Type
+          type: string
+        sum_of_advance_rentals:
+          title: Sum Of Advance Rentals
+          type: number
+        no_of_advance_payments:
+          title: No Of Advance Payments
+          type: integer
+        no_of_regular_payments:
+          title: No Of Regular Payments
+          type: integer
+        introducer_identifier:
+          title: Introducer Identifier
+          type: string
+        introducer_name:
+          title: Introducer Name
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        deferral_amount:
+          title: Deferral Amount
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        product_type:
+          title: Product Type
+          type: string
+        finance_amount:
+          title: Finance Amount
+          type: number
+        gross_profit:
+          title: Gross Profit
+          type: number
+        commission_type:
+          title: Commission Type
+          type: string
+        commission_amount:
+          title: Commission Amount
+          type: number
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        meta_data:
+          title: Meta Data
+          type: object
+        comments:
+          title: Comments
+          type: string
+        vat_treatment:
+          title: Vat Treatment
+          type: string
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: integer
+        deferred_type:
+          title: Deferred Type
+          type: string
+        reference_number:
+          title: Reference Number
+          type: string
+        rate_type:
+          title: Rate Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        rental_mode:
+          title: Rental Mode
+          type: string
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        running_id:
+          title: Running Id
+          type: string
+        broker_id:
+          title: Broker Id
+          type: integer
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuoteFeeModel'
+        order_payments:
+          title: Order Payments
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuotePaymentModel'
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickAssetModel'
+        order_stakeholders:
+          title: Order Stakeholders
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderStakeholderBaseModel'
+        created_at:
+          title: Created At
+          type: string
+          format: date
+        date_submitted:
+          title: Date Submitted
+          type: string
+          format: date
+        customer:
+          $ref: '#/components/schemas/QuickQuoteCustomerModel'
+    OrderStakeholderBaseModel:
+      title: OrderStakeholderBaseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        order_identifier:
+          title: Order Identifier
+          type: string
+        stakeholder_reference_id:
+          title: Stakeholder Reference Id
+          type: string
+        name:
+          title: Name
+          type: string
+        email:
+          title: Email
+          type: string
+        role:
+          title: Role
+          type: string
+        position:
+          title: Position
+          type: string
+        contact_number:
+          title: Contact Number
+          type: string
+        address_id:
+          title: Address Id
+          type: string
+    QuickQuotePaymentModel:
+      title: QuickQuotePaymentModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        payment_number_from:
+          title: Payment Number From
+          type: integer
+        payment_number_to:
+          title: Payment Number To
+          type: integer
+        amount:
+          title: Amount
+          type: number
+        payment_type:
+          title: Payment Type
+          type: string
+        order_id:
+          title: Order Id
+          type: integer
+    QuickAssetModel:
+      title: QuickAssetModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        vin:
+          title: Vin
+          type: string
+        make:
+          title: Make
+          type: string
+        model:
+          title: Model
+          type: string
+        trim:
+          title: Trim
+          type: string
+        year:
+          title: Year
+          type: string
+        stock_number:
+          title: Stock Number
+          type: string
+        asset_image:
+          title: Asset Image
+          type: array
+          items:
+            type: string
+        asset_type:
+          title: Asset Type
+          type: string
+        rv_balloon_amount:
+          title: Rv Balloon Amount
+          type: number
+    OrderStageTypes:
+      title: OrderStageTypes
+      enum:
+      - Quotation
+      - Application
+      type: string
+      description: An enumeration.
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

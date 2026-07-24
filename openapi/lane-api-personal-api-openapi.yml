@@ -1,0 +1,301 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Personal API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Personal
+paths:
+  /dms/customer/personal-finance:
+    get:
+      tags:
+      - Personal
+      summary: Get single personal finance  information record
+      description: Get personal finance  information by customer ID
+      operationId: findone_personal_finance_info_dms_customer_personal_finance_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPersonalFinanceResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Personal
+      summary: Creates personal finance information
+      description: Create personal finance information against customer
+      operationId: add_personal_finance_info_dms_customer_personal_finance_post
+      parameters:
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalFinanceModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPersonalFinanceResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Personal
+      summary: Delete single personal finance  information record
+      description: Delete personal finance information record of customer employment record ID
+      operationId: delete_personal_finance_info_by_id_dms_customer_personal_finance_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Personal
+      summary: Updates personal finance information
+      description: Update personal finance information against customer
+      operationId: update_personal_finance_info_dms_customer_personal_finance_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonalFinanceUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPersonalFinanceResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    PersonalFinanceModel:
+      title: PersonalFinanceModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        residence:
+          title: Residence
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference Id
+    PersonalFinanceUpdateModel:
+      title: PersonalFinanceUpdateModel
+      type: object
+      properties:
+        residence:
+          title: Residence
+          minLength: 1
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+    CustomerPersonalFinanceResponseModel:
+      title: CustomerPersonalFinanceResponseModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        residence:
+          title: Residence
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference Id
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

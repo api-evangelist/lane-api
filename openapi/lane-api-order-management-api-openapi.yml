@@ -1,0 +1,4146 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Order  Management API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Order  Management
+paths:
+  /dms/configure/all-quotation/{reference_number}:
+    get:
+      tags:
+      - Order  Management
+      summary: Get Specific quotation
+      description: Get Specific quotation
+      operationId: get_all_order_quotation_by_reference_number_dms_configure_all_quotation__reference_number__get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/all-quotations:
+    get:
+      tags:
+      - Order  Management
+      summary: Get Specific quotation
+      description: Get Specific quotation
+      operationId: get_all_order_quotation_dms_configure_all_quotations_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get All Order Quotation Dms Configure All Quotations Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderQuotationResponseModel'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/quotation/{identifier}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Update an configured quotation
+      description: Update an configured quotation
+      operationId: update_order_quotation_dms_configure_quotation__identifier__patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderQuotationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderQuotationUpdateModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/order-fees/{identifier}:
+    get:
+      tags:
+      - Order  Management
+      summary: Get all order fees for order
+      description: Get all order fees for order
+      operationId: get_order_fee_by_id_dms_configure_order_fees__identifier__get
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Order Fee By Id Dms Configure Order Fees  Identifier  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderFeeModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Order  Management
+      summary: Delete all orders fees filtered on identifier
+      description: Delete all orders fees filtered on identifier
+      operationId: delete_order_fees_dms_configure_order_fees__identifier__delete
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderFeeModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Order  Management
+      summary: Update fee record for order
+      description: Update fee record for order
+      operationId: update_order_fee_dms_configure_order_fees__identifier__patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderFeeModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderFeeModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/order-options/{identifier}:
+    get:
+      tags:
+      - Order  Management
+      summary: Get order option details
+      description: Get order all options against an identifier
+      operationId: get_order_options_by_identifier_dms_configure_order_options__identifier__get
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Order Options By Identifier Dms Configure Order Options  Identifier  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderOptionModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Order  Management
+      summary: Delete order option record
+      description: Delete all order option records against identifier
+      operationId: delete_order_option_dms_configure_order_options__identifier__delete
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderOptionModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Order  Management
+      summary: Update an order option record
+      description: Update an order option record
+      operationId: update_order_option_dms_configure_order_options__identifier__patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderOptionModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderOptionModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/order-fni:
+    post:
+      tags:
+      - Order  Management
+      summary: Create finance insurance product record for order
+      description: Create finance insurance product record for order
+      operationId: add_order_fni_dms_configure_order_fni_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderFinancialInsuranceProductModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderFIPResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/order/tradein:
+    post:
+      tags:
+      - Order  Management
+      summary: Creates an order tradein info setup record
+      description: Creates an order tradein info setup record
+      operationId: add_order_tradein_dms_configure_order_tradein_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderTradeInModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderTradeInResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/order/update-status/{reference_number}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Update order status record by order reference number
+      description: Update order status record by order reference number
+      operationId: update_order_status_by_reference_number_dms_configure_order_update_status__reference_number__patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: path
+      - required: false
+        schema:
+          title: Is Inventory Check
+          type: boolean
+          default: false
+        name: is_inventory_check
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderStatusRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/assets-by-trim-code/{trim_code}:
+    get:
+      tags:
+      - Order  Management
+      summary: Get assets by trim code
+      description: Get assets by trim code
+      operationId: quote_comparison_dms_configure_assets_by_trim_code__trim_code__get
+      parameters:
+      - required: true
+        schema:
+          title: Trim Code
+          minLength: 1
+          type: string
+        name: trim_code
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetsByTrimCodeResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/order_information_for_submitted_order:
+    get:
+      tags:
+      - Order  Management
+      summary: Get order by order status
+      description: Get order by order status
+      operationId: get_order_details_dms_order_order_information_for_submitted_order_get
+      parameters:
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - required: true
+        schema:
+          title: Order Status
+          type: string
+        name: order_status
+        in: query
+      - required: false
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: query
+      - required: false
+        schema:
+          title: Order Fee
+          type: boolean
+        name: order_fee
+        in: query
+      - required: false
+        schema:
+          title: Order Option
+          type: boolean
+        name: order_option
+        in: query
+      - required: false
+        schema:
+          title: Order Fni
+          type: boolean
+        name: order_fni
+        in: query
+      - required: false
+        schema:
+          title: Order Tradein
+          type: boolean
+        name: order_tradein
+        in: query
+      - required: false
+        schema:
+          title: Order Assets
+          type: boolean
+        name: order_assets
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /dms/order/order-checklist:
+    get:
+      tags:
+      - Order  Management
+      summary: Get Order checklist
+      description: Get Order checklist
+      operationId: get_order_checklist_dms_order_order_checklist_get
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: true
+        schema:
+          title: Checklist Identifier
+          type: string
+        name: checklist_identifier
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Order Checklist Dms Order Order Checklist Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderChecklistResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Order  Management
+      summary: Add Order checklist
+      description: Add Order checklist
+      operationId: add_order_checklist_dms_order_order_checklist_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Items
+              type: array
+              items:
+                $ref: '#/components/schemas/OrderChecklistModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Add Order Checklist Dms Order Order Checklist Post
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderChecklistResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Order  Management
+      summary: Delete Order checklist
+      description: Delete Order checklist
+      operationId: delete_order_checklist_dms_order_order_checklist_delete
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: true
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Order  Management
+      summary: Update Order checklist
+      description: Update Order checklist
+      operationId: update_order_checklist_dms_order_order_checklist_patch
+      parameters:
+      - required: true
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Request
+              type: array
+              items:
+                $ref: '#/components/schemas/OrderChecklistUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Update Order Checklist Dms Order Order Checklist Patch
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderChecklistResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/update-credit-approver-decision/{reference_number}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Update decision status after receiving decision from credit approver
+      description: Update an configured quotation
+      operationId: update_credit_approver_decision_dms_order_update_credit_approver_decision__reference_number__patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderQuotationModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/update-payment-status/{reference_number}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Update Payment Status
+      operationId: update_payment_status_dms_order_update_payment_status__reference_number__patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: path
+      - required: true
+        schema:
+          title: Payment Indicator
+          type: boolean
+        name: payment_indicator
+        in: query
+      - required: false
+        schema:
+          title: Order Status
+          type: string
+        name: order_status
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /dms/order/order-verify-document/{identifier}:
+    post:
+      tags:
+      - Order  Management
+      summary: Verify Order Documents
+      description: Verify Order Documents
+      operationId: verify_order_document_dms_order_order_verify_document__identifier__post
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/upload-signed-document/{identifier}:
+    post:
+      tags:
+      - Order  Management
+      summary: Upload Signed Document
+      description: Upload Signed Document
+      operationId: upload_order_signed_document_dms_order_upload_signed_document__identifier__post
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadFile'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/quotation-to-order/{identifier}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Convert specific Quotation to Application
+      description: Convert specific Quotation stage to Application and save all financial data
+      operationId: convert_quotation_to_order_dms_configure_quotation_to_order__identifier__patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderQuotationUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderQuotationUpdateModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/quick_quotation:
+    post:
+      tags:
+      - Order  Management
+      summary: Save Single Quotation
+      description: Save Single Quotation
+      operationId: save_quotations_dms_order_quick_quotation_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuickQuotationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuickQuotationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Order  Management
+      summary: Update Quotation
+      description: Update Quotation
+      operationId: update_quotations_dms_order_quick_quotation_patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuickOrderModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuickQuotationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/workqueue:
+    get:
+      tags:
+      - Order  Management
+      summary: Get all orders for workqueue.
+      description: Get all orders for workqueue.
+      operationId: get_orders_workqueue_dms_order_workqueue_get
+      parameters:
+      - description: Accepts only string values
+        required: false
+        schema:
+          title: statuses
+          type: array
+          items:
+            type: string
+          description: Accepts only string values
+        name: statuses
+        in: query
+      - required: false
+        schema:
+          title: Dealer Id
+          type: integer
+        name: dealer_id
+        in: query
+      - required: false
+        schema:
+          title: Broker Id
+          type: integer
+        name: broker_id
+        in: query
+      - required: false
+        schema:
+          title: Customer Email
+          type: string
+        name: customer_email
+        in: query
+      - required: false
+        schema:
+          title: Customer Name
+          type: string
+        name: customer_name
+        in: query
+      - required: false
+        schema:
+          title: Lender Name
+          type: string
+        name: lender_name
+        in: query
+      - required: false
+        schema:
+          title: Dealer Name
+          type: string
+        name: dealer_name
+        in: query
+      - required: false
+        schema:
+          title: Contact Number
+          type: string
+        name: contact_number
+        in: query
+      - required: false
+        schema:
+          title: Vendor Name
+          type: string
+        name: vendor_name
+        in: query
+      - required: false
+        schema:
+          title: Introducer Name
+          type: string
+        name: introducer_name
+        in: query
+      - required: false
+        schema:
+          title: Vendor Email
+          type: string
+        name: vendor_email
+        in: query
+      - required: false
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: query
+      - required: false
+        schema:
+          title: Name
+          type: string
+        name: name
+        in: query
+      - required: false
+        schema:
+          title: Finance Type
+          type: string
+        name: finance_type
+        in: query
+      - required: false
+        schema:
+          title: Product Type
+          type: string
+        name: product_type
+        in: query
+      - required: false
+        schema:
+          title: Finance Amount
+          type: number
+        name: finance_amount
+        in: query
+      - required: false
+        schema:
+          title: Updated At
+          type: string
+        name: updated_at
+        in: query
+      - required: false
+        schema:
+          title: Date Submitted
+          type: string
+        name: date_submitted
+        in: query
+      - required: false
+        schema:
+          title: Start Date
+          type: string
+        name: start_date
+        in: query
+      - required: false
+        schema:
+          title: End Date
+          type: string
+        name: end_date
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortByQuickQuotation'
+        name: sort_by
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/SortEnum'
+        name: sort_order
+        in: query
+      - required: false
+        schema:
+          $ref: '#/components/schemas/OrderStageTypes'
+        name: order_stage
+        in: query
+      - required: false
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: false
+        schema:
+          title: Page Size
+          type: integer
+        name: page_size
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderWorkqueueResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/get-reference-data/{dealer_code}:
+    get:
+      tags:
+      - Order  Management
+      summary: Get Reference Data By Dealer Code
+      description: This method returns the data of inventory from Configuration By Dealer Code
+      operationId: get_reference_data_dms_get_reference_data__dealer_code__get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/asset/{reference_number}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Updates an order asset record
+      description: Updates an order asset record
+      operationId: update_order_asset_dms_order_asset__reference_number__patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderAssetUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/update-order-submission:
+    post:
+      tags:
+      - Order  Management
+      summary: Update Order Submission Status
+      description: Updates an order submission status by hubex response
+      operationId: update_order_submission_dms_update_order_submission_post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/get-customer-order-submissions/{customer_reference_id}/{submission_status}:
+    post:
+      tags:
+      - Order  Management
+      summary: Get order lender submissions of customer by status and Lender ids
+      description: Get order lender submission records of customer by status and lender ids
+      operationId: get_customer_order_submissions_dms_order_get_customer_order_submissions__customer_reference_id___submission_status__post
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: path
+      - required: true
+        schema:
+          title: Submission Status
+          type: string
+        name: submission_status
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/re-submit/{identifier}:
+    patch:
+      tags:
+      - Order  Management
+      summary: Update order and re-send deal to lender
+      description: Update the order and resubmit deal to lenders with deffering existing submission records.
+      operationId: resubmit_order_dms_order_re_submit__identifier__patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderQuotationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    SortEnum:
+      title: SortEnum
+      enum:
+      - asc
+      - desc
+      type: string
+      description: An enumeration.
+    CustomerAddressWithoutAddressTypeModel:
+      title: CustomerAddressWithoutAddressTypeModel
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    AssetsByTrimCodeResponse:
+      title: AssetsByTrimCodeResponse
+      type: object
+      properties:
+        asset_make_id:
+          title: Asset Make Id
+          type: integer
+        asset_model_id:
+          title: Asset Model Id
+          type: integer
+        asset_trim_id:
+          title: Asset Trim Id
+          type: integer
+    TradeInCheckList:
+      title: TradeInCheckList
+      type: object
+      properties:
+        question:
+          title: Question
+          type: string
+        answer:
+          title: Answer
+          type: string
+        trade_in_id:
+          title: Trade In Id
+          type: integer
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    InsuranceInformationWithAddressesModel:
+      title: InsuranceInformationWithAddressesModel
+      required:
+      - created_by
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        insurer_name:
+          title: Insurer Name
+          type: string
+        agent_phone:
+          title: Agent Phone
+          type: string
+        subscription_id:
+          title: Subscription Id
+          type: string
+        agent_name:
+          title: Agent Name
+          type: string
+        policy_number:
+          title: Policy Number
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        created_by:
+          title: Created By
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
+        insurance_documents:
+          title: Insurance Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceDocumentsModel'
+        insurer_address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    OrderFIPResponseModel:
+      title: OrderFIPResponseModel
+      required:
+      - applied_price
+      - dealer_id
+      - financial_insurance_id
+      - order_id
+      - lender_id
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        applied_price:
+          title: Applied Price
+          type: number
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        financial_insurance_id:
+          title: Financial Insurance Id
+          type: integer
+        order_id:
+          title: Order Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+    QuickQuotationModel:
+      title: QuickQuotationModel
+      type: object
+      properties:
+        quote_identifiers:
+          $ref: '#/components/schemas/QuickQuoteCustomerModel'
+        quote_details:
+          $ref: '#/components/schemas/QuickOrderModel'
+    OrderChecklistModel:
+      title: OrderChecklistModel
+      required:
+      - customer_reference_id
+      - order_reference_id
+      - checklist_name
+      - event
+      - question_text
+      - question_type
+      - primary_answer
+      - checklist_identifier
+      - created_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+          description: Customer reference number
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+          description: Order reference number
+        checklist_name:
+          title: Checklist Name
+          type: string
+          description: Checklist name
+        event:
+          title: Event
+          type: string
+          description: Event
+        question_text:
+          title: Question Text
+          type: string
+          description: Question text
+        question_type:
+          allOf:
+          - $ref: '#/components/schemas/QuestionType'
+          description: Question type [YES_NO or MULTIPLE_OPTIONS]
+        primary_answer:
+          title: Primary Answer
+          type: string
+          description: Primary answer
+        secondary_answer:
+          title: Secondary Answer
+          type: string
+          description: Secondary answer
+        external_order_ref_number:
+          title: External Order Ref Number
+          type: string
+          description: External order reference number
+        checklist_identifier:
+          title: Checklist Identifier
+          type: string
+          description: Checklist identifier
+        description:
+          title: Description
+          type: string
+          description: Checklist description
+        created_by:
+          title: Created By
+          type: string
+    CustomerAddressWithId:
+      title: CustomerAddressWithId
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        id:
+          title: Id
+          type: integer
+    OrderQuotationResponseModel:
+      title: OrderQuotationResponseModel
+      required:
+      - status
+      - reference_number
+      - order_asset_number
+      - identifier
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        broker_id:
+          title: Broker Id
+          type: integer
+        company_id:
+          title: Company Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        contract_term:
+          title: Contract Term
+          type: integer
+        allowed_usage:
+          title: Allowed Usage
+          type: integer
+        credit_rating:
+          title: Credit Rating
+          type: string
+        apr:
+          title: Apr
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+        annual_usage:
+          title: Annual Usage
+          type: number
+          default: 0
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        is_payment_updated:
+          title: Is Payment Updated
+          type: boolean
+          default: false
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        down_payment_lease:
+          title: Down Payment Lease
+          type: number
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: number
+        deferred_type:
+          title: Deferred Type
+          type: string
+        rv_balloon_percentage:
+          title: Rv Balloon Percentage
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        fp_id:
+          title: Fp Id
+          type: integer
+        vehicle_id:
+          title: Vehicle Id
+          type: integer
+        msrp:
+          title: Msrp
+          type: number
+        schedule_option:
+          title: Schedule Option
+          type: string
+        asset_usage:
+          title: Asset Usage
+          type: string
+        calcuation_method:
+          title: Calcuation Method
+          type: string
+        order_stage:
+          title: Order Stage
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderFeeCreateModel'
+        order_options:
+          title: Order Options
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/OrderOptionCreateModel'
+            - $ref: '#/components/schemas/Option'
+        order_fnI:
+          title: Order Fni
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/OrderFinancialInsuranceProductCreateModel'
+            - $ref: '#/components/schemas/FinancialInsurance'
+        order_tradein:
+          $ref: '#/components/schemas/OrderTradeInCreateModel'
+        appointment_details:
+          $ref: '#/components/schemas/libdms__models__CreateAppointmentModel'
+        finance_amount:
+          title: Finance Amount
+          type: number
+        order_asset:
+          $ref: '#/components/schemas/OrderAssetModel'
+        insurance:
+          $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
+        payment_recieved:
+          title: Payment Recieved
+          type: boolean
+        base_rate:
+          title: Base Rate
+          type: number
+        rate_type:
+          title: Rate Type
+          type: string
+        commission_type:
+          title: Commission Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        applicable_rate:
+          title: Applicable Rate
+          type: number
+        invoice_status:
+          $ref: '#/components/schemas/InvoiceStatus'
+        rental_mode:
+          title: Rental Mode
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        running_id:
+          title: Running Id
+          type: string
+        order_currency:
+          title: Order Currency
+          type: string
+        commission_amount:
+          title: Commission Amount
+          type: number
+        received_security_deposit:
+          title: Received Security Deposit
+          type: integer
+        net_finance_amount:
+          title: Net Finance Amount
+          type: number
+        rebate:
+          title: Rebate
+          type: number
+        capitalized_cost_reduction:
+          title: Capitalized Cost Reduction
+          type: number
+        monthly_deprecation:
+          title: Monthly Deprecation
+          type: number
+        tax_on_capitalized_cost_reduction:
+          title: Tax On Capitalized Cost Reduction
+          type: number
+        monthly_sales_use_tax:
+          title: Monthly Sales Use Tax
+          type: number
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        individualized_agreement:
+          title: Individualized Agreement
+          type: string
+        base_residual_type:
+          title: Base Residual Type
+          type: integer
+        excess_mileage_rate:
+          title: Excess Mileage Rate
+          type: number
+        asset_rv_amount:
+          title: Asset Rv Amount
+          type: number
+        customer_id:
+          title: Customer Id
+          type: integer
+        status:
+          title: Status
+          type: string
+        reference_number:
+          title: Reference Number
+          type: string
+        order_asset_number:
+          title: Order Asset Number
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    OrderOptionCreateModel:
+      title: OrderOptionCreateModel
+      required:
+      - option_id
+      - applied_price
+      - rv_balloon_percentage
+      type: object
+      properties:
+        option_id:
+          title: Option Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        applied_price:
+          title: Applied Price
+          type: number
+        rv_balloon_percentage:
+          title: Rv Balloon Percentage
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+    CustomerAddressPreResponseModel:
+      title: CustomerAddressPreResponseModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    InvoiceStatus:
+      title: InvoiceStatus
+      enum:
+      - Active
+      - Paused
+      - Resumed
+      type: string
+      description: An enumeration.
+    OrderQuotationUpdateModel:
+      title: OrderQuotationUpdateModel
+      required:
+      - identifier
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        broker_id:
+          title: Broker Id
+          type: integer
+        company_id:
+          title: Company Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        contract_term:
+          title: Contract Term
+          type: integer
+        allowed_usage:
+          title: Allowed Usage
+          type: integer
+        credit_rating:
+          title: Credit Rating
+          type: string
+        apr:
+          title: Apr
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+        annual_usage:
+          title: Annual Usage
+          type: number
+          default: 0
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        is_payment_updated:
+          title: Is Payment Updated
+          type: boolean
+          default: false
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        down_payment_lease:
+          title: Down Payment Lease
+          type: number
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: number
+        deferred_type:
+          title: Deferred Type
+          type: string
+        rv_balloon_percentage:
+          title: Rv Balloon Percentage
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        fp_id:
+          title: Fp Id
+          type: integer
+        vehicle_id:
+          title: Vehicle Id
+          type: integer
+        msrp:
+          title: Msrp
+          type: number
+        schedule_option:
+          title: Schedule Option
+          type: string
+        asset_usage:
+          title: Asset Usage
+          type: string
+        calcuation_method:
+          title: Calcuation Method
+          type: string
+        order_stage:
+          title: Order Stage
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderFeeCreateModel'
+        order_options:
+          title: Order Options
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/OrderOptionCreateModel'
+            - $ref: '#/components/schemas/Option'
+        order_fnI:
+          title: Order Fni
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/OrderFinancialInsuranceProductCreateModel'
+            - $ref: '#/components/schemas/FinancialInsurance'
+        order_tradein:
+          $ref: '#/components/schemas/OrderTradeInCreateModel'
+        appointment_details:
+          $ref: '#/components/schemas/libdms__models__CreateAppointmentModel'
+        finance_amount:
+          title: Finance Amount
+          type: number
+        order_asset:
+          $ref: '#/components/schemas/OrderAssetModel'
+        insurance:
+          $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
+        payment_recieved:
+          title: Payment Recieved
+          type: boolean
+        base_rate:
+          title: Base Rate
+          type: number
+        rate_type:
+          title: Rate Type
+          type: string
+        commission_type:
+          title: Commission Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        applicable_rate:
+          title: Applicable Rate
+          type: number
+        invoice_status:
+          $ref: '#/components/schemas/InvoiceStatus'
+        rental_mode:
+          title: Rental Mode
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        running_id:
+          title: Running Id
+          type: string
+        order_currency:
+          title: Order Currency
+          type: string
+        commission_amount:
+          title: Commission Amount
+          type: number
+        received_security_deposit:
+          title: Received Security Deposit
+          type: integer
+        net_finance_amount:
+          title: Net Finance Amount
+          type: number
+        rebate:
+          title: Rebate
+          type: number
+        capitalized_cost_reduction:
+          title: Capitalized Cost Reduction
+          type: number
+        monthly_deprecation:
+          title: Monthly Deprecation
+          type: number
+        tax_on_capitalized_cost_reduction:
+          title: Tax On Capitalized Cost Reduction
+          type: number
+        monthly_sales_use_tax:
+          title: Monthly Sales Use Tax
+          type: number
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        individualized_agreement:
+          title: Individualized Agreement
+          type: string
+        base_residual_type:
+          title: Base Residual Type
+          type: integer
+        excess_mileage_rate:
+          title: Excess Mileage Rate
+          type: number
+        asset_rv_amount:
+          title: Asset Rv Amount
+          type: number
+        identifier:
+          title: Identifier
+          type: string
+        changeVehicleStatus:
+          title: Changevehiclestatus
+          type: boolean
+          default: true
+    VehicleCondition:
+      title: VehicleCondition
+      enum:
+      - Fair
+      - Good
+      - Very Good
+      - Excellent
+      type: string
+      description: An enumeration.
+    OrderTradeInModel:
+      title: OrderTradeInModel
+      type: object
+      properties:
+        year:
+          title: Year
+          type: integer
+        make:
+          title: Make
+          type: string
+        model:
+          title: Model
+          type: string
+        trim:
+          title: Trim
+          type: string
+        mileage:
+          title: Mileage
+          type: integer
+        vin:
+          title: Vin
+          type: string
+        condition:
+          $ref: '#/components/schemas/VehicleCondition'
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+        is_customer_titled:
+          title: Is Customer Titled
+          type: boolean
+        loan_lease_balance:
+          title: Loan Lease Balance
+          type: boolean
+        lender_contract_number:
+          title: Lender Contract Number
+          type: string
+        lender_name:
+          title: Lender Name
+          type: string
+        lender_address:
+          title: Lender Address
+          type: string
+        lender_contact_number:
+          title: Lender Contact Number
+          type: string
+        payment_type:
+          $ref: '#/components/schemas/PaymentType'
+        payoff_amount:
+          title: Payoff Amount
+          type: number
+        order_id:
+          title: Order Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        asset_image:
+          title: Asset Image
+          type: array
+          items:
+            type: string
+    OrderFinancialInsuranceProductModel:
+      title: OrderFinancialInsuranceProductModel
+      required:
+      - applied_price
+      - dealer_id
+      - financial_insurance_id
+      - mileage
+      - term
+      - order_id
+      - lender_id
+      - form_id
+      - rate_id
+      type: object
+      properties:
+        applied_price:
+          title: Applied Price
+          type: number
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        financial_insurance_id:
+          title: Financial Insurance Id
+          type: integer
+        mileage:
+          title: Mileage
+          type: integer
+        term:
+          title: Term
+          type: integer
+        order_id:
+          title: Order Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        is_msp:
+          title: Is Msp
+          type: boolean
+        form_id:
+          title: Form Id
+          type: integer
+        rate_id:
+          title: Rate Id
+          type: integer
+    OrderTradeInCreateModel:
+      title: OrderTradeInCreateModel
+      type: object
+      properties:
+        year:
+          title: Year
+          type: integer
+        make:
+          title: Make
+          type: string
+        model:
+          title: Model
+          type: string
+        trim:
+          title: Trim
+          type: string
+        mileage:
+          title: Mileage
+          type: integer
+        vin:
+          title: Vin
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        condition:
+          $ref: '#/components/schemas/VehicleCondition'
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+        is_customer_titled:
+          title: Is Customer Titled
+          type: boolean
+        loan_lease_balance:
+          title: Loan Lease Balance
+          type: boolean
+        lender_contract_number:
+          title: Lender Contract Number
+          type: string
+        lender_name:
+          title: Lender Name
+          type: string
+        lender_address:
+          title: Lender Address
+          type: string
+        lender_contact_number:
+          title: Lender Contact Number
+          type: string
+        payment_type:
+          $ref: '#/components/schemas/PaymentType'
+        payoff_amount:
+          title: Payoff Amount
+          type: number
+        lender_id:
+          title: Lender Id
+          type: integer
+          description: DealerTradeIn lender id
+        asset_image:
+          title: Asset Image
+          type: array
+          items:
+            type: string
+        trade_in_type:
+          $ref: '#/components/schemas/TradeInType'
+        question_answers:
+          title: Question Answers
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeInCheckList'
+    InsuranceDocumentsModel:
+      title: InsuranceDocumentsModel
+      required:
+      - content_type
+      - name
+      - file_size
+      type: object
+      properties:
+        document:
+          title: Document
+          type: string
+        content_type:
+          title: Content Type
+          minLength: 1
+          type: string
+          description: 'format: application/pdf, image/png '
+        name:
+          title: Name
+          minLength: 1
+          type: string
+        file_size:
+          title: File Size
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        doucment_reference_id:
+          title: Doucment Reference Id
+          type: string
+    SortByQuickQuotation:
+      title: SortByQuickQuotation
+      enum:
+      - customer_name
+      - lender_name
+      - dealer_name
+      - introducer_name
+      - name
+      - finance_type
+      - product_type
+      - finance_amount
+      - updated_at
+      - date_submitted
+      - start_date
+      - end_date
+      - statuses
+      type: string
+      description: An enumeration.
+    OrderStatusRequestModel:
+      title: OrderStatusRequestModel
+      required:
+      - status
+      - user_id
+      type: object
+      properties:
+        status:
+          title: Status
+          type: string
+        user_id:
+          title: User Id
+          type: integer
+        reason:
+          title: Reason
+          type: string
+    OrderChecklistUpdateModel:
+      title: OrderChecklistUpdateModel
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+          description: Customer reference id
+        checklist_identifier:
+          title: Checklist Identifier
+          type: string
+          description: Checklist identifier
+        checklist_name:
+          title: Checklist Name
+          type: string
+          description: Checklist name
+        event:
+          title: Event
+          type: string
+          description: Event
+        question_text:
+          title: Question Text
+          type: string
+          description: Question text
+        question_type:
+          allOf:
+          - $ref: '#/components/schemas/QuestionType'
+          description: Question type [YES_NO or MULTIPLE_OPTIONS]
+        primary_answer:
+          title: Primary Answer
+          type: string
+          description: Primary answer
+        secondary_answer:
+          title: Secondary Answer
+          type: string
+          description: Secondary answer
+        external_order_ref_number:
+          title: External Order Ref Number
+          type: string
+          description: External order reference number
+        description:
+          title: Description
+          type: string
+          description: Checklist description
+        updated_by:
+          title: Updated By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+        changed_by:
+          title: Changed By
+          type: string
+        changed_at:
+          title: Changed At
+          type: string
+          format: date-time
+    QuickOrderModel:
+      title: QuickOrderModel
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date
+        end_date:
+          title: End Date
+          type: string
+          format: date
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_order_id:
+          title: External Order Id
+          type: string
+        order_status:
+          title: Order Status
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+        sum_of_advance_rentals:
+          title: Sum Of Advance Rentals
+          type: number
+        calculations_type:
+          title: Calculations Type
+          type: string
+        no_of_advance_payments:
+          title: No Of Advance Payments
+          type: integer
+        no_of_regular_payments:
+          title: No Of Regular Payments
+          type: integer
+        introducer_identifier:
+          title: Introducer Identifier
+          type: string
+        introducer_name:
+          title: Introducer Name
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        deferral_amount:
+          title: Deferral Amount
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        product_type:
+          title: Product Type
+          type: string
+        program_type:
+          title: Program Type
+          type: string
+        finance_amount:
+          title: Finance Amount
+          type: number
+        gross_profit:
+          title: Gross Profit
+          type: number
+        commission_amount:
+          title: Commission Amount
+          type: number
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        meta_data:
+          title: Meta Data
+          type: object
+        comments:
+          title: Comments
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: string
+        broker_id:
+          title: Broker Id
+          type: string
+        vat_treatment:
+          title: Vat Treatment
+          type: string
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: integer
+        deferred_type:
+          title: Deferred Type
+          type: string
+        reference_number:
+          title: Reference Number
+          type: string
+        rental_mode:
+          title: Rental Mode
+          type: string
+        rate_type:
+          title: Rate Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        commission_type:
+          title: Commission Type
+          type: string
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        running_id:
+          title: Running Id
+          type: string
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuoteFeeModel'
+        order_payments:
+          title: Order Payments
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuotePaymentModel'
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickAssetModel'
+    OrderFeeCreateModel:
+      title: OrderFeeCreateModel
+      required:
+      - dealer_fee_id
+      - applied_price
+      type: object
+      properties:
+        dealer_fee_id:
+          title: Dealer Fee Id
+          type: integer
+        applied_price:
+          title: Applied Price
+          type: number
+        identifier:
+          title: Identifier
+          type: string
+        vendor:
+          title: Vendor
+          type: string
+        fee_type:
+          title: Fee Type
+          type: string
+    Option:
+      title: Option
+      required:
+      - option_id
+      - applied_price
+      - rv_balloon_percentage
+      - rv_balloon_value
+      type: object
+      properties:
+        option_id:
+          title: Option Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        applied_price:
+          title: Applied Price
+          type: number
+        rv_balloon_percentage:
+          title: Rv Balloon Percentage
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+    QuickQuotePaymentModel:
+      title: QuickQuotePaymentModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        payment_number_from:
+          title: Payment Number From
+          type: integer
+        payment_number_to:
+          title: Payment Number To
+          type: integer
+        amount:
+          title: Amount
+          type: number
+        payment_type:
+          title: Payment Type
+          type: string
+        order_id:
+          title: Order Id
+          type: integer
+    QuickQuoteCustomerModel:
+      title: QuickQuoteCustomerModel
+      type: object
+      properties:
+        company_name:
+          title: Company Name
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        customer_type:
+          title: Customer Type
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        email:
+          title: Email
+          type: string
+          format: email
+        reference_id:
+          title: Reference Id
+          type: string
+    LicenseInfoCustomerResponseModel:
+      title: LicenseInfoCustomerResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        status:
+          title: Status
+          type: string
+        license_number:
+          title: License Number
+          type: string
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+    OrderStageTypes:
+      title: OrderStageTypes
+      enum:
+      - Quotation
+      - Application
+      type: string
+      description: An enumeration.
+    OrderPaginationResponse:
+      title: OrderPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderInformationModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    QuickQuoteFeeModel:
+      title: QuickQuoteFeeModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        dealer_fee_name:
+          title: Dealer Fee Name
+          type: string
+        applied_price:
+          title: Applied Price
+          type: number
+        order_id:
+          title: Order Id
+          type: integer
+        fee_frequency:
+          title: Fee Frequency
+          type: string
+        fee_occurance:
+          title: Fee Occurance
+          type: string
+        fee_first_due_date:
+          title: Fee First Due Date
+          type: string
+    OrderWorkqueueModel:
+      title: OrderWorkqueueModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        reference_number:
+          title: Reference Number
+          type: string
+        name:
+          title: Name
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date
+        created_at:
+          title: Created At
+          type: string
+          format: date
+        date_submitted:
+          title: Date Submitted
+          type: string
+          format: date
+        start_date:
+          title: Start Date
+          type: string
+          format: date
+        end_date:
+          title: End Date
+          type: string
+          format: date
+        status:
+          title: Status
+          type: string
+        external_order_id:
+          title: External Order Id
+          type: string
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        calculations_type:
+          title: Calculations Type
+          type: string
+        introducer_identifier:
+          title: Introducer Identifier
+          type: string
+        introducer_name:
+          title: Introducer Name
+          type: string
+        lender_name:
+          title: Lender Name
+          type: string
+        dealer_name:
+          title: Dealer Name
+          type: string
+        customer_name:
+          title: Customer Name
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        product_type:
+          title: Product Type
+          type: string
+        finance_amount:
+          title: Finance Amount
+          type: number
+        running_id:
+          title: Running Id
+          type: string
+        customer_type:
+          title: Customer Type
+          type: string
+    OrderFinancialInsuranceProductCreateModel:
+      title: OrderFinancialInsuranceProductCreateModel
+      required:
+      - applied_price
+      - financial_insurance_id
+      type: object
+      properties:
+        applied_price:
+          title: Applied Price
+          type: number
+        financial_insurance_id:
+          title: Financial Insurance Id
+          type: integer
+        form_id:
+          title: Form Id
+          type: integer
+        rate_id:
+          title: Rate Id
+          type: integer
+        mileage:
+          title: Mileage
+          type: integer
+        term:
+          title: Term
+          type: integer
+        session_id:
+          title: Session Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_msp:
+          title: Is Msp
+          type: boolean
+    CustomerProfileModelResponse:
+      title: CustomerProfileModelResponse
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        email:
+          title: Email
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressPreResponseModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerEmploymentInfoPreResponseModel'
+        payments_info:
+          title: Payments Info
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerPaymentInfoResponseModel'
+        license_info:
+          $ref: '#/components/schemas/LicenseInfoCustomerResponseModel'
+    CustomerEmploymentInfoPreResponseModel:
+      title: CustomerEmploymentInfoPreResponseModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    QuickQuotationResponseModel:
+      title: QuickQuotationResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        name:
+          title: Name
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date
+        end_date:
+          title: End Date
+          type: string
+          format: date
+        updated_at:
+          title: Updated At
+          type: string
+          format: date
+        external_order_id:
+          title: External Order Id
+          type: string
+        status:
+          title: Status
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: string
+        calculations_type:
+          title: Calculations Type
+          type: string
+        sum_of_advance_rentals:
+          title: Sum Of Advance Rentals
+          type: number
+        no_of_advance_payments:
+          title: No Of Advance Payments
+          type: integer
+        no_of_regular_payments:
+          title: No Of Regular Payments
+          type: integer
+        introducer_identifier:
+          title: Introducer Identifier
+          type: string
+        introducer_name:
+          title: Introducer Name
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        deferral_amount:
+          title: Deferral Amount
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        product_type:
+          title: Product Type
+          type: string
+        finance_amount:
+          title: Finance Amount
+          type: number
+        gross_profit:
+          title: Gross Profit
+          type: number
+        commission_type:
+          title: Commission Type
+          type: string
+        commission_amount:
+          title: Commission Amount
+          type: number
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        meta_data:
+          title: Meta Data
+          type: object
+        comments:
+          title: Comments
+          type: string
+        vat_treatment:
+          title: Vat Treatment
+          type: string
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: integer
+        deferred_type:
+          title: Deferred Type
+          type: string
+        reference_number:
+          title: Reference Number
+          type: string
+        rate_type:
+          title: Rate Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        rental_mode:
+          title: Rental Mode
+          type: string
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        running_id:
+          title: Running Id
+          type: string
+        broker_id:
+          title: Broker Id
+          type: integer
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuoteFeeModel'
+        order_payments:
+          title: Order Payments
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuotePaymentModel'
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickAssetModel'
+        order_stakeholders:
+          title: Order Stakeholders
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderStakeholderBaseModel'
+        created_at:
+          title: Created At
+          type: string
+          format: date
+        date_submitted:
+          title: Date Submitted
+          type: string
+          format: date
+        customer:
+          $ref: '#/components/schemas/QuickQuoteCustomerModel'
+    OrderStakeholderBaseModel:
+      title: OrderStakeholderBaseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        order_identifier:
+          title: Order Identifier
+          type: string
+        stakeholder_reference_id:
+          title: Stakeholder Reference Id
+          type: string
+        name:
+          title: Name
+          type: string
+        email:
+          title: Email
+          type: string
+        role:
+          title: Role
+          type: string
+        position:
+          title: Position
+          type: string
+        contact_number:
+          title: Contact Number
+          type: string
+        address_id:
+          title: Address Id
+          type: string
+    UploadFile:
+      title: UploadFile
+      required:
+      - file
+      - file_name
+      - content_type
+      type: object
+      properties:
+        file:
+          title: File
+          type: string
+        file_name:
+          title: File Name
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+    PaymentType:
+      title: PaymentType
+      enum:
+      - Lease
+      - Finance
+      type: string
+      description: An enumeration.
+    OrderInformationModel:
+      title: OrderInformationModel
+      required:
+      - order_info
+      - customer_info
+      type: object
+      properties:
+        order_info:
+          $ref: '#/components/schemas/OrderQuotationResponseModel'
+        customer_info:
+          $ref: '#/components/schemas/CustomerProfileModelResponse'
+    OrderTradeInResponseModel:
+      title: OrderTradeInResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        year:
+          title: Year
+          type: integer
+        make:
+          title: Make
+          type: string
+        model:
+          title: Model
+          type: string
+        trim:
+          title: Trim
+          type: string
+        mileage:
+          title: Mileage
+          type: integer
+        vin:
+          title: Vin
+          type: string
+        condition:
+          $ref: '#/components/schemas/VehicleCondition'
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+        is_customer_titled:
+          title: Is Customer Titled
+          type: boolean
+        loan_lease_balance:
+          title: Loan Lease Balance
+          type: boolean
+        lender_contract_number:
+          title: Lender Contract Number
+          type: string
+        lender_name:
+          title: Lender Name
+          type: string
+        lender_address:
+          title: Lender Address
+          type: string
+        lender_contact_number:
+          title: Lender Contact Number
+          type: string
+        payment_type:
+          $ref: '#/components/schemas/PaymentType'
+        payoff_amount:
+          title: Payoff Amount
+          type: number
+        order_id:
+          title: Order Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        asset_image:
+          title: Asset Image
+          type: array
+          items:
+            type: string
+    QuickAssetModel:
+      title: QuickAssetModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        vin:
+          title: Vin
+          type: string
+        make:
+          title: Make
+          type: string
+        model:
+          title: Model
+          type: string
+        trim:
+          title: Trim
+          type: string
+        year:
+          title: Year
+          type: string
+        stock_number:
+          title: Stock Number
+          type: string
+        asset_image:
+          title: Asset Image
+          type: array
+          items:
+            type: string
+        asset_type:
+          title: Asset Type
+          type: string
+        rv_balloon_amount:
+          title: Rv Balloon Amount
+          type: number
+    OrderAssetModel:
+      title: OrderAssetModel
+      type: object
+      properties:
+        make:
+          title: Make
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        model:
+          title: Model
+          type: string
+        trim:
+          title: Trim
+          type: string
+        year_manufacturer:
+          title: Year Manufacturer
+          type: string
+        msrp:
+          title: Msrp
+          type: number
+        mileage:
+          title: Mileage
+          type: integer
+        exterior_color:
+          title: Exterior Color
+          type: string
+        condition:
+          title: Condition
+          type: array
+          items:
+            type: string
+        classification:
+          title: Classification
+          type: string
+        engine_cylinder:
+          title: Engine Cylinder
+          type: string
+        power_type:
+          title: Power Type
+          type: string
+        power_figure:
+          title: Power Figure
+          type: string
+        engine_displacement:
+          title: Engine Displacement
+          type: string
+        fuel_type:
+          title: Fuel Type
+          type: string
+        quantity:
+          title: Quantity
+          type: string
+        unit_price:
+          title: Unit Price
+          type: string
+        unit_tax:
+          title: Unit Tax
+          type: string
+        total:
+          title: Total
+          type: string
+        vin:
+          title: Vin
+          type: string
+        asset_type:
+          title: Asset Type
+          type: string
+        rv_balloon_amount:
+          title: Rv Balloon Amount
+          type: number
+    QuestionType:
+      title: QuestionType
+      enum:
+      - YES_NO
+      - MULTIPLE_OPTIONS
+      description: An enumeration.
+    OrderQuotationModel:
+      title: OrderQuotationModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        broker_id:
+          title: Broker Id
+          type: integer
+        company_id:
+          title: Company Id
+          type: integer
+        name:
+          title: Name
+          type: string
+        contract_term:
+          title: Contract Term
+          type: integer
+        allowed_usage:
+          title: Allowed Usage
+          type: integer
+        credit_rating:
+          title: Credit Rating
+          type: string
+        apr:
+          title: Apr
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+        annual_usage:
+          title: Annual Usage
+          type: number
+          default: 0
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        is_payment_updated:
+          title: Is Payment Updated
+          type: boolean
+          default: false
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        down_payment_lease:
+          title: Down Payment Lease
+          type: number
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: number
+        deferred_type:
+          title: Deferred Type
+          type: string
+        rv_balloon_percentage:
+          title: Rv Balloon Percentage
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        fp_id:
+          title: Fp Id
+          type: integer
+        vehicle_id:
+          title: Vehicle Id
+          type: integer
+        msrp:
+          title: Msrp
+          type: number
+        schedule_option:
+          title: Schedule Option
+          type: string
+        asset_usage:
+          title: Asset Usage
+          type: string
+        calcuation_method:
+          title: Calcuation Method
+          type: string
+        order_stage:
+          title: Order Stage
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderFeeCreateModel'
+        order_options:
+          title: Order Options
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/OrderOptionCreateModel'
+            - $ref: '#/components/schemas/Option'
+        order_fnI:
+          title: Order Fni
+          type: array
+          items:
+            anyOf:
+            - $ref: '#/components/schemas/OrderFinancialInsuranceProductCreateModel'
+            - $ref: '#/components/schemas/FinancialInsurance'
+        order_tradein:
+          $ref: '#/components/schemas/OrderTradeInCreateModel'
+        appointment_details:
+          $ref: '#/components/schemas/libdms__models__CreateAppointmentModel'
+        finance_amount:
+          title: Finance Amount
+          type: number
+        order_asset:
+          $ref: '#/components/schemas/OrderAssetModel'
+        insurance:
+          $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
+        payment_recieved:
+          title: Payment Recieved
+          type: boolean
+        base_rate:
+          title: Base Rate
+          type: number
+        rate_type:
+          title: Rate Type
+          type: string
+        commission_type:
+          title: Commission Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        applicable_rate:
+          title: Applicable Rate
+          type: number
+        invoice_status:
+          $ref: '#/components/schemas/InvoiceStatus'
+        rental_mode:
+          title: Rental Mode
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        running_id:
+          title: Running Id
+          type: string
+        order_currency:
+          title: Order Currency
+          type: string
+        commission_amount:
+          title: Commission Amount
+          type: number
+        received_security_deposit:
+          title: Received Security Deposit
+          type: integer
+        net_finance_amount:
+          title: Net Finance Amount
+          type: number
+        rebate:
+          title: Rebate
+          type: number
+        capitalized_cost_reduction:
+          title: Capitalized Cost Reduction
+          type: number
+        monthly_deprecation:
+          title: Monthly Deprecation
+          type: number
+        tax_on_capitalized_cost_reduction:
+          title: Tax On Capitalized Cost Reduction
+          type: number
+        monthly_sales_use_tax:
+          title: Monthly Sales Use Tax
+          type: number
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        individualized_agreement:
+          title: Individualized Agreement
+          type: string
+        base_residual_type:
+          title: Base Residual Type
+          type: integer
+        excess_mileage_rate:
+          title: Excess Mileage Rate
+          type: number
+        asset_rv_amount:
+          title: Asset Rv Amount
+          type: number
+    AddressTypes:
+      title: AddressTypes
+      enum:
+      - Mailing
+      - Invoice
+      - Office
+      - Garaging
+      - DealerAddress
+      - DrivingLicense
+      - Billing
+      - InsuranceAddress
+      - Residential
+      - Employment
+      type: string
+      description: An enumeration.
+    FinancialInsurance:
+      title: FinancialInsurance
+      type: object
+      properties:
+        applied_price:
+          title: Applied Price
+          type: integer
+        financial_insurance_id:
+          title: Financial Insurance Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+    OrderOptionModel:
+      title: OrderOptionModel
+      required:
+      - order_id
+      - option_id
+      - applied_price
+      - dealer_id
+      - lender_id
+      - rv_balloon_percentage
+      - rv_balloon_value
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        order_id:
+          title: Order Id
+          type: integer
+        option_id:
+          title: Option Id
+          type: integer
+        applied_price:
+          title: Applied Price
+          type: number
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        rv_balloon_percentage:
+          title: Rv Balloon Percentage
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    OrderChecklistResponseModel:
+      title: OrderChecklistResponseModel
+      required:
+      - id
+      - customer_id
+      - checklist_name
+      - question_text
+      - question_type
+      - primary_answer
+      - checklist_identifier
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        customer_id:
+          title: Customer Id
+          type: integer
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        checklist_name:
+          title: Checklist Name
+          type: string
+        event:
+          title: Event
+          type: string
+        question_text:
+          title: Question Text
+          type: string
+        question_type:
+          $ref: '#/components/schemas/QuestionType'
+        primary_answer:
+          title: Primary Answer
+          type: string
+        secondary_answer:
+          title: Secondary Answer
+          type: string
+        external_order_ref_number:
+          title: External Order Ref Number
+          type: string
+        checklist_identifier:
+          title: Checklist Identifier
+          type: string
+        description:
+          title: Description
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_by:
+          title: Deleted By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        changed_by:
+          title: Changed By
+          type: string
+        changed_at:
+          title: Changed At
+          type: string
+          format: date-time
+    UpdateQuickOrderModel:
+      title: UpdateQuickOrderModel
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date
+        end_date:
+          title: End Date
+          type: string
+          format: date
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_order_id:
+          title: External Order Id
+          type: string
+        order_status:
+          title: Order Status
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        selling_price:
+          title: Selling Price
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+        sum_of_advance_rentals:
+          title: Sum Of Advance Rentals
+          type: number
+        calculations_type:
+          title: Calculations Type
+          type: string
+        no_of_advance_payments:
+          title: No Of Advance Payments
+          type: integer
+        no_of_regular_payments:
+          title: No Of Regular Payments
+          type: integer
+        introducer_identifier:
+          title: Introducer Identifier
+          type: string
+        introducer_name:
+          title: Introducer Name
+          type: string
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+        deferral_amount:
+          title: Deferral Amount
+          type: number
+        rv_balloon_value:
+          title: Rv Balloon Value
+          type: number
+        balloon_collection:
+          title: Balloon Collection
+          type: string
+        finance_type:
+          title: Finance Type
+          type: string
+        product_type:
+          title: Product Type
+          type: string
+        program_type:
+          title: Program Type
+          type: string
+        finance_amount:
+          title: Finance Amount
+          type: number
+        gross_profit:
+          title: Gross Profit
+          type: number
+        commission_amount:
+          title: Commission Amount
+          type: number
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        meta_data:
+          title: Meta Data
+          type: object
+        comments:
+          title: Comments
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: string
+        broker_id:
+          title: Broker Id
+          type: string
+        vat_treatment:
+          title: Vat Treatment
+          type: string
+        tax_amount:
+          title: Tax Amount
+          type: number
+        tax_amount_number:
+          title: Tax Amount Number
+          type: integer
+        deferred_type:
+          title: Deferred Type
+          type: string
+        reference_number:
+          title: Reference Number
+          type: string
+        rental_mode:
+          title: Rental Mode
+          type: string
+        rate_type:
+          title: Rate Type
+          type: string
+        margin:
+          title: Margin
+          type: number
+        commission_type:
+          title: Commission Type
+          type: string
+        sum_of_fees:
+          title: Sum Of Fees
+          type: number
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: number
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: number
+        total_payables:
+          title: Total Payables
+          type: number
+        running_id:
+          title: Running Id
+          type: string
+        non_vatable_amount:
+          title: Non Vatable Amount
+          type: number
+        order_fees:
+          title: Order Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuoteFeeModel'
+        order_payments:
+          title: Order Payments
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickQuotePaymentModel'
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/QuickAssetModel'
+        updated_by:
+          title: Updated By
+          type: string
+        customer:
+          $ref: '#/components/schemas/QuickQuoteCustomerModel'
+    CustomerPaymentInfoResponseModel:
+      title: CustomerPaymentInfoResponseModel
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    TradeInType:
+      title: TradeInType
+      enum:
+      - Manual Estimate
+      - Make Model
+      - Vin
+      - License Plate
+      type: string
+      description: An enumeration.
+    OrderWorkqueueResponseModel:
+      title: OrderWorkqueueResponseModel
+      required:
+      - results
+      - total_results
+      type: object
+      properties:
+        results:
+          title: Results
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderWorkqueueModel'
+        total_results:
+          title: Total Results
+          type: integer
+    OrderFeeModel:
+      title: OrderFeeModel
+      required:
+      - dealer_fee_id
+      - dealer_id
+      - applied_price
+      - order_id
+      - lender_id
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        dealer_fee_id:
+          title: Dealer Fee Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        applied_price:
+          title: Applied Price
+          type: number
+        order_id:
+          title: Order Id
+          type: integer
+        lender_id:
+          title: Lender Id
+          type: integer
+        vendor:
+          title: Vendor
+          type: string
+        fee_type:
+          title: Fee Type
+          type: string
+    OrderAssetUpdateModel:
+      title: OrderAssetUpdateModel
+      type: object
+      properties:
+        order_id:
+          title: Order Id
+          type: string
+          description: Order Reference Id
+        mileage:
+          title: Mileage
+          type: number
+        engine_cylinder:
+          title: Engine Cylinder
+          type: string
+        vehicle_uses:
+          title: Vehicle Uses
+          type: string
+        transmission_type:
+          title: Transmission Type
+          type: string
+        odometer_disclaimer:
+          title: Odometer Disclaimer
+          type: string
+    libdms__models__CreateAppointmentModel:
+      title: CreateAppointmentModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        order_id:
+          title: Order Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        customer_id:
+          title: Customer Id
+          type: integer
+        appointment_date:
+          title: Appointment Date
+          type: string
+          format: date-time
+        appointment_type:
+          title: Appointment Type
+          type: string
+        appointment_status:
+          title: Appointment Status
+          type: string
+        comments:
+          title: Comments
+          type: string
+        address_id:
+          title: Address Id
+          type: integer
+        dealer_code:
+          title: Dealer Code
+          type: string
+        address_data:
+          $ref: '#/components/schemas/CustomerAddressWithId'
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        time_zone:
+          title: Time Zone
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

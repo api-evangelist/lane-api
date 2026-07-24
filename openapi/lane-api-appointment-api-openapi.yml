@@ -1,0 +1,340 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Appointment API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Appointment
+paths:
+  /dms/configure/appointment:
+    post:
+      tags:
+      - Appointment
+      summary: Creates Appointment after Order Confirmation
+      description: Creates an appointment after order confirmation
+      operationId: create_appointment_dms_configure_appointment_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/libdms__appointment_models__CreateAppointmentModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Appointment
+      summary: Update an created appointment
+      description: Update an created appointment
+      operationId: update_appointment_dms_configure_appointment_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAppointmentModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/appointment/{appointment_id}:
+    get:
+      tags:
+      - Appointment
+      summary: Get Appointment by id
+      description: Get Appointment by id
+      operationId: get_appointment_dms_configure_appointment__appointment_id__get
+      parameters:
+      - required: true
+        schema:
+          title: Appointment Id
+          type: integer
+        name: appointment_id
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Appointment
+      summary: Delete created appointment
+      description: Delete created appointment
+      operationId: delete_appointment_dms_configure_appointment__appointment_id__patch
+      parameters:
+      - required: true
+        schema:
+          title: Appointment Id
+          type: integer
+        name: appointment_id
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    AddressTypes:
+      title: AddressTypes
+      enum:
+      - Mailing
+      - Invoice
+      - Office
+      - Garaging
+      - DealerAddress
+      - DrivingLicense
+      - Billing
+      - InsuranceAddress
+      - Residential
+      - Employment
+      type: string
+      description: An enumeration.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    libdms__appointment_models__CreateAppointmentModel:
+      title: CreateAppointmentModel
+      required:
+      - appointment_date
+      type: object
+      properties:
+        order_id:
+          title: Order Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        customer_id:
+          title: Customer Id
+          type: integer
+        appointment_date:
+          title: Appointment Date
+          type: string
+          format: date-time
+        time_zone:
+          title: Time Zone
+          type: string
+        appointment_type:
+          title: Appointment Type
+          type: string
+        appointment_status:
+          title: Appointment Status
+          type: string
+        comments:
+          title: Comments
+          type: string
+        address_id:
+          title: Address Id
+          type: integer
+        dealer_code:
+          title: Dealer Code
+          type: string
+        address_data:
+          $ref: '#/components/schemas/CustomerAddressWithId'
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    UpdateAppointmentModel:
+      title: UpdateAppointmentModel
+      required:
+      - id
+      - appointment_date
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        order_id:
+          title: Order Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        customer_id:
+          title: Customer Id
+          type: integer
+        appointment_date:
+          title: Appointment Date
+          type: string
+          format: date-time
+        time_zone:
+          title: Time Zone
+          type: string
+        appointment_type:
+          title: Appointment Type
+          type: string
+        appointment_status:
+          title: Appointment Status
+          type: string
+        comments:
+          title: Comments
+          type: string
+        address_id:
+          title: Address Id
+          type: integer
+        dealer_code:
+          title: Dealer Code
+          type: string
+        address_data:
+          $ref: '#/components/schemas/CustomerAddressWithId'
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    CustomerAddressWithId:
+      title: CustomerAddressWithId
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        id:
+          title: Id
+          type: integer
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

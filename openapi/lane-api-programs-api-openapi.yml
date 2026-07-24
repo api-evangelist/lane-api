@@ -1,0 +1,217 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Programs API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Programs
+paths:
+  /dms/programs/all/:
+    post:
+      tags:
+      - Programs
+      summary: Get All Evaluated Programs
+      operationId: get_all_evaluated_programs_dms_programs_all__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgramParamsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    ProgramParamsModel:
+      title: ProgramParamsModel
+      type: object
+      properties:
+        terms:
+          title: Terms
+          type: integer
+          description: Terms
+        dealer_code:
+          title: Dealer Code
+          type: string
+          description: Dealer Code
+        lender_code:
+          title: Lender Code
+          type: string
+          description: Lender Code
+        company_code:
+          title: Company Code
+          type: string
+          description: Company Code
+        customer_type:
+          title: Customer Type
+          type: string
+          description: Customer Type for Chart
+        product_type:
+          title: Product Type
+          type: string
+          description: Product Type For Chart
+        asset_category:
+          title: Asset Category
+          type: string
+          description: Asset Category For Chart
+        asset_type:
+          title: Asset Type
+          type: string
+          description: Asset Type For Chart
+        business_trading_age:
+          title: Business Trading Age
+          type: string
+          description: Business Trading Age For Chart
+        make_name:
+          title: Make Name
+          type: string
+          description: Make Name
+        model_code:
+          title: Model Code
+          type: string
+          description: Model Code
+        model_name:
+          title: Model Name
+          type: string
+          description: Model Name
+        model_detail_name:
+          title: Model Detail Name
+          type: string
+          description: Trim Name
+        asset_condition:
+          title: Asset Condition
+          type: string
+          description: Asset Condition
+        credit_rating:
+          title: Credit Rating
+          type: string
+          description: Credit rating
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance Type
+        asset_classification:
+          title: Asset Classification
+          type: string
+          description: Asset Classification (e.g. Vehicle, Equipment etc.)
+        annual_usage:
+          title: Annual Usage
+          type: integer
+          description: Annual Usage
+        is_rv_guaranteed:
+          title: Is Rv Guaranteed
+          type: string
+          description: Is RV Guaranteed
+        rental_mode:
+          title: Rental Mode
+          type: string
+          description: Payment Mode
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+          description: Rental Frequency available with Program
+        retrieve_all_programs:
+          title: Retrieve All Programs
+          type: boolean
+          description: Retrieve all program
+        financed_amount:
+          title: Financed Amount
+          type: string
+          description: Financed Amount
+        vin:
+          title: Vin
+          type: string
+          description: Vin Number
+        odometer:
+          title: Odometer
+          type: integer
+          description: Odometer
+        selling_price:
+          title: Selling Price
+          type: integer
+          description: Selling Price
+        msrp:
+          title: Msrp
+          type: integer
+          description: MSRF
+        is_new:
+          title: Is New
+          type: boolean
+          description: Is it new
+        total_score:
+          title: Total Score
+          type: integer
+          description: Total Score
+        is_payment_estimator:
+          title: Is Payment Estimator
+          type: boolean
+          description: Is Payment Estimator
+        tier:
+          title: Tier
+          type: string
+          description: tier
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

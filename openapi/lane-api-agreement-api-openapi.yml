@@ -1,0 +1,279 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Agreement API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Agreement
+paths:
+  /dms/configure/individualized-agreement:
+    patch:
+      tags:
+      - Agreement
+      summary: Creates an order individualized agreement info setup record
+      description: Creates an order individualized agreement info setup record
+      operationId: add_individualized_agreement_dms_configure_individualized_agreement_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderIndividualizedModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/disclaimer-agreement:
+    get:
+      tags:
+      - Agreement
+      summary: Get Saved Disclaimer Agreement
+      operationId: get_disclaimer_acceptance_agreement_dms_configure_disclaimer_agreement_get
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Id
+          type: string
+        name: order_reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Disclaimer Acceptance Agreement Dms Configure Disclaimer Agreement Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/DisclaimerAcceptanceModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Agreement
+      summary: Create Disclaimer Agreement
+      operationId: create_disclaimer_acceptance_dms_configure_disclaimer_agreement_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisclaimerAcceptanceParamsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisclaimerAcceptanceModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Agreement
+      summary: Delete Disclaimer Agreement
+      operationId: remove_disclaimer_acceptance_dms_configure_disclaimer_agreement_delete
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: true
+        schema:
+          title: Disclaimer Name
+          type: string
+        name: disclaimer_name
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/disclaimer-agreement-datetime:
+    get:
+      tags:
+      - Agreement
+      summary: Get Disclaimer Agreement Date Time by Customer ID/Order ID
+      operationId: get_disclaimer_acceptance_date_time_dms_configure_disclaimer_agreement_datetime_get
+      parameters:
+      - required: false
+        schema:
+          title: Customer Reference No
+          type: string
+        name: customer_reference_no
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Number
+          type: string
+        name: order_reference_number
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Disclaimer Acceptance Date Time Dms Configure Disclaimer Agreement Datetime Get
+                type: string
+                format: date-time
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    DisclaimerAcceptanceParamsModel:
+      title: DisclaimerAcceptanceParamsModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        disclaimer_name:
+          title: Disclaimer Name
+          type: string
+        disclaimer_version:
+          title: Disclaimer Version
+          type: number
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    OrderIndividualizedModel:
+      title: OrderIndividualizedModel
+      required:
+      - reference_number
+      type: object
+      properties:
+        reference_number:
+          title: Reference Number
+          type: string
+        individualized_agreement:
+          title: Individualized Agreement
+          type: string
+    DisclaimerAcceptanceModel:
+      title: DisclaimerAcceptanceModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        disclaimer_name:
+          title: Disclaimer Name
+          type: string
+        disclaimer_version:
+          title: Disclaimer Version
+          type: string
+        disclaimer_details:
+          title: Disclaimer Details
+          type: string
+        disclaimer_acceptance_date:
+          title: Disclaimer Acceptance Date
+          type: string
+          format: date-time
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

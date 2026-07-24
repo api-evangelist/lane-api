@@ -1,0 +1,639 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Send  Email  Notification API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Send  Email  Notification
+paths:
+  /dms/order/send-email/{event_name}:
+    post:
+      tags:
+      - Send  Email  Notification
+      summary: send Email notification
+      operationId: send_email_dms_order_send_email__event_name__post
+      parameters:
+      - required: true
+        schema:
+          $ref: '#/components/schemas/Events'
+        name: event_name
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailNotificationRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    CommentDiaryCategory:
+      title: CommentDiaryCategory
+      enum:
+      - General
+      - Underwriting
+      - Change Requests
+      type: string
+      description: An enumeration.
+    Events:
+      title: Events
+      enum:
+      - Customer Verification
+      - Customer Sign up completion
+      - Send Invitation Email
+      - Send Order Link
+      - Credit Application Submission
+      - Credit Application Resubmission
+      - Credit Application Approved
+      - Credit Application Conditioned
+      - Order Cancellation
+      - Order Declined
+      - Order Withdrawn
+      - Payment Successful
+      - Payment Decline
+      - Order Completion
+      - Lead Creation
+      - Asset Inspection Requested
+      - Asset Inspection Completed
+      - Driver License Verification Successful
+      - Driver License Verification Failed
+      - Credit Decision Rejected
+      - Customer Vehicle Pickup/Delivery
+      - Customer Order Created
+      - Customer Order Placed
+      - Car not Available
+      - Lead generation
+      - Order TimeSlots Proposed
+      - Customer Order Availability Confirmed
+      - Generate Compliance Documents
+      - Email Quotation
+      - Email Compliance Documents
+      - Download Quotation
+      - Download Proposal
+      - Email Proposal
+      - Email Proposal to Customer
+      - Customer Order Scheduled
+      - Customer Order Reschedule
+      - Trade in offer rejected
+      - Trade in offer accepted
+      - Trade in offer updated
+      - Availability Confirmed with special price
+      type: string
+      description: An enumeration.
+    GenerateDocumentData:
+      title: GenerateDocumentData
+      required:
+      - company_id
+      - reference_number
+      - customer_reference_id
+      type: object
+      properties:
+        company_id:
+          title: Company Id
+          type: integer
+          description: Company id
+        reference_number:
+          title: Reference Number
+          type: string
+          description: Order Reference Number
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+          description: Customer Reference Id
+        lender_name:
+          title: Lender Name
+          type: string
+          description: Lender Name
+        name:
+          title: Name
+          type: string
+          description: Quote or Proposal Name
+        comments:
+          title: Comments
+          type: string
+          description: General Comments
+        creation_date:
+          title: Creation Date
+          type: string
+          description: Deal Creation Date
+        asset_type:
+          title: Asset Type
+          type: string
+          description: Asset Type
+        client_type:
+          title: Client Type
+          type: string
+          description: Customer Type
+        customer_name:
+          title: Customer Name
+          type: string
+          description: Customer Name
+        first_name:
+          title: First Name
+          type: string
+          description: First Name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last Name
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact Number
+        email_address:
+          title: Email Address
+          type: string
+          description: Email Address
+        id_number:
+          title: Id Number
+          type: string
+          description: ID Number
+        company_name:
+          title: Company Name
+          type: string
+          description: Company Name
+        registration_number:
+          title: Registration Number
+          type: string
+          description: Registration Number
+        trading_as:
+          title: Trading As
+          type: string
+          description: Trading As
+        years_in_business:
+          title: Years In Business
+          type: string
+          description: Years in Business
+        address:
+          title: Address
+          type: string
+          description: Address
+        broker_name:
+          title: Broker Name
+          type: string
+          description: Broker Name
+        introducer_name:
+          title: Introducer Name
+          type: string
+          description: Introducer Name
+        introducer_email:
+          title: Introducer Email
+          type: string
+          description: Introducer Email
+        introducer_contact:
+          title: Introducer Contact
+          type: string
+          description: Introducer Contact
+        asset_cost:
+          title: Asset Cost
+          type: string
+          description: Asset Cost
+        deposit_amount:
+          title: Deposit Amount
+          type: string
+          description: Deposit Amount
+        deposit:
+          title: Deposit
+          type: string
+          description: Deposit
+        finance_amount:
+          title: Finance Amount
+          type: string
+          description: Finance Amount
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance Type
+        advance_payments:
+          title: Advance Payments
+          type: string
+          description: Advance Payments
+        regular_payments:
+          title: Regular Payments
+          type: string
+          description: Regular Payments
+        payment_frequency:
+          title: Payment Frequency
+          type: string
+          description: Payment Frequency
+        payment_mode:
+          title: Payment Mode
+          type: string
+          description: Payment Mode
+        total_payable:
+          title: Total Payable
+          type: string
+          description: Total Payable
+        gross_yield:
+          title: Gross Yield
+          type: string
+          description: Gross Yield
+        net_yield:
+          title: Net Yield
+          type: string
+          description: Net Yield
+        apr:
+          title: Apr
+          type: string
+          description: APR
+        commission_amount:
+          title: Commission Amount
+          type: string
+          description: Commission Amount
+        commission_percentage:
+          title: Commission Percentage
+          type: string
+          description: Commission Percentage
+        rate:
+          title: Rate
+          type: string
+          description: Rate
+        rate_type:
+          title: Rate Type
+          type: string
+          description: Rate Type
+        no_of_advance_payment:
+          title: No Of Advance Payment
+          type: string
+          description: No of Advance Payment
+        no_of_regular_payments:
+          title: No Of Regular Payments
+          type: string
+          description: No of Regular Payments
+        flat_rate_excl_commission:
+          title: Flat Rate Excl Commission
+          type: string
+          description: Flat Rate Excl Commission
+        flat_rate_incl_commission:
+          title: Flat Rate Incl Commission
+          type: string
+          description: Flat Rate Incl Commission
+        balloon_payment:
+          title: Balloon Payment
+          type: string
+          description: Ballon Payment
+        ballon_collection:
+          title: Ballon Collection
+          type: string
+          description: Ballon Collection
+        vat_treatment:
+          title: Vat Treatment
+          type: string
+          description: VAT Treatment
+        vat_amount:
+          title: Vat Amount
+          type: string
+          description: VAT Amount
+        vat_number:
+          title: Vat Number
+          type: string
+          description: VAT Number
+        vat_deferred_type:
+          title: Vat Deferred Type
+          type: string
+          description: VAT Deferred Type
+        document_fee:
+          title: Document Fee
+          type: string
+          description: Document Fee
+        annual_admin_fee:
+          title: Annual Admin Fee
+          type: string
+          description: Annual Admin Fee
+        otp_fee:
+          title: Otp Fee
+          type: string
+          description: OTP Fee
+        product_type:
+          title: Product Type
+          type: string
+          description: Product Type
+        sum_of_advance_rentals:
+          title: Sum Of Advance Rentals
+          type: string
+          description: Sum of Advance Rentals
+        sum_of_fees:
+          title: Sum Of Fees
+          type: string
+          description: Sum of Fees
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: string
+          description: Sum of Periodic Interest
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: string
+          description: Sum of All Rentals
+        rental:
+          title: Rental
+          type: string
+          description: Rental Amount
+        total_payables:
+          title: Total Payables
+          type: string
+          description: Total Payables
+        term:
+          title: Term
+          type: string
+          description: Contract Terms
+        processing_date:
+          title: Processing Date
+          type: string
+          description: Processing Date
+        fees_info:
+          title: Fees Info
+          type: array
+          items:
+            $ref: '#/components/schemas/FeeInfo'
+          description: Fees List
+        director_details:
+          title: Director Details
+          type: array
+          items:
+            $ref: '#/components/schemas/PartnerInfo'
+          description: Directors List
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetInfo'
+          description: Total Assets
+        credit_documents:
+          title: Credit Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/CreditDocuments'
+          description: Credit Documents List
+        payments:
+          title: Payments
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentDetails'
+          description: Total Payments
+        underwriter_comments:
+          title: Underwriter Comments
+          type: array
+          items:
+            $ref: '#/components/schemas/UnderWriterCommentsModel'
+        contact_person_name:
+          title: Contact Person Name
+          type: string
+          description: Contact Person Name
+        contact_person_email:
+          title: Contact Person Email
+          type: string
+          description: Contact Person Email
+        contact_person_contact:
+          title: Contact Person Contact
+          type: string
+          description: Contact Person Contact
+        contact_person_address:
+          title: Contact Person Address
+          type: string
+          description: Contact Person Address
+        total_rentals_without_balloon:
+          title: Total Rentals Without Balloon
+          type: string
+          description: Total Rentals without Balloon
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    FeeInfo:
+      title: FeeInfo
+      type: object
+      properties:
+        amount:
+          title: Amount
+          type: string
+          description: Fee Amount
+        frequency:
+          title: Frequency
+          type: string
+          description: FeeFfrequency
+        name:
+          title: Name
+          type: string
+          description: Fee Name
+        occurence:
+          title: Occurence
+          type: string
+          description: Fee Occurence
+    UnderWriterCommentsModel:
+      title: UnderWriterCommentsModel
+      type: object
+      properties:
+        category:
+          $ref: '#/components/schemas/CommentDiaryCategory'
+        comment:
+          title: Comment
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    PaymentDetails:
+      title: PaymentDetails
+      type: object
+      properties:
+        payment_from:
+          title: Payment From
+          type: string
+          description: Payment From
+        payment_to:
+          title: Payment To
+          type: string
+          description: Payment To
+        amount:
+          title: Amount
+          type: string
+          description: Payment Amount
+        payment_type:
+          title: Payment Type
+          type: string
+          description: Rate Type
+    PartnerInfo:
+      title: PartnerInfo
+      type: object
+      properties:
+        full_name:
+          title: Full Name
+          type: string
+          description: Partner Full Name
+        email:
+          title: Email
+          type: string
+          description: Partner Email
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Partner Contact Number
+        address:
+          title: Address
+          type: string
+          description: Partner Address
+    AssetInfo:
+      title: AssetInfo
+      type: object
+      properties:
+        cost:
+          title: Cost
+          type: string
+          description: Asset Cost
+        quantity:
+          title: Quantity
+          type: string
+          description: Asset Quantity
+        type:
+          title: Type
+          type: string
+          description: Asset Type
+        sub_type:
+          title: Sub Type
+          type: string
+          description: Asset Sub Type
+        condition:
+          title: Condition
+          type: string
+          description: Asset Condition
+        category:
+          title: Category
+          type: string
+          description: Asset Category
+        age:
+          title: Age
+          type: string
+          description: Asset Age
+        rv_balloon_amount:
+          title: Rv Balloon Amount
+          type: string
+          description: Asset RV Balloon Amount
+        total_cost:
+          title: Total Cost
+          type: string
+          description: Asset Total Cost
+        total_rv_balloon_amount:
+          title: Total Rv Balloon Amount
+          type: string
+          description: Asset Total RV Balloon Amount
+        supplier_name:
+          title: Supplier Name
+          type: string
+          description: Asset Supplier Name
+        description:
+          title: Description
+          type: string
+          description: Asset Description
+    EmailNotificationRequestModel:
+      title: EmailNotificationRequestModel
+      required:
+      - data
+      type: object
+      properties:
+        source_email:
+          title: Source Email
+          type: string
+        email:
+          title: Email
+          type: string
+        email_attachment_keys:
+          title: Email Attachment Keys
+          type: array
+          items:
+            type: string
+        data:
+          $ref: '#/components/schemas/GenerateDocumentData'
+        email_subject:
+          title: Email Subject
+          type: string
+        cc_emails:
+          title: Cc Emails
+          type: array
+          items:
+            type: string
+        bcc_emails:
+          title: Bcc Emails
+          type: array
+          items:
+            type: string
+    CreditDocuments:
+      title: CreditDocuments
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Document Name
+        type:
+          title: Type
+          type: string
+          description: Document Type
+        state:
+          title: State
+          type: string
+          description: Document State
+        status:
+          title: Status
+          type: string
+          description: Document Status
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

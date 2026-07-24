@@ -1,0 +1,2593 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Documents API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Documents
+paths:
+  /dms/customer/insurance-information/document-history:
+    get:
+      tags:
+      - Documents
+      summary: Get customer insurance information document history
+      description: Get customer insurance information document history
+      operationId: get_insurance_documents_dms_customer_insurance_information_document_history_get
+      parameters:
+      - description: provide valid reference_id
+        required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: provide valid reference_id
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Insurance Documents Dms Customer Insurance Information Document History Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/add-document:
+    post:
+      tags:
+      - Documents
+      summary: Add insurance document
+      description: Add insurance document
+      operationId: add_insurance_document_dms_customer_insurance_information_add_document_post
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceDocumentsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Add Insurance Document Dms Customer Insurance Information Add Document Post
+                type: array
+                items:
+                  $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/remove-document:
+    delete:
+      tags:
+      - Documents
+      summary: 'Delete insurance document '
+      description: 'Delete insurance document '
+      operationId: remove_insurance_document_depreceted_dms_customer_insurance_information_remove_document_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/insurance-information/remove-insurance-document:
+    patch:
+      tags:
+      - Documents
+      summary: 'Delete insurance document '
+      description: 'Delete insurance document '
+      operationId: remove_insurance_document_dms_customer_insurance_information_remove_insurance_document_patch
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/order-verify-document/{identifier}:
+    post:
+      tags:
+      - Documents
+      summary: Verify Order Documents
+      description: Verify Order Documents
+      operationId: verify_order_document_dms_order_order_verify_document__identifier__post
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/upload-signed-document/{identifier}:
+    post:
+      tags:
+      - Documents
+      summary: Upload Signed Document
+      description: Upload Signed Document
+      operationId: upload_order_signed_document_dms_order_upload_signed_document__identifier__post
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadFile'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/order/generate-document/{event_name}:
+    post:
+      tags:
+      - Documents
+      summary: Generate Document for respective event
+      operationId: generate_documents_dms_order_generate_document__event_name__post
+      parameters:
+      - required: true
+        schema:
+          $ref: '#/components/schemas/Events'
+        name: event_name
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentGenerationWithSignatoryModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document:
+    get:
+      tags:
+      - Documents
+      summary: Get customer documents
+      operationId: get_customer_documents_dms_customer_document_get
+      parameters:
+      - required: false
+        schema:
+          title: External Reference Id
+          type: string
+        name: external_reference_id
+        in: query
+      - required: false
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: false
+        schema:
+          title: Stipulation Code
+          type: string
+        name: stipulation_code
+        in: query
+      - required: false
+        schema:
+          title: Category
+          type: string
+        name: category
+        in: query
+      - required: false
+        schema:
+          title: Document Type
+          type: string
+        name: document_type
+        in: query
+      - description: Accepts only string values
+        required: false
+        schema:
+          title: document_status
+          type: array
+          items:
+            type: string
+          description: Accepts only string values
+        name: document_status
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer Documents Dms Customer Document Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerDocumentWithReviewsResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Documents
+      summary: Creates customer document
+      operationId: add_customer_document_dms_customer_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Documents
+      summary: Delete customer document by identifier
+      operationId: delete_customer_document_dms_customer_document_delete
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDeleteModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Documents
+      summary: Update customer document by identifier
+      operationId: update_customer_document_dms_customer_document_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/status:
+    get:
+      tags:
+      - Documents
+      summary: Get customer document by identifier
+      operationId: get_customer_document_identifier_dms_customer_document_status_get
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Documents
+      summary: Update customer document status
+      operationId: update_customer_document_status_dms_customer_document_status_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentStatus'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document-history:
+    get:
+      tags:
+      - Documents
+      summary: Get customer document history
+      operationId: get_customer_document_history_dms_customer_document_history_get
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: From Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: from_date
+        in: query
+      - description: 'Format: YYYY-MM-DD'
+        required: false
+        schema:
+          title: To Date
+          type: string
+          description: 'Format: YYYY-MM-DD'
+          format: date
+        name: to_date
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerStipulationPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/documents/{customer_reference_id}:
+    patch:
+      tags:
+      - Documents
+      summary: Update customer document by identifier
+      operationId: get_customer_document_dms_customer_documents__customer_reference_id__patch
+      parameters:
+      - required: true
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Item
+              type: array
+              items:
+                $ref: '#/components/schemas/CustomerDocumentUpdateDMSModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/review:
+    get:
+      tags:
+      - Documents
+      summary: Get customer document reviews
+      operationId: get_customer_document_reviews_by_identifier_dms_customer_document_review_get
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer Document Reviews By Identifier Dms Customer Document Review Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerDocumentReviewResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Documents
+      summary: Add customer document review
+      operationId: add_customer_document_review_dms_customer_document_review_post
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentReviewModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentReviewResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/uploading-status:
+    get:
+      tags:
+      - Documents
+      summary: Get customer document upload status
+      operationId: get_customer_document_upload_status_dms_customer_document_uploading_status_get
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentUploadStatus'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Documents
+      summary: Update customer document upload status
+      operationId: update_customer_document_uploading_status_dms_customer_document_uploading_status_patch
+      parameters:
+      - required: true
+        schema:
+          title: Document Identifier
+          type: string
+        name: document_identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerDocumentUploadStatus'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/download:
+    get:
+      tags:
+      - Documents
+      summary: Get customer document url by artifect_id
+      description: Get customer document url by artifect_id
+      operationId: get_customer_document_url_by_artifect_id_dms_customer_document_download_get
+      parameters:
+      - required: true
+        schema:
+          title: Artifect Id
+          type: string
+        name: artifect_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/download-stream:
+    get:
+      tags:
+      - Documents
+      summary: Get customer document stream by artifect_id
+      description: Get customer document stream by artifect_id
+      operationId: get_customer_document_stream_by_artifect_id_dms_customer_document_download_stream_get
+      parameters:
+      - required: true
+        schema:
+          title: Artifect Id
+          type: string
+        name: artifect_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/document/signature-document:
+    post:
+      tags:
+      - Documents
+      summary: Customer Document Signature
+      operationId: signature_document_dms_customer_document_signature_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignatureCustomerDocument'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/additional-document:
+    post:
+      tags:
+      - Documents
+      summary: Creates customer document
+      operationId: add_customer_additional_document_dms_customer_additional_document_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerAdditionalDocumentModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerDocumentResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-package:
+    get:
+      tags:
+      - Documents
+      summary: Get document package by identifier
+      operationId: get_document_package_dms_configure_document_package_get
+      parameters:
+      - required: true
+        schema:
+          title: Package Id
+          type: string
+        name: package_id
+        in: query
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Record not found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Documents
+      summary: Create document package
+      operationId: create_document_package_new_dms_configure_document_package_post
+      parameters:
+      - required: false
+        schema:
+          title: Is Product
+          type: boolean
+          default: false
+        name: is_product
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentPackageRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '412':
+          description: Precondition Failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Documents
+      summary: Cancel document package and document by identifier
+      operationId: cancel_document_package_dms_configure_document_package_delete
+      parameters:
+      - required: true
+        schema:
+          title: Package Id
+          type: string
+        name: package_id
+        in: query
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-package-by-reference-id:
+    get:
+      tags:
+      - Documents
+      summary: Get document package by reference_id
+      operationId: get_document_package_by_reference_id_dms_configure_document_package_by_reference_id_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-package/document:
+    get:
+      tags:
+      - Documents
+      summary: Get document from document package by identifier
+      operationId: get_document_dms_configure_document_package_document_get
+      parameters:
+      - required: true
+        schema:
+          title: Package Id
+          type: string
+        name: package_id
+        in: query
+      - required: true
+        schema:
+          title: Document Id
+          type: string
+        name: document_id
+        in: query
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsResponseModel'
+        '404':
+          description: Record not found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-pre-signed-url/{key}:
+    get:
+      tags:
+      - Documents
+      summary: Get document package by identifier
+      operationId: get_document_pre_signed_url_dms_configure_document_pre_signed_url__key__get
+      parameters:
+      - required: true
+        schema:
+          title: Key
+          type: string
+        name: key
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-notification-bookmarks:
+    get:
+      tags:
+      - Documents
+      summary: Get bookmarks of documents and notifications
+      operationId: get_document_notification_bookmarks_dms_configure_document_notification_bookmarks_get
+      parameters:
+      - required: false
+        schema:
+          title: Event Name
+          type: string
+        name: event_name
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /dms/contract-document:
+    post:
+      summary: Handle contract document
+      description: Handle contract document
+      operationId: contract_documents_dms_contract_document_post
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: query
+      - required: true
+        schema:
+          title: Document Event
+          type: string
+        name: document_event
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+      tags:
+      - Documents
+components:
+  schemas:
+    ErrorModel:
+      title: ErrorModel
+      type: object
+      properties:
+        code:
+          title: Error code
+          type: string
+          description: Error code based on the validation, if any validation fail
+        message:
+          title: Error message
+          type: string
+          description: Error code based on the validation, if any validation fail
+    Events:
+      title: Events
+      enum:
+      - Customer Verification
+      - Customer Sign up completion
+      - Send Invitation Email
+      - Send Order Link
+      - Credit Application Submission
+      - Credit Application Resubmission
+      - Credit Application Approved
+      - Credit Application Conditioned
+      - Order Cancellation
+      - Order Declined
+      - Order Withdrawn
+      - Payment Successful
+      - Payment Decline
+      - Order Completion
+      - Lead Creation
+      - Asset Inspection Requested
+      - Asset Inspection Completed
+      - Driver License Verification Successful
+      - Driver License Verification Failed
+      - Credit Decision Rejected
+      - Customer Vehicle Pickup/Delivery
+      - Customer Order Created
+      - Customer Order Placed
+      - Car not Available
+      - Lead generation
+      - Order TimeSlots Proposed
+      - Customer Order Availability Confirmed
+      - Generate Compliance Documents
+      - Email Quotation
+      - Email Compliance Documents
+      - Download Quotation
+      - Download Proposal
+      - Email Proposal
+      - Email Proposal to Customer
+      - Customer Order Scheduled
+      - Customer Order Reschedule
+      - Trade in offer rejected
+      - Trade in offer accepted
+      - Trade in offer updated
+      - Availability Confirmed with special price
+      type: string
+      description: An enumeration.
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    FeeInfo:
+      title: FeeInfo
+      type: object
+      properties:
+        amount:
+          title: Amount
+          type: string
+          description: Fee Amount
+        frequency:
+          title: Frequency
+          type: string
+          description: FeeFfrequency
+        name:
+          title: Name
+          type: string
+          description: Fee Name
+        occurence:
+          title: Occurence
+          type: string
+          description: Fee Occurence
+    CustomerDocumentUpdateModel:
+      title: CustomerDocumentUpdateModel
+      required:
+      - customer_reference_id
+      - content_type
+      - updated_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        document:
+          title: Document
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          $ref: '#/components/schemas/StipulationCategory'
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+    SignatureCustomerDocument:
+      title: SignatureCustomerDocument
+      required:
+      - document_url
+      - document_name
+      - customer_id
+      - identifier
+      type: object
+      properties:
+        document_url:
+          title: Document Url
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    PartnerInfo:
+      title: PartnerInfo
+      type: object
+      properties:
+        full_name:
+          title: Full Name
+          type: string
+          description: Partner Full Name
+        email:
+          title: Email
+          type: string
+          description: Partner Email
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Partner Contact Number
+        address:
+          title: Address
+          type: string
+          description: Partner Address
+    DocumentWithCustomSignatories:
+      title: DocumentWithCustomSignatories
+      required:
+      - data
+      - template
+      - signatories
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/GenerateDocumentData'
+        template:
+          title: Template
+          type: string
+        signatories:
+          title: Signatories
+          type: array
+          items:
+            type: string
+    CreditDocuments:
+      title: CreditDocuments
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Document Name
+        type:
+          title: Type
+          type: string
+          description: Document Type
+        state:
+          title: State
+          type: string
+          description: Document State
+        status:
+          title: Status
+          type: string
+          description: Document Status
+    CustomerDocumentReviewModel:
+      title: CustomerDocumentReviewModel
+      required:
+      - review_notes
+      - review_status
+      - reviewed_by
+      type: object
+      properties:
+        review_notes:
+          title: Review Notes
+          type: string
+        review_status:
+          $ref: '#/components/schemas/DocumentUploadStatus'
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    DocumentRequestModel:
+      title: DocumentRequestModel
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        template:
+          title: Template
+          type: string
+        data:
+          title: Data
+          type: object
+        meta_data:
+          title: Meta Data
+          type: object
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        signatures:
+          title: Signatures
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentSignaturesModel'
+    CommentDiaryCategory:
+      title: CommentDiaryCategory
+      enum:
+      - General
+      - Underwriting
+      - Change Requests
+      type: string
+      description: An enumeration.
+    CustomerDocumentUploadStatus:
+      title: CustomerDocumentUploadStatus
+      required:
+      - document_upload_indicator
+      type: object
+      properties:
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+    InsuranceDocumentsModel:
+      title: InsuranceDocumentsModel
+      required:
+      - content_type
+      - name
+      - file_size
+      type: object
+      properties:
+        document:
+          title: Document
+          type: string
+        content_type:
+          title: Content Type
+          minLength: 1
+          type: string
+          description: 'format: application/pdf, image/png '
+        name:
+          title: Name
+          minLength: 1
+          type: string
+        file_size:
+          title: File Size
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        doucment_reference_id:
+          title: Doucment Reference Id
+          type: string
+    AssetInfo:
+      title: AssetInfo
+      type: object
+      properties:
+        cost:
+          title: Cost
+          type: string
+          description: Asset Cost
+        quantity:
+          title: Quantity
+          type: string
+          description: Asset Quantity
+        type:
+          title: Type
+          type: string
+          description: Asset Type
+        sub_type:
+          title: Sub Type
+          type: string
+          description: Asset Sub Type
+        condition:
+          title: Condition
+          type: string
+          description: Asset Condition
+        category:
+          title: Category
+          type: string
+          description: Asset Category
+        age:
+          title: Age
+          type: string
+          description: Asset Age
+        rv_balloon_amount:
+          title: Rv Balloon Amount
+          type: string
+          description: Asset RV Balloon Amount
+        total_cost:
+          title: Total Cost
+          type: string
+          description: Asset Total Cost
+        total_rv_balloon_amount:
+          title: Total Rv Balloon Amount
+          type: string
+          description: Asset Total RV Balloon Amount
+        supplier_name:
+          title: Supplier Name
+          type: string
+          description: Asset Supplier Name
+        description:
+          title: Description
+          type: string
+          description: Asset Description
+    CustomerDeleteModel:
+      title: CustomerDeleteModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    DeleteRequestModel:
+      title: DeleteRequestModel
+      required:
+      - deleted_by
+      type: object
+      properties:
+        deleted_by:
+          title: Deleted By
+          type: string
+    DocumentPackageRequestModel:
+      title: DocumentPackageRequestModel
+      type: object
+      properties:
+        order_id:
+          title: Order Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        type:
+          title: Type
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        documents:
+          title: Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentRequestModel'
+    InsuranceDocumentsResponseModel:
+      title: InsuranceDocumentsResponseModel
+      type: object
+      properties:
+        document_uri:
+          title: Document Uri
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        name:
+          title: Name
+          type: string
+        file_size:
+          title: File Size
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date
+        deleted_by:
+          title: Deleted By
+          type: string
+    DocumentsModel:
+      title: DocumentsModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        title:
+          title: Title
+          type: string
+        template:
+          title: Template
+          type: string
+        data:
+          title: Data
+          type: object
+        meta_data:
+          title: Meta Data
+          type: object
+        status:
+          title: Status
+          type: string
+        last_viewed_at:
+          title: Last Viewed At
+          type: string
+          format: date-time
+        signatures:
+          title: Signatures
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentSignaturesModel'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        generated_document_uri:
+          title: Generated Document Uri
+          type: string
+    CustomerDocumentResponseModel:
+      title: CustomerDocumentResponseModel
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          title: Category
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        document_url:
+          title: Document Url
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_at:
+          title: Created At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        deleted_at:
+          title: Deleted At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        deleted_by:
+          title: Deleted By
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+          default: false
+        identifier:
+          title: Identifier
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+    GenerateDocumentData:
+      title: GenerateDocumentData
+      required:
+      - company_id
+      - reference_number
+      - customer_reference_id
+      type: object
+      properties:
+        company_id:
+          title: Company Id
+          type: integer
+          description: Company id
+        reference_number:
+          title: Reference Number
+          type: string
+          description: Order Reference Number
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+          description: Customer Reference Id
+        lender_name:
+          title: Lender Name
+          type: string
+          description: Lender Name
+        name:
+          title: Name
+          type: string
+          description: Quote or Proposal Name
+        comments:
+          title: Comments
+          type: string
+          description: General Comments
+        creation_date:
+          title: Creation Date
+          type: string
+          description: Deal Creation Date
+        asset_type:
+          title: Asset Type
+          type: string
+          description: Asset Type
+        client_type:
+          title: Client Type
+          type: string
+          description: Customer Type
+        customer_name:
+          title: Customer Name
+          type: string
+          description: Customer Name
+        first_name:
+          title: First Name
+          type: string
+          description: First Name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last Name
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact Number
+        email_address:
+          title: Email Address
+          type: string
+          description: Email Address
+        id_number:
+          title: Id Number
+          type: string
+          description: ID Number
+        company_name:
+          title: Company Name
+          type: string
+          description: Company Name
+        registration_number:
+          title: Registration Number
+          type: string
+          description: Registration Number
+        trading_as:
+          title: Trading As
+          type: string
+          description: Trading As
+        years_in_business:
+          title: Years In Business
+          type: string
+          description: Years in Business
+        address:
+          title: Address
+          type: string
+          description: Address
+        broker_name:
+          title: Broker Name
+          type: string
+          description: Broker Name
+        introducer_name:
+          title: Introducer Name
+          type: string
+          description: Introducer Name
+        introducer_email:
+          title: Introducer Email
+          type: string
+          description: Introducer Email
+        introducer_contact:
+          title: Introducer Contact
+          type: string
+          description: Introducer Contact
+        asset_cost:
+          title: Asset Cost
+          type: string
+          description: Asset Cost
+        deposit_amount:
+          title: Deposit Amount
+          type: string
+          description: Deposit Amount
+        deposit:
+          title: Deposit
+          type: string
+          description: Deposit
+        finance_amount:
+          title: Finance Amount
+          type: string
+          description: Finance Amount
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance Type
+        advance_payments:
+          title: Advance Payments
+          type: string
+          description: Advance Payments
+        regular_payments:
+          title: Regular Payments
+          type: string
+          description: Regular Payments
+        payment_frequency:
+          title: Payment Frequency
+          type: string
+          description: Payment Frequency
+        payment_mode:
+          title: Payment Mode
+          type: string
+          description: Payment Mode
+        total_payable:
+          title: Total Payable
+          type: string
+          description: Total Payable
+        gross_yield:
+          title: Gross Yield
+          type: string
+          description: Gross Yield
+        net_yield:
+          title: Net Yield
+          type: string
+          description: Net Yield
+        apr:
+          title: Apr
+          type: string
+          description: APR
+        commission_amount:
+          title: Commission Amount
+          type: string
+          description: Commission Amount
+        commission_percentage:
+          title: Commission Percentage
+          type: string
+          description: Commission Percentage
+        rate:
+          title: Rate
+          type: string
+          description: Rate
+        rate_type:
+          title: Rate Type
+          type: string
+          description: Rate Type
+        no_of_advance_payment:
+          title: No Of Advance Payment
+          type: string
+          description: No of Advance Payment
+        no_of_regular_payments:
+          title: No Of Regular Payments
+          type: string
+          description: No of Regular Payments
+        flat_rate_excl_commission:
+          title: Flat Rate Excl Commission
+          type: string
+          description: Flat Rate Excl Commission
+        flat_rate_incl_commission:
+          title: Flat Rate Incl Commission
+          type: string
+          description: Flat Rate Incl Commission
+        balloon_payment:
+          title: Balloon Payment
+          type: string
+          description: Ballon Payment
+        ballon_collection:
+          title: Ballon Collection
+          type: string
+          description: Ballon Collection
+        vat_treatment:
+          title: Vat Treatment
+          type: string
+          description: VAT Treatment
+        vat_amount:
+          title: Vat Amount
+          type: string
+          description: VAT Amount
+        vat_number:
+          title: Vat Number
+          type: string
+          description: VAT Number
+        vat_deferred_type:
+          title: Vat Deferred Type
+          type: string
+          description: VAT Deferred Type
+        document_fee:
+          title: Document Fee
+          type: string
+          description: Document Fee
+        annual_admin_fee:
+          title: Annual Admin Fee
+          type: string
+          description: Annual Admin Fee
+        otp_fee:
+          title: Otp Fee
+          type: string
+          description: OTP Fee
+        product_type:
+          title: Product Type
+          type: string
+          description: Product Type
+        sum_of_advance_rentals:
+          title: Sum Of Advance Rentals
+          type: string
+          description: Sum of Advance Rentals
+        sum_of_fees:
+          title: Sum Of Fees
+          type: string
+          description: Sum of Fees
+        sum_of_periodic_interest:
+          title: Sum Of Periodic Interest
+          type: string
+          description: Sum of Periodic Interest
+        sum_of_rentals:
+          title: Sum Of Rentals
+          type: string
+          description: Sum of All Rentals
+        rental:
+          title: Rental
+          type: string
+          description: Rental Amount
+        total_payables:
+          title: Total Payables
+          type: string
+          description: Total Payables
+        term:
+          title: Term
+          type: string
+          description: Contract Terms
+        processing_date:
+          title: Processing Date
+          type: string
+          description: Processing Date
+        fees_info:
+          title: Fees Info
+          type: array
+          items:
+            $ref: '#/components/schemas/FeeInfo'
+          description: Fees List
+        director_details:
+          title: Director Details
+          type: array
+          items:
+            $ref: '#/components/schemas/PartnerInfo'
+          description: Directors List
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/AssetInfo'
+          description: Total Assets
+        credit_documents:
+          title: Credit Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/CreditDocuments'
+          description: Credit Documents List
+        payments:
+          title: Payments
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentDetails'
+          description: Total Payments
+        underwriter_comments:
+          title: Underwriter Comments
+          type: array
+          items:
+            $ref: '#/components/schemas/UnderWriterCommentsModel'
+        contact_person_name:
+          title: Contact Person Name
+          type: string
+          description: Contact Person Name
+        contact_person_email:
+          title: Contact Person Email
+          type: string
+          description: Contact Person Email
+        contact_person_contact:
+          title: Contact Person Contact
+          type: string
+          description: Contact Person Contact
+        contact_person_address:
+          title: Contact Person Address
+          type: string
+          description: Contact Person Address
+        total_rentals_without_balloon:
+          title: Total Rentals Without Balloon
+          type: string
+          description: Total Rentals without Balloon
+    CustomerAdditionalDocumentModel:
+      title: CustomerAdditionalDocumentModel
+      required:
+      - customer_reference_id
+      - document_type
+      - created_by
+      - content_type
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        document:
+          title: Document
+          type: string
+        comment:
+          title: Comment
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+    CustomerDocumentModel:
+      title: CustomerDocumentModel
+      required:
+      - customer_reference_id
+      - external_reference_id
+      - document_type
+      - created_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        comment:
+          title: Comment
+          type: string
+    CustomerDocumentUpdateDMSModel:
+      title: CustomerDocumentUpdateDMSModel
+      required:
+      - customer_reference_id
+      - content_type
+      - updated_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        document:
+          title: Document
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          $ref: '#/components/schemas/StipulationCategory'
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+    UploadFile:
+      title: UploadFile
+      required:
+      - file
+      - file_name
+      - content_type
+      type: object
+      properties:
+        file:
+          title: File
+          type: string
+        file_name:
+          title: File Name
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    ErrorDetailModel:
+      title: ErrorDetailModel
+      required:
+      - detail
+      type: object
+      properties:
+        detail:
+          $ref: '#/components/schemas/ErrorModel'
+    DocumentGenerationWithSignatoryModel:
+      title: DocumentGenerationWithSignatoryModel
+      required:
+      - company_id
+      - documents
+      type: object
+      properties:
+        company_id:
+          title: Company Id
+          type: integer
+        documents:
+          title: Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentWithCustomSignatories'
+    CustomerDocumentStatus:
+      title: CustomerDocumentStatus
+      required:
+      - document_status
+      type: object
+      properties:
+        document_status:
+          $ref: '#/components/schemas/DocumentUploadStatus'
+    UnderWriterCommentsModel:
+      title: UnderWriterCommentsModel
+      type: object
+      properties:
+        category:
+          $ref: '#/components/schemas/CommentDiaryCategory'
+        comment:
+          title: Comment
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    CustomerStipulationPaginationResponse:
+      title: CustomerStipulationPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerDocumentWithReviewsResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    CustomerDocumentWithReviewsResponseModel:
+      title: CustomerDocumentWithReviewsResponseModel
+      required:
+      - document_reviews
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          title: Category
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        document_url:
+          title: Document Url
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_status:
+          title: Document Status
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        created_at:
+          title: Created At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        deleted_at:
+          title: Deleted At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        deleted_by:
+          title: Deleted By
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+          default: false
+        identifier:
+          title: Identifier
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        document_reviews:
+          title: Document Reviews
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerDocumentReviewPreResponseModel'
+    CustomerDocumentReviewPreResponseModel:
+      title: CustomerDocumentReviewPreResponseModel
+      type: object
+      properties:
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        review_date_time:
+          title: Review Date Time
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        review_status:
+          title: Review Status
+          type: string
+        review_notes:
+          title: Review Notes
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    DocumentsResponseModel:
+      title: DocumentsResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        pdf:
+          title: Pdf
+          type: string
+        title:
+          title: Title
+          type: string
+        template:
+          title: Template
+          type: string
+        data:
+          title: Data
+          type: object
+        meta_data:
+          title: Meta Data
+          type: object
+        status:
+          title: Status
+          type: string
+        last_viewed_at:
+          title: Last Viewed At
+          type: string
+          format: date-time
+        signatures:
+          title: Signatures
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentSignaturesModel'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        generated_document_uri:
+          title: Generated Document Uri
+          type: string
+    PaymentDetails:
+      title: PaymentDetails
+      type: object
+      properties:
+        payment_from:
+          title: Payment From
+          type: string
+          description: Payment From
+        payment_to:
+          title: Payment To
+          type: string
+          description: Payment To
+        amount:
+          title: Amount
+          type: string
+          description: Payment Amount
+        payment_type:
+          title: Payment Type
+          type: string
+          description: Rate Type
+    CustomerDocumentReviewResponseModel:
+      title: CustomerDocumentReviewResponseModel
+      type: object
+      properties:
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        review_date_time:
+          title: Review Date Time
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        review_status:
+          title: Review Status
+          type: string
+        review_notes:
+          title: Review Notes
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        document_identifier:
+          title: Document Identifier
+          type: string
+    DocumentSignaturesModel:
+      title: DocumentSignaturesModel
+      required:
+      - id
+      - type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        status:
+          title: Status
+          type: string
+        type:
+          title: Type
+          type: string
+        signer:
+          title: Signer
+          type: string
+        signed_at:
+          title: Signed At
+          type: string
+        x:
+          title: X
+          type: integer
+        y:
+          title: Y
+          type: integer
+        x_bound:
+          title: X Bound
+          type: integer
+        y_bound:
+          title: Y Bound
+          type: integer
+        width:
+          title: Width
+          type: integer
+        height:
+          title: Height
+          type: integer
+        page:
+          title: Page
+          type: integer
+        date_field_id:
+          title: Date Field Id
+          type: string
+    DocumentPackageResponseModel:
+      title: DocumentPackageResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        order_id:
+          title: Order Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        type:
+          title: Type
+          type: string
+        status:
+          title: Status
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        documents:
+          title: Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentsModel'
+    StipulationCategory:
+      title: StipulationCategory
+      enum:
+      - STIP
+      - NON_STIP
+      type: string
+      description: An enumeration.
+    DocumentUploadStatus:
+      title: DocumentUploadStatus
+      enum:
+      - Draft
+      - InProgress
+      - Approved
+      - SoftReject
+      - Reject
+      type: string
+      description: An enumeration.
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

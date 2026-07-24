@@ -1,0 +1,196 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Code API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Code
+paths:
+  /dms/configure/assets-by-trim-code/{trim_code}:
+    get:
+      tags:
+      - Code
+      summary: Get assets by trim code
+      description: Get assets by trim code
+      operationId: quote_comparison_dms_configure_assets_by_trim_code__trim_code__get
+      parameters:
+      - required: true
+        schema:
+          title: Trim Code
+          minLength: 1
+          type: string
+        name: trim_code
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssetsByTrimCodeResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/inventory/reference-data-by-dealer-code/{dealer_code}:
+    get:
+      tags:
+      - Code
+      summary: Get Inventory Reference Data
+      operationId: get_inventory_reference_data_dms_inventory_reference_data_by_dealer_code__dealer_code__get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/dealer/preference-by-dealer-code/{dealer_code}:
+    get:
+      tags:
+      - Code
+      summary: Get Dealer Preference By Dealer Code
+      operationId: get_dealer_preference_by_dealer_code_dms_dealer_preference_by_dealer_code__dealer_code__get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/dealer/fee/dealer-code/{dealer_code}:
+    get:
+      tags:
+      - Code
+      summary: Get All Dealer Fee By Code
+      operationId: get_all_dealer_fee_by_code_dms_dealer_fee_dealer_code__dealer_code__get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: path
+      - required: false
+        schema:
+          title: State Code
+          type: string
+        name: state_code
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    AssetsByTrimCodeResponse:
+      title: AssetsByTrimCodeResponse
+      type: object
+      properties:
+        asset_make_id:
+          title: Asset Make Id
+          type: integer
+        asset_model_id:
+          title: Asset Model Id
+          type: integer
+        asset_trim_id:
+          title: Asset Trim Id
+          type: integer
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

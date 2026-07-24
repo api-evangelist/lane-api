@@ -1,0 +1,684 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Payments API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Payments
+paths:
+  /dms/customer/payment-information:
+    get:
+      tags:
+      - Payments
+      summary: Get customer payment information
+      description: Get customer payment information
+      operationId: get_customer_payment_info_by_dms_customer_payment_information_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Customer Payment Info By Dms Customer Payment Information Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerPaymentInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Payments
+      summary: Create customer payment information
+      description: Create customer payment information
+      operationId: add_customer_payment_info_dms_customer_payment_information_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerPaymentModelTypeMandatory'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPaymentInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Payments
+      summary: Delete customer payment information
+      description: Delete all customer payment information
+      operationId: delete_customer_payment_info_by_id_dms_customer_payment_information_delete
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          minLength: 1
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Payments
+      summary: Update customer payment information
+      description: Update customer payment information
+      operationId: update_customer_payment_dms_customer_payment_information_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerPaymentModelTypeMandatory'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPaymentInformationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/affordability-check/monthly-payment-calculation/V2/:
+    post:
+      tags:
+      - Payments
+      summary: Monthly Payment Calculation V2
+      operationId: monthly_payment_calculation_v2_dms_affordability_check_monthly_payment_calculation_V2__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonthlyPaymentCalculationModelV2'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/get-payment-methods/{reference_number}:
+    get:
+      tags:
+      - Payments
+      summary: Get Payment Methods & Get Paid Amount
+      description: Get Payment Methods & Get Paid Amount
+      operationId: get_payment_methods_dms_get_payment_methods__reference_number__get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/plaid-link-token/:
+    post:
+      tags:
+      - Payments
+      summary: Create Link Token
+      description: Creates a link token which is required when initialing Link. Once Link is initialized, it returns a public token.
+      operationId: create_plaid_link_token_dms_plaid_link_token__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePlaidLinkToken'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaidLinkTokenResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/create-payment/:
+    post:
+      tags:
+      - Payments
+      summary: Create payment for new Order
+      description: Create payment for new Order
+      operationId: create_customer_order_dms_create_payment__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePayment'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePaymentResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/update-payment/:
+    post:
+      tags:
+      - Payments
+      summary: Update Order Payment
+      description: This end point will be used to handle webhook.
+      operationId: update_payment_status_dms_update_payment__post
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/add-payment-details/:
+    post:
+      tags:
+      - Payments
+      summary: Add Payment Details from dealer side
+      description: Add Payment Details from dealer side
+      operationId: add_payment_details_dms_add_payment_details__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddPaymentDetails'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/remove-payment-details/{order_payment_detail_id}:
+    put:
+      tags:
+      - Payments
+      summary: Remove the order payment detail
+      description: Remove the order payment detail
+      operationId: remove_payment_details_dms_remove_payment_details__order_payment_detail_id__put
+      parameters:
+      - required: true
+        schema:
+          title: Order Payment Detail Id
+          type: integer
+        name: order_payment_detail_id
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    CustomerPaymentInformationResponseModel:
+      title: CustomerPaymentInformationResponseModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        reference_id:
+          title: Reference Id
+          type: string
+          description: Reference Id
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    CreatePayment:
+      title: CreatePayment
+      required:
+      - email
+      - amount
+      - reference_number
+      type: object
+      properties:
+        email:
+          title: Email
+          type: string
+        name:
+          title: Name
+          type: string
+        amount:
+          title: Amount
+          type: number
+        reference_number:
+          title: Reference Number
+          type: string
+        token:
+          title: Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        payment_method_id:
+          title: Payment Method Id
+          type: string
+        payment_method_type:
+          allOf:
+          - $ref: '#/components/schemas/PaymentMethodType'
+          default: card
+    PaymentOption:
+      title: PaymentOption
+      type: object
+      properties:
+        redirect_url:
+          title: Redirect Url
+          type: string
+        payment_method:
+          title: Payment Method
+          type: string
+        card:
+          title: Card
+          type: object
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    PlaidLinkTokenResponseModel:
+      title: PlaidLinkTokenResponseModel
+      required:
+      - link_token
+      - expiration
+      - request_id
+      type: object
+      properties:
+        link_token:
+          title: Link Token
+          type: string
+          description: Link Token
+        expiration:
+          title: Expiration
+          type: string
+          description: Expiration
+        request_id:
+          title: Request Id
+          type: string
+          description: Request Id
+    AddPaymentDetails:
+      title: AddPaymentDetails
+      required:
+      - amount
+      - reference_number
+      type: object
+      properties:
+        amount:
+          title: Amount
+          type: number
+        reference_number:
+          title: Reference Number
+          type: string
+        payment_method_type:
+          allOf:
+          - $ref: '#/components/schemas/PaymentMethodType'
+          default: cheque
+        cheque_number:
+          title: Cheque Number
+          type: string
+        payment_date:
+          title: Payment Date
+          type: string
+          format: date-time
+        order_payment_detail_id:
+          title: Order Payment Detail Id
+          type: integer
+    MonthlyPaymentCalculationModelV2:
+      title: MonthlyPaymentCalculationModelV2
+      required:
+      - asset_make_name
+      - asset_model_name
+      - asset_trim_name
+      - dealer_id
+      - company_id
+      - rental_mode
+      - financed_amount
+      - terms
+      type: object
+      properties:
+        asset_make_name:
+          title: Asset Make Name
+          type: string
+        asset_model_name:
+          title: Asset Model Name
+          type: string
+        asset_trim_name:
+          title: Asset Trim Name
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        company_id:
+          title: Company Id
+          type: integer
+        rental_mode:
+          title: Rental Mode
+          type: string
+        financed_amount:
+          title: Financed Amount
+          type: number
+        terms:
+          title: Terms
+          type: array
+          items:
+            type: integer
+    CustomerPaymentModelTypeMandatory:
+      title: CustomerPaymentModelTypeMandatory
+      required:
+      - type
+      - reference_id
+      type: object
+      properties:
+        type:
+          title: Type
+          minLength: 1
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+    CreatePaymentResponse:
+      title: CreatePaymentResponse
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+          description: Unique identifier for the object.
+        amount:
+          title: Amount
+          type: number
+          description: Amount intended to be collected by this PaymentIntent.
+        amount_capturable:
+          title: Amount Capturable
+          type: integer
+          description: Amount that can be captured from this PaymentIntent.
+        amount_details:
+          title: Amount Details
+          type: object
+          description: Details about items included in the amount.
+        amount_received:
+          title: Amount Received
+          type: integer
+          description: Amount that was collected by this PaymentIntent.
+        application_fee_amount:
+          title: Application Fee Amount
+          type: integer
+          description: The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owners account.
+        client_secret:
+          title: Client Secret
+          type: string
+          description: The client secret of this PaymentIntent
+        capture_method:
+          title: Capture Method
+          type: string
+          description: Controls when the funds will be captured from the customers account. Possible values *automatic* and *manual*.
+        currency:
+          title: Currency
+          type: string
+          description: Three-letter ISO currency code, in lowercase.
+        customer:
+          title: Customer
+          type: string
+          description: ID of the Customer this PaymentIntent belongs to, if one exists.
+        metadata:
+          title: Metadata
+          type: object
+          description: Set of key-value pairs that you can attach to an object.
+        payment_method:
+          title: Payment Method
+          type: string
+          description: ID of the payment method used in this PaymentIntent.
+        payment_method_type:
+          title: Payment Method Type
+          type: string
+          description: Payment method type of the payment, e.g. *card*, *us_bank_account*
+        status:
+          title: Status
+          type: string
+          description: Status of this PaymentIntent.
+        payment_option:
+          title: Payment Option
+          allOf:
+          - $ref: '#/components/schemas/PaymentOption'
+          description: Detailed representation of the payment method.
+        order_id:
+          title: Order Id
+          type: string
+          description: The merchant order Id.
+    CreatePlaidLinkToken:
+      title: CreatePlaidLinkToken
+      required:
+      - user_id
+      type: object
+      properties:
+        user_id:
+          title: User Id
+          anyOf:
+          - type: string
+          - type: integer
+          description: A unique ID representing the end user. Typically this will be a user ID from your application.
+    PaymentMethodType:
+      title: PaymentMethodType
+      enum:
+      - card
+      - ach_debit
+      - cheque
+      type: string
+      description: An enumeration.
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

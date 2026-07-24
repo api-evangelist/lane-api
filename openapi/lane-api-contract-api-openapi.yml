@@ -1,0 +1,1056 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Contract API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Contract
+paths:
+  /dms/contract-document:
+    post:
+      summary: Handle contract document
+      description: Handle contract document
+      operationId: contract_documents_dms_contract_document_post
+      parameters:
+      - required: true
+        schema:
+          title: Reference Number
+          type: string
+        name: reference_number
+        in: query
+      - required: true
+        schema:
+          title: Document Event
+          type: string
+        name: document_event
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+      tags:
+      - Contract
+  /dms/contract:
+    get:
+      tags:
+      - Contract
+      summary: Get active contract
+      description: Get active contract
+      operationId: get_active_contract_dms_contract_get
+      parameters:
+      - required: false
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      - required: false
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: false
+        schema:
+          title: External Order Id
+          type: string
+        name: external_order_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContractResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Contract
+      summary: Create contract
+      description: Create contract
+      operationId: create_contract_dms_contract_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContractCreateModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContractResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Contract
+      summary: Update contract
+      description: Update contract
+      operationId: update_contract_dms_contract_patch
+      parameters:
+      - required: true
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContractUpdateModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContractResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/contract/past-due-webhook:
+    patch:
+      tags:
+      - Contract
+      summary: Past due webhook
+      description: Past due webhook
+      operationId: past_due_webhook_dms_contract_past_due_webhook_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Event
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /dms/contract/all:
+    get:
+      tags:
+      - Contract
+      summary: Get all contract records
+      description: Get all contract records
+      operationId: get_all_contracts_dms_contract_all_get
+      parameters:
+      - required: true
+        schema:
+          title: Page Number
+          type: integer
+        name: page_number
+        in: query
+      - required: true
+        schema:
+          title: Page Size
+          minimum: 1
+          type: integer
+        name: page_size
+        in: query
+      - required: false
+        schema:
+          title: Identifier
+          type: string
+        name: identifier
+        in: query
+      - required: false
+        schema:
+          title: Customer Reference Id
+          type: string
+        name: customer_reference_id
+        in: query
+      - required: false
+        schema:
+          title: External Order Id
+          type: string
+        name: external_order_id
+        in: query
+      - description: Accepts only string values
+        required: false
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractStatus'
+          description: Accepts only string values
+        name: statuses
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContractPaginationResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/contract-term:
+    get:
+      tags:
+      - Contract
+      summary: Get All Contract Terms
+      operationId: get_all_contract_terms_dms_contract_term_get
+      parameters:
+      - required: true
+        schema:
+          title: Company Id
+          type: string
+        name: company_id
+        in: header
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/contract-allowed-annum-mileage:
+    get:
+      tags:
+      - Contract
+      summary: Get All Contract Allowed Mileages
+      operationId: get_all_contract_allowed_mileages_dms_contract_allowed_annum_mileage_get
+      parameters:
+      - required: true
+        schema:
+          title: Company Id
+          type: string
+        name: company_id
+        in: header
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    AddressTypes:
+      title: AddressTypes
+      enum:
+      - Mailing
+      - Invoice
+      - Office
+      - Garaging
+      - DealerAddress
+      - DrivingLicense
+      - Billing
+      - InsuranceAddress
+      - Residential
+      - Employment
+      type: string
+      description: An enumeration.
+    ContractEventModel:
+      title: ContractEventModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        type:
+          $ref: '#/components/schemas/EventStatus'
+        status:
+          title: Status
+          type: string
+    EventStatus:
+      title: EventStatus
+      enum:
+      - Pause
+      - Resume
+      description: An enumeration.
+    ContractCreateModel:
+      title: ContractCreateModel
+      required:
+      - customer_reference_id
+      - start_date
+      - end_date
+      - dealer_id
+      - allowed_miles
+      - exceed_miles_rate
+      - terms
+      - created_by
+      type: object
+      properties:
+        external_subscription_id:
+          title: External Subscription Id
+          type: string
+        vendor_subscription_id:
+          title: Vendor Subscription Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_order_id:
+          title: External Order Id
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date-time
+        end_date:
+          title: End Date
+          type: string
+          format: date-time
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        starting_odometer:
+          title: Starting Odometer
+          type: integer
+          default: 0
+        allowed_miles:
+          title: Allowed Miles
+          type: integer
+        exceed_miles_rate:
+          title: Exceed Miles Rate
+          type: integer
+        terms:
+          title: Terms
+          type: integer
+        meta_data:
+          title: Meta Data
+          type: object
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractAssets'
+        identifier:
+          title: Identifier
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    LicenseInfoCustomerResponseModel:
+      title: LicenseInfoCustomerResponseModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        status:
+          title: Status
+          type: string
+        license_number:
+          title: License Number
+          type: string
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+    CustomerProfileModelResponse:
+      title: CustomerProfileModelResponse
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        email:
+          title: Email
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressPreResponseModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerEmploymentInfoPreResponseModel'
+        payments_info:
+          title: Payments Info
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerPaymentInfoResponseModel'
+        license_info:
+          $ref: '#/components/schemas/LicenseInfoCustomerResponseModel'
+    CustomerEmploymentInfoPreResponseModel:
+      title: CustomerEmploymentInfoPreResponseModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    ContractAssets:
+      title: ContractAssets
+      type: object
+      properties:
+        vin:
+          title: Vin
+          type: string
+    CustomerPaymentInfoResponseModel:
+      title: CustomerPaymentInfoResponseModel
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    Buyout:
+      title: Buyout
+      type: object
+      properties:
+        buyout_option:
+          title: Buyout Option
+          type: string
+          description: Buyout Option
+        vehicle_purchase_price:
+          title: Vehicle Purchase Price
+          type: integer
+          description: Vehicle Purchase Price
+    CustomerAddressPreResponseModel:
+      title: CustomerAddressPreResponseModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    ContractStatus:
+      title: ContractStatus
+      enum:
+      - DRAFT
+      - ACTIVE
+      - PENDING_RETURN
+      - PROCESSING_RETURN
+      - RETURN_SUBMITTED
+      - PAUSED
+      - RESUME
+      - CLOSED
+      - CANCELED
+      - PURCHASED
+      type: string
+      description: An enumeration.
+    ContractReturnModel:
+      title: ContractReturnModel
+      type: object
+      properties:
+        actual_return_date:
+          title: Actual Return Date
+          type: string
+        vin:
+          title: Vin
+          type: string
+        order_reference_number:
+          title: Order Reference Number
+          type: string
+        current_odometer_reading:
+          title: Current Odometer Reading
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        noi_date:
+          title: Noi Date
+          type: string
+          format: date-time
+        identifier:
+          title: Identifier
+          type: string
+        invoice_id:
+          title: Invoice Id
+          type: string
+        planned_return_date:
+          title: Planned Return Date
+          type: string
+        penalty_reason:
+          title: Penalty Reason
+          type: string
+        check_list_start_date:
+          title: Check List Start Date
+          type: string
+        penalty_amount:
+          title: Penalty Amount
+          type: string
+        return_type:
+          title: Return Type
+          type: string
+        et_fee:
+          title: Et Fee
+          type: integer
+        status:
+          title: Status
+          type: string
+        dealer_comments:
+          title: Dealer Comments
+          type: string
+        reason:
+          title: Reason
+          type: string
+        reason_detail:
+          title: Reason Detail
+          type: string
+        allowed_usage:
+          title: Allowed Usage
+          type: integer
+        external_order_id:
+          title: External Order Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        customer_first_name:
+          title: Customer First Name
+          type: string
+        customer_last_name:
+          title: Customer Last Name
+          type: string
+        order_checklist:
+          title: Order Checklist
+          type: array
+          items: {}
+    ContractUpdateModel:
+      title: ContractUpdateModel
+      required:
+      - updated_by
+      type: object
+      properties:
+        external_subscription_id:
+          title: External Subscription Id
+          type: string
+        vendor_subscription_id:
+          title: Vendor Subscription Id
+          type: string
+        return_status:
+          title: Return Status
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          format: date-time
+        end_date:
+          title: End Date
+          type: string
+          format: date-time
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        starting_odometer:
+          title: Starting Odometer
+          type: integer
+        subscription_status:
+          $ref: '#/components/schemas/ContractStatus'
+        allowed_miles:
+          title: Allowed Miles
+          type: integer
+        exceed_miles_rate:
+          title: Exceed Miles Rate
+          type: integer
+        terms:
+          title: Terms
+          type: integer
+        meta_data:
+          title: Meta Data
+          type: object
+        final_bill_invoice_id:
+          title: Final Bill Invoice Id
+          type: string
+        final_bill_amount:
+          title: Final Bill Amount
+          type: integer
+        buyout:
+          title: Buyout
+          allOf:
+          - $ref: '#/components/schemas/Buyout'
+          description: Vehicle Buyout
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractAssets'
+        updated_by:
+          title: Updated By
+          type: string
+    ContractResponseModel:
+      title: ContractResponseModel
+      type: object
+      properties:
+        external_subscription_id:
+          title: External Subscription Id
+          type: string
+        vendor_subscription_id:
+          title: Vendor Subscription Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_order_id:
+          title: External Order Id
+          type: string
+        starting_odometer:
+          title: Starting Odometer
+          type: integer
+        start_date:
+          title: Start Date
+          type: string
+          format: date-time
+        end_date:
+          title: End Date
+          type: string
+          format: date-time
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        allowed_miles:
+          title: Allowed Miles
+          type: integer
+        exceed_miles_rate:
+          title: Exceed Miles Rate
+          type: integer
+        terms:
+          title: Terms
+          type: integer
+        meta_data:
+          title: Meta Data
+          type: object
+        subscription_status:
+          title: Subscription Status
+          type: string
+        received_security_deposit:
+          title: Received Security Deposit
+          type: integer
+        invocation_type:
+          title: Invocation Type
+          type: string
+        assets:
+          title: Assets
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractAssets'
+        buyout:
+          title: Buyout
+          allOf:
+          - $ref: '#/components/schemas/Buyout'
+          description: Vehicle Buyout
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        billing_status:
+          title: Billing Status
+          type: string
+        has_draft_invoice:
+          title: Has Draft Invoice
+          type: boolean
+        final_bill_invoice_id:
+          title: Final Bill Invoice Id
+          type: string
+        final_bill_amount:
+          title: Final Bill Amount
+          type: integer
+        first_bill_invoice_id:
+          title: First Bill Invoice Id
+          type: string
+        events:
+          title: Events
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractEventModel'
+        returns:
+          $ref: '#/components/schemas/ContractReturnModel'
+        customer:
+          $ref: '#/components/schemas/CustomerProfileModelResponse'
+    ContractPaginationResponse:
+      title: ContractPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/ContractResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

@@ -1,0 +1,1415 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Quote API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Quote
+paths:
+  /dms/quote/calculation:
+    post:
+      tags:
+      - Quote
+      summary: Calculate Quotation
+      description: Calculate Quotation
+      operationId: calculate_order_dms_quote_calculation_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgramEvaluationForCalculationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Calculate Order Dms Quote Calculation Post
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderCalculationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      deprecated: true
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/quote/calculate-order:
+    post:
+      tags:
+      - Quote
+      summary: Calculate Quotation
+      description: Calculate Quotation
+      operationId: calculate_order2_dms_quote_calculate_order_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgramEvaluationForCalculationModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/quote/calculate-nfa:
+    post:
+      tags:
+      - Quote
+      summary: Calculate NFA [Net Financed Amount]
+      description: Calculate NFA [Net Financed Amount]
+      operationId: calculate_nfa_dms_quote_calculate_nfa_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NFACalculationParams'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculateNFAResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/quote/calculation/V2:
+    post:
+      tags:
+      - Quote
+      summary: Calculate Rental
+      description: Calculate Rental
+      operationId: calculate_v2_dms_quote_calculation_V2_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculationV2Model'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculationResponseModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/quote/create:
+    post:
+      tags:
+      - Quote
+      summary: Create Quote
+      description: Create Quote
+      operationId: create_quote_dms_quote_create_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ANQuotation'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /dms/quote/calculation/multi-assets:
+    post:
+      tags:
+      - Quote
+      summary: Calculate Quotation for Multiple Assets
+      description: Calculate Quotation for Multiple Assets
+      operationId: calculate_order_multi_assets_dms_quote_calculation_multi_assets_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              title: Asset Params
+              type: array
+              items:
+                $ref: '#/components/schemas/ProgramEvaluationParamsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/quote/calculation/quantity:
+    post:
+      tags:
+      - Quote
+      summary: Calculate Quotation
+      description: Calculate Quotation
+      operationId: calculate_order_with_quantity_dms_quote_calculation_quantity_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgramEvaluationParamsModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/quote/calculation/monthlyImpact:
+    post:
+      tags:
+      - Quote
+      summary: Calculate Monthly Impact
+      description: Calculate Monthly Impact
+      operationId: calculate_monthly_impact_dms_quote_calculation_monthlyImpact_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculationV2Model'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    Vehicle:
+      title: Vehicle
+      required:
+      - vin
+      - odometer_mileage
+      - msrp
+      type: object
+      properties:
+        vin:
+          title: Vin
+          type: string
+          description: VIN
+        is_new:
+          title: Is New
+          type: boolean
+          description: Is New
+        odometer_mileage:
+          title: Odometer Mileage
+          type: integer
+          description: Odometer
+        msrp:
+          title: Msrp
+          type: number
+          description: MSRP
+        year:
+          title: Year
+          type: integer
+          description: Year
+        transmission_type:
+          title: Transmission Type
+          type: string
+          description: Transmission Type
+    ANQuotationProducts:
+      title: ANQuotationProducts
+      required:
+      - productId
+      - productType
+      - price
+      type: object
+      properties:
+        productId:
+          title: Productid
+          type: string
+          description: ID of the product
+        productType:
+          title: Producttype
+          type: string
+          description: Type of the product
+        price:
+          title: Price
+          type: number
+          description: Price of the product
+    ANQuotationAddress:
+      title: ANQuotationAddress
+      required:
+      - city
+      - state
+      - line1
+      - line2
+      - zipCode
+      type: object
+      properties:
+        city:
+          title: City
+          type: string
+          description: City
+        state:
+          title: State
+          type: string
+          description: State
+        line1:
+          title: Line1
+          type: string
+          description: Line 1
+        line2:
+          title: Line2
+          type: string
+          description: Line 2
+        zipCode:
+          title: Zipcode
+          type: string
+          description: Zip Code
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    TradeIn:
+      title: TradeIn
+      type: object
+      properties:
+        trade_in_type:
+          title: Trade In Type
+          type: string
+          description: Trade In Type
+        vin:
+          title: Vin
+          type: string
+          description: VIN
+        offer_amount:
+          title: Offer Amount
+          type: number
+          description: Offer Amount
+        pay_off_amount:
+          title: Pay Off Amount
+          type: number
+          description: Pay Off Amount
+        allowance_amount:
+          title: Allowance Amount
+          type: number
+          description: Actual Cash Value
+    RebateModel:
+      title: RebateModel
+      required:
+      - price
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Description of the rebate
+        price:
+          title: Price
+          type: number
+          description: Price of the rebate
+    CalculateNFAResponseModel:
+      title: CalculateNFAResponseModel
+      required:
+      - net_financed_amount
+      type: object
+      properties:
+        net_financed_amount:
+          title: Net Financed Amount
+          type: number
+          description: Net Financed amount calculated
+    FNIProductCalculationModel:
+      title: FNIProductCalculationModel
+      type: object
+      properties:
+        price:
+          title: Price
+          type: number
+        name:
+          title: Name
+          type: string
+        monthly_impact:
+          title: Monthly Impact
+          type: number
+    Address:
+      title: Address
+      required:
+      - state
+      - zip_code
+      type: object
+      properties:
+        street_address:
+          title: Street Address
+          type: string
+          description: Street Address
+        city:
+          title: City
+          type: string
+          description: City
+        state:
+          title: State
+          type: string
+          description: State
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip Code
+    InsuranceRequestModel:
+      title: InsuranceRequestModel
+      type: object
+      properties:
+        insurance_name:
+          title: Insurance Name
+          type: string
+        insurance_amount:
+          title: Insurance Amount
+          type: number
+        amount_handling:
+          title: Amount Handling
+          type: string
+    ProgramEvaluationForCalculationModel:
+      title: ProgramEvaluationForCalculationModel
+      required:
+      - terms
+      - per_unit_selling_price
+      - dealer_id
+      type: object
+      properties:
+        terms:
+          title: Terms
+          type: string
+          description: Terms
+        per_unit_selling_price:
+          title: Per Unit Selling Price
+          type: number
+          description: Per Unit Asset Selling Price
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer Id
+        quantity:
+          title: Quantity
+          type: integer
+          description: Quantity of Financed Equipment/Assets
+        asset_make_name:
+          title: Asset Make Name
+          type: string
+          description: Asset make name
+        asset_model_name:
+          title: Asset Model Name
+          type: string
+          description: Asset model name
+        asset_trim_name:
+          title: Asset Trim Name
+          type: string
+          description: Asset trim name
+        make_name:
+          title: Make Name
+          type: string
+          description: Make Name
+        model_name:
+          title: Model Name
+          type: string
+          description: Model Name
+        trim_name:
+          title: Trim Name
+          type: string
+          description: Trim Name
+        asset_condition:
+          title: Asset Condition
+          type: string
+          description: Asset Condition
+        credit_rating_id:
+          title: Credit Rating Id
+          type: string
+          description: System Generated Credit Rating Id
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance Type
+        asset_classification:
+          title: Asset Classification
+          type: string
+          description: Asset Classification (e.g. Vehicle, Equipment etc.)
+        annual_usage:
+          title: Annual Usage
+          type: integer
+          description: Annual Usage
+        is_rv_guaranteed:
+          title: Is Rv Guaranteed
+          type: string
+          description: Is RV Guaranteed
+        down_payment:
+          title: Down Payment
+          type: number
+          description: Asset Total Down payment
+        down_payment_paid_by_dealer:
+          title: Down Payment Paid By Dealer
+          type: number
+          description: Asset Down payment paid by Dealer
+        down_payment_paid_by_oem:
+          title: Down Payment Paid By Oem
+          type: number
+          description: Asset Down payment paid by OEM
+        options:
+          title: Options
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionsRequestModel'
+          description: Options applied on asset
+        fees:
+          title: Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/FeeRequestModel'
+          description: Fees
+        fni_products:
+          title: Fni Products
+          type: array
+          items:
+            $ref: '#/components/schemas/FinanceAndInsuranceRequestModel'
+          description: F&I Products
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+          description: Trade-in amount
+        taxes:
+          title: Taxes
+          type: array
+          items:
+            $ref: '#/components/schemas/TaxesRequestModel'
+          description: Trade-in amount
+        insurance:
+          title: Insurance
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceRequestModel'
+          description: Taxes
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+          description: Rental Frequency
+        subsidy:
+          title: Subsidy
+          allOf:
+          - $ref: '#/components/schemas/SubsidyRequestModel'
+          description: Subsidy Parameters
+        interest_rate:
+          title: Interest Rate
+          type: number
+          description: Interest Rate
+        rental_mode:
+          title: Rental Mode
+          type: string
+          description: Payment Mode
+        residual_value:
+          title: Residual Value
+          type: number
+          description: RV Value
+        start_term:
+          title: Start Term
+          type: integer
+          description: Start Term
+        end_term:
+          title: End Term
+          type: integer
+          description: End Term
+        rental_amount:
+          title: Rental Amount
+          type: number
+          description: Payment Amount
+        is_renewal:
+          title: Is Renewal
+          type: boolean
+          description: If Quotation for Renewal or New Quotation
+        program_id:
+          title: Program Id
+          type: integer
+          description: Previous Program ID
+        structure_rentals:
+          title: Structure Rentals
+          type: array
+          items:
+            $ref: '#/components/schemas/StructureRentalModel'
+          description: Array of Structured Rentals
+    FinanceAndInsuranceRequestModel:
+      title: FinanceAndInsuranceRequestModel
+      type: object
+      properties:
+        fni_product_name:
+          title: Fni Product Name
+          type: string
+        fni_product_amount:
+          title: Fni Product Amount
+          type: number
+        amount_handling:
+          title: Amount Handling
+          type: string
+        is_taxable:
+          title: Is Taxable
+          type: boolean
+          default: false
+    SubsidyRequestModel:
+      title: SubsidyRequestModel
+      type: object
+      properties:
+        subsidy_calculation_method:
+          title: Subsidy Calculation Method
+          type: string
+        financier_rate:
+          title: Financier Rate
+          type: number
+        manufacturer_subsidy_rate:
+          title: Manufacturer Subsidy Rate
+          type: number
+        dealer_subsidy_rate:
+          title: Dealer Subsidy Rate
+          type: number
+    ProgramEvaluationParamsModel:
+      title: ProgramEvaluationParamsModel
+      required:
+      - terms
+      - per_unit_selling_price
+      type: object
+      properties:
+        terms:
+          title: Terms
+          type: integer
+          description: Terms
+        per_unit_selling_price:
+          title: Per Unit Selling Price
+          type: number
+          description: Per Unit Asset Selling Price
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: System Generated Dealer Id
+        quantity:
+          title: Quantity
+          type: integer
+          description: Quantity of Financed Equipment/Assets
+        asset_make_id:
+          title: Asset Make Id
+          type: integer
+          description: System Generated Asset Make Id
+        asset_model_id:
+          title: Asset Model Id
+          type: integer
+          description: System Generated Asset Model Id
+        asset_trim_id:
+          title: Asset Trim Id
+          type: integer
+          description: System Generated Asset Trim Id
+        make_name:
+          title: Make Name
+          type: string
+          description: Make Name
+        model_name:
+          title: Model Name
+          type: string
+          description: Model Name
+        trim_name:
+          title: Trim Name
+          type: string
+          description: Trim Name
+        asset_condition:
+          title: Asset Condition
+          type: string
+          description: Asset Condition
+        credit_rating_id:
+          title: Credit Rating Id
+          type: string
+          description: System Generated Credit Rating Id
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance Type
+        asset_classification:
+          title: Asset Classification
+          type: string
+          description: Asset Classification (e.g. Vehicle, Equipment etc.)
+        annual_usage:
+          title: Annual Usage
+          type: integer
+          description: Annual Usage
+        is_rv_guaranteed:
+          title: Is Rv Guaranteed
+          type: string
+          description: Is RV Guaranteed
+        down_payment:
+          title: Down Payment
+          type: number
+          description: Asset Total Down payment
+        down_payment_paid_by_dealer:
+          title: Down Payment Paid By Dealer
+          type: number
+          description: Asset Down payment paid by Dealer
+        down_payment_paid_by_oem:
+          title: Down Payment Paid By Oem
+          type: number
+          description: Asset Down payment paid by OEM
+        options:
+          title: Options
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionsRequestModel'
+          description: Options applied on asset
+        fees:
+          title: Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/FeeRequestModel'
+          description: Fees
+        fni_products:
+          title: Fni Products
+          type: array
+          items:
+            $ref: '#/components/schemas/FinanceAndInsuranceRequestModel'
+          description: F&I Products
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+          description: Trade-in amount
+        taxes:
+          title: Taxes
+          type: array
+          items:
+            $ref: '#/components/schemas/TaxesRequestModel'
+          description: Trade-in amount
+        insurance:
+          title: Insurance
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceRequestModel'
+          description: Taxes
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+          description: Rental Frequency
+        subsidy:
+          title: Subsidy
+          allOf:
+          - $ref: '#/components/schemas/SubsidyRequestModel'
+          description: Subsidy Parameters
+        interest_rate:
+          title: Interest Rate
+          type: number
+          description: Interest Rate
+        rental_mode:
+          title: Rental Mode
+          type: string
+          description: Payment Mode
+        residual_value:
+          title: Residual Value
+          type: number
+          description: RV Value
+        start_term:
+          title: Start Term
+          type: integer
+          description: Start Term
+        end_term:
+          title: End Term
+          type: integer
+          description: End Term
+        rental_amount:
+          title: Rental Amount
+          type: number
+          description: Payment Amount
+        is_renewal:
+          title: Is Renewal
+          type: boolean
+          description: If Quotation for Renewal or New Quotation
+        program_id:
+          title: Program Id
+          type: integer
+          description: Previous Program ID
+        structure_rentals:
+          title: Structure Rentals
+          type: array
+          items:
+            $ref: '#/components/schemas/StructureRentalModel'
+          description: Array of Structured Rentals
+    CalculationMethod:
+      title: CalculationMethod
+      enum:
+      - equal principal
+      - annuity
+      - flat
+      - flat plus
+      - annuity - actual/360
+      - annuity - actual/365
+      description: An enumeration.
+    InterestChartResponseModel:
+      title: InterestChartResponseModel
+      type: object
+      properties:
+        chart_id:
+          title: Chart Id
+          type: integer
+        margin:
+          title: Margin
+          type: number
+        maximum_margin:
+          title: Maximum Margin
+          type: number
+        minimum_margin:
+          title: Minimum Margin
+          type: number
+    OrderCalculationResponseModel:
+      title: OrderCalculationResponseModel
+      type: object
+      properties:
+        fp_id:
+          title: Fp Id
+          type: integer
+          description: fp_id
+        program_name:
+          title: Program Name
+          type: string
+          description: Program name
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance type
+        calculation_method:
+          title: Calculation Method
+          type: string
+          description: Calculation method
+        rental_mode:
+          title: Rental Mode
+          type: string
+          description: Rental mode
+        rv_balloon_override:
+          title: Rv Balloon Override
+          type: boolean
+          description: RV balloon override?
+        interest_rate_override:
+          title: Interest Rate Override
+          type: boolean
+          description: Interest rate override?
+        rate_conversion_method:
+          title: Rate Conversion Method
+          type: string
+          description: Rate conversion method
+        rv_balloon_applicable:
+          title: Rv Balloon Applicable
+          type: boolean
+          description: RV balloon applicable?
+        rv_balloon_type:
+          title: Rv Balloon Type
+          type: string
+          description: RV balloon type
+        rv_calculation_method:
+          title: Rv Calculation Method
+          type: string
+          description: RV calculation method
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+          description: Estimated monthly payment
+        rv_amount:
+          title: Rv Amount
+          type: integer
+          description: RV amount
+        due_at_signing:
+          title: Due At Signing
+          type: number
+          description: Due at signing
+        selling_price:
+          title: Selling Price
+          type: integer
+          description: Selling price
+        down_payment:
+          title: Down Payment
+          type: integer
+          description: Down payment
+        taxes:
+          title: Taxes
+          type: array
+          items:
+            $ref: '#/components/schemas/TaxesRequestModel'
+          description: Taxes
+        financed_amount:
+          title: Financed Amount
+          type: integer
+          description: Financed amount
+        rental_frequency:
+          title: Rental Frequency
+          type: array
+          items:
+            type: integer
+          description: Rental frequency
+        rv_chart:
+          title: Rv Chart
+          description: RV chart
+        interest_chart:
+          title: Interest Chart
+          allOf:
+          - $ref: '#/components/schemas/InterestChartResponseModel'
+          description: Interest chart
+        subsidy:
+          title: Subsidy
+          allOf:
+          - $ref: '#/components/schemas/SubsidyResponseModel'
+          description: Subsidy
+        rentals_stream:
+          title: Rentals Stream
+          type: array
+          items:
+            $ref: '#/components/schemas/RentalSreamResponseModel'
+          description: Rentals stream
+    NFACalculationParams:
+      title: NFACalculationParams
+      required:
+      - per_unit_selling_price
+      - dealer_id
+      - options
+      - fees
+      - fni_products
+      - taxes
+      - insurance
+      type: object
+      properties:
+        per_unit_selling_price:
+          title: Per Unit Selling Price
+          type: number
+          description: Per Unit Asset Selling Price
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: System Generated Dealer Id
+        quantity:
+          title: Quantity
+          type: integer
+          description: Quantity of Financed Equipment/Assets
+        down_payment:
+          title: Down Payment
+          type: number
+          description: Asset Total Down payment
+        options:
+          title: Options
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionsRequestModel'
+          description: Options applied on asset
+        fees:
+          title: Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/FeeRequestModel'
+          description: Fees
+        fni_products:
+          title: Fni Products
+          type: array
+          items:
+            $ref: '#/components/schemas/FinanceAndInsuranceRequestModel'
+          description: F&I Products
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+          description: Trade-in amount
+        taxes:
+          title: Taxes
+          type: array
+          items:
+            $ref: '#/components/schemas/TaxesRequestModel'
+          description: Taxes
+        insurance:
+          title: Insurance
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceRequestModel'
+          description: Insurance
+    FeeRequestModel:
+      title: FeeRequestModel
+      type: object
+      properties:
+        fee_name:
+          title: Fee Name
+          type: string
+        fee_amount:
+          title: Fee Amount
+          type: number
+        fee_handling:
+          title: Fee Handling
+          type: string
+        is_taxable:
+          title: Is Taxable
+          type: boolean
+        tax_in_capital:
+          title: Tax In Capital
+          type: boolean
+          default: true
+        vendor:
+          title: Vendor
+          type: string
+    TaxesRequestModel:
+      title: TaxesRequestModel
+      type: object
+      properties:
+        tax_name:
+          title: Tax Name
+          type: string
+        tax_amount:
+          title: Tax Amount
+          type: number
+        amount_handling:
+          title: Amount Handling
+          type: string
+    SubsidyResponseModel:
+      title: SubsidyResponseModel
+      type: object
+      properties:
+        dealer_subsidy:
+          title: Dealer Subsidy
+          type: number
+        manufacturer_subsidy:
+          title: Manufacturer Subsidy
+          type: number
+        total_subsidy:
+          title: Total Subsidy
+          type: number
+    ANQuotation:
+      title: ANQuotation
+      required:
+      - vin
+      - products
+      - address
+      type: object
+      properties:
+        vin:
+          title: Vin
+          pattern: ^([^\WioqIOQ]{17}|[^\WioqIOQ]{8}|[^\WioqIOQ]{9})$
+          type: string
+          description: VIN of the vehicle
+        downPayment:
+          title: Downpayment
+          minimum: 0
+          type: number
+          description: Down Payment
+        products:
+          title: Products
+          type: array
+          items:
+            $ref: '#/components/schemas/ANQuotationProducts'
+          description: Products
+        address:
+          title: Address
+          allOf:
+          - $ref: '#/components/schemas/ANQuotationAddress'
+          description: Address
+    RentalSreamResponseModel:
+      title: RentalSreamResponseModel
+      type: object
+      properties:
+        startTerm:
+          title: Startterm
+          type: integer
+          description: Start term
+        endTerm:
+          title: Endterm
+          type: integer
+          description: End term
+        rentalAmount:
+          title: Rentalamount
+          type: number
+          description: Rental amount
+        rentalType:
+          title: Rentaltype
+          type: string
+          description: Rental type
+        total_subsidy:
+          title: Total Subsidy
+          type: number
+          description: Total subsidy
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    StructureRentalModel:
+      title: StructureRentalModel
+      type: object
+      properties:
+        start_term:
+          title: Start Term
+          type: string
+        end_term:
+          title: End Term
+          type: string
+        rental_type:
+          title: Rental Type
+          type: string
+        amount:
+          title: Amount
+          type: string
+    RentalMode:
+      title: RentalMode
+      enum:
+      - Advance
+      - Arrear
+      description: An enumeration.
+    OptionsRequestModel:
+      title: OptionsRequestModel
+      type: object
+      properties:
+        option_name:
+          title: Option Name
+          type: string
+        option_amount:
+          title: Option Amount
+          type: number
+        rv_amount_on_option:
+          title: Rv Amount On Option
+          type: number
+        amount_handling:
+          title: Amount Handling
+          type: string
+    CalculationResponseModel:
+      title: CalculationResponseModel
+      type: object
+      properties:
+        add_ons_total:
+          title: Add Ons Total
+          type: number
+        adjusted_capitalized_cost:
+          title: Adjusted Capitalized Cost
+          type: number
+        base_monthly_payment:
+          title: Base Monthly Payment
+          type: number
+        tax_on_capitalized_cost_reduction:
+          title: Tax On Capitalized Cost Reduction
+          type: number
+        monthly_deprecation:
+          title: Monthly Deprecation
+          type: number
+        capitalized_cost_reduction:
+          title: Capitalized Cost Reduction
+          type: number
+        down_payment:
+          title: Down Payment
+          type: number
+        due_at_signing:
+          title: Due At Signing
+          type: number
+        estimated_monthly_payment:
+          title: Estimated Monthly Payment
+          type: number
+        expiry_date:
+          title: Expiry Date
+          type: string
+          format: date
+        fees_total:
+          title: Fees Total
+          type: number
+        final_rate:
+          title: Final Rate
+          type: number
+        fni_total:
+          title: Fni Total
+          type: number
+        fni_products:
+          title: Fni Products
+          type: array
+          items:
+            $ref: '#/components/schemas/FNIProductCalculationModel'
+        gross_capitalized_cost:
+          title: Gross Capitalized Cost
+          type: number
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+        monthly_sales_use_tax:
+          title: Monthly Sales Use Tax
+          type: number
+        rebate_promotions:
+          title: Rebate Promotions
+          type: number
+        rentals_stream:
+          title: Rentals Stream
+        rv_amount:
+          title: Rv Amount
+          type: number
+        selling_price:
+          title: Selling Price
+          type: number
+        subsidy:
+          $ref: '#/components/schemas/SubsidyResponseModel'
+        tax_amount:
+          title: Tax Amount
+          type: number
+        taxes:
+          title: Taxes
+    CalculationV2Model:
+      title: CalculationV2Model
+      required:
+      - apr
+      - dealer_id
+      - fees
+      - fni_products
+      - interest_chart_margin
+      - insurance
+      - per_unit_selling_price
+      - terms
+      - finance_type
+      type: object
+      properties:
+        base_rate:
+          title: Base Rate
+          type: number
+          description: Base rate
+        annual_usage:
+          title: Annual Usage
+          type: integer
+          description: Allowed Usage
+          default: 0
+        apr:
+          title: Apr
+          type: number
+          description: APR
+        calculation_method:
+          allOf:
+          - $ref: '#/components/schemas/CalculationMethod'
+          description: Calculation Method
+          default: annuity
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer Id
+        lender_id:
+          title: Lender Id
+          type: integer
+          description: Lender Id
+        down_payment:
+          title: Down Payment
+          type: number
+          description: Asset Total Down payment
+        down_payment_paid_by_dealer:
+          title: Down Payment Paid By Dealer
+          type: number
+          description: Asset Down payment paid by Dealer
+        down_payment_paid_by_oem:
+          title: Down Payment Paid By Oem
+          type: number
+          description: Asset Down payment paid by OEM
+        fees:
+          title: Fees
+          type: array
+          items:
+            $ref: '#/components/schemas/FeeRequestModel'
+          description: Fees
+        net_financed_amount:
+          title: Net Financed Amount
+          type: number
+          description: Asset Financed amount
+          default: 0
+        fni_products:
+          title: Fni Products
+          type: array
+          items:
+            $ref: '#/components/schemas/FinanceAndInsuranceRequestModel'
+          description: F&I Products
+        interest_chart_margin:
+          title: Interest Chart Margin
+          type: number
+          description: Interest chart margin
+        insurance:
+          title: Insurance
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceRequestModel'
+          description: Insurance
+        options:
+          title: Options
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionsRequestModel'
+          description: Options applied on asset
+        per_unit_selling_price:
+          title: Per Unit Selling Price
+          type: number
+          description: Per Unit Asset Selling Price
+        rental_frequency:
+          title: Rental Frequency
+          type: string
+          description: Rental Frequency
+          default: Monthly
+        rental_mode:
+          allOf:
+          - $ref: '#/components/schemas/RentalMode'
+          description: Rental Mode, possible values [Advance, Arrear]
+        vehicle:
+          title: Vehicle
+          allOf:
+          - $ref: '#/components/schemas/Vehicle'
+          description: Vehicle
+        rv_value:
+          title: Rv Value
+          type: number
+          description: rv value
+        rv_amount:
+          title: Rv Amount
+          type: integer
+          description: RV amount
+        structure_rentals:
+          title: Structure Rentals
+          type: array
+          items:
+            $ref: '#/components/schemas/StructureRentalModel'
+          description: Array of Structured Rentals
+        subsidy:
+          title: Subsidy
+          allOf:
+          - $ref: '#/components/schemas/SubsidyRequestModel'
+          description: Subsidy Parameters
+        quantity:
+          title: Quantity
+          type: integer
+          description: Quantity of Financed Equipment/Assets
+        taxes:
+          title: Taxes
+          type: array
+          items:
+            $ref: '#/components/schemas/TaxesRequestModel'
+          description: Taxes
+        terms:
+          title: Terms
+          type: string
+          description: Terms
+        customer_address:
+          title: Customer Address
+          allOf:
+          - $ref: '#/components/schemas/Address'
+          description: Customer Address
+        dealer_address:
+          title: Dealer Address
+          allOf:
+          - $ref: '#/components/schemas/Address'
+          description: Dealer Address
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+          description: Trade-in amount
+        finance_type:
+          title: Finance Type
+          type: string
+          description: Finance Type
+        markup_rate:
+          title: Markup Rate
+          type: number
+          description: Markup Rate
+        trade_ins:
+          title: Trade Ins
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeIn'
+          description: Trade Ins
+          default: []
+        rebate:
+          title: Rebate
+          allOf:
+          - $ref: '#/components/schemas/RebateModel'
+          description: Rebate Model
+        tax_on_selling_price:
+          title: Tax On Selling Price
+          type: number
+          description: Selling Price Tax Calculation
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

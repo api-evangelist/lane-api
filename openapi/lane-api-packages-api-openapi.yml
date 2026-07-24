@@ -1,0 +1,535 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Packages API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Packages
+paths:
+  /dms/configure/document-package:
+    get:
+      tags:
+      - Packages
+      summary: Get document package by identifier
+      operationId: get_document_package_dms_configure_document_package_get
+      parameters:
+      - required: true
+        schema:
+          title: Package Id
+          type: string
+        name: package_id
+        in: query
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Record not found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Packages
+      summary: Create document package
+      operationId: create_document_package_new_dms_configure_document_package_post
+      parameters:
+      - required: false
+        schema:
+          title: Is Product
+          type: boolean
+          default: false
+        name: is_product
+        in: query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DocumentPackageRequestModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '412':
+          description: Precondition Failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    delete:
+      tags:
+      - Packages
+      summary: Cancel document package and document by identifier
+      operationId: cancel_document_package_dms_configure_document_package_delete
+      parameters:
+      - required: true
+        schema:
+          title: Package Id
+          type: string
+        name: package_id
+        in: query
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-package-by-reference-id:
+    get:
+      tags:
+      - Packages
+      summary: Get document package by reference_id
+      operationId: get_document_package_by_reference_id_dms_configure_document_package_by_reference_id_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/all-document-packages-by-reference-id:
+    get:
+      tags:
+      - Packages
+      summary: Get document package by reference_id
+      operationId: get_all_document_packages_by_reference_id_dms_configure_all_document_packages_by_reference_id_get
+      parameters:
+      - required: true
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - description: Order Id
+        required: false
+        schema:
+          title: External Order Id
+          type: string
+          description: Order Id
+        name: external_order_id
+        in: query
+      - description: Document Type
+        required: false
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonType'
+          description: Document Type
+        name: document_type
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get All Document Packages By Reference Id Dms Configure All Document Packages By Reference Id Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/DocumentPackageResponseModel'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetailModel'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/configure/document-package/document:
+    get:
+      tags:
+      - Packages
+      summary: Get document from document package by identifier
+      operationId: get_document_dms_configure_document_package_document_get
+      parameters:
+      - required: true
+        schema:
+          title: Package Id
+          type: string
+        name: package_id
+        in: query
+      - required: true
+        schema:
+          title: Document Id
+          type: string
+        name: document_id
+        in: query
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsResponseModel'
+        '404':
+          description: Record not found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    DocumentRequestModel:
+      title: DocumentRequestModel
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        template:
+          title: Template
+          type: string
+        data:
+          title: Data
+          type: object
+        meta_data:
+          title: Meta Data
+          type: object
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        signatures:
+          title: Signatures
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentSignaturesModel'
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    DocumentsResponseModel:
+      title: DocumentsResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        pdf:
+          title: Pdf
+          type: string
+        title:
+          title: Title
+          type: string
+        template:
+          title: Template
+          type: string
+        data:
+          title: Data
+          type: object
+        meta_data:
+          title: Meta Data
+          type: object
+        status:
+          title: Status
+          type: string
+        last_viewed_at:
+          title: Last Viewed At
+          type: string
+          format: date-time
+        signatures:
+          title: Signatures
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentSignaturesModel'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        generated_document_uri:
+          title: Generated Document Uri
+          type: string
+    ComparisonType:
+      title: ComparisonType
+      enum:
+      - Contract
+      - noaa
+      - General
+      - Compliance
+      type: string
+      description: An enumeration.
+    DocumentSignaturesModel:
+      title: DocumentSignaturesModel
+      required:
+      - id
+      - type
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        status:
+          title: Status
+          type: string
+        type:
+          title: Type
+          type: string
+        signer:
+          title: Signer
+          type: string
+        signed_at:
+          title: Signed At
+          type: string
+        x:
+          title: X
+          type: integer
+        y:
+          title: Y
+          type: integer
+        x_bound:
+          title: X Bound
+          type: integer
+        y_bound:
+          title: Y Bound
+          type: integer
+        width:
+          title: Width
+          type: integer
+        height:
+          title: Height
+          type: integer
+        page:
+          title: Page
+          type: integer
+        date_field_id:
+          title: Date Field Id
+          type: string
+    DocumentPackageRequestModel:
+      title: DocumentPackageRequestModel
+      type: object
+      properties:
+        order_id:
+          title: Order Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        type:
+          title: Type
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        documents:
+          title: Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentRequestModel'
+    DocumentPackageResponseModel:
+      title: DocumentPackageResponseModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        order_id:
+          title: Order Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        type:
+          title: Type
+          type: string
+        status:
+          title: Status
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        documents:
+          title: Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentsModel'
+    ErrorDetailModel:
+      title: ErrorDetailModel
+      required:
+      - detail
+      type: object
+      properties:
+        detail:
+          $ref: '#/components/schemas/ErrorModel'
+    DocumentsModel:
+      title: DocumentsModel
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        title:
+          title: Title
+          type: string
+        template:
+          title: Template
+          type: string
+        data:
+          title: Data
+          type: object
+        meta_data:
+          title: Meta Data
+          type: object
+        status:
+          title: Status
+          type: string
+        last_viewed_at:
+          title: Last Viewed At
+          type: string
+          format: date-time
+        signatures:
+          title: Signatures
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentSignaturesModel'
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        generated_document_uri:
+          title: Generated Document Uri
+          type: string
+    ErrorModel:
+      title: ErrorModel
+      type: object
+      properties:
+        code:
+          title: Error code
+          type: string
+          description: Error code based on the validation, if any validation fail
+        message:
+          title: Error message
+          type: string
+          description: Error code based on the validation, if any validation fail
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

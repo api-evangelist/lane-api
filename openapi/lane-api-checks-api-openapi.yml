@@ -1,0 +1,451 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Checks API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Checks
+paths:
+  /dms/check-customer-by-email:
+    patch:
+      tags:
+      - Checks
+      summary: Check customer, create if does not exist
+      description: Check customer, create if does not exist
+      operationId: check_customer_dms_check_customer_by_email_patch
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomerModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerProfileModelResponseWithID'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/check-dms-customer:
+    get:
+      tags:
+      - Checks
+      summary: Get customer record
+      description: Get customer record by customer ID
+      operationId: fetch_dms_customer_dms_check_dms_customer_get
+      parameters:
+      - required: false
+        schema:
+          title: Reference Id
+          type: string
+        name: reference_id
+        in: query
+      - required: false
+        schema:
+          title: Dealer Code
+          type: string
+        name: dealer_code
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/customer/fraud-check:
+    post:
+      tags:
+      - Checks
+      summary: Creates personal finance information
+      description: Create personal finance information against customer
+      operationId: add_customer_fraud_check_dms_customer_fraud_check_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FraudCheckModel'
+        required: true
+      responses:
+        '201':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/affordability-check/:
+    post:
+      tags:
+      - Checks
+      summary: Affordability Check
+      operationId: affordability_check_dms_affordability_check__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AffordabilityCheckModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/affordability-check/monthly-payment-calculation/V2/:
+    post:
+      tags:
+      - Checks
+      summary: Monthly Payment Calculation V2
+      operationId: monthly_payment_calculation_v2_dms_affordability_check_monthly_payment_calculation_V2__post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonthlyPaymentCalculationModelV2'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/dealer/check-actively-order:
+    get:
+      tags:
+      - Checks
+      summary: Check Dealer actively order
+      description: Check Dealer actively order
+      operationId: check_dealer_order_dms_dealer_check_actively_order_get
+      parameters:
+      - required: true
+        schema:
+          title: Dealer Id
+          type: string
+        name: dealer_id
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    FraudCheckModel:
+      title: FraudCheckModel
+      required:
+      - user_id
+      - order_reference_number
+      - reference_id
+      - dealer_code
+      type: object
+      properties:
+        user_id:
+          title: User Id
+          type: integer
+        order_reference_number:
+          title: Order Reference Number
+          minLength: 1
+          type: string
+          description: Order Reference Id
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Customer Reference Id
+        dealer_code:
+          title: Dealer Code
+          type: string
+    AffordabilityCheckModel:
+      title: AffordabilityCheckModel
+      required:
+      - dealer_code
+      - company_code
+      - lender_code
+      - max_payment
+      - terms
+      type: object
+      properties:
+        dealer_code:
+          title: Dealer Code
+          type: string
+        company_code:
+          title: Company Code
+          type: string
+          description: Company code
+        lender_code:
+          title: Lender Code
+          type: string
+        max_payment:
+          title: Max Payment
+          type: number
+        terms:
+          title: Terms
+          type: integer
+        credit_rating:
+          title: Credit Rating
+          type: string
+        upfront:
+          title: Upfront
+          type: number
+        annual_usage:
+          title: Annual Usage
+          type: integer
+        balloon_payment:
+          title: Balloon Payment
+          type: number
+        trade_in_amount:
+          title: Trade In Amount
+          type: number
+        trade_in_payoff:
+          title: Trade In Payoff
+          type: number
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    CustomerProfileModelResponseWithID:
+      title: CustomerProfileModelResponseWithID
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        email:
+          title: Email
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        id:
+          title: Id
+          type: integer
+        consent:
+          title: Consent
+    MonthlyPaymentCalculationModelV2:
+      title: MonthlyPaymentCalculationModelV2
+      required:
+      - asset_make_name
+      - asset_model_name
+      - asset_trim_name
+      - dealer_id
+      - company_id
+      - rental_mode
+      - financed_amount
+      - terms
+      type: object
+      properties:
+        asset_make_name:
+          title: Asset Make Name
+          type: string
+        asset_model_name:
+          title: Asset Model Name
+          type: string
+        asset_trim_name:
+          title: Asset Trim Name
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        company_id:
+          title: Company Id
+          type: integer
+        rental_mode:
+          title: Rental Mode
+          type: string
+        financed_amount:
+          title: Financed Amount
+          type: number
+        terms:
+          title: Terms
+          type: array
+          items:
+            type: integer
+    CreateCustomerModel:
+      title: CreateCustomerModel
+      required:
+      - dealer_id
+      - email
+      type: object
+      properties:
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer ID for Customer
+        email:
+          title: Email
+          type: string
+          format: email
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

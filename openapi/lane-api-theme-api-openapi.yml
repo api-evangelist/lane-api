@@ -1,0 +1,237 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Theme API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Theme
+paths:
+  /dms/theme-builder:
+    get:
+      tags:
+      - Theme
+      summary: Get Theme
+      operationId: get_theme_dms_theme_builder_get
+      parameters:
+      - required: true
+        schema:
+          title: User Email
+          type: string
+        name: user_email
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    post:
+      tags:
+      - Theme
+      summary: Post Theme Builder Record
+      description: This method creates theme builder record to be configured for application theme
+      operationId: create_theme_by_user_email_dms_theme_builder_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThemeBuilderModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+  /dms/theme-builder/{user_email}:
+    get:
+      tags:
+      - Theme
+      summary: Get theme by user email
+      description: This method returns the theme of application with respect to user email
+      operationId: get_theme_by_user_email_dms_theme_builder__user_email__get
+      parameters:
+      - required: true
+        schema:
+          title: User Email
+          type: string
+          format: email
+        name: user_email
+        in: path
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+    patch:
+      tags:
+      - Theme
+      summary: Updates a theme builder record
+      description: This method updates theme builder record provided by user_email
+      operationId: update_theme_builder_record_dms_theme_builder__user_email__patch
+      parameters:
+      - required: true
+        schema:
+          title: User Email
+          type: string
+          format: email
+        name: user_email
+        in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThemeBuilderPatchModel'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    ThemeBuilderPatchModel:
+      title: ThemeBuilderPatchModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+          description: Primary ID of Theme Builder
+        stylesheet:
+          title: Stylesheet
+          type: string
+          description: Stylesheet of Theme Builder Class
+        darkmode_stylesheet:
+          title: Darkmode Stylesheet
+          type: string
+          description: Darkmode Stylesheet of Theme Builder
+        favicon:
+          title: Favicon
+          type: string
+          description: favicon of Theme Builder
+        logo:
+          title: Logo
+          type: string
+          description: logo of Theme Builder
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ThemeBuilderModel:
+      title: ThemeBuilderModel
+      required:
+      - user_email
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+          description: Primary ID of Theme Builder
+        stylesheet:
+          title: Stylesheet
+          type: string
+          description: Stylesheet of Theme Builder Class
+        darkmode_stylesheet:
+          title: Darkmode Stylesheet
+          type: string
+          description: Darkmode Stylesheet of Theme Builder
+        favicon:
+          title: Favicon
+          type: string
+          description: favicon of Theme Builder
+        logo:
+          title: Logo
+          type: string
+          description: logo of Theme Builder
+        user_email:
+          title: User Email
+          type: string
+          description: Email of logged in user
+          format: email
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation

@@ -1,0 +1,99 @@
+openapi: 3.0.2
+info:
+  version: 1.3.43
+  title: Lane Disclaimer  Management API
+  contact:
+    email: support@netsolapp.io, support@appexnow.com
+  x-logo:
+    url: ../lane/docs/64x64.png
+    altText: Lane
+    backgroundColor: '#FFFFFF'
+  description: Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.
+servers:
+- url: https://dms-api.netsolapp.io
+tags:
+- name: Disclaimer  Management
+paths:
+  /dms/configure/disclaimer-agreement-datetime:
+    get:
+      tags:
+      - Disclaimer  Management
+      summary: Get Disclaimer Agreement Date Time by Customer ID/Order ID
+      operationId: get_disclaimer_acceptance_date_time_dms_configure_disclaimer_agreement_datetime_get
+      parameters:
+      - required: false
+        schema:
+          title: Customer Reference No
+          type: string
+        name: customer_reference_no
+        in: query
+      - required: false
+        schema:
+          title: Order Reference Number
+          type: string
+        name: order_reference_number
+        in: query
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Disclaimer Acceptance Date Time Dms Configure Disclaimer Agreement Datetime Get
+                type: string
+                format: date-time
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      security:
+      - APIKeyHeader: []
+      - OAuth2PasswordBearer: []
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+    OAuth2PasswordBearer:
+      type: oauth2
+      flows:
+        password:
+          scopes: {}
+          tokenUrl: /signup/verify-otp
+externalDocs:
+  url: https://developer.appexnow.com/docs/lane/overview
+  description: Product Documentation
