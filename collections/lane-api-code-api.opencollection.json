@@ -1,0 +1,119 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Code API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Code",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get assets by trim code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/assets-by-trim-code/:trim_code",
+            "params": [
+              {
+                "name": "trim_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get assets by trim code"
+        },
+        {
+          "info": {
+            "name": "Get Inventory Reference Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/inventory/reference-data-by-dealer-code/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Inventory Reference Data"
+        },
+        {
+          "info": {
+            "name": "Get Dealer Preference By Dealer Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/preference-by-dealer-code/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Dealer Preference By Dealer Code"
+        },
+        {
+          "info": {
+            "name": "Get All Dealer Fee By Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/fee/dealer-code/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "state_code",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get All Dealer Fee By Code"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

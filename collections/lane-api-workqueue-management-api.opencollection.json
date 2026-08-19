@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Workqueue  Management API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workqueue  Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates workqueue after Order creation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/workqueue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates workqueue after Order creation"
+        },
+        {
+          "info": {
+            "name": "Creates workqueue after Order stage change to application",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/workqueue/create_application/:workqueue_id",
+            "params": [
+              {
+                "name": "workqueue_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates workqueue after Order stage change to application"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

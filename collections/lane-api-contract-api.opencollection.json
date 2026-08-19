@@ -1,0 +1,241 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Contract API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contract",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Handle contract document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/contract-document",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "document_event",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Handle contract document"
+        },
+        {
+          "info": {
+            "name": "Get active contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contract",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_order_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get active contract"
+        },
+        {
+          "info": {
+            "name": "Create contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/contract",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create contract"
+        },
+        {
+          "info": {
+            "name": "Update contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/contract",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update contract"
+        },
+        {
+          "info": {
+            "name": "Past due webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/contract/past-due-webhook",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Past due webhook"
+        },
+        {
+          "info": {
+            "name": "Get all contract records",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contract/all",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "Accepts only string values"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all contract records"
+        },
+        {
+          "info": {
+            "name": "Get All Contract Terms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contract-term",
+            "headers": [
+              {
+                "name": "company_id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get All Contract Terms"
+        },
+        {
+          "info": {
+            "name": "Get All Contract Allowed Mileages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contract-allowed-annum-mileage",
+            "headers": [
+              {
+                "name": "company_id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get All Contract Allowed Mileages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

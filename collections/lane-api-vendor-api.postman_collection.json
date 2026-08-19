@@ -1,0 +1,492 @@
+{
+  "item": [
+    {
+      "id": "fce74d8a-33cf-47d5-8f61-e2f3f21db49f",
+      "name": "Vendor",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1966712-6349-4f11-b258-eeac055a7c67",
+          "name": "Get all orders of a customer",
+          "request": {
+            "name": "Get all orders of a customer",
+            "description": {
+              "content": "Get all orders of a customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "quick-quotation-by-vendor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "broker_id",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lender_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contact_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendor_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "introducer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vendor_email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finance_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finance_amount",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_submitted",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_stage",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "03ddc044-93d9-4795-ad98-85c62a86029d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "quick-quotation-by-vendor"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "broker_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lender_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendor_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "introducer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendor_email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "updated_at",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_submitted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_stage",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"name\": \"string\",\n    \"start_date\": \"2002-03-01\",\n    \"end_date\": \"1948-08-04\",\n    \"updated_at\": \"1985-03-29\",\n    \"external_order_id\": \"string\",\n    \"status\": \"string\",\n    \"created_by\": \"string\",\n    \"selling_price\": 45.24299061526516,\n    \"down_payment\": 8354.557786403648,\n    \"estimated_monthly_payment\": \"string\",\n    \"calculations_type\": \"string\",\n    \"sum_of_advance_rentals\": 8483.779128831686,\n    \"no_of_advance_payments\": 3795,\n    \"no_of_regular_payments\": 2696,\n    \"introducer_identifier\": \"string\",\n    \"introducer_name\": \"string\",\n    \"rental_frequency\": \"string\",\n    \"deferral_amount\": 5938.085534599289,\n    \"rv_balloon_value\": 1634.2079078800075,\n    \"balloon_collection\": \"string\",\n    \"finance_type\": \"string\",\n    \"product_type\": \"string\",\n    \"finance_amount\": 8281.929465427775,\n    \"gross_profit\": 550.4599163379353,\n    \"commission_type\": \"string\",\n    \"commission_amount\": 301.0568585975071,\n    \"due_at_signing\": 4260.866411316463,\n    \"meta_data\": {},\n    \"comments\": \"string\",\n    \"vat_treatment\": \"string\",\n    \"tax_amount\": 9853.508855269043,\n    \"tax_amount_number\": 3508,\n    \"deferred_type\": \"string\",\n    \"reference_number\": \"string\",\n    \"rate_type\": \"string\",\n    \"margin\": 6479.768504249561,\n    \"rental_mode\": \"string\",\n    \"sum_of_fees\": 1126.3963562003964,\n    \"sum_of_periodic_interest\": 5173.732904117734,\n    \"sum_of_rentals\": 6074.085635726146,\n    \"total_payables\": 5321.403791146258,\n    \"running_id\": \"string\",\n    \"broker_id\": 5379,\n    \"non_vatable_amount\": 7105.226919127999,\n    \"order_fees\": [\n      {\n        \"id\": 7034,\n        \"identifier\": \"string\",\n        \"dealer_fee_name\": \"string\",\n        \"applied_price\": 8058.371570972702,\n        \"order_id\": 8041,\n        \"fee_frequency\": \"string\",\n        \"fee_occurance\": \"string\",\n        \"fee_first_due_date\": \"string\"\n      },\n      {\n        \"id\": 3559,\n        \"identifier\": \"string\",\n        \"dealer_fee_name\": \"string\",\n        \"applied_price\": 1829.1809139263814,\n        \"order_id\": 5784,\n        \"fee_frequency\": \"string\",\n        \"fee_occurance\": \"string\",\n        \"fee_first_due_date\": \"string\"\n      }\n    ],\n    \"order_payments\": [\n      {\n        \"identifier\": \"string\",\n        \"payment_number_from\": 2790,\n        \"payment_number_to\": 6328,\n        \"amount\": 9262.225003072506,\n        \"payment_type\": \"string\",\n        \"order_id\": 8217\n      },\n      {\n        \"identifier\": \"string\",\n        \"payment_number_from\": 8179,\n        \"payment_number_to\": 6139,\n        \"amount\": 497.7119315065648,\n        \"payment_type\": \"string\",\n        \"order_id\": 6889\n      }\n    ],\n    \"assets\": [\n      {\n        \"id\": 8694,\n        \"identifier\": \"string\",\n        \"vin\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"trim\": \"string\",\n        \"year\": \"string\",\n        \"stock_number\": \"string\",\n        \"asset_image\": [\n          \"string\",\n          \"string\"\n        ],\n        \"asset_type\": \"string\",\n        \"rv_balloon_amount\": 3354.588903694893\n      },\n      {\n        \"id\": 3262,\n        \"identifier\": \"string\",\n        \"vin\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"trim\": \"string\",\n        \"year\": \"string\",\n        \"stock_number\": \"string\",\n        \"asset_image\": [\n          \"string\",\n          \"string\"\n        ],\n        \"asset_type\": \"string\",\n        \"rv_balloon_amount\": 7750.742709626851\n      }\n    ],\n    \"order_stakeholders\": [\n      {\n        \"identifier\": \"string\",\n        \"order_identifier\": \"string\",\n        \"stakeholder_reference_id\": \"string\",\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"role\": \"string\",\n        \"position\": \"string\",\n        \"contact_number\": \"string\",\n        \"address_id\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"order_identifier\": \"string\",\n        \"stakeholder_reference_id\": \"string\",\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"role\": \"string\",\n        \"position\": \"string\",\n        \"contact_number\": \"string\",\n        \"address_id\": \"string\"\n      }\n    ],\n    \"created_at\": \"1974-11-16\",\n    \"date_submitted\": \"1965-03-10\",\n    \"customer\": {\n      \"company_name\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"mobile_number\": \"string\",\n      \"customer_type\": \"string\",\n      \"identifier\": \"string\",\n      \"email\": \"6V66HSghRVtDmX@dTepYXFFpgZMOjjU.nei\",\n      \"reference_id\": \"string\"\n    }\n  },\n  {\n    \"identifier\": \"string\",\n    \"name\": \"string\",\n    \"start_date\": \"1969-05-06\",\n    \"end_date\": \"1978-04-17\",\n    \"updated_at\": \"1980-09-20\",\n    \"external_order_id\": \"string\",\n    \"status\": \"string\",\n    \"created_by\": \"string\",\n    \"selling_price\": 2704.0118830000915,\n    \"down_payment\": 4001.136971106436,\n    \"estimated_monthly_payment\": \"string\",\n    \"calculations_type\": \"string\",\n    \"sum_of_advance_rentals\": 2664.270230243867,\n    \"no_of_advance_payments\": 8897,\n    \"no_of_regular_payments\": 1257,\n    \"introducer_identifier\": \"string\",\n    \"introducer_name\": \"string\",\n    \"rental_frequency\": \"string\",\n    \"deferral_amount\": 4555.570477291215,\n    \"rv_balloon_value\": 1175.9987514116522,\n    \"balloon_collection\": \"string\",\n    \"finance_type\": \"string\",\n    \"product_type\": \"string\",\n    \"finance_amount\": 2714.857555926833,\n    \"gross_profit\": 5285.3695614737335,\n    \"commission_type\": \"string\",\n    \"commission_amount\": 4714.509406505535,\n    \"due_at_signing\": 943.1155042573946,\n    \"meta_data\": {},\n    \"comments\": \"string\",\n    \"vat_treatment\": \"string\",\n    \"tax_amount\": 9419.397413322706,\n    \"tax_amount_number\": 3286,\n    \"deferred_type\": \"string\",\n    \"reference_number\": \"string\",\n    \"rate_type\": \"string\",\n    \"margin\": 2693.0337849407993,\n    \"rental_mode\": \"string\",\n    \"sum_of_fees\": 3879.465267174441,\n    \"sum_of_periodic_interest\": 7208.687495003157,\n    \"sum_of_rentals\": 9884.522484609943,\n    \"total_payables\": 252.73782912651922,\n    \"running_id\": \"string\",\n    \"broker_id\": 2015,\n    \"non_vatable_amount\": 1533.9459337218952,\n    \"order_fees\": [\n      {\n        \"id\": 9358,\n        \"identifier\": \"string\",\n        \"dealer_fee_name\": \"string\",\n        \"applied_price\": 7197.39565682991,\n        \"order_id\": 6924,\n        \"fee_frequency\": \"string\",\n        \"fee_occurance\": \"string\",\n        \"fee_first_due_date\": \"string\"\n      },\n      {\n        \"id\": 5675,\n        \"identifier\": \"string\",\n        \"dealer_fee_name\": \"string\",\n        \"applied_price\": 6173.737521410928,\n        \"order_id\": 8988,\n        \"fee_frequency\": \"string\",\n        \"fee_occurance\": \"string\",\n        \"fee_first_due_date\": \"string\"\n      }\n    ],\n    \"order_payments\": [\n      {\n        \"identifier\": \"string\",\n        \"payment_number_from\": 2615,\n        \"payment_number_to\": 9343,\n        \"amount\": 9129.641202012377,\n        \"payment_type\": \"string\",\n        \"order_id\": 1302\n      },\n      {\n        \"identifier\": \"string\",\n        \"payment_number_from\": 2313,\n        \"payment_number_to\": 4583,\n        \"amount\": 7396.567648200445,\n        \"payment_type\": \"string\",\n        \"order_id\": 9926\n      }\n    ],\n    \"assets\": [\n      {\n        \"id\": 2064,\n        \"identifier\": \"string\",\n        \"vin\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"trim\": \"string\",\n        \"year\": \"string\",\n        \"stock_number\": \"string\",\n        \"asset_image\": [\n          \"string\",\n          \"string\"\n        ],\n        \"asset_type\": \"string\",\n        \"rv_balloon_amount\": 6938.4641534161265\n      },\n      {\n        \"id\": 7531,\n        \"identifier\": \"string\",\n        \"vin\": \"string\",\n        \"make\": \"string\",\n        \"model\": \"string\",\n        \"trim\": \"string\",\n        \"year\": \"string\",\n        \"stock_number\": \"string\",\n        \"asset_image\": [\n          \"string\",\n          \"string\"\n        ],\n        \"asset_type\": \"string\",\n        \"rv_balloon_amount\": 8966.017152403945\n      }\n    ],\n    \"order_stakeholders\": [\n      {\n        \"identifier\": \"string\",\n        \"order_identifier\": \"string\",\n        \"stakeholder_reference_id\": \"string\",\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"role\": \"string\",\n        \"position\": \"string\",\n        \"contact_number\": \"string\",\n        \"address_id\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"order_identifier\": \"string\",\n        \"stakeholder_reference_id\": \"string\",\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"role\": \"string\",\n        \"position\": \"string\",\n        \"contact_number\": \"string\",\n        \"address_id\": \"string\"\n      }\n    ],\n    \"created_at\": \"2025-12-05\",\n    \"date_submitted\": \"1966-01-17\",\n    \"customer\": {\n      \"company_name\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"mobile_number\": \"string\",\n      \"customer_type\": \"string\",\n      \"identifier\": \"string\",\n      \"email\": \"WHyT9vbuO9@vQTKsgSeEbyTKZrnvlnLODU.xua\",\n      \"reference_id\": \"string\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7e878a6e-455f-4d1f-a888-3558904dce12",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "quick-quotation-by-vendor"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "broker_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customer_email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lender_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "contact_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendor_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "introducer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vendor_email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "updated_at",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_submitted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_stage",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a1a7cbeb-1f96-4504-9517-5af7774a1561",
+    "name": "Lane Vendor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

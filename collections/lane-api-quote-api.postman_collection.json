@@ -1,0 +1,1388 @@
+{
+  "item": [
+    {
+      "id": "56189f34-4e05-414e-9d97-8e15f477aa0f",
+      "name": "Quote",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "92de8623-522f-474d-9294-e2ee4cf6612c",
+          "name": "Calculate Quotation",
+          "request": {
+            "name": "Calculate Quotation",
+            "description": {
+              "content": "Calculate Quotation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terms\": \"<string>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_name\": \"<string>\",\n  \"asset_model_name\": \"<string>\",\n  \"asset_trim_name\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8b02a0a-a199-40ae-9445-9d1cd520e5fe",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<string>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_name\": \"<string>\",\n  \"asset_model_name\": \"<string>\",\n  \"asset_trim_name\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"fp_id\": 4278,\n    \"program_name\": \"string\",\n    \"finance_type\": \"string\",\n    \"calculation_method\": \"string\",\n    \"rental_mode\": \"string\",\n    \"rv_balloon_override\": false,\n    \"interest_rate_override\": true,\n    \"rate_conversion_method\": \"string\",\n    \"rv_balloon_applicable\": true,\n    \"rv_balloon_type\": \"string\",\n    \"rv_calculation_method\": \"string\",\n    \"estimated_monthly_payment\": 3151.62067925027,\n    \"rv_amount\": 1400,\n    \"due_at_signing\": 887.4766072797923,\n    \"selling_price\": 8749,\n    \"down_payment\": 1006,\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"financed_amount\": 6175,\n    \"rental_frequency\": [\n      4230,\n      4375\n    ],\n    \"rv_chart\": {},\n    \"interest_chart\": {\n      \"chart_id\": 3823,\n      \"margin\": 2580.1619183393377,\n      \"maximum_margin\": 9310.061839913042,\n      \"minimum_margin\": 3591.8912353091505\n    },\n    \"subsidy\": {\n      \"dealer_subsidy\": 2691.87240671208,\n      \"manufacturer_subsidy\": 2943.4307975201014,\n      \"total_subsidy\": 1446.0733278893313\n    },\n    \"rentals_stream\": [\n      {\n        \"startTerm\": 1867,\n        \"endTerm\": 6835,\n        \"rentalAmount\": 9180.789125991952,\n        \"rentalType\": \"string\",\n        \"total_subsidy\": 3627.0676449187854\n      },\n      {\n        \"startTerm\": 6044,\n        \"endTerm\": 9444,\n        \"rentalAmount\": 913.4806243079896,\n        \"rentalType\": \"string\",\n        \"total_subsidy\": 6134.280591737506\n      }\n    ]\n  },\n  {\n    \"fp_id\": 1947,\n    \"program_name\": \"string\",\n    \"finance_type\": \"string\",\n    \"calculation_method\": \"string\",\n    \"rental_mode\": \"string\",\n    \"rv_balloon_override\": true,\n    \"interest_rate_override\": false,\n    \"rate_conversion_method\": \"string\",\n    \"rv_balloon_applicable\": false,\n    \"rv_balloon_type\": \"string\",\n    \"rv_calculation_method\": \"string\",\n    \"estimated_monthly_payment\": 4250.400514137305,\n    \"rv_amount\": 3095,\n    \"due_at_signing\": 3239.1398557473563,\n    \"selling_price\": 2993,\n    \"down_payment\": 610,\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"financed_amount\": 4004,\n    \"rental_frequency\": [\n      1325,\n      9642\n    ],\n    \"rv_chart\": {},\n    \"interest_chart\": {\n      \"chart_id\": 1565,\n      \"margin\": 5760.475013817141,\n      \"maximum_margin\": 1331.1878791135766,\n      \"minimum_margin\": 3542.994119539721\n    },\n    \"subsidy\": {\n      \"dealer_subsidy\": 6292.120228478274,\n      \"manufacturer_subsidy\": 3331.315829058774,\n      \"total_subsidy\": 6482.102125615763\n    },\n    \"rentals_stream\": [\n      {\n        \"startTerm\": 623,\n        \"endTerm\": 2524,\n        \"rentalAmount\": 604.6869900976071,\n        \"rentalType\": \"string\",\n        \"total_subsidy\": 2026.9334477706968\n      },\n      {\n        \"startTerm\": 9718,\n        \"endTerm\": 4214,\n        \"rentalAmount\": 8638.155631286141,\n        \"rentalType\": \"string\",\n        \"total_subsidy\": 9118.454893424676\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6cbf816b-6c73-4b2c-abf5-602d807d6d93",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<string>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_name\": \"<string>\",\n  \"asset_model_name\": \"<string>\",\n  \"asset_trim_name\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca2c5578-7065-44ba-b789-0d9dfa1ba067",
+          "name": "Calculate Quotation",
+          "request": {
+            "name": "Calculate Quotation",
+            "description": {
+              "content": "Calculate Quotation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculate-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terms\": \"<string>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_name\": \"<string>\",\n  \"asset_model_name\": \"<string>\",\n  \"asset_trim_name\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7d5f8a47-da04-4ab5-97f5-96ca860039b3",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculate-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<string>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_name\": \"<string>\",\n  \"asset_model_name\": \"<string>\",\n  \"asset_trim_name\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b223f84-fb50-488e-832c-bc09cafb4fd7",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculate-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<string>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_name\": \"<string>\",\n  \"asset_model_name\": \"<string>\",\n  \"asset_trim_name\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2cf35129-ee17-425c-9dfc-61c831195872",
+          "name": "Calculate NFA [Net Financed Amount]",
+          "request": {
+            "name": "Calculate NFA [Net Financed Amount]",
+            "description": {
+              "content": "Calculate NFA [Net Financed Amount]",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculate-nfa"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"trade_in_amount\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "62a69cfa-fd97-4bd1-8b16-ee376213611f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculate-nfa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"trade_in_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"net_financed_amount\": 3936.4975053768703\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5671f62e-c772-47fa-be38-c8d66423b09e",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculate-nfa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"trade_in_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "daa05ae1-585c-45de-b1a6-bccc9f3eda6a",
+          "name": "Calculate Rental",
+          "request": {
+            "name": "Calculate Rental",
+            "description": {
+              "content": "Calculate Rental",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculation",
+                "V2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apr\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"interest_chart_margin\": \"<number>\",\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"per_unit_selling_price\": \"<number>\",\n  \"terms\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"base_rate\": \"<number>\",\n  \"annual_usage\": 0,\n  \"calculation_method\": \"annuity\",\n  \"lender_id\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"net_financed_amount\": 0,\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"Monthly\",\n  \"rental_mode\": \"<string>\",\n  \"vehicle\": {\n    \"vin\": \"<string>\",\n    \"odometer_mileage\": \"<integer>\",\n    \"msrp\": \"<number>\",\n    \"is_new\": \"<boolean>\",\n    \"year\": \"<integer>\",\n    \"transmission_type\": \"<string>\"\n  },\n  \"rv_value\": \"<number>\",\n  \"rv_amount\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ],\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"quantity\": \"<integer>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"customer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"dealer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"trade_in_amount\": \"<number>\",\n  \"markup_rate\": \"<number>\",\n  \"rebate\": {\n    \"price\": \"<number>\",\n    \"name\": \"<string>\"\n  },\n  \"tax_on_selling_price\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ea04bf7-b300-491b-ae3f-e0f1db79af6b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "V2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apr\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"interest_chart_margin\": \"<number>\",\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"per_unit_selling_price\": \"<number>\",\n  \"terms\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"base_rate\": \"<number>\",\n  \"annual_usage\": 0,\n  \"calculation_method\": \"annuity\",\n  \"lender_id\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"net_financed_amount\": 0,\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"Monthly\",\n  \"rental_mode\": \"<string>\",\n  \"vehicle\": {\n    \"vin\": \"<string>\",\n    \"odometer_mileage\": \"<integer>\",\n    \"msrp\": \"<number>\",\n    \"is_new\": \"<boolean>\",\n    \"year\": \"<integer>\",\n    \"transmission_type\": \"<string>\"\n  },\n  \"rv_value\": \"<number>\",\n  \"rv_amount\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ],\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"quantity\": \"<integer>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"customer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"dealer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"trade_in_amount\": \"<number>\",\n  \"markup_rate\": \"<number>\",\n  \"rebate\": {\n    \"price\": \"<number>\",\n    \"name\": \"<string>\"\n  },\n  \"tax_on_selling_price\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"add_ons_total\": 4309.4169315406025,\n  \"adjusted_capitalized_cost\": 7709.776867271779,\n  \"base_monthly_payment\": 6606.660259783534,\n  \"tax_on_capitalized_cost_reduction\": 4239.8805791226105,\n  \"monthly_deprecation\": 1483.237318702022,\n  \"capitalized_cost_reduction\": 2744.927822827885,\n  \"down_payment\": 8286.046795548817,\n  \"due_at_signing\": 8287.127377715973,\n  \"estimated_monthly_payment\": 6610.907436507974,\n  \"expiry_date\": \"1975-05-25\",\n  \"fees_total\": 44.31918706934712,\n  \"final_rate\": 1951.0362532460147,\n  \"fni_total\": 531.207710786038,\n  \"fni_products\": [\n    {\n      \"price\": 8013.631439108261,\n      \"name\": \"string\",\n      \"monthly_impact\": 3594.9159084519997\n    },\n    {\n      \"price\": 543.3064413322563,\n      \"name\": \"string\",\n      \"monthly_impact\": 9944.175995656147\n    }\n  ],\n  \"gross_capitalized_cost\": 8726.168937561803,\n  \"monthly_payment\": 9354.081419985698,\n  \"monthly_sales_use_tax\": 2912.2000594220654,\n  \"rebate_promotions\": 9104.380882190191,\n  \"rentals_stream\": {},\n  \"rv_amount\": 1151.6109993514324,\n  \"selling_price\": 4884.698122683077,\n  \"subsidy\": {\n    \"dealer_subsidy\": 2247.9921845777585,\n    \"manufacturer_subsidy\": 4831.95134743867,\n    \"total_subsidy\": 3117.753049891503\n  },\n  \"tax_amount\": 6543.432509801266,\n  \"taxes\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c8a3f41-ded8-4302-a96c-965a4909cc97",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "V2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apr\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"interest_chart_margin\": \"<number>\",\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"per_unit_selling_price\": \"<number>\",\n  \"terms\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"base_rate\": \"<number>\",\n  \"annual_usage\": 0,\n  \"calculation_method\": \"annuity\",\n  \"lender_id\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"net_financed_amount\": 0,\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"Monthly\",\n  \"rental_mode\": \"<string>\",\n  \"vehicle\": {\n    \"vin\": \"<string>\",\n    \"odometer_mileage\": \"<integer>\",\n    \"msrp\": \"<number>\",\n    \"is_new\": \"<boolean>\",\n    \"year\": \"<integer>\",\n    \"transmission_type\": \"<string>\"\n  },\n  \"rv_value\": \"<number>\",\n  \"rv_amount\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ],\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"quantity\": \"<integer>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"customer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"dealer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"trade_in_amount\": \"<number>\",\n  \"markup_rate\": \"<number>\",\n  \"rebate\": {\n    \"price\": \"<number>\",\n    \"name\": \"<string>\"\n  },\n  \"tax_on_selling_price\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d5ac280-5346-4cde-9c08-7da9425f8822",
+          "name": "Create Quote",
+          "request": {
+            "name": "Create Quote",
+            "description": {
+              "content": "Create Quote",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vin\": \"<string>\",\n  \"products\": [\n    {\n      \"productId\": \"<string>\",\n      \"productType\": \"<string>\",\n      \"price\": \"<number>\"\n    },\n    {\n      \"productId\": \"<string>\",\n      \"productType\": \"<string>\",\n      \"price\": \"<number>\"\n    }\n  ],\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"line1\": \"<string>\",\n    \"line2\": \"<string>\",\n    \"zipCode\": \"<string>\"\n  },\n  \"downPayment\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d9e5d39e-2067-4e58-8b85-93a396f1198a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vin\": \"<string>\",\n  \"products\": [\n    {\n      \"productId\": \"<string>\",\n      \"productType\": \"<string>\",\n      \"price\": \"<number>\"\n    },\n    {\n      \"productId\": \"<string>\",\n      \"productType\": \"<string>\",\n      \"price\": \"<number>\"\n    }\n  ],\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"line1\": \"<string>\",\n    \"line2\": \"<string>\",\n    \"zipCode\": \"<string>\"\n  },\n  \"downPayment\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af3023cf-861d-409d-8eb1-da76da4f111e",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vin\": \"<string>\",\n  \"products\": [\n    {\n      \"productId\": \"<string>\",\n      \"productType\": \"<string>\",\n      \"price\": \"<number>\"\n    },\n    {\n      \"productId\": \"<string>\",\n      \"productType\": \"<string>\",\n      \"price\": \"<number>\"\n    }\n  ],\n  \"address\": {\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"line1\": \"<string>\",\n    \"line2\": \"<string>\",\n    \"zipCode\": \"<string>\"\n  },\n  \"downPayment\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "490ccf0d-3bbe-48d6-9f73-63e6b13cd6d1",
+          "name": "Calculate Quotation for Multiple Assets",
+          "request": {
+            "name": "Calculate Quotation for Multiple Assets",
+            "description": {
+              "content": "Calculate Quotation for Multiple Assets",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculation",
+                "multi-assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"terms\": \"<integer>\",\n    \"per_unit_selling_price\": \"<number>\",\n    \"dealer_id\": \"<integer>\",\n    \"quantity\": \"<integer>\",\n    \"asset_make_id\": \"<integer>\",\n    \"asset_model_id\": \"<integer>\",\n    \"asset_trim_id\": \"<integer>\",\n    \"make_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"trim_name\": \"<string>\",\n    \"asset_condition\": \"<string>\",\n    \"credit_rating_id\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"asset_classification\": \"<string>\",\n    \"annual_usage\": \"<integer>\",\n    \"is_rv_guaranteed\": \"<string>\",\n    \"down_payment\": \"<number>\",\n    \"down_payment_paid_by_dealer\": \"<number>\",\n    \"down_payment_paid_by_oem\": \"<number>\",\n    \"options\": [\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"fees\": [\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      },\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      }\n    ],\n    \"fni_products\": [\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      },\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      }\n    ],\n    \"trade_in_amount\": \"<number>\",\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"insurance\": [\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"rental_frequency\": \"<string>\",\n    \"subsidy\": {\n      \"subsidy_calculation_method\": \"<string>\",\n      \"financier_rate\": \"<number>\",\n      \"manufacturer_subsidy_rate\": \"<number>\",\n      \"dealer_subsidy_rate\": \"<number>\"\n    },\n    \"interest_rate\": \"<number>\",\n    \"rental_mode\": \"<string>\",\n    \"residual_value\": \"<number>\",\n    \"start_term\": \"<integer>\",\n    \"end_term\": \"<integer>\",\n    \"rental_amount\": \"<number>\",\n    \"is_renewal\": \"<boolean>\",\n    \"program_id\": \"<integer>\",\n    \"structure_rentals\": [\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      },\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"terms\": \"<integer>\",\n    \"per_unit_selling_price\": \"<number>\",\n    \"dealer_id\": \"<integer>\",\n    \"quantity\": \"<integer>\",\n    \"asset_make_id\": \"<integer>\",\n    \"asset_model_id\": \"<integer>\",\n    \"asset_trim_id\": \"<integer>\",\n    \"make_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"trim_name\": \"<string>\",\n    \"asset_condition\": \"<string>\",\n    \"credit_rating_id\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"asset_classification\": \"<string>\",\n    \"annual_usage\": \"<integer>\",\n    \"is_rv_guaranteed\": \"<string>\",\n    \"down_payment\": \"<number>\",\n    \"down_payment_paid_by_dealer\": \"<number>\",\n    \"down_payment_paid_by_oem\": \"<number>\",\n    \"options\": [\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"fees\": [\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      },\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      }\n    ],\n    \"fni_products\": [\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      },\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      }\n    ],\n    \"trade_in_amount\": \"<number>\",\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"insurance\": [\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"rental_frequency\": \"<string>\",\n    \"subsidy\": {\n      \"subsidy_calculation_method\": \"<string>\",\n      \"financier_rate\": \"<number>\",\n      \"manufacturer_subsidy_rate\": \"<number>\",\n      \"dealer_subsidy_rate\": \"<number>\"\n    },\n    \"interest_rate\": \"<number>\",\n    \"rental_mode\": \"<string>\",\n    \"residual_value\": \"<number>\",\n    \"start_term\": \"<integer>\",\n    \"end_term\": \"<integer>\",\n    \"rental_amount\": \"<number>\",\n    \"is_renewal\": \"<boolean>\",\n    \"program_id\": \"<integer>\",\n    \"structure_rentals\": [\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      },\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      }\n    ]\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9a508203-1365-427a-91d2-66c2c4f8fb05",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "multi-assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"terms\": \"<integer>\",\n    \"per_unit_selling_price\": \"<number>\",\n    \"dealer_id\": \"<integer>\",\n    \"quantity\": \"<integer>\",\n    \"asset_make_id\": \"<integer>\",\n    \"asset_model_id\": \"<integer>\",\n    \"asset_trim_id\": \"<integer>\",\n    \"make_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"trim_name\": \"<string>\",\n    \"asset_condition\": \"<string>\",\n    \"credit_rating_id\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"asset_classification\": \"<string>\",\n    \"annual_usage\": \"<integer>\",\n    \"is_rv_guaranteed\": \"<string>\",\n    \"down_payment\": \"<number>\",\n    \"down_payment_paid_by_dealer\": \"<number>\",\n    \"down_payment_paid_by_oem\": \"<number>\",\n    \"options\": [\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"fees\": [\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      },\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      }\n    ],\n    \"fni_products\": [\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      },\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      }\n    ],\n    \"trade_in_amount\": \"<number>\",\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"insurance\": [\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"rental_frequency\": \"<string>\",\n    \"subsidy\": {\n      \"subsidy_calculation_method\": \"<string>\",\n      \"financier_rate\": \"<number>\",\n      \"manufacturer_subsidy_rate\": \"<number>\",\n      \"dealer_subsidy_rate\": \"<number>\"\n    },\n    \"interest_rate\": \"<number>\",\n    \"rental_mode\": \"<string>\",\n    \"residual_value\": \"<number>\",\n    \"start_term\": \"<integer>\",\n    \"end_term\": \"<integer>\",\n    \"rental_amount\": \"<number>\",\n    \"is_renewal\": \"<boolean>\",\n    \"program_id\": \"<integer>\",\n    \"structure_rentals\": [\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      },\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"terms\": \"<integer>\",\n    \"per_unit_selling_price\": \"<number>\",\n    \"dealer_id\": \"<integer>\",\n    \"quantity\": \"<integer>\",\n    \"asset_make_id\": \"<integer>\",\n    \"asset_model_id\": \"<integer>\",\n    \"asset_trim_id\": \"<integer>\",\n    \"make_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"trim_name\": \"<string>\",\n    \"asset_condition\": \"<string>\",\n    \"credit_rating_id\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"asset_classification\": \"<string>\",\n    \"annual_usage\": \"<integer>\",\n    \"is_rv_guaranteed\": \"<string>\",\n    \"down_payment\": \"<number>\",\n    \"down_payment_paid_by_dealer\": \"<number>\",\n    \"down_payment_paid_by_oem\": \"<number>\",\n    \"options\": [\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"fees\": [\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      },\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      }\n    ],\n    \"fni_products\": [\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      },\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      }\n    ],\n    \"trade_in_amount\": \"<number>\",\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"insurance\": [\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"rental_frequency\": \"<string>\",\n    \"subsidy\": {\n      \"subsidy_calculation_method\": \"<string>\",\n      \"financier_rate\": \"<number>\",\n      \"manufacturer_subsidy_rate\": \"<number>\",\n      \"dealer_subsidy_rate\": \"<number>\"\n    },\n    \"interest_rate\": \"<number>\",\n    \"rental_mode\": \"<string>\",\n    \"residual_value\": \"<number>\",\n    \"start_term\": \"<integer>\",\n    \"end_term\": \"<integer>\",\n    \"rental_amount\": \"<number>\",\n    \"is_renewal\": \"<boolean>\",\n    \"program_id\": \"<integer>\",\n    \"structure_rentals\": [\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      },\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      }\n    ]\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4878437a-f57b-4587-9413-63eb6ff3e9ad",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "multi-assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"terms\": \"<integer>\",\n    \"per_unit_selling_price\": \"<number>\",\n    \"dealer_id\": \"<integer>\",\n    \"quantity\": \"<integer>\",\n    \"asset_make_id\": \"<integer>\",\n    \"asset_model_id\": \"<integer>\",\n    \"asset_trim_id\": \"<integer>\",\n    \"make_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"trim_name\": \"<string>\",\n    \"asset_condition\": \"<string>\",\n    \"credit_rating_id\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"asset_classification\": \"<string>\",\n    \"annual_usage\": \"<integer>\",\n    \"is_rv_guaranteed\": \"<string>\",\n    \"down_payment\": \"<number>\",\n    \"down_payment_paid_by_dealer\": \"<number>\",\n    \"down_payment_paid_by_oem\": \"<number>\",\n    \"options\": [\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"fees\": [\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      },\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      }\n    ],\n    \"fni_products\": [\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      },\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      }\n    ],\n    \"trade_in_amount\": \"<number>\",\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"insurance\": [\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"rental_frequency\": \"<string>\",\n    \"subsidy\": {\n      \"subsidy_calculation_method\": \"<string>\",\n      \"financier_rate\": \"<number>\",\n      \"manufacturer_subsidy_rate\": \"<number>\",\n      \"dealer_subsidy_rate\": \"<number>\"\n    },\n    \"interest_rate\": \"<number>\",\n    \"rental_mode\": \"<string>\",\n    \"residual_value\": \"<number>\",\n    \"start_term\": \"<integer>\",\n    \"end_term\": \"<integer>\",\n    \"rental_amount\": \"<number>\",\n    \"is_renewal\": \"<boolean>\",\n    \"program_id\": \"<integer>\",\n    \"structure_rentals\": [\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      },\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      }\n    ]\n  },\n  {\n    \"terms\": \"<integer>\",\n    \"per_unit_selling_price\": \"<number>\",\n    \"dealer_id\": \"<integer>\",\n    \"quantity\": \"<integer>\",\n    \"asset_make_id\": \"<integer>\",\n    \"asset_model_id\": \"<integer>\",\n    \"asset_trim_id\": \"<integer>\",\n    \"make_name\": \"<string>\",\n    \"model_name\": \"<string>\",\n    \"trim_name\": \"<string>\",\n    \"asset_condition\": \"<string>\",\n    \"credit_rating_id\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"asset_classification\": \"<string>\",\n    \"annual_usage\": \"<integer>\",\n    \"is_rv_guaranteed\": \"<string>\",\n    \"down_payment\": \"<number>\",\n    \"down_payment_paid_by_dealer\": \"<number>\",\n    \"down_payment_paid_by_oem\": \"<number>\",\n    \"options\": [\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"option_name\": \"<string>\",\n        \"option_amount\": \"<number>\",\n        \"rv_amount_on_option\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"fees\": [\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      },\n      {\n        \"fee_name\": \"<string>\",\n        \"fee_amount\": \"<number>\",\n        \"fee_handling\": \"<string>\",\n        \"is_taxable\": \"<boolean>\",\n        \"tax_in_capital\": true,\n        \"vendor\": \"<string>\"\n      }\n    ],\n    \"fni_products\": [\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      },\n      {\n        \"fni_product_name\": \"<string>\",\n        \"fni_product_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\",\n        \"is_taxable\": false\n      }\n    ],\n    \"trade_in_amount\": \"<number>\",\n    \"taxes\": [\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"tax_name\": \"<string>\",\n        \"tax_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"insurance\": [\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      },\n      {\n        \"insurance_name\": \"<string>\",\n        \"insurance_amount\": \"<number>\",\n        \"amount_handling\": \"<string>\"\n      }\n    ],\n    \"rental_frequency\": \"<string>\",\n    \"subsidy\": {\n      \"subsidy_calculation_method\": \"<string>\",\n      \"financier_rate\": \"<number>\",\n      \"manufacturer_subsidy_rate\": \"<number>\",\n      \"dealer_subsidy_rate\": \"<number>\"\n    },\n    \"interest_rate\": \"<number>\",\n    \"rental_mode\": \"<string>\",\n    \"residual_value\": \"<number>\",\n    \"start_term\": \"<integer>\",\n    \"end_term\": \"<integer>\",\n    \"rental_amount\": \"<number>\",\n    \"is_renewal\": \"<boolean>\",\n    \"program_id\": \"<integer>\",\n    \"structure_rentals\": [\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      },\n      {\n        \"start_term\": \"<string>\",\n        \"end_term\": \"<string>\",\n        \"rental_type\": \"<string>\",\n        \"amount\": \"<string>\"\n      }\n    ]\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b08ebaf1-4d14-4d50-a9aa-8545031c9fbe",
+          "name": "Calculate Quotation",
+          "request": {
+            "name": "Calculate Quotation",
+            "description": {
+              "content": "Calculate Quotation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculation",
+                "quantity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terms\": \"<integer>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_id\": \"<integer>\",\n  \"asset_model_id\": \"<integer>\",\n  \"asset_trim_id\": \"<integer>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fc96e4f3-208a-4b65-bc83-ef5c5dac64b3",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "quantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<integer>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_id\": \"<integer>\",\n  \"asset_model_id\": \"<integer>\",\n  \"asset_trim_id\": \"<integer>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "23b07d95-37bf-443c-9dc2-97947f1dcc90",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "quantity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<integer>\",\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"quantity\": \"<integer>\",\n  \"asset_make_id\": \"<integer>\",\n  \"asset_model_id\": \"<integer>\",\n  \"asset_trim_id\": \"<integer>\",\n  \"make_name\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"trim_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating_id\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"trade_in_amount\": \"<number>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"<string>\",\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"interest_rate\": \"<number>\",\n  \"rental_mode\": \"<string>\",\n  \"residual_value\": \"<number>\",\n  \"start_term\": \"<integer>\",\n  \"end_term\": \"<integer>\",\n  \"rental_amount\": \"<number>\",\n  \"is_renewal\": \"<boolean>\",\n  \"program_id\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7f22159-d292-4046-b6af-5dbae0ede509",
+          "name": "Calculate Monthly Impact",
+          "request": {
+            "name": "Calculate Monthly Impact",
+            "description": {
+              "content": "Calculate Monthly Impact",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculation",
+                "monthlyImpact"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apr\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"interest_chart_margin\": \"<number>\",\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"per_unit_selling_price\": \"<number>\",\n  \"terms\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"base_rate\": \"<number>\",\n  \"annual_usage\": 0,\n  \"calculation_method\": \"annuity\",\n  \"lender_id\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"net_financed_amount\": 0,\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"Monthly\",\n  \"rental_mode\": \"<string>\",\n  \"vehicle\": {\n    \"vin\": \"<string>\",\n    \"odometer_mileage\": \"<integer>\",\n    \"msrp\": \"<number>\",\n    \"is_new\": \"<boolean>\",\n    \"year\": \"<integer>\",\n    \"transmission_type\": \"<string>\"\n  },\n  \"rv_value\": \"<number>\",\n  \"rv_amount\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ],\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"quantity\": \"<integer>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"customer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"dealer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"trade_in_amount\": \"<number>\",\n  \"markup_rate\": \"<number>\",\n  \"rebate\": {\n    \"price\": \"<number>\",\n    \"name\": \"<string>\"\n  },\n  \"tax_on_selling_price\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "90a8c1a3-a627-4695-a882-8983f5f0454f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "monthlyImpact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apr\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"interest_chart_margin\": \"<number>\",\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"per_unit_selling_price\": \"<number>\",\n  \"terms\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"base_rate\": \"<number>\",\n  \"annual_usage\": 0,\n  \"calculation_method\": \"annuity\",\n  \"lender_id\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"net_financed_amount\": 0,\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"Monthly\",\n  \"rental_mode\": \"<string>\",\n  \"vehicle\": {\n    \"vin\": \"<string>\",\n    \"odometer_mileage\": \"<integer>\",\n    \"msrp\": \"<number>\",\n    \"is_new\": \"<boolean>\",\n    \"year\": \"<integer>\",\n    \"transmission_type\": \"<string>\"\n  },\n  \"rv_value\": \"<number>\",\n  \"rv_amount\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ],\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"quantity\": \"<integer>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"customer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"dealer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"trade_in_amount\": \"<number>\",\n  \"markup_rate\": \"<number>\",\n  \"rebate\": {\n    \"price\": \"<number>\",\n    \"name\": \"<string>\"\n  },\n  \"tax_on_selling_price\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af7efbc3-eb95-44d0-9f00-733237622d72",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculation",
+                    "monthlyImpact"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apr\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"interest_chart_margin\": \"<number>\",\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"per_unit_selling_price\": \"<number>\",\n  \"terms\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"base_rate\": \"<number>\",\n  \"annual_usage\": 0,\n  \"calculation_method\": \"annuity\",\n  \"lender_id\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_paid_by_dealer\": \"<number>\",\n  \"down_payment_paid_by_oem\": \"<number>\",\n  \"net_financed_amount\": 0,\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"rental_frequency\": \"Monthly\",\n  \"rental_mode\": \"<string>\",\n  \"vehicle\": {\n    \"vin\": \"<string>\",\n    \"odometer_mileage\": \"<integer>\",\n    \"msrp\": \"<number>\",\n    \"is_new\": \"<boolean>\",\n    \"year\": \"<integer>\",\n    \"transmission_type\": \"<string>\"\n  },\n  \"rv_value\": \"<number>\",\n  \"rv_amount\": \"<integer>\",\n  \"structure_rentals\": [\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    },\n    {\n      \"start_term\": \"<string>\",\n      \"end_term\": \"<string>\",\n      \"rental_type\": \"<string>\",\n      \"amount\": \"<string>\"\n    }\n  ],\n  \"subsidy\": {\n    \"subsidy_calculation_method\": \"<string>\",\n    \"financier_rate\": \"<number>\",\n    \"manufacturer_subsidy_rate\": \"<number>\",\n    \"dealer_subsidy_rate\": \"<number>\"\n  },\n  \"quantity\": \"<integer>\",\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"customer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"dealer_address\": {\n    \"state\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"street_address\": \"<string>\",\n    \"city\": \"<string>\"\n  },\n  \"trade_in_amount\": \"<number>\",\n  \"markup_rate\": \"<number>\",\n  \"rebate\": {\n    \"price\": \"<number>\",\n    \"name\": \"<string>\"\n  },\n  \"tax_on_selling_price\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ebfa9d7f-f25c-43a7-a220-f70b6802007e",
+    "name": "Lane Quote API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

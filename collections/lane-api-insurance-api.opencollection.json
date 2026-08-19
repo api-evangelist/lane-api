@@ -1,0 +1,439 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Insurance API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Insurance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get customer insurance information by customer reference id and order reference number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query",
+                "description": "provide valid reference_id"
+              },
+              {
+                "name": "order_reference_id",
+                "value": "",
+                "type": "query",
+                "description": "provide valid order_reference_id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get customer insurance information by customer reference id and order reference number"
+        },
+        {
+          "info": {
+            "name": "Create customer insurance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create customer insurance information"
+        },
+        {
+          "info": {
+            "name": "Updates customer insurance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates customer insurance information"
+        },
+        {
+          "info": {
+            "name": "Delete single customer insurance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete single customer insurance information"
+        },
+        {
+          "info": {
+            "name": "Updates customer insurance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/customer/update-insurance-information",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates customer insurance information"
+        },
+        {
+          "info": {
+            "name": "Get customer insurance information history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information-history",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from_date",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DD"
+              },
+              {
+                "name": "to_date",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DD"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get customer insurance information history"
+        },
+        {
+          "info": {
+            "name": "Get customer insurance information by customer reference id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information-by-customer",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get customer insurance information by customer reference id"
+        },
+        {
+          "info": {
+            "name": "Get customer insurance information by order reference number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information-by-order",
+            "params": [
+              {
+                "name": "order_reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get customer insurance information by order reference number"
+        },
+        {
+          "info": {
+            "name": "Get customer insurance information document history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information/document-history",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query",
+                "description": "provide valid reference_id"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get customer insurance information document history"
+        },
+        {
+          "info": {
+            "name": "Delete single customer insurance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/customer/delete-insurance-information",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete single customer insurance information"
+        },
+        {
+          "info": {
+            "name": "Add insurance document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information/add-document",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add insurance document"
+        },
+        {
+          "info": {
+            "name": "Delete insurance document ",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information/remove-document",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete insurance document "
+        },
+        {
+          "info": {
+            "name": "Delete insurance document ",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/customer/insurance-information/remove-insurance-document",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete insurance document "
+        },
+        {
+          "info": {
+            "name": "Add insurance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/insurance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add insurance information"
+        },
+        {
+          "info": {
+            "name": "Add Insurance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/insurance/add-insurance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Storing Transaction id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

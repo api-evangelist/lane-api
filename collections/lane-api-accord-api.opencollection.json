@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Accord API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accord",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update Disclaimer accord",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-accord",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "change_accord",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update Disclaimer accord"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Associated API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Associated",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Dealer Distance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/get-associated-dealers",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "resource_owner_password_credentials",
+              "accessTokenUrl": "/signup/verify-otp",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get All Dealer Distance"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

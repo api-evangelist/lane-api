@@ -1,0 +1,131 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Order  Stakeholder  Management API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Order  Stakeholder  Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get order stakeholder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/order/stakeholder/",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stakeholder_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "position",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get order stakeholder"
+        },
+        {
+          "info": {
+            "name": "Create new order stakeholder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/order/stakeholder/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create new order stakeholder"
+        },
+        {
+          "info": {
+            "name": "Update order stakeholder",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/order/stakeholder/",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update order stakeholder"
+        },
+        {
+          "info": {
+            "name": "Update order stakeholder",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/order/stakeholder/",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Update order stakeholder"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

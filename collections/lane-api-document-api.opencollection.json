@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Document API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Document",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete customer document by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/customer/delete-document",
+            "params": [
+              {
+                "name": "document_identifier",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete customer document by identifier"
+        },
+        {
+          "info": {
+            "name": "Get document package by reference_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-document-packages-by-reference-id",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_order_id",
+                "value": "",
+                "type": "query",
+                "description": "Order Id"
+              },
+              {
+                "name": "document_type",
+                "value": "",
+                "type": "query",
+                "description": "Document Type"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by reference_id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

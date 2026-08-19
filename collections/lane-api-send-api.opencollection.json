@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Send API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "send email to customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/customer/send-email-to-customer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "send email to customer"
+        },
+        {
+          "info": {
+            "name": "send order link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/customer/send-order-link",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "send order link"
+        },
+        {
+          "info": {
+            "name": "Send Email Notification Through SQS",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/send-notification-email-sqs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Send Email Notification Through SQS"
+        },
+        {
+          "info": {
+            "name": "Send Email Notification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/send-notification-email",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Send Email Notification"
+        },
+        {
+          "info": {
+            "name": "send Email notification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/order/send-email/:event_name",
+            "params": [
+              {
+                "name": "event_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "send Email notification"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

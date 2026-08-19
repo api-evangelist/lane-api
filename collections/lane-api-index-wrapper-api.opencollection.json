@@ -1,0 +1,254 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Index  Wrapper API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Index  Wrapper",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Company By Tenant Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/company/by-tenant-id/:tenant_id",
+            "params": [
+              {
+                "name": "tenant_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Find Company By Tenant Id"
+        },
+        {
+          "info": {
+            "name": "Get Inventory Reference Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/inventory/reference-data-by-dealer-code/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Inventory Reference Data"
+        },
+        {
+          "info": {
+            "name": "Get Dealer Preference By Dealer Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/preference-by-dealer-code/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Dealer Preference By Dealer Code"
+        },
+        {
+          "info": {
+            "name": "Get Hubex Configuration By Provider Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/integration/configuration/:dealer_code/:integration_type/:provider_name",
+            "headers": [
+              {
+                "name": "company_id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "integration_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "provider_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Hubex Configuration By Provider Name"
+        },
+        {
+          "info": {
+            "name": "Get Vehicle Detail By Vin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/vehicle-detail/:vin",
+            "params": [
+              {
+                "name": "vin",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Vehicle Detail By Vin"
+        },
+        {
+          "info": {
+            "name": "Get Dealer Profile By Dealer Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/profile/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Dealer Profile By Dealer Code"
+        },
+        {
+          "info": {
+            "name": "Get Vehicle By Vin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/vehicle/:vin",
+            "params": [
+              {
+                "name": "vin",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Vehicle By Vin"
+        },
+        {
+          "info": {
+            "name": "Get All Dealer Fee By Code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/fee/dealer-code/:dealer_code",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "state_code",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get All Dealer Fee By Code"
+        },
+        {
+          "info": {
+            "name": "Get Active Asset Usages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/asset-usage/active",
+            "headers": [
+              {
+                "name": "company_id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Active Asset Usages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,479 @@
+{
+  "item": [
+    {
+      "id": "fe80b800-3312-489b-83e3-5babf2d7d364",
+      "name": "Document",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9768c374-1bc7-424d-bd5d-0e75df4bbae4",
+          "name": "Delete customer document by identifier",
+          "request": {
+            "name": "Delete customer document by identifier",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "delete-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "document_identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3a7ef411-9481-4cff-8b0f-e0b7deb7122a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "delete-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "document_identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "546951fa-fd62-48f7-8097-d39ae11944bd",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "delete-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "document_identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e5976da-4e23-4a87-b2e5-f94b2dca55e6",
+          "name": "Get document package by reference_id",
+          "request": {
+            "name": "Get document package by reference_id",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "all-document-packages-by-reference-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "external_order_id",
+                  "value": "<string>",
+                  "description": "Order Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "document_type",
+                  "value": "<string>",
+                  "description": "Document Type"
+                },
+                {
+                  "disabled": false,
+                  "key": "document_type",
+                  "value": "<string>",
+                  "description": "Document Type"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "81f33c95-9fdf-4e1e-b2a0-c124f82c9066",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"order_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"created_at\": \"1965-01-24T12:42:06.447Z\",\n    \"updated_at\": \"1997-05-05T14:41:52.068Z\",\n    \"documents\": [\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1956-05-17T18:37:59.508Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 8356,\n            \"y\": 9435,\n            \"x_bound\": 1093,\n            \"y_bound\": 8102,\n            \"width\": 5170,\n            \"height\": 9894,\n            \"page\": 2334,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 6432,\n            \"y\": 6835,\n            \"x_bound\": 85,\n            \"y_bound\": 3308,\n            \"width\": 1370,\n            \"height\": 1071,\n            \"page\": 6905,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"1984-03-10T04:12:33.250Z\",\n        \"updated_at\": \"2010-01-17T22:50:10.536Z\",\n        \"generated_document_uri\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1974-06-23T09:50:24.909Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 4260,\n            \"y\": 7554,\n            \"x_bound\": 7867,\n            \"y_bound\": 6253,\n            \"width\": 3254,\n            \"height\": 9217,\n            \"page\": 3911,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 3803,\n            \"y\": 9420,\n            \"x_bound\": 1460,\n            \"y_bound\": 6706,\n            \"width\": 4918,\n            \"height\": 7247,\n            \"page\": 6203,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"1995-09-22T22:56:13.909Z\",\n        \"updated_at\": \"1950-05-18T16:16:12.366Z\",\n        \"generated_document_uri\": \"string\"\n      }\n    ]\n  },\n  {\n    \"identifier\": \"string\",\n    \"order_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"created_at\": \"1962-12-22T04:22:17.362Z\",\n    \"updated_at\": \"2019-11-29T00:53:27.563Z\",\n    \"documents\": [\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1990-08-09T21:19:39.048Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 6772,\n            \"y\": 7677,\n            \"x_bound\": 9459,\n            \"y_bound\": 3314,\n            \"width\": 6355,\n            \"height\": 901,\n            \"page\": 9098,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 8778,\n            \"y\": 4758,\n            \"x_bound\": 934,\n            \"y_bound\": 3687,\n            \"width\": 6064,\n            \"height\": 2021,\n            \"page\": 5777,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"2012-11-17T01:49:25.936Z\",\n        \"updated_at\": \"1964-04-30T22:56:40.856Z\",\n        \"generated_document_uri\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"2002-02-10T08:49:40.930Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 4779,\n            \"y\": 6227,\n            \"x_bound\": 5277,\n            \"y_bound\": 8448,\n            \"width\": 3340,\n            \"height\": 8084,\n            \"page\": 3063,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 2435,\n            \"y\": 518,\n            \"x_bound\": 961,\n            \"y_bound\": 4688,\n            \"width\": 5051,\n            \"height\": 9249,\n            \"page\": 4192,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"2004-03-17T12:24:42.270Z\",\n        \"updated_at\": \"1965-04-05T17:32:45.429Z\",\n        \"generated_document_uri\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c781ea60-b62b-41ec-9db5-9e867124d43e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "067bfa1a-dab9-45c3-9ec2-0225ccdc7dfd",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "68f89a73-d888-4a5a-83a9-710ec262a5a4",
+    "name": "Lane Document API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

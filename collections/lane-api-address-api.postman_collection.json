@@ -1,0 +1,889 @@
+{
+  "item": [
+    {
+      "id": "276c593c-9fb4-4286-a590-389f02ce455a",
+      "name": "Address",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6337c97f-69e6-42d6-a4fd-e03b4e253a34",
+          "name": "Get existing record of address",
+          "request": {
+            "name": "Get existing record of address",
+            "description": {
+              "content": "Get existing record of address",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e6ee3f20-fc1c-4abf-906e-f1bc1d6e61bf",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"address_type\": \"Residential\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": false,\n    \"move_in_date\": \"1961-12-05\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1965-01-15T17:43:12.145Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"2002-02-13T18:31:36.961Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1955-11-06T21:11:18.088Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  },\n  {\n    \"address_type\": \"Mailing\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1997-12-28\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"2021-02-16T16:02:54.249Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1982-07-11T18:07:41.624Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1977-12-29T11:55:55.158Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a931012-4b91-42c6-ab7a-4a5764e79e7b",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "843a2428-af54-40aa-a391-b622b10e15f9",
+          "name": "Create an address",
+          "request": {
+            "name": "Create an address",
+            "description": {
+              "content": "Create single address record",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_line_2\": \"<string>\",\n  \"state_name\": \"<string>\",\n  \"zip_code\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"verified\": \"<boolean>\",\n  \"move_in_date\": \"<date>\",\n  \"is_garaging\": false,\n  \"identifier\": \"<string>\",\n  \"reference_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "872529c2-0fcc-4db7-adca-2aa99d8e27d1",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_line_2\": \"<string>\",\n  \"state_name\": \"<string>\",\n  \"zip_code\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"verified\": \"<boolean>\",\n  \"move_in_date\": \"<date>\",\n  \"is_garaging\": false,\n  \"identifier\": \"<string>\",\n  \"reference_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"string\",\n  \"address_line_2\": \"string\",\n  \"state_name\": \"string\",\n  \"zip_code\": \"string\",\n  \"county\": \"string\",\n  \"city\": \"string\",\n  \"contact_number\": \"string\",\n  \"verified\": false,\n  \"move_in_date\": \"1969-03-31\",\n  \"is_garaging\": false,\n  \"identifier\": \"string\",\n  \"created_at\": \"2009-10-25T09:27:26.118Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"1967-09-17T03:24:01.373Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1990-06-22T14:44:48.787Z\",\n  \"deleted_by\": \"string\",\n  \"reference_id\": \"string\",\n  \"is_active\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "60e8d5f6-0a49-480f-972c-38f7b2b07f36",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_line_2\": \"<string>\",\n  \"state_name\": \"<string>\",\n  \"zip_code\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"verified\": \"<boolean>\",\n  \"move_in_date\": \"<date>\",\n  \"is_garaging\": false,\n  \"identifier\": \"<string>\",\n  \"reference_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5e7208c-6be0-4730-b377-a730a05c1d3d",
+          "name": "Delete existing record of address",
+          "request": {
+            "name": "Delete existing record of address",
+            "description": {
+              "content": "Delete existing record of address",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5e1972cd-8e37-4999-bfd4-211e7b98be5c",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32bc735d-2fa9-4235-87dd-55a07ca7851a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa15e11f-7b22-4ac9-9e9f-811247d30291",
+          "name": "Update an address",
+          "request": {
+            "name": "Update an address",
+            "description": {
+              "content": "Update an existing record of address",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "address"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_line_2\": \"<string>\",\n  \"state_name\": \"<string>\",\n  \"zip_code\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"verified\": \"<boolean>\",\n  \"move_in_date\": \"<date>\",\n  \"is_garaging\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2a87f651-726f-4f88-bdd7-985aca067ee0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_line_2\": \"<string>\",\n  \"state_name\": \"<string>\",\n  \"zip_code\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"verified\": \"<boolean>\",\n  \"move_in_date\": \"<date>\",\n  \"is_garaging\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"string\",\n  \"address_line_2\": \"string\",\n  \"state_name\": \"string\",\n  \"zip_code\": \"string\",\n  \"county\": \"string\",\n  \"city\": \"string\",\n  \"contact_number\": \"string\",\n  \"verified\": false,\n  \"move_in_date\": \"1969-03-31\",\n  \"is_garaging\": false,\n  \"identifier\": \"string\",\n  \"created_at\": \"2009-10-25T09:27:26.118Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"1967-09-17T03:24:01.373Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1990-06-22T14:44:48.787Z\",\n  \"deleted_by\": \"string\",\n  \"reference_id\": \"string\",\n  \"is_active\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c7b6cea-9210-4ef8-8904-c33c2da6e127",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address_type\": \"<string>\",\n  \"address_line_1\": \"<string>\",\n  \"address_line_2\": \"<string>\",\n  \"state_name\": \"<string>\",\n  \"zip_code\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"verified\": \"<boolean>\",\n  \"move_in_date\": \"<date>\",\n  \"is_garaging\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1b20a78-0f3b-4c1f-8473-b520bf00008e",
+          "name": "Delete existing record of address",
+          "request": {
+            "name": "Delete existing record of address",
+            "description": {
+              "content": "Delete existing record of address",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "address",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4228ba84-4862-4528-95b7-6c5ae8973d43",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1953-05-20\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1949-08-29T08:37:25.193Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"2004-01-09T12:50:45.120Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"2007-04-20T23:46:34.022Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  },\n  {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1990-11-12\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"2007-02-24T14:19:46.437Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1960-01-04T23:28:38.611Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"2007-07-25T18:22:47.697Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ef4d3d9-0fac-4f5b-8953-79ca187ba7f2",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a9df307e-6232-40be-8a04-82b070c6c882",
+    "name": "Lane Address API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

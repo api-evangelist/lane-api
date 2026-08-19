@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Lead API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lead",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get dealer's lead",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/lead/:dealer_id",
+            "params": [
+              {
+                "name": "dealer_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "year_make_model_trim",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lead_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lead_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "email_address",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "first_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "last_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contact_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preferred_communication",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stock",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "last_updated_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "last_synced_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lead_source",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will get a dealer's leads"
+        },
+        {
+          "info": {
+            "name": "Update exisitng Draft/Active lead otherwise create new Lead",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/lead",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will update exisitng Draft/Active lead otherwise create new Lead"
+        },
+        {
+          "info": {
+            "name": "Update exisitng lead status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/lead/change-status/:lead_id",
+            "params": [
+              {
+                "name": "lead_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will update exisitng lead status along with any other param update"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

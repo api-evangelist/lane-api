@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Bookmarks API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bookmarks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get bookmarks of documents and notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-notification-bookmarks",
+            "params": [
+              {
+                "name": "event_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get bookmarks of documents and notifications"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

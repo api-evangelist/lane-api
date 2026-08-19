@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Year API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Year",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all the year from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-year/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will get all the year from KBB"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

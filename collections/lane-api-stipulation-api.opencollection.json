@@ -1,0 +1,188 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Stipulation API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stipulation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Stipulation Fulfillments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/fulfillment"
+          },
+          "docs": "Get All Stipulation Fulfillments"
+        },
+        {
+          "info": {
+            "name": "Create Stipulation Fulfillment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/fulfillment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create Stipulation Fulfillment"
+        },
+        {
+          "info": {
+            "name": "Delete Stipulation Fulfillments",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/fulfillment",
+            "params": [
+              {
+                "name": "stipulation_fulfillment_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete Stipulation Fulfillments"
+        },
+        {
+          "info": {
+            "name": "Delete Stipulation Fulfillments",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/fulfillment",
+            "params": [
+              {
+                "name": "stipulation_fulfillment_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete Stipulation Fulfillments"
+        },
+        {
+          "info": {
+            "name": "Get Stipulation Fulfillments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/fulfillment/",
+            "params": [
+              {
+                "name": "stipulation_fulfillment_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Stipulation Fulfillments"
+        },
+        {
+          "info": {
+            "name": "Get Financial Stipulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/financial",
+            "params": [
+              {
+                "name": "external_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Financial Stipulation"
+        },
+        {
+          "info": {
+            "name": "Create Financial Stipulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/financial",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create Financial Stipulation"
+        },
+        {
+          "info": {
+            "name": "Get Financial Stipulation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/stipulation/stipulation-by-lender",
+            "params": [
+              {
+                "name": "company_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Financial Stipulation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

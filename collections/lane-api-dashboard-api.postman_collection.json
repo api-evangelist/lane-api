@@ -1,0 +1,437 @@
+{
+  "item": [
+    {
+      "id": "5a361f21-55d1-4b7e-84db-6707bdb83c1e",
+      "name": "Dashboard",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1bef4ccd-63bc-48f1-9959-2f642fef24c3",
+          "name": "Get order proposal analytics for broker dashboard",
+          "request": {
+            "name": "Get order proposal analytics for broker dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "proposal-dashboard-analytics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "broker_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finance_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lender_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "introducer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_submitted",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finance_amount",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at_from",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at_to",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c1e994da-3098-4abf-a59b-cc50dc117ac0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal-dashboard-analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "broker_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lender_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "introducer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_submitted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "updated_at",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"updated_at\": \"1983-07-17\",\n    \"status\": \"string\",\n    \"name\": \"string\",\n    \"product_type\": \"string\",\n    \"finance_type\": \"string\",\n    \"customer_name\": \"string\",\n    \"introducer_name\": \"string\",\n    \"lender_name\": \"string\",\n    \"dealer_name\": \"string\",\n    \"date_submitted\": \"2003-08-31\",\n    \"finance_amount\": \"string\",\n    \"start_date\": \"1976-07-25\",\n    \"end_date\": \"1946-11-08\",\n    \"age_in_seconds\": \"string\",\n    \"company_name\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"customer_type\": \"string\",\n    \"running_id\": \"string\"\n  },\n  {\n    \"identifier\": \"string\",\n    \"updated_at\": \"1993-05-22\",\n    \"status\": \"string\",\n    \"name\": \"string\",\n    \"product_type\": \"string\",\n    \"finance_type\": \"string\",\n    \"customer_name\": \"string\",\n    \"introducer_name\": \"string\",\n    \"lender_name\": \"string\",\n    \"dealer_name\": \"string\",\n    \"date_submitted\": \"2015-06-15\",\n    \"finance_amount\": \"string\",\n    \"start_date\": \"2003-10-02\",\n    \"end_date\": \"1976-10-20\",\n    \"age_in_seconds\": \"string\",\n    \"company_name\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"customer_type\": \"string\",\n    \"running_id\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33a610ca-956f-4aaf-b7d4-8d2a5edcc266",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal-dashboard-analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "broker_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lender_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "introducer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_submitted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "updated_at",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dba3f202-e5d8-42eb-86a1-70d9fb98e7d6",
+    "name": "Lane Dashboard API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

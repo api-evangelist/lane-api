@@ -1,0 +1,961 @@
+{
+  "item": [
+    {
+      "id": "9b15f772-9fac-409d-802c-01465c766283",
+      "name": "Proposals",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7cb999e4-f2d3-4ec7-b9db-14a50d791d05",
+          "name": "Create new order proposal for broker",
+          "request": {
+            "name": "Create new order proposal for broker",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "proposal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"introducer_identifier\": \"<string>\",\n  \"introducer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"sum_of_advance_rentals\": \"<number>\",\n  \"no_of_advance_payments\": \"<integer>\",\n  \"no_of_regular_payments\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"deferral_amount\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"calculations_type\": \"<string>\",\n  \"program_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"finance_amount\": \"<number>\",\n  \"gross_profit\": \"<number>\",\n  \"due_at_signing\": \"<number>\",\n  \"comments\": \"<string>\",\n  \"meta_data\": \"<object>\",\n  \"commission_amount\": \"<number>\",\n  \"vat_treatment\": \"<string>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<integer>\",\n  \"deferred_type\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rate_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"commission_type\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95bf14ea-050c-4595-8c77-588ba79ceac3",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"introducer_identifier\": \"<string>\",\n  \"introducer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"sum_of_advance_rentals\": \"<number>\",\n  \"no_of_advance_payments\": \"<integer>\",\n  \"no_of_regular_payments\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"deferral_amount\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"calculations_type\": \"<string>\",\n  \"program_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"finance_amount\": \"<number>\",\n  \"gross_profit\": \"<number>\",\n  \"due_at_signing\": \"<number>\",\n  \"comments\": \"<string>\",\n  \"meta_data\": \"<object>\",\n  \"commission_amount\": \"<number>\",\n  \"vat_treatment\": \"<string>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<integer>\",\n  \"deferred_type\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rate_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"commission_type\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"introducer_identifier\": \"string\",\n  \"introducer_name\": \"string\",\n  \"dealer_id\": 7156,\n  \"lender_id\": 6096,\n  \"broker_id\": 9609,\n  \"start_date\": \"1951-08-13\",\n  \"end_date\": \"2017-01-22\",\n  \"status\": \"string\",\n  \"created_by\": \"string\",\n  \"selling_price\": 6868.014896005197,\n  \"down_payment\": 8691.961570954883,\n  \"estimated_monthly_payment\": 3290.4654136549925,\n  \"sum_of_advance_rentals\": 1524.0647606105517,\n  \"no_of_advance_payments\": 559,\n  \"no_of_regular_payments\": 1752,\n  \"rental_frequency\": \"string\",\n  \"deferral_amount\": 7853.374127199476,\n  \"rv_balloon_value\": 2954.39770810878,\n  \"balloon_collection\": \"string\",\n  \"calculations_type\": \"string\",\n  \"program_type\": \"string\",\n  \"product_type\": \"string\",\n  \"finance_type\": \"string\",\n  \"finance_amount\": 17.463009677054497,\n  \"gross_profit\": 8120.727385848104,\n  \"due_at_signing\": 6415.607786682809,\n  \"comments\": \"string\",\n  \"meta_data\": {},\n  \"commission_amount\": 6518.94205329065,\n  \"vat_treatment\": \"string\",\n  \"tax_amount\": 3708.9769925900873,\n  \"tax_amount_number\": 3791,\n  \"deferred_type\": \"string\",\n  \"reference_number\": \"string\",\n  \"rental_mode\": \"string\",\n  \"rate_type\": \"string\",\n  \"margin\": 149.30976240243976,\n  \"commission_type\": \"string\",\n  \"running_id\": \"string\",\n  \"non_vatable_amount\": 4728.218171400148,\n  \"identifier\": \"string\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5dd2f77c-b6bd-4102-878e-6c4a16029a8c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"introducer_identifier\": \"<string>\",\n  \"introducer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"sum_of_advance_rentals\": \"<number>\",\n  \"no_of_advance_payments\": \"<integer>\",\n  \"no_of_regular_payments\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"deferral_amount\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"calculations_type\": \"<string>\",\n  \"program_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"finance_amount\": \"<number>\",\n  \"gross_profit\": \"<number>\",\n  \"due_at_signing\": \"<number>\",\n  \"comments\": \"<string>\",\n  \"meta_data\": \"<object>\",\n  \"commission_amount\": \"<number>\",\n  \"vat_treatment\": \"<string>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<integer>\",\n  \"deferred_type\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rate_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"commission_type\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad174ec7-ef56-44ef-af14-b06bf0a30680",
+          "name": "Update order proposal for broker",
+          "request": {
+            "name": "Update order proposal for broker",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "proposal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"introducer_identifier\": \"<string>\",\n  \"introducer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"sum_of_advance_rentals\": \"<number>\",\n  \"no_of_advance_payments\": \"<integer>\",\n  \"no_of_regular_payments\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"deferral_amount\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"calculations_type\": \"<string>\",\n  \"program_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"finance_amount\": \"<number>\",\n  \"gross_profit\": \"<number>\",\n  \"due_at_signing\": \"<number>\",\n  \"comments\": \"<string>\",\n  \"meta_data\": \"<object>\",\n  \"commission_amount\": \"<number>\",\n  \"vat_treatment\": \"<string>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<integer>\",\n  \"deferred_type\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rate_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"commission_type\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4513cf77-d404-482d-ac15-af1d721fa555",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"introducer_identifier\": \"<string>\",\n  \"introducer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"sum_of_advance_rentals\": \"<number>\",\n  \"no_of_advance_payments\": \"<integer>\",\n  \"no_of_regular_payments\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"deferral_amount\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"calculations_type\": \"<string>\",\n  \"program_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"finance_amount\": \"<number>\",\n  \"gross_profit\": \"<number>\",\n  \"due_at_signing\": \"<number>\",\n  \"comments\": \"<string>\",\n  \"meta_data\": \"<object>\",\n  \"commission_amount\": \"<number>\",\n  \"vat_treatment\": \"<string>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<integer>\",\n  \"deferred_type\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rate_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"commission_type\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"introducer_identifier\": \"string\",\n  \"introducer_name\": \"string\",\n  \"dealer_id\": 3539,\n  \"lender_id\": 3640,\n  \"broker_id\": 5370,\n  \"start_date\": \"1990-03-13\",\n  \"end_date\": \"1952-02-27\",\n  \"status\": \"string\",\n  \"created_by\": \"string\",\n  \"selling_price\": 5368.501748556621,\n  \"down_payment\": 2933.466296862621,\n  \"estimated_monthly_payment\": 8277.512347992331,\n  \"sum_of_advance_rentals\": 9723.855759779195,\n  \"no_of_advance_payments\": 6317,\n  \"no_of_regular_payments\": 6222,\n  \"rental_frequency\": \"string\",\n  \"deferral_amount\": 1913.0784541529588,\n  \"rv_balloon_value\": 7809.326431782248,\n  \"balloon_collection\": \"string\",\n  \"calculations_type\": \"string\",\n  \"program_type\": \"string\",\n  \"product_type\": \"string\",\n  \"finance_type\": \"string\",\n  \"finance_amount\": 642.6175857576277,\n  \"gross_profit\": 6552.578318872745,\n  \"due_at_signing\": 7237.646925281048,\n  \"comments\": \"string\",\n  \"meta_data\": {},\n  \"commission_amount\": 9064.542462856527,\n  \"vat_treatment\": \"string\",\n  \"tax_amount\": 2170.254098498691,\n  \"tax_amount_number\": 8515,\n  \"deferred_type\": \"string\",\n  \"reference_number\": \"string\",\n  \"rental_mode\": \"string\",\n  \"rate_type\": \"string\",\n  \"margin\": 9562.388126443706,\n  \"commission_type\": \"string\",\n  \"running_id\": \"string\",\n  \"non_vatable_amount\": 3778.9156819114955,\n  \"identifier\": \"string\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f5520330-1c55-419a-9593-be5942cb8479",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"introducer_identifier\": \"<string>\",\n  \"introducer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"start_date\": \"<date>\",\n  \"end_date\": \"<date>\",\n  \"status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"sum_of_advance_rentals\": \"<number>\",\n  \"no_of_advance_payments\": \"<integer>\",\n  \"no_of_regular_payments\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"deferral_amount\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"calculations_type\": \"<string>\",\n  \"program_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"finance_amount\": \"<number>\",\n  \"gross_profit\": \"<number>\",\n  \"due_at_signing\": \"<number>\",\n  \"comments\": \"<string>\",\n  \"meta_data\": \"<object>\",\n  \"commission_amount\": \"<number>\",\n  \"vat_treatment\": \"<string>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<integer>\",\n  \"deferred_type\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rate_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"commission_type\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"customer\": {\n    \"identifier\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"customer_type\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"mobile_number\": \"<string>\",\n    \"company_registration_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"year_business_established\": \"<string>\",\n    \"nature_of_business\": \"<string>\",\n    \"sic_code\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"address\": {\n      \"identifier\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"city\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"move_in_date\": \"<dateTime>\"\n    },\n    \"partners\": [\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      },\n      {\n        \"identifier\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": {\n          \"address_type\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"address_line_1\": \"<string>\"\n        },\n        \"role\": \"<string>\"\n      }\n    ],\n    \"customer_documents\": [\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      },\n      {\n        \"customer_reference_id\": \"<string>\",\n        \"external_reference_id\": \"<string>\",\n        \"document_reference_id\": \"<string>\",\n        \"document_type\": \"<string>\",\n        \"content_type\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"category\": \"<string>\",\n        \"document\": \"<string>\",\n        \"document_name\": \"<string>\",\n        \"document_size\": \"<string>\",\n        \"document_url\": \"<string>\",\n        \"reason_by_system\": \"<string>\",\n        \"reason_for_customer\": \"<string>\",\n        \"document_status\": \"<string>\",\n        \"document_upload_indicator\": false,\n        \"expires_at\": \"<dateTime>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"deleted_by\": \"<string>\",\n        \"uploaded_by\": \"<string>\",\n        \"uploaded_at\": \"<dateTime>\",\n        \"is_deleted\": false,\n        \"identifier\": \"<string>\",\n        \"stipulation_code\": \"<string>\",\n        \"is_mandatory\": false\n      }\n    ]\n  },\n  \"order_assets\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"category\": \"<string>\",\n      \"asset_type\": \"<string>\",\n      \"asset_sub_type\": \"<string>\",\n      \"supplier_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"unit_price\": \"<string>\",\n      \"quantity\": \"<string>\",\n      \"total\": \"<string>\",\n      \"age\": \"<number>\",\n      \"condition\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"rv_balloon_amount\": \"<number>\"\n    }\n  ],\n  \"order_fees\": [\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"dealer_fee_name\": \"<string>\",\n      \"applied_price\": \"<number>\",\n      \"order_id\": \"<integer>\",\n      \"fee_frequency\": \"<string>\",\n      \"fee_occurance\": \"<string>\",\n      \"fee_first_due_date\": \"<string>\"\n    }\n  ],\n  \"order_payments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"payment_number_from\": \"<integer>\",\n      \"payment_number_to\": \"<integer>\",\n      \"amount\": \"<number>\",\n      \"payment_type\": \"<string>\",\n      \"order_id\": \"<integer>\"\n    }\n  ],\n  \"order_stakeholders\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_identifier\": \"<string>\",\n      \"stakeholder_reference_id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"role\": \"<string>\",\n      \"position\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"address_id\": \"<string>\"\n    }\n  ],\n  \"order_comments\": [\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"order_reference_id\": \"<string>\",\n      \"customer_id\": \"<string>\",\n      \"category\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"created_at\": \"<dateTime>\",\n      \"updated_by\": \"<string>\",\n      \"updated_at\": \"<dateTime>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9af907e-53a2-4d2d-ad8d-5cedb349e590",
+          "name": "Update order proposal status",
+          "request": {
+            "name": "Update order proposal status",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "change-proposal-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<string>\",\n  \"current_status\": \"<string>\",\n  \"next_status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\",\n  \"comment_data\": {\n    \"identifier\": \"<string>\",\n    \"order_reference_id\": \"<string>\",\n    \"customer_id\": \"<string>\",\n    \"category\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_by\": \"<string>\",\n    \"updated_at\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "622eecc8-1f2c-414e-bee6-d1c070a4bd88",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "change-proposal-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"current_status\": \"<string>\",\n  \"next_status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\",\n  \"comment_data\": {\n    \"identifier\": \"<string>\",\n    \"order_reference_id\": \"<string>\",\n    \"customer_id\": \"<string>\",\n    \"category\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_by\": \"<string>\",\n    \"updated_at\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa5714a0-ee52-41ba-a163-cbe97d138810",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "change-proposal-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"current_status\": \"<string>\",\n  \"next_status\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"updated_at\": \"<string>\",\n  \"comment_data\": {\n    \"identifier\": \"<string>\",\n    \"order_reference_id\": \"<string>\",\n    \"customer_id\": \"<string>\",\n    \"category\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"created_at\": \"<dateTime>\",\n    \"updated_by\": \"<string>\",\n    \"updated_at\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98d3a020-0932-4d05-982c-8af2f9b0015c",
+          "name": "Get order proposal analytics for broker dashboard",
+          "request": {
+            "name": "Get order proposal analytics for broker dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "proposal-dashboard-analytics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "broker_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "product_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finance_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lender_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "introducer_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date_submitted",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "start_date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "end_date",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finance_amount",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at_from",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updated_at_to",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "70a70d1c-b2e1-4b8b-ac0d-f1df9941f91e",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal-dashboard-analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "broker_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lender_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "introducer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_submitted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "updated_at",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"updated_at\": \"1967-06-22\",\n    \"status\": \"string\",\n    \"name\": \"string\",\n    \"product_type\": \"string\",\n    \"finance_type\": \"string\",\n    \"customer_name\": \"string\",\n    \"introducer_name\": \"string\",\n    \"lender_name\": \"string\",\n    \"dealer_name\": \"string\",\n    \"date_submitted\": \"2025-07-24\",\n    \"finance_amount\": \"string\",\n    \"start_date\": \"1952-10-19\",\n    \"end_date\": \"1985-05-11\",\n    \"age_in_seconds\": \"string\",\n    \"company_name\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"customer_type\": \"string\",\n    \"running_id\": \"string\"\n  },\n  {\n    \"identifier\": \"string\",\n    \"updated_at\": \"1962-01-23\",\n    \"status\": \"string\",\n    \"name\": \"string\",\n    \"product_type\": \"string\",\n    \"finance_type\": \"string\",\n    \"customer_name\": \"string\",\n    \"introducer_name\": \"string\",\n    \"lender_name\": \"string\",\n    \"dealer_name\": \"string\",\n    \"date_submitted\": \"2003-05-05\",\n    \"finance_amount\": \"string\",\n    \"start_date\": \"1965-03-11\",\n    \"end_date\": \"2023-07-16\",\n    \"age_in_seconds\": \"string\",\n    \"company_name\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"customer_type\": \"string\",\n    \"running_id\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e26b3e4-190c-41dc-8fdb-bd7b3982a252",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "proposal-dashboard-analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "broker_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "product_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "lender_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "introducer_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date_submitted",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finance_amount",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "updated_at",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updated_at_to",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "79161dd6-54ba-4aa6-93e0-f6054b3713af",
+    "name": "Lane Proposals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

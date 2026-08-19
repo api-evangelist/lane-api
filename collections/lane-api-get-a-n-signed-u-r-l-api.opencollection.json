@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Get  A N  Signed  U R L API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get  A N  Signed  U R L",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get AN Signed URL to Upload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/get-an-signed-url",
+            "params": [
+              {
+                "name": "document_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "content_type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get AN Signed URL to upload document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

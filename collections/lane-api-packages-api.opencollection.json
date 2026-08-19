@@ -1,0 +1,183 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Packages API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Packages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get document package by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package",
+            "params": [
+              {
+                "name": "package_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by identifier"
+        },
+        {
+          "info": {
+            "name": "Create document package",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package",
+            "params": [
+              {
+                "name": "is_product",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create document package"
+        },
+        {
+          "info": {
+            "name": "Cancel document package and document by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package",
+            "params": [
+              {
+                "name": "package_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cancel document package and document by identifier"
+        },
+        {
+          "info": {
+            "name": "Get document package by reference_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package-by-reference-id",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by reference_id"
+        },
+        {
+          "info": {
+            "name": "Get document package by reference_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-document-packages-by-reference-id",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_order_id",
+                "value": "",
+                "type": "query",
+                "description": "Order Id"
+              },
+              {
+                "name": "document_type",
+                "value": "",
+                "type": "query",
+                "description": "Document Type"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by reference_id"
+        },
+        {
+          "info": {
+            "name": "Get document from document package by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package/document",
+            "params": [
+              {
+                "name": "package_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "document_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document from document package by identifier"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

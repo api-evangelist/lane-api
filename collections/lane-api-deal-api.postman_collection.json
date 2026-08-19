@@ -1,0 +1,204 @@
+{
+  "item": [
+    {
+      "id": "0b10805e-d043-4423-993c-85f158f4c8c4",
+      "name": "Deal",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7013de62-07d8-45e7-89af-425b3605dac2",
+          "name": "Push Deal to Third Party",
+          "request": {
+            "name": "Push Deal to Third Party",
+            "description": {
+              "content": "Push Deal to Third Party",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "external-orders",
+                "push-deal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fp_id\": \"<integer>\",\n  \"annual_usage\": \"<number>\",\n  \"vehicle_id\": \"<integer>\",\n  \"payment_received\": \"<boolean>\",\n  \"schedule_option\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"due_at_signing\": \"<number>\",\n  \"base_rate\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"is_deleted\": \"<boolean>\",\n  \"lender_id\": \"<integer>\",\n  \"selling_price\": \"<number>\",\n  \"finance_amount\": \"<number>\",\n  \"margin\": \"<integer>\",\n  \"rental_mode\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"contract_term\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"finance_type\": \"<string>\",\n  \"applicable_rate\": \"<integer>\",\n  \"updated_at\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"allowed_usage\": \"<integer>\",\n  \"down_payment_lease\": \"<number>\",\n  \"customer_id\": \"<integer>\",\n  \"calculation_method\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"order_asset_number\": \"<string>\",\n  \"credit_rating\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"is_active\": \"<boolean>\",\n  \"application_created_at\": \"<string>\",\n  \"apr\": \"<number>\",\n  \"rv_balloon_percentage\": \"<number>\",\n  \"order_stage\": \"<string>\",\n  \"key_id\": \"<integer>\",\n  \"asset_usage\": \"<string>\",\n  \"status\": \"<string>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"order_fees\": [\n    {\n      \"lender_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"created_at\": \"<string>\",\n      \"dealer_fee_id\": \"<integer>\",\n      \"dealer_id\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"is_active\": \"<boolean>\",\n      \"is_deleted\": \"<boolean>\",\n      \"order_id\": \"<integer>\",\n      \"updated_at\": \"<string>\",\n      \"fee_name\": \"<string>\"\n    },\n    {\n      \"lender_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"created_at\": \"<string>\",\n      \"dealer_fee_id\": \"<integer>\",\n      \"dealer_id\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"is_active\": \"<boolean>\",\n      \"is_deleted\": \"<boolean>\",\n      \"order_id\": \"<integer>\",\n      \"updated_at\": \"<string>\",\n      \"fee_name\": \"<string>\"\n    }\n  ],\n  \"order_options\": [],\n  \"order_fnI\": [],\n  \"order_tradein\": {\n    \"year\": \"<integer>\",\n    \"is_customer_titled\": \"<boolean>\",\n    \"asset_image\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"created_at\": \"<string>\",\n    \"make\": \"<string>\",\n    \"loan_lease_balance\": \"<boolean>\",\n    \"order_id\": \"<integer>\",\n    \"model\": \"<string>\",\n    \"lender_id\": \"<integer>\",\n    \"trim\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"mileage\": \"<integer>\",\n    \"is_active\": \"<boolean>\",\n    \"vin\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"condition\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"trade_in_amount\": \"<integer>\",\n    \"payoff_amount\": \"<integer>\",\n    \"lender_contract_number\": {},\n    \"lender_name\": {},\n    \"lender_address\": {},\n    \"lender_contact_number\": {},\n    \"payment_type\": {}\n  },\n  \"customer_info\": {\n    \"last_name\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"mobile_number\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"ssn\": \"<string>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"email\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"updated_by\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"mobile_number_verified_status\": \"<boolean>\",\n    \"home_number_verified_status\": \"<boolean>\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"state_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"is_active\": \"<boolean>\",\n        \"is_deleted\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"identifier\": \"<string>\",\n        \"is_garaging\": \"<boolean>\",\n        \"updated_at\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"updated_by\": \"<string>\",\n        \"state_id\": {},\n        \"deleted_at\": {},\n        \"category_identifier\": {},\n        \"deleted_by\": {},\n        \"zip_code\": \"<string>\",\n        \"parent_id\": {},\n        \"county\": \"<string>\",\n        \"country_id\": {},\n        \"history_id\": {},\n        \"city\": \"<string>\",\n        \"field5\": {},\n        \"move_in_date\": \"<string>\",\n        \"contact_number\": {},\n        \"field6\": {},\n        \"address_line_1\": \"<string>\",\n        \"lender_id\": {}\n      },\n      {\n        \"address_type\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"state_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"is_active\": \"<boolean>\",\n        \"is_deleted\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"identifier\": \"<string>\",\n        \"is_garaging\": \"<boolean>\",\n        \"updated_at\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"updated_by\": \"<string>\",\n        \"state_id\": {},\n        \"deleted_at\": {},\n        \"category_identifier\": {},\n        \"deleted_by\": {},\n        \"zip_code\": \"<string>\",\n        \"parent_id\": {},\n        \"county\": \"<string>\",\n        \"country_id\": {},\n        \"history_id\": {},\n        \"city\": \"<string>\",\n        \"field5\": {},\n        \"move_in_date\": \"<string>\",\n        \"contact_number\": {},\n        \"field6\": {},\n        \"address_line_1\": \"<string>\",\n        \"lender_id\": {}\n      }\n    ],\n    \"customer_license\": [\n      {\n        \"id\": \"<integer>\",\n        \"expiry_date\": \"<string>\",\n        \"call_type\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"front_image\": \"<string>\",\n        \"updated_at\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"first_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"last_name\": \"<string>\",\n        \"is_active\": \"<boolean>\",\n        \"date_of_birth\": \"<string>\",\n        \"license_number\": \"<string>\",\n        \"is_pdf_417\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"is_deleted\": \"<boolean>\",\n        \"status\": \"<string>\",\n        \"is_selfie_verified\": {},\n        \"back_image\": {},\n        \"created_by\": {},\n        \"selfie_image\": {},\n        \"updated_by\": {},\n        \"cropped_front_image\": {},\n        \"deleted_at\": {},\n        \"cropped_back_image\": {},\n        \"parent_id\": {},\n        \"deleted_by\": {},\n        \"cropped_selfie_image\": {},\n        \"issue_date\": {}\n      },\n      {\n        \"id\": \"<integer>\",\n        \"expiry_date\": \"<string>\",\n        \"call_type\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"front_image\": \"<string>\",\n        \"updated_at\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"first_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"last_name\": \"<string>\",\n        \"is_active\": \"<boolean>\",\n        \"date_of_birth\": \"<string>\",\n        \"license_number\": \"<string>\",\n        \"is_pdf_417\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"is_deleted\": \"<boolean>\",\n        \"status\": \"<string>\",\n        \"is_selfie_verified\": {},\n        \"back_image\": {},\n        \"created_by\": {},\n        \"selfie_image\": {},\n        \"updated_by\": {},\n        \"cropped_front_image\": {},\n        \"deleted_at\": {},\n        \"cropped_back_image\": {},\n        \"parent_id\": {},\n        \"deleted_by\": {},\n        \"cropped_selfie_image\": {},\n        \"issue_date\": {}\n      }\n    ],\n    \"deleted_by\": {},\n    \"customer_type\": {},\n    \"home_number\": {},\n    \"date_of_birth\": {},\n    \"prefix\": {},\n    \"created_by\": {},\n    \"suffix\": {},\n    \"stripe_customer_id\": {},\n    \"meta_data\": {},\n    \"deleted_at\": {},\n    \"middle_name\": {},\n    \"parent_id\": {}\n  },\n  \"Vehicle_details\": {\n    \"model\": \"<string>\",\n    \"make\": \"<string>\",\n    \"year\": \"<string>\",\n    \"trim_description\": \"<string>\",\n    \"stock_number\": \"<string>\",\n    \"vin\": \"<string>\",\n    \"vehicle_display_name\": {}\n  },\n  \"Insurance_Information\": {\n    \"order_reference_id\": \"<string>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"policy_number\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"customer_id\": \"<integer>\",\n    \"expiration_date\": \"<string>\",\n    \"insurer_name\": \"<string>\",\n    \"insurance_address\": \"<integer>\",\n    \"status\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"agent_name\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"id\": \"<integer>\",\n    \"subscription_id\": {},\n    \"updated_by\": {},\n    \"deductible_comprehensive\": {},\n    \"deleted_at\": {},\n    \"deductible_collision\": {},\n    \"deleted_by\": {},\n    \"insurance_documents\": {},\n    \"agent_phone\": {},\n    \"parent_id\": {}\n  },\n  \"appointment_details\": {\n    \"created_at\": \"<string>\",\n    \"order_id\": \"<integer>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"dealer_id\": \"<integer>\",\n    \"customer_id\": \"<integer>\",\n    \"appointment_date\": \"<string>\",\n    \"appointment_type\": \"<string>\",\n    \"dealer_code\": {},\n    \"tenant_id\": {},\n    \"address_id\": {},\n    \"address\": {}\n  },\n  \"documents\": [\n    {\n      \"identifier\": \"<string>\",\n      \"document_name\": \"<string>\",\n      \"document_raw_url\": \"<string>\",\n      \"document_signed_url\": \"<string>\",\n      \"is_fni_doc\": \"<boolean>\",\n      \"is_verified\": \"<boolean>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"document_name\": \"<string>\",\n      \"document_raw_url\": \"<string>\",\n      \"document_signed_url\": \"<string>\",\n      \"is_fni_doc\": \"<boolean>\",\n      \"is_verified\": \"<boolean>\"\n    }\n  ],\n  \"deleted_at\": {},\n  \"subscription_status\": {},\n  \"meta_data\": {},\n  \"deleted_by\": {},\n  \"msrp\": {},\n  \"billing_status\": {},\n  \"parent_id\": {},\n  \"start_date\": {},\n  \"terms\": {},\n  \"end_date\": {},\n  \"excess_usage_rate\": {},\n  \"final_bill_invoice_id\": {},\n  \"tenant_id\": {},\n  \"has_draft_invoice\": {},\n  \"invoice_status\": {},\n  \"expiry_date\": {},\n  \"external_subscription_id\": {},\n  \"reason\": {},\n  \"created_by\": {},\n  \"vendor_subscription_id\": {},\n  \"updated_by\": {},\n  \"order_currency\": {},\n  \"external_order_id\": {},\n  \"order_asset\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "955579f3-822f-47b7-bc4f-67947c6e9abd",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "external-orders",
+                    "push-deal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fp_id\": \"<integer>\",\n  \"annual_usage\": \"<number>\",\n  \"vehicle_id\": \"<integer>\",\n  \"payment_received\": \"<boolean>\",\n  \"schedule_option\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"due_at_signing\": \"<number>\",\n  \"base_rate\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"is_deleted\": \"<boolean>\",\n  \"lender_id\": \"<integer>\",\n  \"selling_price\": \"<number>\",\n  \"finance_amount\": \"<number>\",\n  \"margin\": \"<integer>\",\n  \"rental_mode\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"contract_term\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"finance_type\": \"<string>\",\n  \"applicable_rate\": \"<integer>\",\n  \"updated_at\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"allowed_usage\": \"<integer>\",\n  \"down_payment_lease\": \"<number>\",\n  \"customer_id\": \"<integer>\",\n  \"calculation_method\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"order_asset_number\": \"<string>\",\n  \"credit_rating\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"is_active\": \"<boolean>\",\n  \"application_created_at\": \"<string>\",\n  \"apr\": \"<number>\",\n  \"rv_balloon_percentage\": \"<number>\",\n  \"order_stage\": \"<string>\",\n  \"key_id\": \"<integer>\",\n  \"asset_usage\": \"<string>\",\n  \"status\": \"<string>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"order_fees\": [\n    {\n      \"lender_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"created_at\": \"<string>\",\n      \"dealer_fee_id\": \"<integer>\",\n      \"dealer_id\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"is_active\": \"<boolean>\",\n      \"is_deleted\": \"<boolean>\",\n      \"order_id\": \"<integer>\",\n      \"updated_at\": \"<string>\",\n      \"fee_name\": \"<string>\"\n    },\n    {\n      \"lender_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"created_at\": \"<string>\",\n      \"dealer_fee_id\": \"<integer>\",\n      \"dealer_id\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"is_active\": \"<boolean>\",\n      \"is_deleted\": \"<boolean>\",\n      \"order_id\": \"<integer>\",\n      \"updated_at\": \"<string>\",\n      \"fee_name\": \"<string>\"\n    }\n  ],\n  \"order_options\": [],\n  \"order_fnI\": [],\n  \"order_tradein\": {\n    \"year\": \"<integer>\",\n    \"is_customer_titled\": \"<boolean>\",\n    \"asset_image\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"created_at\": \"<string>\",\n    \"make\": \"<string>\",\n    \"loan_lease_balance\": \"<boolean>\",\n    \"order_id\": \"<integer>\",\n    \"model\": \"<string>\",\n    \"lender_id\": \"<integer>\",\n    \"trim\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"mileage\": \"<integer>\",\n    \"is_active\": \"<boolean>\",\n    \"vin\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"condition\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"trade_in_amount\": \"<integer>\",\n    \"payoff_amount\": \"<integer>\",\n    \"lender_contract_number\": {},\n    \"lender_name\": {},\n    \"lender_address\": {},\n    \"lender_contact_number\": {},\n    \"payment_type\": {}\n  },\n  \"customer_info\": {\n    \"last_name\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"mobile_number\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"ssn\": \"<string>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"email\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"updated_by\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"mobile_number_verified_status\": \"<boolean>\",\n    \"home_number_verified_status\": \"<boolean>\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"state_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"is_active\": \"<boolean>\",\n        \"is_deleted\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"identifier\": \"<string>\",\n        \"is_garaging\": \"<boolean>\",\n        \"updated_at\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"updated_by\": \"<string>\",\n        \"state_id\": {},\n        \"deleted_at\": {},\n        \"category_identifier\": {},\n        \"deleted_by\": {},\n        \"zip_code\": \"<string>\",\n        \"parent_id\": {},\n        \"county\": \"<string>\",\n        \"country_id\": {},\n        \"history_id\": {},\n        \"city\": \"<string>\",\n        \"field5\": {},\n        \"move_in_date\": \"<string>\",\n        \"contact_number\": {},\n        \"field6\": {},\n        \"address_line_1\": \"<string>\",\n        \"lender_id\": {}\n      },\n      {\n        \"address_type\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"state_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"is_active\": \"<boolean>\",\n        \"is_deleted\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"identifier\": \"<string>\",\n        \"is_garaging\": \"<boolean>\",\n        \"updated_at\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"updated_by\": \"<string>\",\n        \"state_id\": {},\n        \"deleted_at\": {},\n        \"category_identifier\": {},\n        \"deleted_by\": {},\n        \"zip_code\": \"<string>\",\n        \"parent_id\": {},\n        \"county\": \"<string>\",\n        \"country_id\": {},\n        \"history_id\": {},\n        \"city\": \"<string>\",\n        \"field5\": {},\n        \"move_in_date\": \"<string>\",\n        \"contact_number\": {},\n        \"field6\": {},\n        \"address_line_1\": \"<string>\",\n        \"lender_id\": {}\n      }\n    ],\n    \"customer_license\": [\n      {\n        \"id\": \"<integer>\",\n        \"expiry_date\": \"<string>\",\n        \"call_type\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"front_image\": \"<string>\",\n        \"updated_at\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"first_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"last_name\": \"<string>\",\n        \"is_active\": \"<boolean>\",\n        \"date_of_birth\": \"<string>\",\n        \"license_number\": \"<string>\",\n        \"is_pdf_417\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"is_deleted\": \"<boolean>\",\n        \"status\": \"<string>\",\n        \"is_selfie_verified\": {},\n        \"back_image\": {},\n        \"created_by\": {},\n        \"selfie_image\": {},\n        \"updated_by\": {},\n        \"cropped_front_image\": {},\n        \"deleted_at\": {},\n        \"cropped_back_image\": {},\n        \"parent_id\": {},\n        \"deleted_by\": {},\n        \"cropped_selfie_image\": {},\n        \"issue_date\": {}\n      },\n      {\n        \"id\": \"<integer>\",\n        \"expiry_date\": \"<string>\",\n        \"call_type\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"front_image\": \"<string>\",\n        \"updated_at\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"first_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"last_name\": \"<string>\",\n        \"is_active\": \"<boolean>\",\n        \"date_of_birth\": \"<string>\",\n        \"license_number\": \"<string>\",\n        \"is_pdf_417\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"is_deleted\": \"<boolean>\",\n        \"status\": \"<string>\",\n        \"is_selfie_verified\": {},\n        \"back_image\": {},\n        \"created_by\": {},\n        \"selfie_image\": {},\n        \"updated_by\": {},\n        \"cropped_front_image\": {},\n        \"deleted_at\": {},\n        \"cropped_back_image\": {},\n        \"parent_id\": {},\n        \"deleted_by\": {},\n        \"cropped_selfie_image\": {},\n        \"issue_date\": {}\n      }\n    ],\n    \"deleted_by\": {},\n    \"customer_type\": {},\n    \"home_number\": {},\n    \"date_of_birth\": {},\n    \"prefix\": {},\n    \"created_by\": {},\n    \"suffix\": {},\n    \"stripe_customer_id\": {},\n    \"meta_data\": {},\n    \"deleted_at\": {},\n    \"middle_name\": {},\n    \"parent_id\": {}\n  },\n  \"Vehicle_details\": {\n    \"model\": \"<string>\",\n    \"make\": \"<string>\",\n    \"year\": \"<string>\",\n    \"trim_description\": \"<string>\",\n    \"stock_number\": \"<string>\",\n    \"vin\": \"<string>\",\n    \"vehicle_display_name\": {}\n  },\n  \"Insurance_Information\": {\n    \"order_reference_id\": \"<string>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"policy_number\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"customer_id\": \"<integer>\",\n    \"expiration_date\": \"<string>\",\n    \"insurer_name\": \"<string>\",\n    \"insurance_address\": \"<integer>\",\n    \"status\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"agent_name\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"id\": \"<integer>\",\n    \"subscription_id\": {},\n    \"updated_by\": {},\n    \"deductible_comprehensive\": {},\n    \"deleted_at\": {},\n    \"deductible_collision\": {},\n    \"deleted_by\": {},\n    \"insurance_documents\": {},\n    \"agent_phone\": {},\n    \"parent_id\": {}\n  },\n  \"appointment_details\": {\n    \"created_at\": \"<string>\",\n    \"order_id\": \"<integer>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"dealer_id\": \"<integer>\",\n    \"customer_id\": \"<integer>\",\n    \"appointment_date\": \"<string>\",\n    \"appointment_type\": \"<string>\",\n    \"dealer_code\": {},\n    \"tenant_id\": {},\n    \"address_id\": {},\n    \"address\": {}\n  },\n  \"documents\": [\n    {\n      \"identifier\": \"<string>\",\n      \"document_name\": \"<string>\",\n      \"document_raw_url\": \"<string>\",\n      \"document_signed_url\": \"<string>\",\n      \"is_fni_doc\": \"<boolean>\",\n      \"is_verified\": \"<boolean>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"document_name\": \"<string>\",\n      \"document_raw_url\": \"<string>\",\n      \"document_signed_url\": \"<string>\",\n      \"is_fni_doc\": \"<boolean>\",\n      \"is_verified\": \"<boolean>\"\n    }\n  ],\n  \"deleted_at\": {},\n  \"subscription_status\": {},\n  \"meta_data\": {},\n  \"deleted_by\": {},\n  \"msrp\": {},\n  \"billing_status\": {},\n  \"parent_id\": {},\n  \"start_date\": {},\n  \"terms\": {},\n  \"end_date\": {},\n  \"excess_usage_rate\": {},\n  \"final_bill_invoice_id\": {},\n  \"tenant_id\": {},\n  \"has_draft_invoice\": {},\n  \"invoice_status\": {},\n  \"expiry_date\": {},\n  \"external_subscription_id\": {},\n  \"reason\": {},\n  \"created_by\": {},\n  \"vendor_subscription_id\": {},\n  \"updated_by\": {},\n  \"order_currency\": {},\n  \"external_order_id\": {},\n  \"order_asset\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9350f32f-6c4b-45e1-95c8-183c01d3f731",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "external-orders",
+                    "push-deal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fp_id\": \"<integer>\",\n  \"annual_usage\": \"<number>\",\n  \"vehicle_id\": \"<integer>\",\n  \"payment_received\": \"<boolean>\",\n  \"schedule_option\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"due_at_signing\": \"<number>\",\n  \"base_rate\": \"<integer>\",\n  \"rental_frequency\": \"<string>\",\n  \"is_deleted\": \"<boolean>\",\n  \"lender_id\": \"<integer>\",\n  \"selling_price\": \"<number>\",\n  \"finance_amount\": \"<number>\",\n  \"margin\": \"<integer>\",\n  \"rental_mode\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"contract_term\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"finance_type\": \"<string>\",\n  \"applicable_rate\": \"<integer>\",\n  \"updated_at\": \"<string>\",\n  \"reference_number\": \"<string>\",\n  \"allowed_usage\": \"<integer>\",\n  \"down_payment_lease\": \"<number>\",\n  \"customer_id\": \"<integer>\",\n  \"calculation_method\": \"<string>\",\n  \"created_at\": \"<string>\",\n  \"order_asset_number\": \"<string>\",\n  \"credit_rating\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"is_active\": \"<boolean>\",\n  \"application_created_at\": \"<string>\",\n  \"apr\": \"<number>\",\n  \"rv_balloon_percentage\": \"<number>\",\n  \"order_stage\": \"<string>\",\n  \"key_id\": \"<integer>\",\n  \"asset_usage\": \"<string>\",\n  \"status\": \"<string>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"order_fees\": [\n    {\n      \"lender_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"created_at\": \"<string>\",\n      \"dealer_fee_id\": \"<integer>\",\n      \"dealer_id\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"is_active\": \"<boolean>\",\n      \"is_deleted\": \"<boolean>\",\n      \"order_id\": \"<integer>\",\n      \"updated_at\": \"<string>\",\n      \"fee_name\": \"<string>\"\n    },\n    {\n      \"lender_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"created_at\": \"<string>\",\n      \"dealer_fee_id\": \"<integer>\",\n      \"dealer_id\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"identifier\": \"<string>\",\n      \"is_active\": \"<boolean>\",\n      \"is_deleted\": \"<boolean>\",\n      \"order_id\": \"<integer>\",\n      \"updated_at\": \"<string>\",\n      \"fee_name\": \"<string>\"\n    }\n  ],\n  \"order_options\": [],\n  \"order_fnI\": [],\n  \"order_tradein\": {\n    \"year\": \"<integer>\",\n    \"is_customer_titled\": \"<boolean>\",\n    \"asset_image\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"created_at\": \"<string>\",\n    \"make\": \"<string>\",\n    \"loan_lease_balance\": \"<boolean>\",\n    \"order_id\": \"<integer>\",\n    \"model\": \"<string>\",\n    \"lender_id\": \"<integer>\",\n    \"trim\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"updated_at\": \"<string>\",\n    \"mileage\": \"<integer>\",\n    \"is_active\": \"<boolean>\",\n    \"vin\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"condition\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"trade_in_amount\": \"<integer>\",\n    \"payoff_amount\": \"<integer>\",\n    \"lender_contract_number\": {},\n    \"lender_name\": {},\n    \"lender_address\": {},\n    \"lender_contact_number\": {},\n    \"payment_type\": {}\n  },\n  \"customer_info\": {\n    \"last_name\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"mobile_number\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"ssn\": \"<string>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"email\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"updated_by\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"mobile_number_verified_status\": \"<boolean>\",\n    \"home_number_verified_status\": \"<boolean>\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"state_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"is_active\": \"<boolean>\",\n        \"is_deleted\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"identifier\": \"<string>\",\n        \"is_garaging\": \"<boolean>\",\n        \"updated_at\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"updated_by\": \"<string>\",\n        \"state_id\": {},\n        \"deleted_at\": {},\n        \"category_identifier\": {},\n        \"deleted_by\": {},\n        \"zip_code\": \"<string>\",\n        \"parent_id\": {},\n        \"county\": \"<string>\",\n        \"country_id\": {},\n        \"history_id\": {},\n        \"city\": \"<string>\",\n        \"field5\": {},\n        \"move_in_date\": \"<string>\",\n        \"contact_number\": {},\n        \"field6\": {},\n        \"address_line_1\": \"<string>\",\n        \"lender_id\": {}\n      },\n      {\n        \"address_type\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"state_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"is_active\": \"<boolean>\",\n        \"is_deleted\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"identifier\": \"<string>\",\n        \"is_garaging\": \"<boolean>\",\n        \"updated_at\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"updated_by\": \"<string>\",\n        \"state_id\": {},\n        \"deleted_at\": {},\n        \"category_identifier\": {},\n        \"deleted_by\": {},\n        \"zip_code\": \"<string>\",\n        \"parent_id\": {},\n        \"county\": \"<string>\",\n        \"country_id\": {},\n        \"history_id\": {},\n        \"city\": \"<string>\",\n        \"field5\": {},\n        \"move_in_date\": \"<string>\",\n        \"contact_number\": {},\n        \"field6\": {},\n        \"address_line_1\": \"<string>\",\n        \"lender_id\": {}\n      }\n    ],\n    \"customer_license\": [\n      {\n        \"id\": \"<integer>\",\n        \"expiry_date\": \"<string>\",\n        \"call_type\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"front_image\": \"<string>\",\n        \"updated_at\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"first_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"last_name\": \"<string>\",\n        \"is_active\": \"<boolean>\",\n        \"date_of_birth\": \"<string>\",\n        \"license_number\": \"<string>\",\n        \"is_pdf_417\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"is_deleted\": \"<boolean>\",\n        \"status\": \"<string>\",\n        \"is_selfie_verified\": {},\n        \"back_image\": {},\n        \"created_by\": {},\n        \"selfie_image\": {},\n        \"updated_by\": {},\n        \"cropped_front_image\": {},\n        \"deleted_at\": {},\n        \"cropped_back_image\": {},\n        \"parent_id\": {},\n        \"deleted_by\": {},\n        \"cropped_selfie_image\": {},\n        \"issue_date\": {}\n      },\n      {\n        \"id\": \"<integer>\",\n        \"expiry_date\": \"<string>\",\n        \"call_type\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"front_image\": \"<string>\",\n        \"updated_at\": \"<string>\",\n        \"customer_id\": \"<integer>\",\n        \"first_name\": \"<string>\",\n        \"key_id\": \"<integer>\",\n        \"last_name\": \"<string>\",\n        \"is_active\": \"<boolean>\",\n        \"date_of_birth\": \"<string>\",\n        \"license_number\": \"<string>\",\n        \"is_pdf_417\": \"<boolean>\",\n        \"created_at\": \"<string>\",\n        \"is_deleted\": \"<boolean>\",\n        \"status\": \"<string>\",\n        \"is_selfie_verified\": {},\n        \"back_image\": {},\n        \"created_by\": {},\n        \"selfie_image\": {},\n        \"updated_by\": {},\n        \"cropped_front_image\": {},\n        \"deleted_at\": {},\n        \"cropped_back_image\": {},\n        \"parent_id\": {},\n        \"deleted_by\": {},\n        \"cropped_selfie_image\": {},\n        \"issue_date\": {}\n      }\n    ],\n    \"deleted_by\": {},\n    \"customer_type\": {},\n    \"home_number\": {},\n    \"date_of_birth\": {},\n    \"prefix\": {},\n    \"created_by\": {},\n    \"suffix\": {},\n    \"stripe_customer_id\": {},\n    \"meta_data\": {},\n    \"deleted_at\": {},\n    \"middle_name\": {},\n    \"parent_id\": {}\n  },\n  \"Vehicle_details\": {\n    \"model\": \"<string>\",\n    \"make\": \"<string>\",\n    \"year\": \"<string>\",\n    \"trim_description\": \"<string>\",\n    \"stock_number\": \"<string>\",\n    \"vin\": \"<string>\",\n    \"vehicle_display_name\": {}\n  },\n  \"Insurance_Information\": {\n    \"order_reference_id\": \"<string>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"policy_number\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"customer_id\": \"<integer>\",\n    \"expiration_date\": \"<string>\",\n    \"insurer_name\": \"<string>\",\n    \"insurance_address\": \"<integer>\",\n    \"status\": \"<string>\",\n    \"created_at\": \"<string>\",\n    \"is_deleted\": \"<boolean>\",\n    \"agent_name\": \"<string>\",\n    \"is_active\": \"<boolean>\",\n    \"id\": \"<integer>\",\n    \"subscription_id\": {},\n    \"updated_by\": {},\n    \"deductible_comprehensive\": {},\n    \"deleted_at\": {},\n    \"deductible_collision\": {},\n    \"deleted_by\": {},\n    \"insurance_documents\": {},\n    \"agent_phone\": {},\n    \"parent_id\": {}\n  },\n  \"appointment_details\": {\n    \"created_at\": \"<string>\",\n    \"order_id\": \"<integer>\",\n    \"key_id\": \"<integer>\",\n    \"updated_at\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"dealer_id\": \"<integer>\",\n    \"customer_id\": \"<integer>\",\n    \"appointment_date\": \"<string>\",\n    \"appointment_type\": \"<string>\",\n    \"dealer_code\": {},\n    \"tenant_id\": {},\n    \"address_id\": {},\n    \"address\": {}\n  },\n  \"documents\": [\n    {\n      \"identifier\": \"<string>\",\n      \"document_name\": \"<string>\",\n      \"document_raw_url\": \"<string>\",\n      \"document_signed_url\": \"<string>\",\n      \"is_fni_doc\": \"<boolean>\",\n      \"is_verified\": \"<boolean>\"\n    },\n    {\n      \"identifier\": \"<string>\",\n      \"document_name\": \"<string>\",\n      \"document_raw_url\": \"<string>\",\n      \"document_signed_url\": \"<string>\",\n      \"is_fni_doc\": \"<boolean>\",\n      \"is_verified\": \"<boolean>\"\n    }\n  ],\n  \"deleted_at\": {},\n  \"subscription_status\": {},\n  \"meta_data\": {},\n  \"deleted_by\": {},\n  \"msrp\": {},\n  \"billing_status\": {},\n  \"parent_id\": {},\n  \"start_date\": {},\n  \"terms\": {},\n  \"end_date\": {},\n  \"excess_usage_rate\": {},\n  \"final_bill_invoice_id\": {},\n  \"tenant_id\": {},\n  \"has_draft_invoice\": {},\n  \"invoice_status\": {},\n  \"expiry_date\": {},\n  \"external_subscription_id\": {},\n  \"reason\": {},\n  \"created_by\": {},\n  \"vendor_subscription_id\": {},\n  \"updated_by\": {},\n  \"order_currency\": {},\n  \"external_order_id\": {},\n  \"order_asset\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cd9d91f4-4acf-4cc3-8fac-6b3925a0adf7",
+    "name": "Lane Deal API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

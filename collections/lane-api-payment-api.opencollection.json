@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Payment API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update Payment Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/order/update-payment-status/:reference_number",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "payment_indicator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Update Payment Status"
+        },
+        {
+          "info": {
+            "name": "Get Payment Methods & Get Paid Amount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/get-payment-methods/:reference_number",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Payment Methods & Get Paid Amount"
+        },
+        {
+          "info": {
+            "name": "Create payment for new Order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/create-payment/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create payment for new Order"
+        },
+        {
+          "info": {
+            "name": "Update Order Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/update-payment/",
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This end point will be used to handle webhook."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

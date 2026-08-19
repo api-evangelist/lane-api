@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Document_id API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Document_id",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sign document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/:document_package_id/:document_id/:signature_id",
+            "params": [
+              {
+                "name": "document_package_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "document_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "date_time_format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "time_zone",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Sign document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,742 @@
+{
+  "item": [
+    {
+      "id": "b054a6d0-00b8-4092-8fcf-395d1ff36ecf",
+      "name": "Employment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0302f90c-3d34-4aca-9775-ab5770e0a748",
+          "name": "Get single employment information record",
+          "request": {
+            "name": "Get single employment information record",
+            "description": {
+              "content": "Get employment information by customer ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "employment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e34c0cdb-ad49-41b7-93ed-14240672fb5f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"employment_type\": \"string\",\n  \"name\": \"string\",\n  \"phone\": \"string\",\n  \"employed_since\": \"2002-04-21\",\n  \"occupation\": \"string\",\n  \"annual_employment_income\": 1295.8483842563119,\n  \"annual_other_income\": 857.4382012882709,\n  \"source_of_other_income\": \"string\",\n  \"created_at\": \"1955-01-13T22:56:36.100Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"2004-03-06T08:08:22.422Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"2002-10-05T05:09:58.235Z\",\n  \"deleted_by\": \"string\",\n  \"reference_id\": \"string\",\n  \"address\": {\n    \"address_type\": \"DealerAddress\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1981-07-02\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1978-01-22T19:45:52.609Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1951-04-22T16:32:07.476Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1975-07-26T22:56:31.345Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "401d681a-7524-47d1-9670-9572fb911dcb",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d7a6b83-9407-4b20-8500-cd89841637db",
+          "name": "Creates employment information",
+          "request": {
+            "name": "Creates employment information",
+            "description": {
+              "content": "Create employment information against customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "employment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dealer_code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employment_type\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"employed_since\": \"<date>\",\n  \"occupation\": \"<string>\",\n  \"annual_employment_income\": \"<number>\",\n  \"annual_other_income\": \"<number>\",\n  \"source_of_other_income\": \"<string>\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7c0dac3-8dbe-4f3d-8e80-9f791d2e8122",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employment_type\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"employed_since\": \"<date>\",\n  \"occupation\": \"<string>\",\n  \"annual_employment_income\": \"<number>\",\n  \"annual_other_income\": \"<number>\",\n  \"source_of_other_income\": \"<string>\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"employment_type\": \"string\",\n  \"name\": \"string\",\n  \"phone\": \"string\",\n  \"employed_since\": \"2009-02-12\",\n  \"occupation\": \"string\",\n  \"annual_employment_income\": 2696.2608828214584,\n  \"annual_other_income\": 7996.794223930067,\n  \"source_of_other_income\": \"string\",\n  \"created_at\": \"1977-09-13T07:37:13.198Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"2024-07-17T04:00:59.568Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1975-12-08T06:24:12.083Z\",\n  \"deleted_by\": \"string\",\n  \"reference_id\": \"string\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1947-04-16\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1997-11-05T08:42:13.375Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1969-03-27T13:50:07.702Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1988-03-27T04:09:22.933Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7374b3c-92f1-4a28-93be-6a94c2b7ef51",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employment_type\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"employed_since\": \"<date>\",\n  \"occupation\": \"<string>\",\n  \"annual_employment_income\": \"<number>\",\n  \"annual_other_income\": \"<number>\",\n  \"source_of_other_income\": \"<string>\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30d86744-ab37-4281-a858-477f585f6cc9",
+          "name": "Delete single employment information record",
+          "request": {
+            "name": "Delete single employment information record",
+            "description": {
+              "content": "Delete employment information record of customer employment record ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "employment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "de098b15-a094-492f-a521-6d9849e1adb7",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7840ec8b-0ee2-4a51-b214-cb9d783bf84b",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5025aa75-080a-44b7-ae7b-b7b16bf2d7ac",
+          "name": "Updates employment information",
+          "request": {
+            "name": "Updates employment information",
+            "description": {
+              "content": "Update employment information against customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "employment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employment_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"employed_since\": \"<date>\",\n  \"occupation\": \"<string>\",\n  \"annual_employment_income\": \"<number>\",\n  \"annual_other_income\": \"<number>\",\n  \"source_of_other_income\": \"<string>\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c26f8f0-8fdd-4993-b270-3d8aa8fc83f4",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employment_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"employed_since\": \"<date>\",\n  \"occupation\": \"<string>\",\n  \"annual_employment_income\": \"<number>\",\n  \"annual_other_income\": \"<number>\",\n  \"source_of_other_income\": \"<string>\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"employment_type\": \"string\",\n  \"name\": \"string\",\n  \"phone\": \"string\",\n  \"employed_since\": \"2009-02-12\",\n  \"occupation\": \"string\",\n  \"annual_employment_income\": 2696.2608828214584,\n  \"annual_other_income\": 7996.794223930067,\n  \"source_of_other_income\": \"string\",\n  \"created_at\": \"1977-09-13T07:37:13.198Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"2024-07-17T04:00:59.568Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1975-12-08T06:24:12.083Z\",\n  \"deleted_by\": \"string\",\n  \"reference_id\": \"string\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1947-04-16\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1997-11-05T08:42:13.375Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1969-03-27T13:50:07.702Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1988-03-27T04:09:22.933Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e75b3bd2-f877-47f0-be37-1eed473fc72a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "employment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employment_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"employed_since\": \"<date>\",\n  \"occupation\": \"<string>\",\n  \"annual_employment_income\": \"<number>\",\n  \"annual_other_income\": \"<number>\",\n  \"source_of_other_income\": \"<string>\",\n  \"address\": {\n    \"address_type\": \"<string>\",\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4ed683ad-0cf2-4a8f-9e4c-53192898f37a",
+    "name": "Lane Employment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

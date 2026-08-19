@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Notifications API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send Email Notification Through SQS",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/send-notification-email-sqs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Send Email Notification Through SQS"
+        },
+        {
+          "info": {
+            "name": "Send Email Notification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/send-notification-email",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Send Email Notification"
+        },
+        {
+          "info": {
+            "name": "Get bookmarks of documents and notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-notification-bookmarks",
+            "params": [
+              {
+                "name": "event_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get bookmarks of documents and notifications"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

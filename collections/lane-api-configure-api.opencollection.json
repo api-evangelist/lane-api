@@ -1,0 +1,2044 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Configure API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Configure",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Specific quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/quotation",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Specific quotation"
+        },
+        {
+          "info": {
+            "name": "Get Specific quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-quotation/:reference_number",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Specific quotation"
+        },
+        {
+          "info": {
+            "name": "Get Specific quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-quotations",
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Specific quotation"
+        },
+        {
+          "info": {
+            "name": "Update an configured quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/quotation/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update an configured quotation"
+        },
+        {
+          "info": {
+            "name": "Save a new order quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/save-quotation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Save a new order quotation and child objects orderoffer,         orderfee, orderoption, orderFnI, orderTradeIn"
+        },
+        {
+          "info": {
+            "name": "Creates fee record for order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fees",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates fee record for order"
+        },
+        {
+          "info": {
+            "name": "Get all order fees for order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fees/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all order fees for order"
+        },
+        {
+          "info": {
+            "name": "Update fee record for order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fees/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update fee record for order"
+        },
+        {
+          "info": {
+            "name": "Delete all orders fees filtered on identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fees/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete all orders fees filtered on identifier"
+        },
+        {
+          "info": {
+            "name": "Create a new order option record",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-options",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a new order option record"
+        },
+        {
+          "info": {
+            "name": "Get order option details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-options/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get order all options against an identifier"
+        },
+        {
+          "info": {
+            "name": "Update an order option record",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-options/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update an order option record"
+        },
+        {
+          "info": {
+            "name": "Delete order option record",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-options/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete all order option records against identifier"
+        },
+        {
+          "info": {
+            "name": "Create finance insurance product record for order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fni",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create finance insurance product record for order"
+        },
+        {
+          "info": {
+            "name": "Get orders finance insurance product filtered on identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fni/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get orders finance insurance product filtered on identifier"
+        },
+        {
+          "info": {
+            "name": "Update finance insurance product record for order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fni/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update finance insurance product record for order"
+        },
+        {
+          "info": {
+            "name": "Delete all orders finance insurance product filtered on identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-fni/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete all orders finance insurance product filtered on identifier"
+        },
+        {
+          "info": {
+            "name": "Creates an order tradein info setup record",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/tradein",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates an order tradein info setup record"
+        },
+        {
+          "info": {
+            "name": "Get a order tradein info setup record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/tradein/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a order tradein info setup record identifier"
+        },
+        {
+          "info": {
+            "name": "Updates a order tradei info setup record",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/tradein/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Updates a order tradei info setup record by identifier"
+        },
+        {
+          "info": {
+            "name": "Delete order tradein info setup record",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/tradein/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete order tradein info setup record identifier"
+        },
+        {
+          "info": {
+            "name": "Get all order record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/orders",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all order record"
+        },
+        {
+          "info": {
+            "name": "Search orders based on filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/filter",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ref_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expiry_date",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Search orders based on filters"
+        },
+        {
+          "info": {
+            "name": "Get orders record filtered on order status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-status/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get orders record filtered on order status"
+        },
+        {
+          "info": {
+            "name": "Update order status record by order reference number",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/update-status/:reference_number",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "is_inventory_check",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update order status record by order reference number"
+        },
+        {
+          "info": {
+            "name": "Convert specific Order to Quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order-to-quotation/:identifier/:reference_number",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update order record from application to quotation"
+        },
+        {
+          "info": {
+            "name": "Update order status history record by order reference number",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/status/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update order status history record by order reference number"
+        },
+        {
+          "info": {
+            "name": "Get assets by trim code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/assets-by-trim-code/:trim_code",
+            "params": [
+              {
+                "name": "trim_code",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get assets by trim code"
+        },
+        {
+          "info": {
+            "name": "Get order status by dealer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/status-by-dealer",
+            "params": [
+              {
+                "name": "dealer_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get order status by dealer"
+        },
+        {
+          "info": {
+            "name": "Convert specific Quotation to Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/quotation-to-order/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Convert specific Quotation stage to Application and save all financial data"
+        },
+        {
+          "info": {
+            "name": "Add insurance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/insurance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add insurance information"
+        },
+        {
+          "info": {
+            "name": "Get all orders of a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/quotation-by-customers",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dealer_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all orders of a customer"
+        },
+        {
+          "info": {
+            "name": "Get Specific quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/quick-quotation-by-identifier/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Specific quotation"
+        },
+        {
+          "info": {
+            "name": "Get all orders of a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/quick-quotation-by-vendor",
+            "params": [
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "Accepts only string values"
+              },
+              {
+                "name": "dealer_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "broker_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lender_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dealer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "contact_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vendor_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "introducer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vendor_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "product_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_submitted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_stage",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all orders of a customer"
+        },
+        {
+          "info": {
+            "name": "Creates an order individualized agreement info setup record",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/individualized-agreement",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates an order individualized agreement info setup record"
+        },
+        {
+          "info": {
+            "name": "Update Financial Indicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/update-financial-indicator/:reference_number/:is_payment_updated",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "is_payment_updated",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update Financial Indicator"
+        },
+        {
+          "info": {
+            "name": "Get Disclaimer Details by Disclaimer Name and Disclaimer Version",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer",
+            "params": [
+              {
+                "name": "disclaimer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "disclaimer_version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Disclaimer Details by Disclaimer Name and Disclaimer Version"
+        },
+        {
+          "info": {
+            "name": "Create disclaimer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create disclaimer"
+        },
+        {
+          "info": {
+            "name": "Get Disclaimer by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-by-name/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Disclaimer by Name"
+        },
+        {
+          "info": {
+            "name": "Get customer mandatory Disclaimers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/customer-mandatory-disclaimers",
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get customer mandatory Disclaimers"
+        },
+        {
+          "info": {
+            "name": "Get all Disclaimers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-disclaimer",
+            "params": [
+              {
+                "name": "disclaimer_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all Disclaimers"
+        },
+        {
+          "info": {
+            "name": "Update Disclaimer status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-status",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "change_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update Disclaimer status"
+        },
+        {
+          "info": {
+            "name": "Update Disclaimer accord",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-accord",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "change_accord",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update Disclaimer accord"
+        },
+        {
+          "info": {
+            "name": "Update Disclaimer details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update Disclaimer details"
+        },
+        {
+          "info": {
+            "name": "Get Saved Disclaimer Agreement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement",
+            "params": [
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Saved Disclaimer Agreement"
+        },
+        {
+          "info": {
+            "name": "Create Disclaimer Agreement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create Disclaimer Agreement"
+        },
+        {
+          "info": {
+            "name": "Delete Disclaimer Agreement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement",
+            "params": [
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "disclaimer_name",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete Disclaimer Agreement"
+        },
+        {
+          "info": {
+            "name": "Get Disclaimer Agreement Date Time by Customer ID/Order ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement-datetime",
+            "params": [
+              {
+                "name": "customer_reference_no",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Disclaimer Agreement Date Time by Customer ID/Order ID"
+        },
+        {
+          "info": {
+            "name": "Create multiple disclaimers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/multiple-disclaimers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create multiple disclaimers"
+        },
+        {
+          "info": {
+            "name": "Creates workqueue after Order creation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/workqueue",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates workqueue after Order creation"
+        },
+        {
+          "info": {
+            "name": "Search workqueue based on filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/workqueue/search",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "make",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "model",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "trim",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "request_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stock",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "program",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expiry_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appointment_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_order_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "make_model_trim",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vehicle_condition",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "reason",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "selling_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dealer_email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latest_order",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Search workqueue based on filters"
+        },
+        {
+          "info": {
+            "name": "Creates workqueue after Order stage change to application",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/workqueue/create_application/:workqueue_id",
+            "params": [
+              {
+                "name": "workqueue_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates workqueue after Order stage change to application"
+        },
+        {
+          "info": {
+            "name": "Creates Appointment after Order Confirmation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/appointment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates an appointment after order confirmation"
+        },
+        {
+          "info": {
+            "name": "Update an created appointment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/appointment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update an created appointment"
+        },
+        {
+          "info": {
+            "name": "Get Appointment by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/appointment/:appointment_id",
+            "params": [
+              {
+                "name": "appointment_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Appointment by id"
+        },
+        {
+          "info": {
+            "name": "Delete created appointment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/appointment/:appointment_id",
+            "params": [
+              {
+                "name": "appointment_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete created appointment"
+        },
+        {
+          "info": {
+            "name": "Get paginated list of Appointments",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/appointments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get paginated list of Appointments"
+        },
+        {
+          "info": {
+            "name": "Get document package by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package",
+            "params": [
+              {
+                "name": "package_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by identifier"
+        },
+        {
+          "info": {
+            "name": "Create document package",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package",
+            "params": [
+              {
+                "name": "is_product",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create document package"
+        },
+        {
+          "info": {
+            "name": "Cancel document package and document by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package",
+            "params": [
+              {
+                "name": "package_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Cancel document package and document by identifier"
+        },
+        {
+          "info": {
+            "name": "Get document package by reference_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package-by-reference-id",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by reference_id"
+        },
+        {
+          "info": {
+            "name": "Get document package by reference_id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-document-packages-by-reference-id",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "external_order_id",
+                "value": "",
+                "type": "query",
+                "description": "Order Id"
+              },
+              {
+                "name": "document_type",
+                "value": "",
+                "type": "query",
+                "description": "Document Type"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by reference_id"
+        },
+        {
+          "info": {
+            "name": "Get document from document package by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-package/document",
+            "params": [
+              {
+                "name": "package_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "document_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document from document package by identifier"
+        },
+        {
+          "info": {
+            "name": "Sign document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/:document_package_id/:document_id/:signature_id",
+            "params": [
+              {
+                "name": "document_package_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "document_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "date_time_format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "time_zone",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Sign document"
+        },
+        {
+          "info": {
+            "name": "Sign document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/by-role/:document_package_identifier/:document_identifier/:signature_id/:signer_role",
+            "params": [
+              {
+                "name": "document_package_identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "document_identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signer_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "date_time_format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "time_zone",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Sign document"
+        },
+        {
+          "info": {
+            "name": "Get document package by identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-pre-signed-url/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get document package by identifier"
+        },
+        {
+          "info": {
+            "name": "Add Meta Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/metadata",
+            "params": [
+              {
+                "name": "document_package_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "document_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Add Meta Data"
+        },
+        {
+          "info": {
+            "name": "Get bookmarks of documents and notifications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/document-notification-bookmarks",
+            "params": [
+              {
+                "name": "event_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get bookmarks of documents and notifications"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

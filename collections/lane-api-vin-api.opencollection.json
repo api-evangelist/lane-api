@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Vin API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get vehicle details through VIN",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-vehicle-detail-by-vin/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will provide vehicle details through VIN"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

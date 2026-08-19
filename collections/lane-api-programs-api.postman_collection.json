@@ -1,0 +1,204 @@
+{
+  "item": [
+    {
+      "id": "7bb9671d-e302-48d6-9fe2-14ea1c180379",
+      "name": "Programs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b9e21981-61a2-48b8-bc73-30b5c51749c7",
+          "name": "Get All Evaluated Programs",
+          "request": {
+            "name": "Get All Evaluated Programs",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "programs",
+                "all",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"terms\": \"<integer>\",\n  \"dealer_code\": \"<string>\",\n  \"lender_code\": \"<string>\",\n  \"company_code\": \"<string>\",\n  \"customer_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"asset_category\": \"<string>\",\n  \"asset_type\": \"<string>\",\n  \"business_trading_age\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_code\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"model_detail_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rental_frequency\": \"<string>\",\n  \"retrieve_all_programs\": \"<boolean>\",\n  \"financed_amount\": \"<string>\",\n  \"vin\": \"<string>\",\n  \"odometer\": \"<integer>\",\n  \"selling_price\": \"<integer>\",\n  \"msrp\": \"<integer>\",\n  \"is_new\": \"<boolean>\",\n  \"total_score\": \"<integer>\",\n  \"is_payment_estimator\": \"<boolean>\",\n  \"tier\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "899b443a-841b-41a6-8003-6f01513aa715",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "programs",
+                    "all",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<integer>\",\n  \"dealer_code\": \"<string>\",\n  \"lender_code\": \"<string>\",\n  \"company_code\": \"<string>\",\n  \"customer_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"asset_category\": \"<string>\",\n  \"asset_type\": \"<string>\",\n  \"business_trading_age\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_code\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"model_detail_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rental_frequency\": \"<string>\",\n  \"retrieve_all_programs\": \"<boolean>\",\n  \"financed_amount\": \"<string>\",\n  \"vin\": \"<string>\",\n  \"odometer\": \"<integer>\",\n  \"selling_price\": \"<integer>\",\n  \"msrp\": \"<integer>\",\n  \"is_new\": \"<boolean>\",\n  \"total_score\": \"<integer>\",\n  \"is_payment_estimator\": \"<boolean>\",\n  \"tier\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ac607fc-a148-4e1f-8112-07d54bb24d33",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "programs",
+                    "all",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"terms\": \"<integer>\",\n  \"dealer_code\": \"<string>\",\n  \"lender_code\": \"<string>\",\n  \"company_code\": \"<string>\",\n  \"customer_type\": \"<string>\",\n  \"product_type\": \"<string>\",\n  \"asset_category\": \"<string>\",\n  \"asset_type\": \"<string>\",\n  \"business_trading_age\": \"<string>\",\n  \"make_name\": \"<string>\",\n  \"model_code\": \"<string>\",\n  \"model_name\": \"<string>\",\n  \"model_detail_name\": \"<string>\",\n  \"asset_condition\": \"<string>\",\n  \"credit_rating\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"asset_classification\": \"<string>\",\n  \"annual_usage\": \"<integer>\",\n  \"is_rv_guaranteed\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rental_frequency\": \"<string>\",\n  \"retrieve_all_programs\": \"<boolean>\",\n  \"financed_amount\": \"<string>\",\n  \"vin\": \"<string>\",\n  \"odometer\": \"<integer>\",\n  \"selling_price\": \"<integer>\",\n  \"msrp\": \"<integer>\",\n  \"is_new\": \"<boolean>\",\n  \"total_score\": \"<integer>\",\n  \"is_payment_estimator\": \"<boolean>\",\n  \"tier\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "69abb27f-0fa8-4da9-a205-4b4e330a226d",
+    "name": "Lane Programs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

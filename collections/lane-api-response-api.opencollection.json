@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Response API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Response",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get third party response history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/customer/third-party-response-history",
+            "params": [
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_images",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "include_response",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type_list",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get third party response history"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

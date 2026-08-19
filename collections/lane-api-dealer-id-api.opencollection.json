@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Dealer_id API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dealer_id",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Order expiry date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/order/expiry/:order_stage/:dealer_id",
+            "params": [
+              {
+                "name": "order_stage",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dealer_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get order expiry date"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

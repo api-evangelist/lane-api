@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Disclaimer  Management API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Disclaimer  Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Disclaimer Agreement Date Time by Customer ID/Order ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement-datetime",
+            "params": [
+              {
+                "name": "customer_reference_no",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Disclaimer Agreement Date Time by Customer ID/Order ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

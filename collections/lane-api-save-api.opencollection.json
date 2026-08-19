@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Save API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Save",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Save a new order quotation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/save-quotation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Save a new order quotation and child objects orderoffer,         orderfee, orderoption, orderFnI, orderTradeIn"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

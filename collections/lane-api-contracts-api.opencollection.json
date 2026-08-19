@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Contracts API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contracts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get contracts by external order ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contracts",
+            "params": [
+              {
+                "name": "external_order_ids",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get contracts by external order ids"
+        },
+        {
+          "info": {
+            "name": "Get contracts by external order ids",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contracts/search",
+            "params": [
+              {
+                "name": "subscription_start_date",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DDTHH:MM:SS"
+              },
+              {
+                "name": "subscription_end_date",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DDTHH:MM:SS"
+              },
+              {
+                "name": "subscription_start_date_from",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DDTHH:MM:SS"
+              },
+              {
+                "name": "subscription_start_date_to",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DDTHH:MM:SS"
+              },
+              {
+                "name": "subscription_end_date_from",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DDTHH:MM:SS"
+              },
+              {
+                "name": "subscription_end_date_to",
+                "value": "",
+                "type": "query",
+                "description": "Format: YYYY-MM-DDTHH:MM:SS"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get contracts by external order ids"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,258 @@
+{
+  "item": [
+    {
+      "id": "bf2aa2ae-da47-440d-86c8-062759c73980",
+      "name": "Tradein",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "eefebafe-0321-40c8-a41d-64008711d631",
+          "name": "Get trade in options linked with vehicles",
+          "request": {
+            "name": "Get trade in options linked with vehicles",
+            "description": {
+              "content": "This method will get all the options related to vehicle",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "get-tradein-options",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Vehicle valuation service to use",
+                "key": "x-service-provider",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Dealer code from the header",
+                "key": "x-dealer-code",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Company ID from the dealer",
+                "key": "company-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"platform_vehicle_type\": \"<string>\",\n  \"options_filter\": {\n    \"vehicleId\": 0,\n    \"yearId\": 0,\n    \"makeId\": 0,\n    \"modelId\": 0,\n    \"trimId\": 0\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "06b5cc96-02df-4e34-b25d-e9e4ab1ecfee",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "get-tradein-options",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Vehicle valuation service to use",
+                    "key": "x-service-provider",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Dealer code from the header",
+                    "key": "x-dealer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Company ID from the dealer",
+                    "key": "company-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"platform_vehicle_type\": \"<string>\",\n  \"options_filter\": {\n    \"vehicleId\": 0,\n    \"yearId\": 0,\n    \"makeId\": 0,\n    \"modelId\": 0,\n    \"trimId\": 0\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2ab7a4b-c087-4b7e-b324-2faf6c38ced0",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "get-tradein-options",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Vehicle valuation service to use",
+                    "key": "x-service-provider",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Dealer code from the header",
+                    "key": "x-dealer-code",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Company ID from the dealer",
+                    "key": "company-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"platform_vehicle_type\": \"<string>\",\n  \"options_filter\": {\n    \"vehicleId\": 0,\n    \"yearId\": 0,\n    \"makeId\": 0,\n    \"modelId\": 0,\n    \"trimId\": 0\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9544cb93-693f-4f53-bfbb-001722310e46",
+    "name": "Lane Tradein API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

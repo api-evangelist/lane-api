@@ -1,0 +1,228 @@
+{
+  "item": [
+    {
+      "id": "842d973f-10a1-4253-a4f8-ff61477bf401",
+      "name": "Customer  Document",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f4332a6a-caa4-46a6-9056-314cae91b04a",
+          "name": "Update customer document by identifier",
+          "request": {
+            "name": "Update customer document by identifier",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "documents",
+                ":customer_reference_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customer_reference_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"customer_reference_id\": \"<string>\",\n    \"content_type\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"document\": \"<string>\",\n    \"document_name\": \"<string>\",\n    \"document_size\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"category\": \"<string>\",\n    \"uploaded_by\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\",\n    \"expires_at\": \"<dateTime>\",\n    \"document_reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"document_type\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"document_status\": \"<string>\",\n    \"external_reference_id\": \"<string>\",\n    \"stipulation_code\": \"<string>\",\n    \"document_upload_indicator\": false\n  },\n  {\n    \"customer_reference_id\": \"<string>\",\n    \"content_type\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"document\": \"<string>\",\n    \"document_name\": \"<string>\",\n    \"document_size\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"category\": \"<string>\",\n    \"uploaded_by\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\",\n    \"expires_at\": \"<dateTime>\",\n    \"document_reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"document_type\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"document_status\": \"<string>\",\n    \"external_reference_id\": \"<string>\",\n    \"stipulation_code\": \"<string>\",\n    \"document_upload_indicator\": false\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "073b340c-de5a-44b7-924a-73bdf8f0c2c2",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "documents",
+                    ":customer_reference_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customer_reference_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"customer_reference_id\": \"<string>\",\n    \"content_type\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"document\": \"<string>\",\n    \"document_name\": \"<string>\",\n    \"document_size\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"category\": \"<string>\",\n    \"uploaded_by\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\",\n    \"expires_at\": \"<dateTime>\",\n    \"document_reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"document_type\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"document_status\": \"<string>\",\n    \"external_reference_id\": \"<string>\",\n    \"stipulation_code\": \"<string>\",\n    \"document_upload_indicator\": false\n  },\n  {\n    \"customer_reference_id\": \"<string>\",\n    \"content_type\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"document\": \"<string>\",\n    \"document_name\": \"<string>\",\n    \"document_size\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"category\": \"<string>\",\n    \"uploaded_by\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\",\n    \"expires_at\": \"<dateTime>\",\n    \"document_reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"document_type\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"document_status\": \"<string>\",\n    \"external_reference_id\": \"<string>\",\n    \"stipulation_code\": \"<string>\",\n    \"document_upload_indicator\": false\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1164c795-873c-4148-9483-9cca0e762ac1",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "documents",
+                    ":customer_reference_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customer_reference_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"customer_reference_id\": \"<string>\",\n    \"content_type\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"document\": \"<string>\",\n    \"document_name\": \"<string>\",\n    \"document_size\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"category\": \"<string>\",\n    \"uploaded_by\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\",\n    \"expires_at\": \"<dateTime>\",\n    \"document_reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"document_type\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"document_status\": \"<string>\",\n    \"external_reference_id\": \"<string>\",\n    \"stipulation_code\": \"<string>\",\n    \"document_upload_indicator\": false\n  },\n  {\n    \"customer_reference_id\": \"<string>\",\n    \"content_type\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"document\": \"<string>\",\n    \"document_name\": \"<string>\",\n    \"document_size\": \"<string>\",\n    \"comment\": \"<string>\",\n    \"category\": \"<string>\",\n    \"uploaded_by\": \"<string>\",\n    \"uploaded_at\": \"<dateTime>\",\n    \"expires_at\": \"<dateTime>\",\n    \"document_reference_id\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"identifier\": \"<string>\",\n    \"document_type\": \"<string>\",\n    \"created_by\": \"<string>\",\n    \"document_status\": \"<string>\",\n    \"external_reference_id\": \"<string>\",\n    \"stipulation_code\": \"<string>\",\n    \"document_upload_indicator\": false\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6eeecca2-09fd-4bea-b12c-079f88593e42",
+    "name": "Lane Customer  Document API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

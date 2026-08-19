@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Disclaimer API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Disclaimer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all Disclaimers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/all-disclaimer",
+            "params": [
+              {
+                "name": "disclaimer_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get all Disclaimers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

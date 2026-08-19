@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Past API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Past",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Past due webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/contract/past-due-webhook",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Past due webhook"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

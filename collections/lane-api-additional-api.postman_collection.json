@@ -1,0 +1,201 @@
+{
+  "item": [
+    {
+      "id": "6095b8d2-3d51-4c91-b628-92bd58f22867",
+      "name": "Additional",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "437044e8-d982-458f-8d5c-709396cea6c6",
+          "name": "Creates customer document",
+          "request": {
+            "name": "Creates customer document",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "additional-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"document_type\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"content_type\": \"<string>\",\n  \"external_reference_id\": \"<string>\",\n  \"document_name\": \"<string>\",\n  \"reason_by_system\": \"<string>\",\n  \"reason_for_customer\": \"<string>\",\n  \"document_upload_indicator\": false,\n  \"expires_at\": \"<dateTime>\",\n  \"document\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"uploaded_by\": \"<string>\",\n  \"uploaded_at\": \"<dateTime>\",\n  \"document_reference_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "60861ba7-7e14-43f5-81cf-3935d66d3a2b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "additional-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"document_type\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"content_type\": \"<string>\",\n  \"external_reference_id\": \"<string>\",\n  \"document_name\": \"<string>\",\n  \"reason_by_system\": \"<string>\",\n  \"reason_for_customer\": \"<string>\",\n  \"document_upload_indicator\": false,\n  \"expires_at\": \"<dateTime>\",\n  \"document\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"uploaded_by\": \"<string>\",\n  \"uploaded_at\": \"<dateTime>\",\n  \"document_reference_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"customer_reference_id\": \"string\",\n  \"external_reference_id\": \"string\",\n  \"document_type\": \"string\",\n  \"comment\": \"string\",\n  \"category\": \"string\",\n  \"document_name\": \"string\",\n  \"document_size\": \"string\",\n  \"document_url\": \"string\",\n  \"reason_by_system\": \"string\",\n  \"reason_for_customer\": \"string\",\n  \"document_status\": \"string\",\n  \"document_upload_indicator\": false,\n  \"expires_at\": \"2000-08-08T19:27:53.083Z\",\n  \"created_at\": \"1987-06-24T01:08:35.631Z\",\n  \"updated_at\": \"1974-01-04T14:19:49.161Z\",\n  \"deleted_at\": \"1975-07-04T09:01:04.420Z\",\n  \"updated_by\": \"string\",\n  \"created_by\": \"string\",\n  \"deleted_by\": \"string\",\n  \"uploaded_by\": \"string\",\n  \"uploaded_at\": \"1994-08-26T21:11:25.472Z\",\n  \"is_deleted\": false,\n  \"identifier\": \"string\",\n  \"stipulation_code\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "22beeed1-6b8b-4dd9-9297-0435ae7ed224",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "additional-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"document_type\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"content_type\": \"<string>\",\n  \"external_reference_id\": \"<string>\",\n  \"document_name\": \"<string>\",\n  \"reason_by_system\": \"<string>\",\n  \"reason_for_customer\": \"<string>\",\n  \"document_upload_indicator\": false,\n  \"expires_at\": \"<dateTime>\",\n  \"document\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"uploaded_by\": \"<string>\",\n  \"uploaded_at\": \"<dateTime>\",\n  \"document_reference_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "915c8e8b-b3f3-47f7-88b3-639756cc8d4c",
+    "name": "Lane Additional API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

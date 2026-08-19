@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Removes API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Removes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Remove the order payment detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://dms-api.netsolapp.io/dms/remove-payment-details/:order_payment_detail_id",
+            "params": [
+              {
+                "name": "order_payment_detail_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove the order payment detail"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

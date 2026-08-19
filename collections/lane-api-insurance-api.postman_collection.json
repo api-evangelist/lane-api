@@ -1,0 +1,2749 @@
+{
+  "item": [
+    {
+      "id": "c3e9837f-717f-40f8-880d-4da6085ed537",
+      "name": "Insurance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b05340e7-ac4b-46f3-a9d4-73216e7bb3fc",
+          "name": "Get customer insurance information by customer reference id and order reference number",
+          "request": {
+            "name": "Get customer insurance information by customer reference id and order reference number",
+            "description": {
+              "content": "Get customer insurance information by customer reference id and order reference number",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) provide valid reference_id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>",
+                  "description": "(Required) provide valid order_reference_id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "436ee659-efd2-463e-b4a1-981bfc77ec2b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1988-06-20\",\n  \"expiration_date\": \"1988-09-15\",\n  \"deductible_comprehensive\": 9848.49599958068,\n  \"deductible_collision\": 5129.019925676811,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": true,\n      \"created_by\": \"string\",\n      \"created_at\": \"1968-06-13\",\n      \"deleted_at\": \"1982-03-29\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": true,\n      \"created_by\": \"string\",\n      \"created_at\": \"1955-07-14\",\n      \"deleted_at\": \"2010-01-07\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1997-09-10\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\"\n  },\n  \"status\": \"Verified\",\n  \"is_active\": true,\n  \"is_deleted\": true,\n  \"created_at\": \"1955-10-10T21:07:52.206Z\",\n  \"updated_at\": \"1978-02-12T01:23:07.582Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1975-12-11\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "825a316f-f8b0-4c12-8bbe-e149a62906b8",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0fc08204-f7ae-4bad-8bae-785cba7e9c30",
+          "name": "Create customer insurance information",
+          "request": {
+            "name": "Create customer insurance information",
+            "description": {
+              "content": "Create customer insurance information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"created_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"identifier\": \"<string>\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4419848d-b8bd-43ad-b2aa-d85f67c7ab57",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"created_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"identifier\": \"<string>\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1969-03-20\",\n  \"expiration_date\": \"1952-07-01\",\n  \"deductible_comprehensive\": 6892.332487508984,\n  \"deductible_collision\": 8174.199772078542,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"2022-10-11\",\n      \"deleted_at\": \"2021-06-15\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": true,\n      \"created_by\": \"string\",\n      \"created_at\": \"2008-06-06\",\n      \"deleted_at\": \"1955-02-24\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  },\n  \"status\": \"Unverified\",\n  \"is_active\": true,\n  \"is_deleted\": true,\n  \"created_at\": \"2003-02-17T11:10:49.467Z\",\n  \"updated_at\": \"1966-05-31T01:50:07.704Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1985-05-28\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5d9504a-1f15-4ae1-b88f-b44bca2d4682",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"created_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"identifier\": \"<string>\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17db562e-bb60-4ac9-807d-16cbf892357f",
+          "name": "Delete single customer insurance information",
+          "request": {
+            "name": "Delete single customer insurance information",
+            "description": {
+              "content": "Delete single customer insurance information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "31527679-4ec4-483f-9be3-3dcccaf0fa92",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac082f47-8884-4198-a0a7-ada1c1ac4574",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "366cf668-a32d-431d-99fa-8bea18802d6c",
+          "name": "Updates customer insurance information",
+          "request": {
+            "name": "Updates customer insurance information",
+            "description": {
+              "content": "Updates customer insurance information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"updated_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"is_verified\": false,\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  },\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7269d5ac-307d-4734-a559-d0fb6d0715b6",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updated_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"is_verified\": false,\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  },\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1976-07-04\",\n  \"expiration_date\": \"1984-09-11\",\n  \"deductible_comprehensive\": 6986.467806429917,\n  \"deductible_collision\": 8316.675722264918,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"1993-11-28\",\n      \"deleted_at\": \"1961-09-19\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"2000-01-05\",\n      \"deleted_at\": \"1964-08-13\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"is_active\": false,\n  \"is_deleted\": true,\n  \"created_at\": \"2010-11-12T00:56:12.377Z\",\n  \"updated_at\": \"2007-08-30T02:29:55.960Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1996-01-12\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "62f71d8f-7a99-405d-b4a8-ec44504979a7",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updated_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"is_verified\": false,\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  },\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b18557d2-8861-4834-8298-50892868cf9e",
+          "name": "Updates customer insurance information",
+          "request": {
+            "name": "Updates customer insurance information",
+            "description": {
+              "content": "Updates customer insurance information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "update-insurance-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"updated_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"is_verified\": false,\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  },\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ef04f8cd-03e6-4708-bc3c-ff4c6588fbef",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "update-insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updated_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"is_verified\": false,\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  },\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1976-07-04\",\n  \"expiration_date\": \"1984-09-11\",\n  \"deductible_comprehensive\": 6986.467806429917,\n  \"deductible_collision\": 8316.675722264918,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"1993-11-28\",\n      \"deleted_at\": \"1961-09-19\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"2000-01-05\",\n      \"deleted_at\": \"1964-08-13\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"is_active\": false,\n  \"is_deleted\": true,\n  \"created_at\": \"2010-11-12T00:56:12.377Z\",\n  \"updated_at\": \"2007-08-30T02:29:55.960Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1996-01-12\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "00daecde-4cb9-4b3e-a4fb-4d5d67737d76",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "update-insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updated_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"is_verified\": false,\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false\n  },\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c166fa6a-c01e-4431-aa56-da6fb165723e",
+          "name": "Get customer insurance information history",
+          "request": {
+            "name": "Get customer insurance information history",
+            "description": {
+              "content": "Get customer insurance information history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8e139691-3802-40b2-898a-2673ba892efc",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"order_reference_id\": \"string\",\n      \"reference_id\": \"string\",\n      \"insurer_name\": \"string\",\n      \"agent_phone\": \"string\",\n      \"subscription_id\": \"string\",\n      \"agent_name\": \"string\",\n      \"policy_number\": \"string\",\n      \"start_date\": \"1952-05-19\",\n      \"expiration_date\": \"2012-02-20\",\n      \"deductible_comprehensive\": 5436.303549020904,\n      \"deductible_collision\": 5925.734888954769,\n      \"created_by\": \"string\",\n      \"identifier\": \"string\",\n      \"is_verified\": false,\n      \"insurance_documents\": [\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": true,\n          \"created_by\": \"string\",\n          \"created_at\": \"2024-06-08\",\n          \"deleted_at\": \"1981-06-17\",\n          \"deleted_by\": \"string\"\n        },\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": false,\n          \"created_by\": \"string\",\n          \"created_at\": \"1950-08-23\",\n          \"deleted_at\": \"2025-08-13\",\n          \"deleted_by\": \"string\"\n        }\n      ],\n      \"insurer_address\": {\n        \"address_line_1\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"state_name\": \"<string>\",\n        \"zip_code\": \"<string>\",\n        \"county\": \"<string>\",\n        \"city\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"move_in_date\": \"<date>\",\n        \"is_garaging\": false,\n        \"identifier\": \"<string>\"\n      },\n      \"status\": \"<string>\",\n      \"is_active\": true,\n      \"is_deleted\": true,\n      \"created_at\": \"1953-10-06T00:58:27.881Z\",\n      \"updated_at\": \"1968-07-11T04:15:19.177Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1984-05-11\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"order_reference_id\": \"string\",\n      \"reference_id\": \"string\",\n      \"insurer_name\": \"string\",\n      \"agent_phone\": \"string\",\n      \"subscription_id\": \"string\",\n      \"agent_name\": \"string\",\n      \"policy_number\": \"string\",\n      \"start_date\": \"2017-10-11\",\n      \"expiration_date\": \"2024-06-28\",\n      \"deductible_comprehensive\": 7221.880677595045,\n      \"deductible_collision\": 2957.5177701800203,\n      \"created_by\": \"string\",\n      \"identifier\": \"string\",\n      \"is_verified\": false,\n      \"insurance_documents\": [\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": false,\n          \"created_by\": \"string\",\n          \"created_at\": \"1950-12-27\",\n          \"deleted_at\": \"1997-08-13\",\n          \"deleted_by\": \"string\"\n        },\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": true,\n          \"created_by\": \"string\",\n          \"created_at\": \"1991-10-15\",\n          \"deleted_at\": \"1996-07-23\",\n          \"deleted_by\": \"string\"\n        }\n      ],\n      \"insurer_address\": {\n        \"address_line_1\": \"<string>\",\n        \"address_line_2\": \"<string>\",\n        \"state_name\": \"<string>\",\n        \"zip_code\": \"<string>\",\n        \"county\": \"<string>\",\n        \"city\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"verified\": \"<boolean>\",\n        \"move_in_date\": \"<date>\",\n        \"is_garaging\": false,\n        \"identifier\": \"<string>\"\n      },\n      \"status\": \"<string>\",\n      \"is_active\": false,\n      \"is_deleted\": true,\n      \"created_at\": \"1964-06-09T13:09:32.691Z\",\n      \"updated_at\": \"1988-11-22T09:10:42.753Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1978-05-23\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"page_number\": 7483,\n  \"page_size\": 9744,\n  \"total_pages\": 9084,\n  \"total_results\": 2285\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dbd46980-4d61-49b5-9fdd-737db6dbea88",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "490c3471-ebe7-4db3-876a-65c1bca55fe7",
+          "name": "Get customer insurance information by customer reference id",
+          "request": {
+            "name": "Get customer insurance information by customer reference id",
+            "description": {
+              "content": "Get customer insurance information by customer reference id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information-by-customer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "29f8e6e8-f754-4b23-89e6-10dd5cf127b9",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-by-customer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1976-07-04\",\n  \"expiration_date\": \"1984-09-11\",\n  \"deductible_comprehensive\": 6986.467806429917,\n  \"deductible_collision\": 8316.675722264918,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"1993-11-28\",\n      \"deleted_at\": \"1961-09-19\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"2000-01-05\",\n      \"deleted_at\": \"1964-08-13\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"is_active\": false,\n  \"is_deleted\": true,\n  \"created_at\": \"2010-11-12T00:56:12.377Z\",\n  \"updated_at\": \"2007-08-30T02:29:55.960Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1996-01-12\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b26ff99-8e5a-4587-9219-bcd901b9d734",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-by-customer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6b1972f-1d6d-40a8-8bf6-0598fac5ab6b",
+          "name": "Get customer insurance information by order reference number",
+          "request": {
+            "name": "Get customer insurance information by order reference number",
+            "description": {
+              "content": "Get customer insurance information by order reference number",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information-by-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "67576353-c0cb-43c0-9129-d837652953af",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-by-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1976-07-04\",\n  \"expiration_date\": \"1984-09-11\",\n  \"deductible_comprehensive\": 6986.467806429917,\n  \"deductible_collision\": 8316.675722264918,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"1993-11-28\",\n      \"deleted_at\": \"1961-09-19\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"2000-01-05\",\n      \"deleted_at\": \"1964-08-13\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"is_active\": false,\n  \"is_deleted\": true,\n  \"created_at\": \"2010-11-12T00:56:12.377Z\",\n  \"updated_at\": \"2007-08-30T02:29:55.960Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1996-01-12\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34c17e5e-546d-43c7-97be-26615b117cd8",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-by-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4fc548cf-ddf4-4a07-8c0d-7f70c57e597c",
+          "name": "Get customer insurance information document history",
+          "request": {
+            "name": "Get customer insurance information document history",
+            "description": {
+              "content": "Get customer insurance information document history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information",
+                "document-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) provide valid reference_id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ba4685fc-07ca-468e-89cd-959df79daed0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "document-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"document_uri\": \"string\",\n    \"content_type\": \"string\",\n    \"name\": \"string\",\n    \"file_size\": \"string\",\n    \"identifier\": \"string\",\n    \"is_active\": true,\n    \"created_by\": \"string\",\n    \"created_at\": \"1962-01-24\",\n    \"deleted_at\": \"1999-05-23\",\n    \"deleted_by\": \"string\"\n  },\n  {\n    \"document_uri\": \"string\",\n    \"content_type\": \"string\",\n    \"name\": \"string\",\n    \"file_size\": \"string\",\n    \"identifier\": \"string\",\n    \"is_active\": true,\n    \"created_by\": \"string\",\n    \"created_at\": \"1956-04-18\",\n    \"deleted_at\": \"1981-11-15\",\n    \"deleted_by\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a775faa-844e-4fc6-9cb4-124494dc1618",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "document-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad47affb-d6c4-46ae-ade4-cf59572b5d09",
+          "name": "Delete single customer insurance information",
+          "request": {
+            "name": "Delete single customer insurance information",
+            "description": {
+              "content": "Delete single customer insurance information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "delete-insurance-information"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d581920-3036-45cc-861a-e0776f3b5729",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "delete-insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a3548e6-cdc2-4047-b1cd-01f237d97feb",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "delete-insurance-information"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfb5a1e1-a933-4c5c-b858-9698767353d7",
+          "name": "Add insurance document",
+          "request": {
+            "name": "Add insurance document",
+            "description": {
+              "content": "Add insurance document",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information",
+                "add-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"file_size\": \"<string>\",\n  \"document\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"doucment_reference_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e8ba4d68-02ae-4d9c-b5da-e30a40e78efe",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "add-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"file_size\": \"<string>\",\n  \"document\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"doucment_reference_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"document_uri\": \"string\",\n    \"content_type\": \"string\",\n    \"name\": \"string\",\n    \"file_size\": \"string\",\n    \"identifier\": \"string\",\n    \"is_active\": false,\n    \"created_by\": \"string\",\n    \"created_at\": \"1981-05-03\",\n    \"deleted_at\": \"1961-11-21\",\n    \"deleted_by\": \"string\"\n  },\n  {\n    \"document_uri\": \"string\",\n    \"content_type\": \"string\",\n    \"name\": \"string\",\n    \"file_size\": \"string\",\n    \"identifier\": \"string\",\n    \"is_active\": true,\n    \"created_by\": \"string\",\n    \"created_at\": \"1971-10-22\",\n    \"deleted_at\": \"1986-09-29\",\n    \"deleted_by\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "57267d89-70c4-4519-a37d-a0080cef5548",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "add-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content_type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"file_size\": \"<string>\",\n  \"document\": \"<string>\",\n  \"created_by\": \"<string>\",\n  \"doucment_reference_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c24cafba-efcb-45c1-a215-47959c220618",
+          "name": "Delete insurance document ",
+          "request": {
+            "name": "Delete insurance document ",
+            "description": {
+              "content": "Delete insurance document ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information",
+                "remove-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0b9c5767-dc6a-4281-8faf-318edb28dbff",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "remove-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40ead767-5457-4c5c-84cc-0fd45fd07d81",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "remove-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9219e2e3-0c24-46d2-93de-f653360d9fcf",
+          "name": "Delete insurance document ",
+          "request": {
+            "name": "Delete insurance document ",
+            "description": {
+              "content": "Delete insurance document ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information",
+                "remove-insurance-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65f049df-ba64-4dc5-ad99-9ae814a32732",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "remove-insurance-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0da47aa5-1e4f-49a7-b1c5-565b124f840f",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "remove-insurance-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deleted_by\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efa82a59-3b6e-4ab2-ae61-16ebe13c3825",
+          "name": "Add insurance",
+          "request": {
+            "name": "Add insurance",
+            "description": {
+              "content": "Add insurance information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "insurance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"created_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"identifier\": \"<string>\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "667379e2-2048-4f1e-b4f5-ec1187a63e4f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "insurance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"created_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"identifier\": \"<string>\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_reference_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"insurer_name\": \"string\",\n  \"agent_phone\": \"string\",\n  \"subscription_id\": \"string\",\n  \"agent_name\": \"string\",\n  \"policy_number\": \"string\",\n  \"start_date\": \"1976-07-04\",\n  \"expiration_date\": \"1984-09-11\",\n  \"deductible_comprehensive\": 6986.467806429917,\n  \"deductible_collision\": 8316.675722264918,\n  \"created_by\": \"string\",\n  \"identifier\": \"string\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"1993-11-28\",\n      \"deleted_at\": \"1961-09-19\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"document_uri\": \"string\",\n      \"content_type\": \"string\",\n      \"name\": \"string\",\n      \"file_size\": \"string\",\n      \"identifier\": \"string\",\n      \"is_active\": false,\n      \"created_by\": \"string\",\n      \"created_at\": \"2000-01-05\",\n      \"deleted_at\": \"1964-08-13\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  },\n  \"status\": \"<string>\",\n  \"is_active\": false,\n  \"is_deleted\": true,\n  \"created_at\": \"2010-11-12T00:56:12.377Z\",\n  \"updated_at\": \"2007-08-30T02:29:55.960Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1996-01-12\",\n  \"deleted_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e9d513a-2271-4524-821a-90996a8f06b6",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "insurance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"created_by\": \"<string>\",\n  \"order_reference_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"insurer_name\": \"<string>\",\n  \"agent_phone\": \"<string>\",\n  \"subscription_id\": \"<string>\",\n  \"agent_name\": \"<string>\",\n  \"policy_number\": \"<string>\",\n  \"start_date\": \"<date>\",\n  \"expiration_date\": \"<date>\",\n  \"deductible_comprehensive\": \"<number>\",\n  \"deductible_collision\": \"<number>\",\n  \"identifier\": \"<string>\",\n  \"is_verified\": false,\n  \"insurance_documents\": [\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    },\n    {\n      \"content_type\": \"<string>\",\n      \"name\": \"<string>\",\n      \"file_size\": \"<string>\",\n      \"document\": \"<string>\",\n      \"created_by\": \"<string>\",\n      \"doucment_reference_id\": \"<string>\"\n    }\n  ],\n  \"insurer_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e285a6f-4469-4d20-92f4-a5c0cc3fa0e2",
+          "name": "Add Insurance",
+          "request": {
+            "name": "Add Insurance",
+            "description": {
+              "content": "Storing Transaction id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "insurance",
+                "add-insurance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"<string>\",\n  \"transactionId\": \"<string>\",\n  \"carrierName\": \"<string>\",\n  \"policyExpirationDate\": \"<date>\",\n  \"policyDocumentUrl\": \"<string>\",\n  \"insuranceCardUrl\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"policyNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ebdafed4-2f9c-424e-949e-7e63219e30d6",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "insurance",
+                    "add-insurance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"transactionId\": \"<string>\",\n  \"carrierName\": \"<string>\",\n  \"policyExpirationDate\": \"<date>\",\n  \"policyDocumentUrl\": \"<string>\",\n  \"insuranceCardUrl\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"policyNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3173091-00f2-4318-87f6-462c8cb3ad47",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "insurance",
+                    "add-insurance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"transactionId\": \"<string>\",\n  \"carrierName\": \"<string>\",\n  \"policyExpirationDate\": \"<date>\",\n  \"policyDocumentUrl\": \"<string>\",\n  \"insuranceCardUrl\": \"<string>\",\n  \"contactNumber\": \"<string>\",\n  \"policyNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d427c567-ea19-4c20-b493-4d92a3c1fbf6",
+    "name": "Lane Insurance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

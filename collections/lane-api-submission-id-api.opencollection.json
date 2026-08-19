@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Submission_id API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Submission_id",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get single order submission by primary key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/order/get-order-submission-by-id/:submission_id",
+            "params": [
+              {
+                "name": "submission_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets single order submission record against given id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1431 @@
+{
+  "item": [
+    {
+      "id": "c55a8f0e-72c1-4f8a-a76b-64d0b5d7406d",
+      "name": "Contract",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0be6ee08-415c-4eff-8812-bb857ab5a130",
+          "name": "Handle contract document",
+          "request": {
+            "name": "Handle contract document",
+            "description": {
+              "content": "Handle contract document",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "contract-document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "document_event",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "461b21ed-5401-4717-888e-43895fdf0a4f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_event",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6312efb3-49be-402c-9ca5-e377e3e1409f",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract-document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_event",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff655f9c-fe6e-4b58-8f0d-a61d17cc3dec",
+          "name": "Get active contract",
+          "request": {
+            "name": "Get active contract",
+            "description": {
+              "content": "Get active contract",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "contract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_reference_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_order_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e241609a-17f8-4753-937d-af93f6e9f454",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"external_subscription_id\": \"string\",\n  \"vendor_subscription_id\": \"string\",\n  \"customer_reference_id\": \"string\",\n  \"external_order_id\": \"string\",\n  \"starting_odometer\": 8436,\n  \"start_date\": \"1991-04-19T00:57:26.822Z\",\n  \"end_date\": \"1958-04-19T15:46:47.784Z\",\n  \"dealer_id\": 3885,\n  \"allowed_miles\": 2365,\n  \"exceed_miles_rate\": 6314,\n  \"terms\": 4715,\n  \"meta_data\": {},\n  \"subscription_status\": \"string\",\n  \"received_security_deposit\": 1083,\n  \"invocation_type\": \"string\",\n  \"assets\": [\n    {\n      \"vin\": \"string\"\n    },\n    {\n      \"vin\": \"string\"\n    }\n  ],\n  \"buyout\": {\n    \"buyout_option\": \"string\",\n    \"vehicle_purchase_price\": 8625\n  },\n  \"identifier\": \"string\",\n  \"created_at\": \"2005-08-28T14:10:05.181Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"1986-11-05T11:36:42.072Z\",\n  \"updated_by\": \"string\",\n  \"billing_status\": \"string\",\n  \"has_draft_invoice\": true,\n  \"final_bill_invoice_id\": \"string\",\n  \"final_bill_amount\": 465,\n  \"first_bill_invoice_id\": \"string\",\n  \"events\": [\n    {\n      \"identifier\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\"\n    }\n  ],\n  \"returns\": {\n    \"actual_return_date\": \"string\",\n    \"vin\": \"string\",\n    \"order_reference_number\": \"string\",\n    \"current_odometer_reading\": 3223,\n    \"dealer_id\": 2000,\n    \"noi_date\": \"2023-05-06T13:44:28.646Z\",\n    \"identifier\": \"string\",\n    \"invoice_id\": \"string\",\n    \"planned_return_date\": \"string\",\n    \"penalty_reason\": \"string\",\n    \"check_list_start_date\": \"string\",\n    \"penalty_amount\": \"string\",\n    \"return_type\": \"string\",\n    \"et_fee\": 1409,\n    \"status\": \"string\",\n    \"dealer_comments\": \"string\",\n    \"reason\": \"string\",\n    \"reason_detail\": \"string\",\n    \"allowed_usage\": 4029,\n    \"external_order_id\": \"string\",\n    \"customer_reference_id\": \"string\",\n    \"customer_first_name\": \"string\",\n    \"customer_last_name\": \"string\"\n  },\n  \"customer\": {\n    \"prefix\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"suffix\": \"string\",\n    \"ssn\": \"string\",\n    \"mobile_number\": \"string\",\n    \"mobile_number_verified_status\": false,\n    \"home_number\": \"string\",\n    \"home_number_verified_status\": false,\n    \"customer_type\": \"string\",\n    \"date_of_birth\": \"2004-06-28\",\n    \"meta_data\": {},\n    \"stripe_customer_id\": \"string\",\n    \"preferred_contact\": \"string\",\n    \"reference_id\": \"string\",\n    \"external_id\": \"string\",\n    \"identifier\": \"string\",\n    \"email\": \"string\",\n    \"created_by\": \"string\",\n    \"created_at\": \"1973-07-18T14:12:01.677Z\",\n    \"updated_at\": \"1983-04-15T14:11:37.129Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1997-06-22T06:51:09.482Z\",\n    \"deleted_by\": \"string\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"DrivingLicense\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"2006-12-28\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1982-12-30T19:08:12.864Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1970-05-29T03:00:30.740Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1952-10-18T16:10:41.430Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"address_type\": \"InsuranceAddress\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": false,\n        \"move_in_date\": \"2008-04-24\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"2019-11-10T20:03:54.917Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"2010-09-13T05:04:29.564Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1995-04-12T11:56:56.632Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"income_info\": {\n      \"employment_type\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\",\n      \"employed_since\": \"2026-06-04\",\n      \"occupation\": \"string\",\n      \"annual_employment_income\": 5920.475842560108,\n      \"annual_other_income\": 6542.5337720502785,\n      \"source_of_other_income\": \"string\",\n      \"created_at\": \"1954-04-16T19:24:22.776Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"2014-04-04T23:13:48.311Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"2026-02-15T16:55:14.378Z\",\n      \"deleted_by\": \"string\"\n    },\n    \"payments_info\": [\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 1413,\n        \"default\": true,\n        \"created_at\": \"1968-07-03T13:49:23.009Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1992-03-05T11:01:30.745Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1994-09-01T16:49:20.795Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 4809,\n        \"default\": true,\n        \"created_at\": \"1975-08-14T01:41:06.489Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"2020-03-28T21:47:09.834Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2023-08-20T22:16:37.222Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"license_info\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"status\": \"string\",\n      \"license_number\": \"string\",\n      \"is_pdf_417\": true,\n      \"issue_date\": \"1996-09-23\",\n      \"expiry_date\": \"2000-11-22\",\n      \"date_of_birth\": \"1981-06-19\",\n      \"is_selfie_verified\": false\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6497d172-70c5-4f7e-b212-da4ef3024242",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e4d78f81-a14a-42b5-8881-f75306586319",
+          "name": "Create contract",
+          "request": {
+            "name": "Create contract",
+            "description": {
+              "content": "Create contract",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "contract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"end_date\": \"<dateTime>\",\n  \"dealer_id\": \"<integer>\",\n  \"allowed_miles\": \"<integer>\",\n  \"exceed_miles_rate\": \"<integer>\",\n  \"terms\": \"<integer>\",\n  \"created_by\": \"<string>\",\n  \"external_subscription_id\": \"<string>\",\n  \"vendor_subscription_id\": \"<string>\",\n  \"external_order_id\": \"<string>\",\n  \"starting_odometer\": 0,\n  \"meta_data\": \"<object>\",\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ],\n  \"identifier\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "15f2bd5a-06b7-44b4-9b34-fa6ab3fb3aec",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"end_date\": \"<dateTime>\",\n  \"dealer_id\": \"<integer>\",\n  \"allowed_miles\": \"<integer>\",\n  \"exceed_miles_rate\": \"<integer>\",\n  \"terms\": \"<integer>\",\n  \"created_by\": \"<string>\",\n  \"external_subscription_id\": \"<string>\",\n  \"vendor_subscription_id\": \"<string>\",\n  \"external_order_id\": \"<string>\",\n  \"starting_odometer\": 0,\n  \"meta_data\": \"<object>\",\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ],\n  \"identifier\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"external_subscription_id\": \"string\",\n  \"vendor_subscription_id\": \"string\",\n  \"customer_reference_id\": \"string\",\n  \"external_order_id\": \"string\",\n  \"starting_odometer\": 2596,\n  \"start_date\": \"2007-09-21T17:21:35.994Z\",\n  \"end_date\": \"1948-05-29T19:20:54.868Z\",\n  \"dealer_id\": 7970,\n  \"allowed_miles\": 894,\n  \"exceed_miles_rate\": 4096,\n  \"terms\": 6426,\n  \"meta_data\": {},\n  \"subscription_status\": \"string\",\n  \"received_security_deposit\": 7493,\n  \"invocation_type\": \"string\",\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ],\n  \"buyout\": {\n    \"buyout_option\": \"string\",\n    \"vehicle_purchase_price\": 6846\n  },\n  \"identifier\": \"string\",\n  \"created_at\": \"1980-03-10T18:48:39.481Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"2006-07-30T15:40:55.474Z\",\n  \"updated_by\": \"string\",\n  \"billing_status\": \"string\",\n  \"has_draft_invoice\": false,\n  \"final_bill_invoice_id\": \"string\",\n  \"final_bill_amount\": 1018,\n  \"first_bill_invoice_id\": \"string\",\n  \"events\": [\n    {\n      \"identifier\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\"\n    }\n  ],\n  \"returns\": {\n    \"actual_return_date\": \"string\",\n    \"vin\": \"string\",\n    \"order_reference_number\": \"string\",\n    \"current_odometer_reading\": 2122,\n    \"dealer_id\": 3654,\n    \"noi_date\": \"1964-10-09T07:37:27.901Z\",\n    \"identifier\": \"string\",\n    \"invoice_id\": \"string\",\n    \"planned_return_date\": \"string\",\n    \"penalty_reason\": \"string\",\n    \"check_list_start_date\": \"string\",\n    \"penalty_amount\": \"string\",\n    \"return_type\": \"string\",\n    \"et_fee\": 9551,\n    \"status\": \"string\",\n    \"dealer_comments\": \"string\",\n    \"reason\": \"string\",\n    \"reason_detail\": \"string\",\n    \"allowed_usage\": 2570,\n    \"external_order_id\": \"string\",\n    \"customer_reference_id\": \"string\",\n    \"customer_first_name\": \"string\",\n    \"customer_last_name\": \"string\"\n  },\n  \"customer\": {\n    \"prefix\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"suffix\": \"string\",\n    \"ssn\": \"string\",\n    \"mobile_number\": \"string\",\n    \"mobile_number_verified_status\": false,\n    \"home_number\": \"string\",\n    \"home_number_verified_status\": false,\n    \"customer_type\": \"string\",\n    \"date_of_birth\": \"1992-04-02\",\n    \"meta_data\": {},\n    \"stripe_customer_id\": \"string\",\n    \"preferred_contact\": \"string\",\n    \"reference_id\": \"string\",\n    \"external_id\": \"string\",\n    \"identifier\": \"string\",\n    \"email\": \"string\",\n    \"created_by\": \"string\",\n    \"created_at\": \"1978-11-26T15:08:25.353Z\",\n    \"updated_at\": \"1960-06-03T06:17:07.740Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1966-10-10T03:51:00.660Z\",\n    \"deleted_by\": \"string\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"Office\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"1980-10-23\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1981-06-26T04:00:22.569Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1992-07-01T00:21:20.965Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2015-06-25T10:01:24.127Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"address_type\": \"Employment\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": false,\n        \"move_in_date\": \"2017-02-03\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1948-03-03T22:49:36.461Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1967-05-07T20:30:56.387Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1952-01-13T09:37:31.957Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"income_info\": {\n      \"employment_type\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\",\n      \"employed_since\": \"2004-10-21\",\n      \"occupation\": \"string\",\n      \"annual_employment_income\": 400.48882824014754,\n      \"annual_other_income\": 4699.1163084552445,\n      \"source_of_other_income\": \"string\",\n      \"created_at\": \"1966-12-01T05:33:18.940Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1981-11-04T16:15:12.195Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1975-12-30T23:39:32.622Z\",\n      \"deleted_by\": \"string\"\n    },\n    \"payments_info\": [\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 301,\n        \"default\": true,\n        \"created_at\": \"2015-01-19T22:36:41.402Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1989-07-25T05:18:22.018Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2016-08-25T05:02:42.821Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 166,\n        \"default\": true,\n        \"created_at\": \"2018-01-29T19:30:19.887Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1990-11-25T00:49:54.313Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2007-03-07T16:43:02.122Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"license_info\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"status\": \"string\",\n      \"license_number\": \"string\",\n      \"is_pdf_417\": true,\n      \"issue_date\": \"2010-11-18\",\n      \"expiry_date\": \"2014-03-21\",\n      \"date_of_birth\": \"1997-03-14\",\n      \"is_selfie_verified\": false\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50ceec9d-eef0-4d2d-8920-c23602cca802",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"end_date\": \"<dateTime>\",\n  \"dealer_id\": \"<integer>\",\n  \"allowed_miles\": \"<integer>\",\n  \"exceed_miles_rate\": \"<integer>\",\n  \"terms\": \"<integer>\",\n  \"created_by\": \"<string>\",\n  \"external_subscription_id\": \"<string>\",\n  \"vendor_subscription_id\": \"<string>\",\n  \"external_order_id\": \"<string>\",\n  \"starting_odometer\": 0,\n  \"meta_data\": \"<object>\",\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ],\n  \"identifier\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51eef123-4b5f-4470-88b6-bb2cf1c4b790",
+          "name": "Update contract",
+          "request": {
+            "name": "Update contract",
+            "description": {
+              "content": "Update contract",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "contract"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"updated_by\": \"<string>\",\n  \"external_subscription_id\": \"<string>\",\n  \"vendor_subscription_id\": \"<string>\",\n  \"return_status\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"end_date\": \"<dateTime>\",\n  \"dealer_id\": \"<integer>\",\n  \"starting_odometer\": \"<integer>\",\n  \"subscription_status\": \"<string>\",\n  \"allowed_miles\": \"<integer>\",\n  \"exceed_miles_rate\": \"<integer>\",\n  \"terms\": \"<integer>\",\n  \"meta_data\": \"<object>\",\n  \"final_bill_invoice_id\": \"<string>\",\n  \"final_bill_amount\": \"<integer>\",\n  \"buyout\": {\n    \"buyout_option\": \"<string>\",\n    \"vehicle_purchase_price\": \"<integer>\"\n  },\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "db68fc19-4de3-4df7-89a6-f2bf811c98b9",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updated_by\": \"<string>\",\n  \"external_subscription_id\": \"<string>\",\n  \"vendor_subscription_id\": \"<string>\",\n  \"return_status\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"end_date\": \"<dateTime>\",\n  \"dealer_id\": \"<integer>\",\n  \"starting_odometer\": \"<integer>\",\n  \"subscription_status\": \"<string>\",\n  \"allowed_miles\": \"<integer>\",\n  \"exceed_miles_rate\": \"<integer>\",\n  \"terms\": \"<integer>\",\n  \"meta_data\": \"<object>\",\n  \"final_bill_invoice_id\": \"<string>\",\n  \"final_bill_amount\": \"<integer>\",\n  \"buyout\": {\n    \"buyout_option\": \"<string>\",\n    \"vehicle_purchase_price\": \"<integer>\"\n  },\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"external_subscription_id\": \"string\",\n  \"vendor_subscription_id\": \"string\",\n  \"customer_reference_id\": \"string\",\n  \"external_order_id\": \"string\",\n  \"starting_odometer\": 6468,\n  \"start_date\": \"1966-06-26T02:02:29.898Z\",\n  \"end_date\": \"1982-02-28T09:19:00.257Z\",\n  \"dealer_id\": 1703,\n  \"allowed_miles\": 4301,\n  \"exceed_miles_rate\": 5092,\n  \"terms\": 1305,\n  \"meta_data\": {},\n  \"subscription_status\": \"string\",\n  \"received_security_deposit\": 5816,\n  \"invocation_type\": \"string\",\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ],\n  \"buyout\": {\n    \"buyout_option\": \"<string>\",\n    \"vehicle_purchase_price\": \"<integer>\"\n  },\n  \"identifier\": \"string\",\n  \"created_at\": \"1976-11-01T17:56:30.741Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"1974-02-24T05:55:59.894Z\",\n  \"updated_by\": \"string\",\n  \"billing_status\": \"string\",\n  \"has_draft_invoice\": true,\n  \"final_bill_invoice_id\": \"string\",\n  \"final_bill_amount\": 7992,\n  \"first_bill_invoice_id\": \"string\",\n  \"events\": [\n    {\n      \"identifier\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"type\": \"string\",\n      \"status\": \"string\"\n    }\n  ],\n  \"returns\": {\n    \"actual_return_date\": \"string\",\n    \"vin\": \"string\",\n    \"order_reference_number\": \"string\",\n    \"current_odometer_reading\": 163,\n    \"dealer_id\": 9571,\n    \"noi_date\": \"2022-04-15T03:09:57.895Z\",\n    \"identifier\": \"string\",\n    \"invoice_id\": \"string\",\n    \"planned_return_date\": \"string\",\n    \"penalty_reason\": \"string\",\n    \"check_list_start_date\": \"string\",\n    \"penalty_amount\": \"string\",\n    \"return_type\": \"string\",\n    \"et_fee\": 8386,\n    \"status\": \"string\",\n    \"dealer_comments\": \"string\",\n    \"reason\": \"string\",\n    \"reason_detail\": \"string\",\n    \"allowed_usage\": 6515,\n    \"external_order_id\": \"string\",\n    \"customer_reference_id\": \"string\",\n    \"customer_first_name\": \"string\",\n    \"customer_last_name\": \"string\"\n  },\n  \"customer\": {\n    \"prefix\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"suffix\": \"string\",\n    \"ssn\": \"string\",\n    \"mobile_number\": \"string\",\n    \"mobile_number_verified_status\": false,\n    \"home_number\": \"string\",\n    \"home_number_verified_status\": false,\n    \"customer_type\": \"string\",\n    \"date_of_birth\": \"1946-10-06\",\n    \"meta_data\": {},\n    \"stripe_customer_id\": \"string\",\n    \"preferred_contact\": \"string\",\n    \"reference_id\": \"string\",\n    \"external_id\": \"string\",\n    \"identifier\": \"string\",\n    \"email\": \"string\",\n    \"created_by\": \"string\",\n    \"created_at\": \"2021-11-06T01:29:09.540Z\",\n    \"updated_at\": \"2016-03-21T13:05:52.511Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1966-09-08T20:11:57.097Z\",\n    \"deleted_by\": \"string\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"Employment\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"1967-04-21\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"2017-02-16T02:57:51.229Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1949-03-21T11:54:35.971Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1962-03-23T09:04:36.868Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"address_type\": \"InsuranceAddress\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"1966-09-02\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1957-08-31T12:17:56.144Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"2023-02-23T04:53:33.249Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2004-09-13T07:31:21.261Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"income_info\": {\n      \"employment_type\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\",\n      \"employed_since\": \"1990-03-08\",\n      \"occupation\": \"string\",\n      \"annual_employment_income\": 9545.724862725561,\n      \"annual_other_income\": 2675.003106347633,\n      \"source_of_other_income\": \"string\",\n      \"created_at\": \"2024-03-02T12:22:38.402Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1996-07-16T17:11:07.966Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1994-06-05T14:16:14.920Z\",\n      \"deleted_by\": \"string\"\n    },\n    \"payments_info\": [\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 3038,\n        \"default\": true,\n        \"created_at\": \"1998-04-24T23:02:22.514Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"2016-05-31T06:50:09.895Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2005-07-03T13:11:17.027Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 8480,\n        \"default\": false,\n        \"created_at\": \"1973-11-20T14:40:50.725Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1984-11-21T18:13:15.772Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1981-12-18T18:10:07.326Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"license_info\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"status\": \"string\",\n      \"license_number\": \"string\",\n      \"is_pdf_417\": false,\n      \"issue_date\": \"2023-02-04\",\n      \"expiry_date\": \"2008-12-11\",\n      \"date_of_birth\": \"2007-12-09\",\n      \"is_selfie_verified\": false\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "742ce08d-9ca9-493a-a7dc-390fcc94db27",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"updated_by\": \"<string>\",\n  \"external_subscription_id\": \"<string>\",\n  \"vendor_subscription_id\": \"<string>\",\n  \"return_status\": \"<string>\",\n  \"start_date\": \"<dateTime>\",\n  \"end_date\": \"<dateTime>\",\n  \"dealer_id\": \"<integer>\",\n  \"starting_odometer\": \"<integer>\",\n  \"subscription_status\": \"<string>\",\n  \"allowed_miles\": \"<integer>\",\n  \"exceed_miles_rate\": \"<integer>\",\n  \"terms\": \"<integer>\",\n  \"meta_data\": \"<object>\",\n  \"final_bill_invoice_id\": \"<string>\",\n  \"final_bill_amount\": \"<integer>\",\n  \"buyout\": {\n    \"buyout_option\": \"<string>\",\n    \"vehicle_purchase_price\": \"<integer>\"\n  },\n  \"assets\": [\n    {\n      \"vin\": \"<string>\"\n    },\n    {\n      \"vin\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d0b6805-253d-42cf-a893-eac7709a8938",
+          "name": "Past due webhook",
+          "request": {
+            "name": "Past due webhook",
+            "description": {
+              "content": "Past due webhook",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "contract",
+                "past-due-webhook"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6fbd2598-9a53-4d86-b027-b573a7f8dbe2",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract",
+                    "past-due-webhook"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01b76fc6-25b2-4cd2-a9f5-811f1506e5d2",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract",
+                    "past-due-webhook"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7eb958a-7384-4147-82f3-e18b4ef70da6",
+          "name": "Get all contract records",
+          "request": {
+            "name": "Get all contract records",
+            "description": {
+              "content": "Get all contract records",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "contract",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_reference_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "external_order_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                },
+                {
+                  "disabled": false,
+                  "key": "statuses",
+                  "value": "<string>",
+                  "description": "Accepts only string values"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "858b4296-b95d-4b71-9b7e-fade24a4b3ac",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"external_subscription_id\": \"string\",\n      \"vendor_subscription_id\": \"string\",\n      \"customer_reference_id\": \"string\",\n      \"external_order_id\": \"string\",\n      \"starting_odometer\": 7586,\n      \"start_date\": \"1965-12-27T00:59:25.349Z\",\n      \"end_date\": \"2014-11-17T06:47:00.170Z\",\n      \"dealer_id\": 962,\n      \"allowed_miles\": 1348,\n      \"exceed_miles_rate\": 9133,\n      \"terms\": 6228,\n      \"meta_data\": {},\n      \"subscription_status\": \"string\",\n      \"received_security_deposit\": 8040,\n      \"invocation_type\": \"string\",\n      \"assets\": [\n        {\n          \"vin\": \"<string>\"\n        },\n        {\n          \"vin\": \"<string>\"\n        }\n      ],\n      \"buyout\": {\n        \"buyout_option\": \"<string>\",\n        \"vehicle_purchase_price\": \"<integer>\"\n      },\n      \"identifier\": \"string\",\n      \"created_at\": \"2005-07-08T07:36:37.269Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1954-12-10T06:32:52.310Z\",\n      \"updated_by\": \"string\",\n      \"billing_status\": \"string\",\n      \"has_draft_invoice\": false,\n      \"final_bill_invoice_id\": \"string\",\n      \"final_bill_amount\": 6543,\n      \"first_bill_invoice_id\": \"string\",\n      \"events\": [\n        {\n          \"identifier\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\"\n        },\n        {\n          \"identifier\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\"\n        }\n      ],\n      \"returns\": {\n        \"actual_return_date\": \"string\",\n        \"vin\": \"string\",\n        \"order_reference_number\": \"string\",\n        \"current_odometer_reading\": 9130,\n        \"dealer_id\": 7425,\n        \"noi_date\": \"2003-11-14T07:04:31.535Z\",\n        \"identifier\": \"string\",\n        \"invoice_id\": \"string\",\n        \"planned_return_date\": \"string\",\n        \"penalty_reason\": \"string\",\n        \"check_list_start_date\": \"string\",\n        \"penalty_amount\": \"string\",\n        \"return_type\": \"string\",\n        \"et_fee\": 5136,\n        \"status\": \"string\",\n        \"dealer_comments\": \"string\",\n        \"reason\": \"string\",\n        \"reason_detail\": \"string\",\n        \"allowed_usage\": 7495,\n        \"external_order_id\": \"string\",\n        \"customer_reference_id\": \"string\",\n        \"customer_first_name\": \"string\",\n        \"customer_last_name\": \"string\"\n      },\n      \"customer\": {\n        \"prefix\": \"string\",\n        \"first_name\": \"string\",\n        \"middle_name\": \"string\",\n        \"last_name\": \"string\",\n        \"suffix\": \"string\",\n        \"ssn\": \"string\",\n        \"mobile_number\": \"string\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"string\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"string\",\n        \"date_of_birth\": \"2000-08-17\",\n        \"meta_data\": {},\n        \"stripe_customer_id\": \"string\",\n        \"preferred_contact\": \"string\",\n        \"reference_id\": \"string\",\n        \"external_id\": \"string\",\n        \"identifier\": \"string\",\n        \"email\": \"string\",\n        \"created_by\": \"string\",\n        \"created_at\": \"1972-03-05T19:56:18.290Z\",\n        \"updated_at\": \"1970-05-26T15:24:44.731Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1965-06-07T07:13:36.282Z\",\n        \"deleted_by\": \"string\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"string\",\n            \"address_line_2\": \"string\",\n            \"state_name\": \"string\",\n            \"zip_code\": \"string\",\n            \"county\": \"string\",\n            \"city\": \"string\",\n            \"contact_number\": \"string\",\n            \"verified\": false,\n            \"move_in_date\": \"2022-10-25\",\n            \"is_garaging\": false,\n            \"identifier\": \"string\",\n            \"created_at\": \"1996-10-31T08:32:30.897Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"1966-02-08T00:42:15.866Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1993-08-24T15:22:38.058Z\",\n            \"deleted_by\": \"string\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"string\",\n            \"address_line_2\": \"string\",\n            \"state_name\": \"string\",\n            \"zip_code\": \"string\",\n            \"county\": \"string\",\n            \"city\": \"string\",\n            \"contact_number\": \"string\",\n            \"verified\": false,\n            \"move_in_date\": \"1996-10-03\",\n            \"is_garaging\": false,\n            \"identifier\": \"string\",\n            \"created_at\": \"1986-01-20T12:40:36.434Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"1978-04-14T11:51:13.095Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1954-03-31T15:21:31.762Z\",\n            \"deleted_by\": \"string\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"string\",\n          \"name\": \"string\",\n          \"phone\": \"string\",\n          \"employed_since\": \"1960-09-25\",\n          \"occupation\": \"string\",\n          \"annual_employment_income\": 4338.998257101004,\n          \"annual_other_income\": 4903.809315451818,\n          \"source_of_other_income\": \"string\",\n          \"created_at\": \"1970-05-13T18:24:23.936Z\",\n          \"created_by\": \"string\",\n          \"updated_at\": \"1992-07-31T19:04:24.630Z\",\n          \"updated_by\": \"string\",\n          \"deleted_at\": \"2016-06-17T16:29:23.235Z\",\n          \"deleted_by\": \"string\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"string\",\n            \"stripe_payment_method_id\": \"string\",\n            \"access_token\": \"string\",\n            \"account_id\": \"string\",\n            \"Bank_name\": \"string\",\n            \"last4\": 5985,\n            \"default\": true,\n            \"created_at\": \"1984-04-12T16:19:58.669Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"1981-01-20T16:05:37.416Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1992-07-28T17:49:29.431Z\",\n            \"deleted_by\": \"string\"\n          },\n          {\n            \"type\": \"string\",\n            \"stripe_payment_method_id\": \"string\",\n            \"access_token\": \"string\",\n            \"account_id\": \"string\",\n            \"Bank_name\": \"string\",\n            \"last4\": 7980,\n            \"default\": false,\n            \"created_at\": \"2016-03-11T05:41:53.740Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"2016-09-21T01:29:18.107Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1964-07-07T09:49:55.617Z\",\n            \"deleted_by\": \"string\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"string\",\n          \"last_name\": \"string\",\n          \"status\": \"string\",\n          \"license_number\": \"string\",\n          \"is_pdf_417\": true,\n          \"issue_date\": \"2017-05-13\",\n          \"expiry_date\": \"2022-08-01\",\n          \"date_of_birth\": \"1996-01-04\",\n          \"is_selfie_verified\": true\n        }\n      }\n    },\n    {\n      \"external_subscription_id\": \"string\",\n      \"vendor_subscription_id\": \"string\",\n      \"customer_reference_id\": \"string\",\n      \"external_order_id\": \"string\",\n      \"starting_odometer\": 5928,\n      \"start_date\": \"1966-06-16T11:33:27.380Z\",\n      \"end_date\": \"1997-03-07T18:20:00.843Z\",\n      \"dealer_id\": 5697,\n      \"allowed_miles\": 1008,\n      \"exceed_miles_rate\": 9331,\n      \"terms\": 6322,\n      \"meta_data\": {},\n      \"subscription_status\": \"string\",\n      \"received_security_deposit\": 8157,\n      \"invocation_type\": \"string\",\n      \"assets\": [\n        {\n          \"vin\": \"<string>\"\n        },\n        {\n          \"vin\": \"<string>\"\n        }\n      ],\n      \"buyout\": {\n        \"buyout_option\": \"<string>\",\n        \"vehicle_purchase_price\": \"<integer>\"\n      },\n      \"identifier\": \"string\",\n      \"created_at\": \"2015-06-14T16:14:53.399Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1993-11-02T16:30:04.854Z\",\n      \"updated_by\": \"string\",\n      \"billing_status\": \"string\",\n      \"has_draft_invoice\": false,\n      \"final_bill_invoice_id\": \"string\",\n      \"final_bill_amount\": 2997,\n      \"first_bill_invoice_id\": \"string\",\n      \"events\": [\n        {\n          \"identifier\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\"\n        },\n        {\n          \"identifier\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\"\n        }\n      ],\n      \"returns\": {\n        \"actual_return_date\": \"string\",\n        \"vin\": \"string\",\n        \"order_reference_number\": \"string\",\n        \"current_odometer_reading\": 7362,\n        \"dealer_id\": 5350,\n        \"noi_date\": \"2017-02-01T14:58:47.314Z\",\n        \"identifier\": \"string\",\n        \"invoice_id\": \"string\",\n        \"planned_return_date\": \"string\",\n        \"penalty_reason\": \"string\",\n        \"check_list_start_date\": \"string\",\n        \"penalty_amount\": \"string\",\n        \"return_type\": \"string\",\n        \"et_fee\": 8938,\n        \"status\": \"string\",\n        \"dealer_comments\": \"string\",\n        \"reason\": \"string\",\n        \"reason_detail\": \"string\",\n        \"allowed_usage\": 4401,\n        \"external_order_id\": \"string\",\n        \"customer_reference_id\": \"string\",\n        \"customer_first_name\": \"string\",\n        \"customer_last_name\": \"string\"\n      },\n      \"customer\": {\n        \"prefix\": \"string\",\n        \"first_name\": \"string\",\n        \"middle_name\": \"string\",\n        \"last_name\": \"string\",\n        \"suffix\": \"string\",\n        \"ssn\": \"string\",\n        \"mobile_number\": \"string\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"string\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"string\",\n        \"date_of_birth\": \"1972-08-15\",\n        \"meta_data\": {},\n        \"stripe_customer_id\": \"string\",\n        \"preferred_contact\": \"string\",\n        \"reference_id\": \"string\",\n        \"external_id\": \"string\",\n        \"identifier\": \"string\",\n        \"email\": \"string\",\n        \"created_by\": \"string\",\n        \"created_at\": \"2025-12-30T14:31:29.781Z\",\n        \"updated_at\": \"1988-11-16T02:03:24.309Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1987-09-02T16:52:40.332Z\",\n        \"deleted_by\": \"string\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"string\",\n            \"address_line_2\": \"string\",\n            \"state_name\": \"string\",\n            \"zip_code\": \"string\",\n            \"county\": \"string\",\n            \"city\": \"string\",\n            \"contact_number\": \"string\",\n            \"verified\": true,\n            \"move_in_date\": \"1970-01-07\",\n            \"is_garaging\": false,\n            \"identifier\": \"string\",\n            \"created_at\": \"1994-05-15T04:04:52.681Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"2024-11-12T03:01:48.654Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1969-09-01T18:47:16.178Z\",\n            \"deleted_by\": \"string\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"string\",\n            \"address_line_2\": \"string\",\n            \"state_name\": \"string\",\n            \"zip_code\": \"string\",\n            \"county\": \"string\",\n            \"city\": \"string\",\n            \"contact_number\": \"string\",\n            \"verified\": true,\n            \"move_in_date\": \"2018-10-18\",\n            \"is_garaging\": false,\n            \"identifier\": \"string\",\n            \"created_at\": \"2022-09-09T11:14:33.569Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"2001-06-22T09:18:27.622Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1965-06-12T08:44:28.935Z\",\n            \"deleted_by\": \"string\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"string\",\n          \"name\": \"string\",\n          \"phone\": \"string\",\n          \"employed_since\": \"1967-01-31\",\n          \"occupation\": \"string\",\n          \"annual_employment_income\": 1915.2353092590756,\n          \"annual_other_income\": 639.7230074951743,\n          \"source_of_other_income\": \"string\",\n          \"created_at\": \"1948-08-20T11:32:32.757Z\",\n          \"created_by\": \"string\",\n          \"updated_at\": \"1988-07-10T11:16:11.385Z\",\n          \"updated_by\": \"string\",\n          \"deleted_at\": \"1950-04-29T05:53:48.263Z\",\n          \"deleted_by\": \"string\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"string\",\n            \"stripe_payment_method_id\": \"string\",\n            \"access_token\": \"string\",\n            \"account_id\": \"string\",\n            \"Bank_name\": \"string\",\n            \"last4\": 6011,\n            \"default\": false,\n            \"created_at\": \"1989-03-24T08:14:31.258Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"1965-11-05T17:53:06.696Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"1984-10-27T12:11:05.166Z\",\n            \"deleted_by\": \"string\"\n          },\n          {\n            \"type\": \"string\",\n            \"stripe_payment_method_id\": \"string\",\n            \"access_token\": \"string\",\n            \"account_id\": \"string\",\n            \"Bank_name\": \"string\",\n            \"last4\": 6088,\n            \"default\": false,\n            \"created_at\": \"2001-08-17T19:58:32.879Z\",\n            \"created_by\": \"string\",\n            \"updated_at\": \"1979-11-08T06:18:41.650Z\",\n            \"updated_by\": \"string\",\n            \"deleted_at\": \"2004-01-11T17:31:34.731Z\",\n            \"deleted_by\": \"string\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"string\",\n          \"last_name\": \"string\",\n          \"status\": \"string\",\n          \"license_number\": \"string\",\n          \"is_pdf_417\": false,\n          \"issue_date\": \"1983-01-27\",\n          \"expiry_date\": \"1967-02-23\",\n          \"date_of_birth\": \"1954-02-21\",\n          \"is_selfie_verified\": true\n        }\n      }\n    }\n  ],\n  \"page_number\": 3019,\n  \"page_size\": 7739,\n  \"total_pages\": 1865,\n  \"total_results\": 5874\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5299b7e-33c5-4390-a168-aa8783e11dcf",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "statuses",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89c612b4-c8d4-486c-855d-8b224f49c0da",
+          "name": "Get All Contract Terms",
+          "request": {
+            "name": "Get All Contract Terms",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "contract-term"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "company_id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "06694c77-3108-46c9-8059-b82a4178527d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract-term"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "company_id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "58c92872-1f75-4cef-9182-e7e965e04af7",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract-term"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "company_id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2374fbea-ad34-48d5-bafa-a97cd7c5723b",
+          "name": "Get All Contract Allowed Mileages",
+          "request": {
+            "name": "Get All Contract Allowed Mileages",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "contract-allowed-annum-mileage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "company_id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "018a988f-2455-4e2e-9a9f-2ba50f3b860d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract-allowed-annum-mileage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "company_id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffd3c329-8fb6-4ca2-b1f4-04e603b85336",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "contract-allowed-annum-mileage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "company_id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b4bf866d-fc52-47b5-af65-e85c5c484fd8",
+    "name": "Lane Contract API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

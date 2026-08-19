@@ -1,0 +1,920 @@
+{
+  "item": [
+    {
+      "id": "1e3447d3-0f51-46b8-8f17-5075eebb92bb",
+      "name": "Inventory",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "776533ae-fe7c-470c-8cd9-5e4ece6e8a9a",
+          "name": "Get Filtered Inventory",
+          "request": {
+            "name": "Get Filtered Inventory",
+            "description": {
+              "content": "This will get filtered inventory ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "get-inventory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dealer_code",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "make_model",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stock_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vin",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mileage",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "msrp",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "internet_price",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "internet_price_from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "internet_price_to",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vehicle_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "listing_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "daily_update",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "daily_update",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "asset_condition",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year_from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year_to",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by_price",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dad90b67-5660-4443-898b-3d4a995d09d5",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "get-inventory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "make_model",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stock_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mileage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msrp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "internet_price",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "internet_price_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "internet_price_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "vehicle_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "listing_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "daily_update",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "daily_update",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "asset_condition",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "year_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_by_price",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3970665-2f1a-4688-a195-0a17208a31ba",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "get-inventory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "make_model",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stock_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mileage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "msrp",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "internet_price",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "internet_price_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "internet_price_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "vehicle_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "listing_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "daily_update",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "daily_update",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "asset_condition",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "year_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_by_price",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94c92a78-21e0-41ee-94dc-8ce3d803cb9e",
+          "name": "Get Inventory Reference Data",
+          "request": {
+            "name": "Get Inventory Reference Data",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "inventory",
+                "reference-data-by-dealer-code",
+                ":dealer_code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dealer_code",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "76083c85-0324-41e0-98e3-2c3627e1350a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "inventory",
+                    "reference-data-by-dealer-code",
+                    ":dealer_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dealer_code",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac90bf6e-73e5-4ea0-8637-e66456834468",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "inventory",
+                    "reference-data-by-dealer-code",
+                    ":dealer_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dealer_code",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "340cd787-5f3f-4f88-928d-451fbf02d361",
+          "name": "Get Inventory Data",
+          "request": {
+            "name": "Get Inventory Data",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "inventory",
+                "filter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dealer_code",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "internet_price_from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "internet_price_to",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vehicle_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "listing_status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "vin",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mileage",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "asset_condition",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year_from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "year_to",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by_price",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stock_number",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7541d9d2-5a2d-4b70-87b3-2c1713adaeee",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "inventory",
+                    "filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "internet_price_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "internet_price_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "vehicle_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "listing_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mileage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asset_condition",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "year_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_by_price",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stock_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e013cc8e-c31b-490d-b4ba-8aab5cb6c396",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "inventory",
+                    "filter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "internet_price_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "internet_price_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "vehicle_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "listing_status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "vin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mileage",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "asset_condition",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year_from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "year_to",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_by_price",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stock_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6f4f8c59-013a-44ce-9427-b142b1cef911",
+    "name": "Lane Inventory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

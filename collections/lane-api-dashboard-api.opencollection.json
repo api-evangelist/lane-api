@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Dashboard API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dashboard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get order proposal analytics for broker dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/order/proposal-dashboard-analytics",
+            "params": [
+              {
+                "name": "statuses",
+                "value": "",
+                "type": "query",
+                "description": "Accepts only string values"
+              },
+              {
+                "name": "dealer_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "broker_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "product_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lender_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dealer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "introducer_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date_submitted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "start_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "end_date",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_at_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "updated_at_to",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get order proposal analytics for broker dashboard"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Event_name API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Event_name",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get generated document(s) key(s) against specific event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/order/download_document_by_event/:event_name",
+            "params": [
+              {
+                "name": "event_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get generated document(s) key(s) against specific event"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

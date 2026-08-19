@@ -1,0 +1,2051 @@
+{
+  "item": [
+    {
+      "id": "7d59f384-bd85-47af-b2bf-33c18db89eec",
+      "name": "History",
+      "description": {
+        "content": "Manage operations related to History",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ccc23aa6-afe7-4ebd-875c-1b90e09cb726",
+          "name": "Get all customers records history",
+          "request": {
+            "name": "Get all customers records history",
+            "description": {
+              "content": "Get all customers records history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "customer-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4d71542b-2e16-45df-b2c4-8fd95e1fb05d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "customer-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"prefix\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"suffix\": \"string\",\n    \"ssn\": \"string\",\n    \"mobile_number\": \"string\",\n    \"mobile_number_verified_status\": false,\n    \"home_number\": \"string\",\n    \"home_number_verified_status\": false,\n    \"customer_type\": \"string\",\n    \"date_of_birth\": \"1952-06-09\",\n    \"meta_data\": {},\n    \"stripe_customer_id\": \"string\",\n    \"preferred_contact\": \"string\",\n    \"reference_id\": \"string\",\n    \"external_id\": \"string\",\n    \"identifier\": \"string\",\n    \"email\": \"string\",\n    \"created_by\": \"string\",\n    \"created_at\": \"1986-07-16T09:35:34.047Z\",\n    \"updated_at\": \"1990-09-13T16:56:48.816Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"2013-05-29T10:56:13.236Z\",\n    \"deleted_by\": \"string\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"Employment\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"1970-07-22\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1990-12-04T14:30:04.197Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1981-03-22T02:41:57.775Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1982-12-26T21:49:05.184Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"address_type\": \"Garaging\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": false,\n        \"move_in_date\": \"2022-10-08\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1957-05-25T18:09:42.592Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1986-11-27T06:19:50.438Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2025-02-25T03:30:57.661Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"income_info\": {\n      \"employment_type\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\",\n      \"employed_since\": \"1958-08-02\",\n      \"occupation\": \"string\",\n      \"annual_employment_income\": 3651.6884762456357,\n      \"annual_other_income\": 2630.8977161695125,\n      \"source_of_other_income\": \"string\",\n      \"created_at\": \"1978-08-30T14:23:59.354Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"2021-05-24T19:27:27.507Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"2017-04-17T20:28:00.897Z\",\n      \"deleted_by\": \"string\"\n    },\n    \"payments_info\": [\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 7772,\n        \"default\": false,\n        \"created_at\": \"1949-05-24T12:52:45.842Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"2016-08-07T17:13:27.051Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1954-03-07T17:49:01.412Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 4053,\n        \"default\": false,\n        \"created_at\": \"1985-09-06T12:53:18.133Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1954-05-29T23:26:31.933Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2000-03-05T14:26:54.112Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"license_info\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"status\": \"string\",\n      \"license_number\": \"string\",\n      \"is_pdf_417\": true,\n      \"issue_date\": \"2021-02-13\",\n      \"expiry_date\": \"2004-02-18\",\n      \"date_of_birth\": \"1961-12-29\",\n      \"is_selfie_verified\": true\n    }\n  },\n  {\n    \"prefix\": \"string\",\n    \"first_name\": \"string\",\n    \"middle_name\": \"string\",\n    \"last_name\": \"string\",\n    \"suffix\": \"string\",\n    \"ssn\": \"string\",\n    \"mobile_number\": \"string\",\n    \"mobile_number_verified_status\": false,\n    \"home_number\": \"string\",\n    \"home_number_verified_status\": false,\n    \"customer_type\": \"string\",\n    \"date_of_birth\": \"1993-08-25\",\n    \"meta_data\": {},\n    \"stripe_customer_id\": \"string\",\n    \"preferred_contact\": \"string\",\n    \"reference_id\": \"string\",\n    \"external_id\": \"string\",\n    \"identifier\": \"string\",\n    \"email\": \"string\",\n    \"created_by\": \"string\",\n    \"created_at\": \"1979-06-05T15:32:42.552Z\",\n    \"updated_at\": \"2013-10-31T22:58:37.032Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1959-02-20T18:45:16.800Z\",\n    \"deleted_by\": \"string\",\n    \"customer_addresses\": [\n      {\n        \"address_type\": \"Invoice\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": false,\n        \"move_in_date\": \"1984-02-27\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1951-07-13T12:21:28.189Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1997-05-29T19:05:22.943Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1994-02-28T17:47:36.378Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"address_type\": \"DealerAddress\",\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"2006-02-20\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\",\n        \"created_at\": \"1983-04-30T10:55:59.630Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1986-02-01T01:36:02.549Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2012-11-25T15:49:27.192Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"income_info\": {\n      \"employment_type\": \"string\",\n      \"name\": \"string\",\n      \"phone\": \"string\",\n      \"employed_since\": \"1997-06-14\",\n      \"occupation\": \"string\",\n      \"annual_employment_income\": 7393.569063986762,\n      \"annual_other_income\": 1194.5886487656553,\n      \"source_of_other_income\": \"string\",\n      \"created_at\": \"1992-07-06T14:07:43.761Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1969-07-24T02:41:27.351Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1995-10-06T11:58:51.372Z\",\n      \"deleted_by\": \"string\"\n    },\n    \"payments_info\": [\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 5431,\n        \"default\": false,\n        \"created_at\": \"2014-04-16T04:19:26.173Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1951-04-10T22:54:57.219Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"1997-10-01T19:40:23.353Z\",\n        \"deleted_by\": \"string\"\n      },\n      {\n        \"type\": \"string\",\n        \"stripe_payment_method_id\": \"string\",\n        \"access_token\": \"string\",\n        \"account_id\": \"string\",\n        \"Bank_name\": \"string\",\n        \"last4\": 2665,\n        \"default\": true,\n        \"created_at\": \"1949-03-13T10:38:10.607Z\",\n        \"created_by\": \"string\",\n        \"updated_at\": \"1953-05-27T17:43:15.435Z\",\n        \"updated_by\": \"string\",\n        \"deleted_at\": \"2011-08-16T16:30:59.625Z\",\n        \"deleted_by\": \"string\"\n      }\n    ],\n    \"license_info\": {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"status\": \"string\",\n      \"license_number\": \"string\",\n      \"is_pdf_417\": true,\n      \"issue_date\": \"2016-12-06\",\n      \"expiry_date\": \"1998-09-18\",\n      \"date_of_birth\": \"1947-02-21\",\n      \"is_selfie_verified\": true\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43ac0297-7ac0-42d1-a789-549de163fcc7",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "customer-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1dcadbb-1b7b-44f7-899f-1cd6a6c3df45",
+          "name": "Get all customer license information history",
+          "request": {
+            "name": "Get all customer license information history",
+            "description": {
+              "content": "Get all customer license information history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-info-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Format: YYYY-MM-DD"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f791fbf6-b876-406d-892e-9aa483168bcf",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"date_of_birth\": \"2019-07-15\",\n      \"is_pdf_417\": false,\n      \"license_number\": \"string\",\n      \"issue_date\": \"1971-10-26\",\n      \"expiry_date\": \"1960-10-29\",\n      \"front_image\": \"string\",\n      \"back_image\": \"string\",\n      \"status\": \"string\",\n      \"call_type\": \"manual\",\n      \"selfie_image\": \"string\",\n      \"cropped_front_image\": \"string\",\n      \"cropped_back_image\": \"string\",\n      \"cropped_selfie_image\": \"string\",\n      \"is_selfie_verified\": false,\n      \"created_by\": \"string\",\n      \"reference_id\": \"string\",\n      \"is_active\": true,\n      \"identifier\": \"string\",\n      \"created_at\": \"2008-10-07T20:07:18.211Z\",\n      \"updated_at\": \"1976-11-20T04:12:08.025Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1952-02-04T08:39:23.827Z\",\n      \"deleted_by\": \"string\",\n      \"address\": {\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"2021-06-07\",\n        \"is_garaging\": false\n      }\n    },\n    {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"date_of_birth\": \"1975-03-07\",\n      \"is_pdf_417\": true,\n      \"license_number\": \"string\",\n      \"issue_date\": \"1979-05-22\",\n      \"expiry_date\": \"1967-11-24\",\n      \"front_image\": \"string\",\n      \"back_image\": \"string\",\n      \"status\": \"string\",\n      \"call_type\": \"auto\",\n      \"selfie_image\": \"string\",\n      \"cropped_front_image\": \"string\",\n      \"cropped_back_image\": \"string\",\n      \"cropped_selfie_image\": \"string\",\n      \"is_selfie_verified\": false,\n      \"created_by\": \"string\",\n      \"reference_id\": \"string\",\n      \"is_active\": false,\n      \"identifier\": \"string\",\n      \"created_at\": \"1962-05-24T11:04:48.654Z\",\n      \"updated_at\": \"2024-06-20T14:35:05.503Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"2019-02-15T20:36:40.504Z\",\n      \"deleted_by\": \"string\",\n      \"address\": {\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": false,\n        \"move_in_date\": \"1975-10-03\",\n        \"is_garaging\": false\n      }\n    }\n  ],\n  \"page_number\": 9783,\n  \"page_size\": 4037,\n  \"total_pages\": 5925,\n  \"total_results\": 4683\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c40e1ed4-9d91-4834-aa14-6b7495565b90",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cea3c8d-e8be-4531-a871-61a99412b2ce",
+          "name": "Get third party response history",
+          "request": {
+            "name": "Get third party response history",
+            "description": {
+              "content": "Get third party response history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "third-party-response-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_images",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "include_response",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "type_list",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type_list",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1c2230b-610b-4e36-b20a-8ce2f11cc1f4",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "third-party-response-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_images",
+                      "value": "false"
+                    },
+                    {
+                      "key": "include_response",
+                      "value": "false"
+                    },
+                    {
+                      "key": "type_list",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type_list",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d518872-9404-451c-b6b9-dac634325989",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "third-party-response-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "include_images",
+                      "value": "false"
+                    },
+                    {
+                      "key": "include_response",
+                      "value": "false"
+                    },
+                    {
+                      "key": "type_list",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type_list",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "99c5aaab-cf2b-4e9f-9430-78a65b3e7af1",
+          "name": "Delete existing record of address",
+          "request": {
+            "name": "Delete existing record of address",
+            "description": {
+              "content": "Delete existing record of address",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "address",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "247a38b8-080f-4d5c-8eaf-679fff00a4ce",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"address_type\": \"DealerAddress\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1960-08-31\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1998-07-22T19:58:36.577Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1979-01-31T00:33:12.163Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1997-04-24T23:08:48.634Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  },\n  {\n    \"address_type\": \"Mailing\",\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": false,\n    \"move_in_date\": \"1952-11-07\",\n    \"is_garaging\": false,\n    \"identifier\": \"string\",\n    \"created_at\": \"1999-11-01T06:04:42.213Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1948-08-24T13:30:04.340Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1964-07-28T00:36:32.057Z\",\n    \"deleted_by\": \"string\",\n    \"reference_id\": \"string\",\n    \"is_active\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd632814-6f68-4451-82be-a794b5179cbe",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "address",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d12bf0b1-7859-47be-beea-613edc2d4e87",
+          "name": "Get customer insurance information history",
+          "request": {
+            "name": "Get customer insurance information history",
+            "description": {
+              "content": "Get customer insurance information history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3057af4b-8894-45a1-bc0f-4ccc362a118a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"order_reference_id\": \"string\",\n      \"reference_id\": \"string\",\n      \"insurer_name\": \"string\",\n      \"agent_phone\": \"string\",\n      \"subscription_id\": \"string\",\n      \"agent_name\": \"string\",\n      \"policy_number\": \"string\",\n      \"start_date\": \"2021-10-20\",\n      \"expiration_date\": \"2013-10-11\",\n      \"deductible_comprehensive\": 383.38813935543726,\n      \"deductible_collision\": 2737.647513272541,\n      \"created_by\": \"string\",\n      \"identifier\": \"string\",\n      \"is_verified\": false,\n      \"insurance_documents\": [\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": false,\n          \"created_by\": \"string\",\n          \"created_at\": \"1964-10-25\",\n          \"deleted_at\": \"1949-02-11\",\n          \"deleted_by\": \"string\"\n        },\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": true,\n          \"created_by\": \"string\",\n          \"created_at\": \"1951-11-20\",\n          \"deleted_at\": \"1958-02-21\",\n          \"deleted_by\": \"string\"\n        }\n      ],\n      \"insurer_address\": {\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"2009-01-01\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\"\n      },\n      \"status\": \"Verified\",\n      \"is_active\": true,\n      \"is_deleted\": false,\n      \"created_at\": \"2003-05-06T15:32:56.759Z\",\n      \"updated_at\": \"1965-02-11T08:19:35.404Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1994-08-15\",\n      \"deleted_by\": \"string\"\n    },\n    {\n      \"order_reference_id\": \"string\",\n      \"reference_id\": \"string\",\n      \"insurer_name\": \"string\",\n      \"agent_phone\": \"string\",\n      \"subscription_id\": \"string\",\n      \"agent_name\": \"string\",\n      \"policy_number\": \"string\",\n      \"start_date\": \"2016-01-01\",\n      \"expiration_date\": \"1975-05-11\",\n      \"deductible_comprehensive\": 2164.9603229522872,\n      \"deductible_collision\": 1571.928530509128,\n      \"created_by\": \"string\",\n      \"identifier\": \"string\",\n      \"is_verified\": false,\n      \"insurance_documents\": [\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": true,\n          \"created_by\": \"string\",\n          \"created_at\": \"2017-01-20\",\n          \"deleted_at\": \"2006-05-19\",\n          \"deleted_by\": \"string\"\n        },\n        {\n          \"document_uri\": \"string\",\n          \"content_type\": \"string\",\n          \"name\": \"string\",\n          \"file_size\": \"string\",\n          \"identifier\": \"string\",\n          \"is_active\": false,\n          \"created_by\": \"string\",\n          \"created_at\": \"1997-08-20\",\n          \"deleted_at\": \"2002-04-28\",\n          \"deleted_by\": \"string\"\n        }\n      ],\n      \"insurer_address\": {\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"2003-05-17\",\n        \"is_garaging\": false,\n        \"identifier\": \"string\"\n      },\n      \"status\": \"Expired\",\n      \"is_active\": false,\n      \"is_deleted\": false,\n      \"created_at\": \"1964-10-08T03:58:05.563Z\",\n      \"updated_at\": \"1970-07-29T15:55:35.540Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"2022-06-04\",\n      \"deleted_by\": \"string\"\n    }\n  ],\n  \"page_number\": 7990,\n  \"page_size\": 8353,\n  \"total_pages\": 2043,\n  \"total_results\": 8099\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e386ad5c-1272-473d-b914-501c1a9ed1ca",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97c6abbf-5cc3-45c7-a301-957485693569",
+          "name": "Get customer insurance information document history",
+          "request": {
+            "name": "Get customer insurance information document history",
+            "description": {
+              "content": "Get customer insurance information document history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "insurance-information",
+                "document-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) provide valid reference_id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "94207c65-18f8-49e5-b55a-672d4d647e29",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "document-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"document_uri\": \"string\",\n    \"content_type\": \"string\",\n    \"name\": \"string\",\n    \"file_size\": \"string\",\n    \"identifier\": \"string\",\n    \"is_active\": false,\n    \"created_by\": \"string\",\n    \"created_at\": \"2005-03-27\",\n    \"deleted_at\": \"1970-06-04\",\n    \"deleted_by\": \"string\"\n  },\n  {\n    \"document_uri\": \"string\",\n    \"content_type\": \"string\",\n    \"name\": \"string\",\n    \"file_size\": \"string\",\n    \"identifier\": \"string\",\n    \"is_active\": false,\n    \"created_by\": \"string\",\n    \"created_at\": \"1978-05-04\",\n    \"deleted_at\": \"1963-06-08\",\n    \"deleted_by\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db33fdd9-3105-407c-bc85-01595a919c5c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "insurance-information",
+                    "document-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "804ae2fa-8929-4b67-9658-cc5e3f3e48cb",
+          "name": "Get Order Checklist Update History",
+          "request": {
+            "name": "Get Order Checklist Update History",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "order-checklist-update-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customer_reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "event",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e4dae82c-ae34-4777-9bfe-6b7c2916d57b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "order-checklist-update-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c26a3f8-c4ba-4de9-a49c-d377ed862578",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "order-checklist-update-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "event",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "977a3ff4-8647-4e4b-8c29-d1c0ab22962d",
+          "name": "Get customer document history",
+          "request": {
+            "name": "Get customer document history",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "document-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customer_reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8fa5f2c0-9c99-4c7d-b23a-1d9025c8b6e4",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "document-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"document_reviews\": [\n        {\n          \"reviewed_by\": \"string\",\n          \"review_date_time\": \"1953-04-12T18:10:46.825Z\",\n          \"review_status\": \"string\",\n          \"review_notes\": \"string\",\n          \"reason\": [\n            \"string\",\n            \"string\"\n          ],\n          \"other_reason\": \"string\",\n          \"identifier\": \"string\"\n        },\n        {\n          \"reviewed_by\": \"string\",\n          \"review_date_time\": \"2015-07-26T23:46:47.586Z\",\n          \"review_status\": \"string\",\n          \"review_notes\": \"string\",\n          \"reason\": [\n            \"string\",\n            \"string\"\n          ],\n          \"other_reason\": \"string\",\n          \"identifier\": \"string\"\n        }\n      ],\n      \"customer_reference_id\": \"string\",\n      \"external_reference_id\": \"string\",\n      \"document_type\": \"string\",\n      \"comment\": \"string\",\n      \"category\": \"string\",\n      \"document_name\": \"string\",\n      \"document_size\": \"string\",\n      \"document_url\": \"string\",\n      \"reason_by_system\": \"string\",\n      \"reason_for_customer\": \"string\",\n      \"document_status\": \"string\",\n      \"document_upload_indicator\": false,\n      \"expires_at\": \"1960-04-21T12:15:33.298Z\",\n      \"created_at\": \"1984-01-15T15:50:51.821Z\",\n      \"updated_at\": \"2009-12-06T20:36:13.961Z\",\n      \"deleted_at\": \"1954-01-21T04:33:13.033Z\",\n      \"updated_by\": \"string\",\n      \"created_by\": \"string\",\n      \"deleted_by\": \"string\",\n      \"uploaded_by\": \"string\",\n      \"uploaded_at\": \"2022-05-22T22:51:53.321Z\",\n      \"is_deleted\": false,\n      \"identifier\": \"string\",\n      \"stipulation_code\": \"string\"\n    },\n    {\n      \"document_reviews\": [\n        {\n          \"reviewed_by\": \"string\",\n          \"review_date_time\": \"1957-12-17T10:57:22.047Z\",\n          \"review_status\": \"string\",\n          \"review_notes\": \"string\",\n          \"reason\": [\n            \"string\",\n            \"string\"\n          ],\n          \"other_reason\": \"string\",\n          \"identifier\": \"string\"\n        },\n        {\n          \"reviewed_by\": \"string\",\n          \"review_date_time\": \"2007-04-19T18:49:47.279Z\",\n          \"review_status\": \"string\",\n          \"review_notes\": \"string\",\n          \"reason\": [\n            \"string\",\n            \"string\"\n          ],\n          \"other_reason\": \"string\",\n          \"identifier\": \"string\"\n        }\n      ],\n      \"customer_reference_id\": \"string\",\n      \"external_reference_id\": \"string\",\n      \"document_type\": \"string\",\n      \"comment\": \"string\",\n      \"category\": \"string\",\n      \"document_name\": \"string\",\n      \"document_size\": \"string\",\n      \"document_url\": \"string\",\n      \"reason_by_system\": \"string\",\n      \"reason_for_customer\": \"string\",\n      \"document_status\": \"string\",\n      \"document_upload_indicator\": false,\n      \"expires_at\": \"1963-09-21T08:35:34.469Z\",\n      \"created_at\": \"1983-10-09T15:09:57.223Z\",\n      \"updated_at\": \"2019-11-20T00:44:33.997Z\",\n      \"deleted_at\": \"1983-09-15T06:30:13.849Z\",\n      \"updated_by\": \"string\",\n      \"created_by\": \"string\",\n      \"deleted_by\": \"string\",\n      \"uploaded_by\": \"string\",\n      \"uploaded_at\": \"2008-05-30T21:19:38.709Z\",\n      \"is_deleted\": false,\n      \"identifier\": \"string\",\n      \"stipulation_code\": \"string\"\n    }\n  ],\n  \"page_number\": 3418,\n  \"page_size\": 2979,\n  \"total_pages\": 1029,\n  \"total_results\": 131\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21b0f122-ce8d-46e3-95be-e329328971af",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "document-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16b35ee5-72ba-4dcf-8b3a-fc83a5dcb9c4",
+          "name": "Get all customers records history",
+          "request": {
+            "name": "Get all customers records history",
+            "description": {
+              "content": "Get all customers records history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>",
+                  "description": "for stipulation, additional_document, insurance"
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<date>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "module_type",
+                  "value": "<string>",
+                  "description": "module"
+                },
+                {
+                  "disabled": false,
+                  "key": "module_type",
+                  "value": "<string>",
+                  "description": "module"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c070276b-fb8d-4c2d-bd2a-685f98ba1630",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "module_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "module_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"identifier\": \"string\",\n      \"created_at\": \"1958-02-15T09:58:06.172Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1952-07-04T17:03:22.160Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1961-04-27T16:47:43.716Z\",\n      \"deleted_by\": \"string\",\n      \"action\": \"string\",\n      \"order_reference_id\": \"string\",\n      \"module_type\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"created_at\": \"1980-02-11T06:40:49.745Z\",\n      \"created_by\": \"string\",\n      \"updated_at\": \"1952-06-27T03:29:54.871Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1975-10-18T22:44:29.297Z\",\n      \"deleted_by\": \"string\",\n      \"action\": \"string\",\n      \"order_reference_id\": \"string\",\n      \"module_type\": \"string\"\n    }\n  ],\n  \"page_number\": 4678,\n  \"page_size\": 7707,\n  \"total_pages\": 6130,\n  \"total_results\": 2810\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63721a59-c32c-460e-a832-89a4ad25b1e4",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "module_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "module_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "365b2312-05ea-4e45-9718-36eb82ebb1d8",
+          "name": "Get history detail",
+          "request": {
+            "name": "Get history detail",
+            "description": {
+              "content": "Get history detail",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "history-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "module_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "order_reference_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "329a0ac8-06a8-4774-a883-ad2ab6a18189",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "history-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "module_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bae6313-4a0c-4800-b90b-187df314db2a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "history-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "module_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4bf4f729-10aa-4b9a-b9bb-04c82d682515",
+    "name": "Lane History API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

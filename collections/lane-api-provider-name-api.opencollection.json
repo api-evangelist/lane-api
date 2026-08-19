@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Provider_name API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Provider_name",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Integration By Provider Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/integration/by_provider_name/:dealer_code/:integration_type/:provider_name",
+            "headers": [
+              {
+                "name": "company_id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "integration_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "provider_name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Integration By Provider Name"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

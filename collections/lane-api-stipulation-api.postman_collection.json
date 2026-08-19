@@ -1,0 +1,1221 @@
+{
+  "item": [
+    {
+      "id": "978f3e13-a9d6-4836-a734-776d549dbba9",
+      "name": "Stipulation",
+      "description": {
+        "content": "Manage operations related to Stipulation",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f7ef9a3e-ee79-4d24-8e01-d7a0ca58464e",
+          "name": "Get All Stipulation Fulfillments",
+          "request": {
+            "name": "Get All Stipulation Fulfillments",
+            "description": {
+              "content": "Get All Stipulation Fulfillments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "fulfillment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d54eba8e-c46f-4dcd-baea-0aadc49c64e2",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stipulation_id\": \"string\",\n  \"stipulation_code\": \"string\",\n  \"document_upload\": \"string\",\n  \"stipulation_type\": \"string\",\n  \"verification_indicator\": true,\n  \"applied_on\": \"string\",\n  \"created_at\": \"2010-05-07T19:05:41.730Z\",\n  \"updated_at\": \"1947-04-18T17:12:33.906Z\",\n  \"created_by\": \"string\",\n  \"updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5291d17e-f92c-4d60-92ca-f8cea3ec9722",
+          "name": "Create Stipulation Fulfillment",
+          "request": {
+            "name": "Create Stipulation Fulfillment",
+            "description": {
+              "content": "Create Stipulation Fulfillment",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "fulfillment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stipulation_id\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"document_upload\": \"<string>\",\n  \"stipulation_type\": \"<string>\",\n  \"verification_indicator\": \"<boolean>\",\n  \"applied_on\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bbbb482d-edce-4dfd-9074-c1ec507db1ea",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stipulation_id\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"document_upload\": \"<string>\",\n  \"stipulation_type\": \"<string>\",\n  \"verification_indicator\": \"<boolean>\",\n  \"applied_on\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"stipulation_id\": \"string\",\n  \"stipulation_code\": \"string\",\n  \"document_upload\": \"string\",\n  \"stipulation_type\": \"string\",\n  \"verification_indicator\": true,\n  \"applied_on\": \"string\",\n  \"created_at\": \"2010-05-07T19:05:41.730Z\",\n  \"updated_at\": \"1947-04-18T17:12:33.906Z\",\n  \"created_by\": \"string\",\n  \"updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e9decdf-3d55-4f0f-92b9-05f88e3b0c31",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stipulation_id\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"document_upload\": \"<string>\",\n  \"stipulation_type\": \"<string>\",\n  \"verification_indicator\": \"<boolean>\",\n  \"applied_on\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0c5e3a05-0226-4718-a8b4-badc42cdcb55",
+          "name": "Delete Stipulation Fulfillments",
+          "request": {
+            "name": "Delete Stipulation Fulfillments",
+            "description": {
+              "content": "Delete Stipulation Fulfillments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "fulfillment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stipulation_fulfillment_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c65ff282-c3c4-430a-a5ee-c4f371ed6981",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stipulation_fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dfe53573-22d4-4705-8033-e68b5879584d",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stipulation_fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14d28fcf-f351-4b98-9f80-dd3fd2d4a726",
+          "name": "Delete Stipulation Fulfillments",
+          "request": {
+            "name": "Delete Stipulation Fulfillments",
+            "description": {
+              "content": "Delete Stipulation Fulfillments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "fulfillment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stipulation_fulfillment_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"stipulation_id\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"document_upload\": \"<string>\",\n  \"stipulation_type\": \"<string>\",\n  \"verification_indicator\": \"<boolean>\",\n  \"applied_on\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecf08397-d010-44cd-aa2d-865412498ede",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stipulation_fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stipulation_id\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"document_upload\": \"<string>\",\n  \"stipulation_type\": \"<string>\",\n  \"verification_indicator\": \"<boolean>\",\n  \"applied_on\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b33f20fe-75fa-427b-847a-b626c6231c9c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stipulation_fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"stipulation_id\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"document_upload\": \"<string>\",\n  \"stipulation_type\": \"<string>\",\n  \"verification_indicator\": \"<boolean>\",\n  \"applied_on\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b3c0b1df-5a32-4728-ab4e-9656c45c369e",
+          "name": "Get Stipulation Fulfillments",
+          "request": {
+            "name": "Get Stipulation Fulfillments",
+            "description": {
+              "content": "Get Stipulation Fulfillments",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "fulfillment",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stipulation_fulfillment_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "51525498-6f02-4d05-a258-e769cd5d18e4",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stipulation_fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7fa6f13e-030c-4da1-a358-8299eb8236ce",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "fulfillment",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stipulation_fulfillment_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b0890c6-cf92-4a81-8473-37d06ed920c2",
+          "name": "Get Financial Stipulation",
+          "request": {
+            "name": "Get Financial Stipulation",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "financial"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "external_reference_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer_reference_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "026c7dce-ee6f-4ec5-94be-cf4703c5c276",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "financial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "external_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"customer_reference_id\": \"string\",\n    \"external_reference_id\": \"string\",\n    \"financial_stip_type\": \"string\",\n    \"reason_by_system\": \"string\",\n    \"reason_for_customer\": \"string\",\n    \"fulfilled\": false,\n    \"condition\": \"string\",\n    \"description\": \"string\",\n    \"stipulation_code\": \"string\",\n    \"expires_at\": \"1983-06-22T07:42:13.644Z\",\n    \"created_at\": \"2014-03-12T05:32:24.229Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1983-08-14T01:00:57.336Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"2023-12-22T07:11:22.823Z\",\n    \"deleted_by\": \"string\",\n    \"is_deleted\": false,\n    \"identifier\": \"string\"\n  },\n  {\n    \"customer_reference_id\": \"string\",\n    \"external_reference_id\": \"string\",\n    \"financial_stip_type\": \"string\",\n    \"reason_by_system\": \"string\",\n    \"reason_for_customer\": \"string\",\n    \"fulfilled\": false,\n    \"condition\": \"string\",\n    \"description\": \"string\",\n    \"stipulation_code\": \"string\",\n    \"expires_at\": \"2023-02-24T21:16:57.892Z\",\n    \"created_at\": \"1959-11-27T07:41:59.013Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1971-01-13T05:47:38.629Z\",\n    \"updated_by\": \"string\",\n    \"deleted_at\": \"1987-02-12T01:12:08.789Z\",\n    \"deleted_by\": \"string\",\n    \"is_deleted\": false,\n    \"identifier\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "204d8cc3-d21d-4589-9cb2-8439d6bf42d5",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "financial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "external_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer_reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ea71026-e201-4307-aacb-bc19373049e4",
+          "name": "Create Financial Stipulation",
+          "request": {
+            "name": "Create Financial Stipulation",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "financial"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"external_reference_id\": \"<string>\",\n  \"financial_stip_type\": \"<string>\",\n  \"condition\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"reason_by_system\": \"<string>\",\n  \"reason_for_customer\": \"<string>\",\n  \"fulfilled\": false,\n  \"description\": \"<string>\",\n  \"expires_at\": \"<dateTime>\",\n  \"identifier\": \"<string>\",\n  \"key_id\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c245205-f7ce-4b5b-a38d-e37b3f34a637",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "financial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"external_reference_id\": \"<string>\",\n  \"financial_stip_type\": \"<string>\",\n  \"condition\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"reason_by_system\": \"<string>\",\n  \"reason_for_customer\": \"<string>\",\n  \"fulfilled\": false,\n  \"description\": \"<string>\",\n  \"expires_at\": \"<dateTime>\",\n  \"identifier\": \"<string>\",\n  \"key_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"customer_reference_id\": \"string\",\n  \"external_reference_id\": \"string\",\n  \"financial_stip_type\": \"string\",\n  \"reason_by_system\": \"string\",\n  \"reason_for_customer\": \"string\",\n  \"fulfilled\": false,\n  \"condition\": \"string\",\n  \"description\": \"string\",\n  \"stipulation_code\": \"string\",\n  \"expires_at\": \"1972-02-07T07:09:31.261Z\",\n  \"created_at\": \"2009-02-03T10:23:04.213Z\",\n  \"created_by\": \"string\",\n  \"updated_at\": \"1986-05-17T19:44:31.166Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1962-03-10T18:35:03.441Z\",\n  \"deleted_by\": \"string\",\n  \"is_deleted\": false,\n  \"identifier\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cee109ea-0a1f-43b3-b7a2-2a02c4514661",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "financial"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer_reference_id\": \"<string>\",\n  \"external_reference_id\": \"<string>\",\n  \"financial_stip_type\": \"<string>\",\n  \"condition\": \"<string>\",\n  \"stipulation_code\": \"<string>\",\n  \"reason_by_system\": \"<string>\",\n  \"reason_for_customer\": \"<string>\",\n  \"fulfilled\": false,\n  \"description\": \"<string>\",\n  \"expires_at\": \"<dateTime>\",\n  \"identifier\": \"<string>\",\n  \"key_id\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1f9be78-cec1-41e3-bbd2-760dd2006648",
+          "name": "Get Financial Stipulation",
+          "request": {
+            "name": "Get Financial Stipulation",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "stipulation",
+                "stipulation-by-lender"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "company_id",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec68662b-2f81-4138-9a6b-fbfd77d93c36",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "stipulation-by-lender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "company_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"stipulation_code\": \"string\",\n    \"stipulation_type\": \"string\",\n    \"parameter\": \"string\",\n    \"description\": \"string\",\n    \"document_code\": \"string\",\n    \"assignee\": \"string\",\n    \"lender_id\": 6480\n  },\n  {\n    \"stipulation_code\": \"string\",\n    \"stipulation_type\": \"string\",\n    \"parameter\": \"string\",\n    \"description\": \"string\",\n    \"document_code\": \"string\",\n    \"assignee\": \"string\",\n    \"lender_id\": 2681\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07bdc156-7dac-4fb5-87da-8496f41d92a9",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "stipulation",
+                    "stipulation-by-lender"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "company_id",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2959dc57-c30e-41fd-b06f-437c4724b30b",
+    "name": "Lane Stipulation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

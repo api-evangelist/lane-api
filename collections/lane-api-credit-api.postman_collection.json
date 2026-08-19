@@ -1,0 +1,843 @@
+{
+  "item": [
+    {
+      "id": "bb6af99e-ea5e-49dc-ae30-fdf9fe3965f3",
+      "name": "Credit",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a8389cb7-e0af-43b6-af0a-67ac33595eaa",
+          "name": "Get credit decision",
+          "request": {
+            "name": "Get credit decision",
+            "description": {
+              "content": "Get credit decision",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "credit-decision"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4207e13a-0162-45aa-a545-49f329df8977",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09e7b801-07c0-4b61-be35-9aa342379d98",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1791d5b9-0363-4ba6-862f-66a55fe5e6b1",
+          "name": "Add credit decision",
+          "request": {
+            "name": "Add credit decision",
+            "description": {
+              "content": "Add credit decision",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "credit-decision"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"<integer>\",\n  \"decision_code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"response_code\": \"<string>\",\n  \"mapped_code\": \"<string>\",\n  \"stipulation\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a0cc483-4d48-4649-b904-66dcae2068e7",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<integer>\",\n  \"decision_code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"response_code\": \"<string>\",\n  \"mapped_code\": \"<string>\",\n  \"stipulation\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_id\": 3852,\n  \"decision_code\": \"string\",\n  \"description\": \"string\",\n  \"response_code\": \"string\",\n  \"mapped_code\": \"string\",\n  \"created_at\": \"2020-03-10T20:34:31.712Z\",\n  \"updated_at\": \"2007-10-27T13:24:46.888Z\",\n  \"created_by\": \"string\",\n  \"updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc22fad8-65cf-49c9-bdc9-7dd887b8a302",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<integer>\",\n  \"decision_code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"response_code\": \"<string>\",\n  \"mapped_code\": \"<string>\",\n  \"stipulation\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54b9f3a7-4b4f-4616-a105-f041d16a0060",
+          "name": "Update decision status after receiving decision from credit approver",
+          "request": {
+            "name": "Update decision status after receiving decision from credit approver",
+            "description": {
+              "content": "Update an configured quotation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "update-credit-approver-decision",
+                ":reference_number"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference_number",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b9226b48-6d6c-43d3-8b7a-a8463fc8a665",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "update-credit-approver-decision",
+                    ":reference_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference_number",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 228,\n  \"dealer_id\": 9843,\n  \"lender_id\": 8125,\n  \"broker_id\": 8317,\n  \"company_id\": 9004,\n  \"name\": \"string\",\n  \"contract_term\": 4946,\n  \"allowed_usage\": 2458,\n  \"credit_rating\": \"string\",\n  \"apr\": 1758.221663899131,\n  \"estimated_monthly_payment\": 1860.5783022140542,\n  \"annual_usage\": 0,\n  \"due_at_signing\": 3672.2809661283604,\n  \"is_payment_updated\": false,\n  \"selling_price\": 3423.106025753204,\n  \"down_payment\": 1707.2356479113394,\n  \"down_payment_lease\": 8244.211765128368,\n  \"tax_amount\": 8876.20387218534,\n  \"tax_amount_number\": 6298.965703858093,\n  \"deferred_type\": \"string\",\n  \"rv_balloon_percentage\": 6248.580602545517,\n  \"rv_balloon_value\": 5746.462376370932,\n  \"balloon_collection\": \"string\",\n  \"fp_id\": 3757,\n  \"vehicle_id\": 9651,\n  \"msrp\": 541.1015702550104,\n  \"schedule_option\": \"string\",\n  \"asset_usage\": \"string\",\n  \"calcuation_method\": \"string\",\n  \"order_stage\": \"string\",\n  \"finance_type\": \"string\",\n  \"order_fees\": [\n    {\n      \"dealer_fee_id\": 9026,\n      \"applied_price\": 4548.564665965649,\n      \"identifier\": \"string\",\n      \"vendor\": \"string\",\n      \"fee_type\": \"string\"\n    },\n    {\n      \"dealer_fee_id\": 1844,\n      \"applied_price\": 9123.20277973689,\n      \"identifier\": \"string\",\n      \"vendor\": \"string\",\n      \"fee_type\": \"string\"\n    }\n  ],\n  \"order_options\": [\n    {\n      \"option_id\": 9366,\n      \"applied_price\": 1091.7050459541488,\n      \"rv_balloon_percentage\": 118.96533805778819,\n      \"identifier\": \"string\",\n      \"rv_balloon_value\": 6698.6066666985425\n    },\n    {\n      \"option_id\": 1989,\n      \"applied_price\": 5390.229828478875,\n      \"rv_balloon_percentage\": 9015.450499612825,\n      \"identifier\": \"string\",\n      \"rv_balloon_value\": 1419.4418838330491\n    }\n  ],\n  \"order_fnI\": [\n    {\n      \"applied_price\": 3978.920267723618,\n      \"financial_insurance_id\": 275,\n      \"form_id\": 1988,\n      \"rate_id\": 6466,\n      \"mileage\": 6995,\n      \"term\": 5477,\n      \"session_id\": \"string\",\n      \"identifier\": \"string\",\n      \"is_msp\": true\n    },\n    {\n      \"applied_price\": 1335.5955966380184,\n      \"financial_insurance_id\": 4485,\n      \"form_id\": 930,\n      \"rate_id\": 4782,\n      \"mileage\": 2348,\n      \"term\": 629,\n      \"session_id\": \"string\",\n      \"identifier\": \"string\",\n      \"is_msp\": true\n    }\n  ],\n  \"order_tradein\": {\n    \"year\": 7846,\n    \"make\": \"string\",\n    \"model\": \"string\",\n    \"trim\": \"string\",\n    \"mileage\": 7239,\n    \"vin\": \"string\",\n    \"identifier\": \"string\",\n    \"condition\": \"Very Good\",\n    \"trade_in_amount\": 7420.054433442388,\n    \"is_customer_titled\": true,\n    \"loan_lease_balance\": false,\n    \"lender_contract_number\": \"string\",\n    \"lender_name\": \"string\",\n    \"lender_address\": \"string\",\n    \"lender_contact_number\": \"string\",\n    \"payment_type\": \"Finance\",\n    \"payoff_amount\": 3507.029800226762,\n    \"lender_id\": 3964,\n    \"asset_image\": [\n      \"string\",\n      \"string\"\n    ],\n    \"trade_in_type\": \"License Plate\",\n    \"question_answers\": [\n      {\n        \"question\": \"string\",\n        \"answer\": \"string\",\n        \"trade_in_id\": 8922\n      },\n      {\n        \"question\": \"string\",\n        \"answer\": \"string\",\n        \"trade_in_id\": 3509\n      }\n    ]\n  },\n  \"appointment_details\": {\n    \"id\": 3978,\n    \"order_id\": 8827,\n    \"dealer_id\": 1348,\n    \"customer_id\": 336,\n    \"appointment_date\": \"1979-09-09T18:18:04.648Z\",\n    \"appointment_type\": \"string\",\n    \"appointment_status\": \"string\",\n    \"comments\": \"string\",\n    \"address_id\": 4038,\n    \"dealer_code\": \"string\",\n    \"address_data\": {\n      \"address_type\": \"DrivingLicense\",\n      \"address_line_1\": \"string\",\n      \"address_line_2\": \"string\",\n      \"state_name\": \"string\",\n      \"zip_code\": \"string\",\n      \"county\": \"string\",\n      \"city\": \"string\",\n      \"contact_number\": \"string\",\n      \"verified\": true,\n      \"move_in_date\": \"1977-10-01\",\n      \"is_garaging\": false,\n      \"identifier\": \"string\",\n      \"id\": 5006\n    },\n    \"created_by\": \"string\",\n    \"updated_by\": \"string\",\n    \"time_zone\": \"string\"\n  },\n  \"finance_amount\": 4436.846271907746,\n  \"order_asset\": {\n    \"make\": \"string\",\n    \"identifier\": \"string\",\n    \"model\": \"string\",\n    \"trim\": \"string\",\n    \"year_manufacturer\": \"string\",\n    \"msrp\": 662.6744065946888,\n    \"mileage\": 8077,\n    \"exterior_color\": \"string\",\n    \"condition\": [\n      \"string\",\n      \"string\"\n    ],\n    \"classification\": \"string\",\n    \"engine_cylinder\": \"string\",\n    \"power_type\": \"string\",\n    \"power_figure\": \"string\",\n    \"engine_displacement\": \"string\",\n    \"fuel_type\": \"string\",\n    \"quantity\": \"string\",\n    \"unit_price\": \"string\",\n    \"unit_tax\": \"string\",\n    \"total\": \"string\",\n    \"vin\": \"string\",\n    \"asset_type\": \"string\",\n    \"rv_balloon_amount\": 4467.173160159894\n  },\n  \"insurance\": {\n    \"created_by\": \"string\",\n    \"order_reference_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"insurer_name\": \"string\",\n    \"agent_phone\": \"string\",\n    \"subscription_id\": \"string\",\n    \"agent_name\": \"string\",\n    \"policy_number\": \"string\",\n    \"start_date\": \"1979-06-14\",\n    \"expiration_date\": \"1978-01-08\",\n    \"deductible_comprehensive\": 564.594158481172,\n    \"deductible_collision\": 3479.6613857349325,\n    \"identifier\": \"string\",\n    \"is_verified\": false,\n    \"insurance_documents\": [\n      {\n        \"content_type\": \"string\",\n        \"name\": \"string\",\n        \"file_size\": \"string\",\n        \"document\": \"string\",\n        \"created_by\": \"string\",\n        \"doucment_reference_id\": \"string\"\n      },\n      {\n        \"content_type\": \"string\",\n        \"name\": \"string\",\n        \"file_size\": \"string\",\n        \"document\": \"string\",\n        \"created_by\": \"string\",\n        \"doucment_reference_id\": \"string\"\n      }\n    ],\n    \"insurer_address\": {\n      \"address_line_1\": \"string\",\n      \"address_line_2\": \"string\",\n      \"state_name\": \"string\",\n      \"zip_code\": \"string\",\n      \"county\": \"string\",\n      \"city\": \"string\",\n      \"contact_number\": \"string\",\n      \"verified\": false,\n      \"move_in_date\": \"1961-07-13\",\n      \"is_garaging\": false,\n      \"identifier\": \"string\"\n    }\n  },\n  \"payment_recieved\": false,\n  \"base_rate\": 3929.0971810890087,\n  \"rate_type\": \"string\",\n  \"commission_type\": \"string\",\n  \"margin\": 9994.880972436942,\n  \"applicable_rate\": 100.37648723441706,\n  \"invoice_status\": \"Active\",\n  \"rental_mode\": \"string\",\n  \"rental_frequency\": \"string\",\n  \"running_id\": \"string\",\n  \"order_currency\": \"string\",\n  \"commission_amount\": 8888.935322157482,\n  \"received_security_deposit\": 348,\n  \"net_finance_amount\": 2166.752222567144,\n  \"rebate\": 782.2869160542045,\n  \"capitalized_cost_reduction\": 5357.843037975296,\n  \"monthly_deprecation\": 5100.515586389187,\n  \"tax_on_capitalized_cost_reduction\": 3857.2732020004696,\n  \"monthly_sales_use_tax\": 734.6043955239834,\n  \"sum_of_fees\": 1316.0938831588687,\n  \"sum_of_periodic_interest\": 8904.196013117662,\n  \"sum_of_rentals\": 8450.851494780221,\n  \"total_payables\": 153.49294687510894,\n  \"non_vatable_amount\": 7421.632561471967,\n  \"individualized_agreement\": \"string\",\n  \"base_residual_type\": 9103,\n  \"excess_mileage_rate\": 4658.944049679306,\n  \"asset_rv_amount\": 2214.2019190576243\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8eaf755-25c4-4b61-b3ec-9620422b7447",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "update-credit-approver-decision",
+                    ":reference_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference_number",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbd234f2-fe0b-4106-a8d4-5a9b903cc17e",
+          "name": "Mock Credit Approver Request",
+          "request": {
+            "name": "Mock Credit Approver Request",
+            "description": {
+              "content": "Mock Request",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "credit-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lender_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"result\": [\n    {\n      \"order_info\": {\n        \"status\": \"<string>\",\n        \"reference_number\": \"<string>\",\n        \"order_asset_number\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"dealer_id\": \"<integer>\",\n        \"lender_id\": \"<integer>\",\n        \"broker_id\": \"<integer>\",\n        \"company_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"contract_term\": \"<integer>\",\n        \"allowed_usage\": \"<integer>\",\n        \"credit_rating\": \"<string>\",\n        \"apr\": \"<number>\",\n        \"estimated_monthly_payment\": \"<number>\",\n        \"annual_usage\": 0,\n        \"due_at_signing\": \"<number>\",\n        \"is_payment_updated\": false,\n        \"selling_price\": \"<number>\",\n        \"down_payment\": \"<number>\",\n        \"down_payment_lease\": \"<number>\",\n        \"tax_amount\": \"<number>\",\n        \"tax_amount_number\": \"<number>\",\n        \"deferred_type\": \"<string>\",\n        \"rv_balloon_percentage\": \"<number>\",\n        \"rv_balloon_value\": \"<number>\",\n        \"balloon_collection\": \"<string>\",\n        \"fp_id\": \"<integer>\",\n        \"vehicle_id\": \"<integer>\",\n        \"msrp\": \"<number>\",\n        \"schedule_option\": \"<string>\",\n        \"asset_usage\": \"<string>\",\n        \"calcuation_method\": \"<string>\",\n        \"order_stage\": \"<string>\",\n        \"finance_type\": \"<string>\",\n        \"order_fees\": [\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          },\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          }\n        ],\n        \"order_options\": [\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_fnI\": [\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_tradein\": {\n          \"year\": \"<integer>\",\n          \"make\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"mileage\": \"<integer>\",\n          \"vin\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"condition\": \"<string>\",\n          \"trade_in_amount\": \"<number>\",\n          \"is_customer_titled\": \"<boolean>\",\n          \"loan_lease_balance\": \"<boolean>\",\n          \"lender_contract_number\": \"<string>\",\n          \"lender_name\": \"<string>\",\n          \"lender_address\": \"<string>\",\n          \"lender_contact_number\": \"<string>\",\n          \"payment_type\": \"<string>\",\n          \"payoff_amount\": \"<number>\",\n          \"lender_id\": \"<integer>\",\n          \"asset_image\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"trade_in_type\": \"<string>\",\n          \"question_answers\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"appointment_details\": {\n          \"id\": \"<integer>\",\n          \"order_id\": \"<integer>\",\n          \"dealer_id\": \"<integer>\",\n          \"customer_id\": \"<integer>\",\n          \"appointment_date\": \"<dateTime>\",\n          \"appointment_type\": \"<string>\",\n          \"appointment_status\": \"<string>\",\n          \"comments\": \"<string>\",\n          \"address_id\": \"<integer>\",\n          \"dealer_code\": \"<string>\",\n          \"address_data\": {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_by\": \"<string>\",\n          \"updated_by\": \"<string>\",\n          \"time_zone\": \"<string>\"\n        },\n        \"finance_amount\": \"<number>\",\n        \"order_asset\": {\n          \"make\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"year_manufacturer\": \"<string>\",\n          \"msrp\": \"<number>\",\n          \"mileage\": \"<integer>\",\n          \"exterior_color\": \"<string>\",\n          \"condition\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"classification\": \"<string>\",\n          \"engine_cylinder\": \"<string>\",\n          \"power_type\": \"<string>\",\n          \"power_figure\": \"<string>\",\n          \"engine_displacement\": \"<string>\",\n          \"fuel_type\": \"<string>\",\n          \"quantity\": \"<string>\",\n          \"unit_price\": \"<string>\",\n          \"unit_tax\": \"<string>\",\n          \"total\": \"<string>\",\n          \"vin\": \"<string>\",\n          \"asset_type\": \"<string>\",\n          \"rv_balloon_amount\": \"<number>\"\n        },\n        \"insurance\": {\n          \"created_by\": \"<string>\",\n          \"order_reference_id\": \"<string>\",\n          \"reference_id\": \"<string>\",\n          \"insurer_name\": \"<string>\",\n          \"agent_phone\": \"<string>\",\n          \"subscription_id\": \"<string>\",\n          \"agent_name\": \"<string>\",\n          \"policy_number\": \"<string>\",\n          \"start_date\": \"<date>\",\n          \"expiration_date\": \"<date>\",\n          \"deductible_comprehensive\": \"<number>\",\n          \"deductible_collision\": \"<number>\",\n          \"identifier\": \"<string>\",\n          \"is_verified\": false,\n          \"insurance_documents\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"insurer_address\": {\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"payment_recieved\": \"<boolean>\",\n        \"base_rate\": \"<number>\",\n        \"rate_type\": \"<string>\",\n        \"commission_type\": \"<string>\",\n        \"margin\": \"<number>\",\n        \"applicable_rate\": \"<number>\",\n        \"invoice_status\": \"<string>\",\n        \"rental_mode\": \"<string>\",\n        \"rental_frequency\": \"<string>\",\n        \"running_id\": \"<string>\",\n        \"order_currency\": \"<string>\",\n        \"commission_amount\": \"<number>\",\n        \"received_security_deposit\": \"<integer>\",\n        \"net_finance_amount\": \"<number>\",\n        \"rebate\": \"<number>\",\n        \"capitalized_cost_reduction\": \"<number>\",\n        \"monthly_deprecation\": \"<number>\",\n        \"tax_on_capitalized_cost_reduction\": \"<number>\",\n        \"monthly_sales_use_tax\": \"<number>\",\n        \"sum_of_fees\": \"<number>\",\n        \"sum_of_periodic_interest\": \"<number>\",\n        \"sum_of_rentals\": \"<number>\",\n        \"total_payables\": \"<number>\",\n        \"non_vatable_amount\": \"<number>\",\n        \"individualized_agreement\": \"<string>\",\n        \"base_residual_type\": \"<integer>\",\n        \"excess_mileage_rate\": \"<number>\",\n        \"asset_rv_amount\": \"<number>\",\n        \"customer_id\": \"<integer>\"\n      },\n      \"customer_info\": {\n        \"prefix\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"middle_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"suffix\": \"<string>\",\n        \"ssn\": \"<string>\",\n        \"mobile_number\": \"<string>\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"<string>\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"<string>\",\n        \"date_of_birth\": \"<date>\",\n        \"meta_data\": \"<object>\",\n        \"stripe_customer_id\": \"<string>\",\n        \"preferred_contact\": \"<string>\",\n        \"reference_id\": \"<string>\",\n        \"external_id\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"email\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"deleted_by\": \"<string>\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"<string>\",\n          \"name\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"employed_since\": \"<date>\",\n          \"occupation\": \"<string>\",\n          \"annual_employment_income\": \"<number>\",\n          \"annual_other_income\": \"<number>\",\n          \"source_of_other_income\": \"<string>\",\n          \"created_at\": \"<dateTime>\",\n          \"created_by\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"updated_by\": \"<string>\",\n          \"deleted_at\": \"<dateTime>\",\n          \"deleted_by\": \"<string>\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\",\n          \"status\": \"<string>\",\n          \"license_number\": \"<string>\",\n          \"is_pdf_417\": \"<boolean>\",\n          \"issue_date\": \"<date>\",\n          \"expiry_date\": \"<date>\",\n          \"date_of_birth\": \"<date>\",\n          \"is_selfie_verified\": \"<boolean>\"\n        }\n      }\n    },\n    {\n      \"order_info\": {\n        \"status\": \"<string>\",\n        \"reference_number\": \"<string>\",\n        \"order_asset_number\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"dealer_id\": \"<integer>\",\n        \"lender_id\": \"<integer>\",\n        \"broker_id\": \"<integer>\",\n        \"company_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"contract_term\": \"<integer>\",\n        \"allowed_usage\": \"<integer>\",\n        \"credit_rating\": \"<string>\",\n        \"apr\": \"<number>\",\n        \"estimated_monthly_payment\": \"<number>\",\n        \"annual_usage\": 0,\n        \"due_at_signing\": \"<number>\",\n        \"is_payment_updated\": false,\n        \"selling_price\": \"<number>\",\n        \"down_payment\": \"<number>\",\n        \"down_payment_lease\": \"<number>\",\n        \"tax_amount\": \"<number>\",\n        \"tax_amount_number\": \"<number>\",\n        \"deferred_type\": \"<string>\",\n        \"rv_balloon_percentage\": \"<number>\",\n        \"rv_balloon_value\": \"<number>\",\n        \"balloon_collection\": \"<string>\",\n        \"fp_id\": \"<integer>\",\n        \"vehicle_id\": \"<integer>\",\n        \"msrp\": \"<number>\",\n        \"schedule_option\": \"<string>\",\n        \"asset_usage\": \"<string>\",\n        \"calcuation_method\": \"<string>\",\n        \"order_stage\": \"<string>\",\n        \"finance_type\": \"<string>\",\n        \"order_fees\": [\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          },\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          }\n        ],\n        \"order_options\": [\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_fnI\": [\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_tradein\": {\n          \"year\": \"<integer>\",\n          \"make\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"mileage\": \"<integer>\",\n          \"vin\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"condition\": \"<string>\",\n          \"trade_in_amount\": \"<number>\",\n          \"is_customer_titled\": \"<boolean>\",\n          \"loan_lease_balance\": \"<boolean>\",\n          \"lender_contract_number\": \"<string>\",\n          \"lender_name\": \"<string>\",\n          \"lender_address\": \"<string>\",\n          \"lender_contact_number\": \"<string>\",\n          \"payment_type\": \"<string>\",\n          \"payoff_amount\": \"<number>\",\n          \"lender_id\": \"<integer>\",\n          \"asset_image\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"trade_in_type\": \"<string>\",\n          \"question_answers\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"appointment_details\": {\n          \"id\": \"<integer>\",\n          \"order_id\": \"<integer>\",\n          \"dealer_id\": \"<integer>\",\n          \"customer_id\": \"<integer>\",\n          \"appointment_date\": \"<dateTime>\",\n          \"appointment_type\": \"<string>\",\n          \"appointment_status\": \"<string>\",\n          \"comments\": \"<string>\",\n          \"address_id\": \"<integer>\",\n          \"dealer_code\": \"<string>\",\n          \"address_data\": {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_by\": \"<string>\",\n          \"updated_by\": \"<string>\",\n          \"time_zone\": \"<string>\"\n        },\n        \"finance_amount\": \"<number>\",\n        \"order_asset\": {\n          \"make\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"year_manufacturer\": \"<string>\",\n          \"msrp\": \"<number>\",\n          \"mileage\": \"<integer>\",\n          \"exterior_color\": \"<string>\",\n          \"condition\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"classification\": \"<string>\",\n          \"engine_cylinder\": \"<string>\",\n          \"power_type\": \"<string>\",\n          \"power_figure\": \"<string>\",\n          \"engine_displacement\": \"<string>\",\n          \"fuel_type\": \"<string>\",\n          \"quantity\": \"<string>\",\n          \"unit_price\": \"<string>\",\n          \"unit_tax\": \"<string>\",\n          \"total\": \"<string>\",\n          \"vin\": \"<string>\",\n          \"asset_type\": \"<string>\",\n          \"rv_balloon_amount\": \"<number>\"\n        },\n        \"insurance\": {\n          \"created_by\": \"<string>\",\n          \"order_reference_id\": \"<string>\",\n          \"reference_id\": \"<string>\",\n          \"insurer_name\": \"<string>\",\n          \"agent_phone\": \"<string>\",\n          \"subscription_id\": \"<string>\",\n          \"agent_name\": \"<string>\",\n          \"policy_number\": \"<string>\",\n          \"start_date\": \"<date>\",\n          \"expiration_date\": \"<date>\",\n          \"deductible_comprehensive\": \"<number>\",\n          \"deductible_collision\": \"<number>\",\n          \"identifier\": \"<string>\",\n          \"is_verified\": false,\n          \"insurance_documents\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"insurer_address\": {\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"payment_recieved\": \"<boolean>\",\n        \"base_rate\": \"<number>\",\n        \"rate_type\": \"<string>\",\n        \"commission_type\": \"<string>\",\n        \"margin\": \"<number>\",\n        \"applicable_rate\": \"<number>\",\n        \"invoice_status\": \"<string>\",\n        \"rental_mode\": \"<string>\",\n        \"rental_frequency\": \"<string>\",\n        \"running_id\": \"<string>\",\n        \"order_currency\": \"<string>\",\n        \"commission_amount\": \"<number>\",\n        \"received_security_deposit\": \"<integer>\",\n        \"net_finance_amount\": \"<number>\",\n        \"rebate\": \"<number>\",\n        \"capitalized_cost_reduction\": \"<number>\",\n        \"monthly_deprecation\": \"<number>\",\n        \"tax_on_capitalized_cost_reduction\": \"<number>\",\n        \"monthly_sales_use_tax\": \"<number>\",\n        \"sum_of_fees\": \"<number>\",\n        \"sum_of_periodic_interest\": \"<number>\",\n        \"sum_of_rentals\": \"<number>\",\n        \"total_payables\": \"<number>\",\n        \"non_vatable_amount\": \"<number>\",\n        \"individualized_agreement\": \"<string>\",\n        \"base_residual_type\": \"<integer>\",\n        \"excess_mileage_rate\": \"<number>\",\n        \"asset_rv_amount\": \"<number>\",\n        \"customer_id\": \"<integer>\"\n      },\n      \"customer_info\": {\n        \"prefix\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"middle_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"suffix\": \"<string>\",\n        \"ssn\": \"<string>\",\n        \"mobile_number\": \"<string>\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"<string>\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"<string>\",\n        \"date_of_birth\": \"<date>\",\n        \"meta_data\": \"<object>\",\n        \"stripe_customer_id\": \"<string>\",\n        \"preferred_contact\": \"<string>\",\n        \"reference_id\": \"<string>\",\n        \"external_id\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"email\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"deleted_by\": \"<string>\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"<string>\",\n          \"name\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"employed_since\": \"<date>\",\n          \"occupation\": \"<string>\",\n          \"annual_employment_income\": \"<number>\",\n          \"annual_other_income\": \"<number>\",\n          \"source_of_other_income\": \"<string>\",\n          \"created_at\": \"<dateTime>\",\n          \"created_by\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"updated_by\": \"<string>\",\n          \"deleted_at\": \"<dateTime>\",\n          \"deleted_by\": \"<string>\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\",\n          \"status\": \"<string>\",\n          \"license_number\": \"<string>\",\n          \"is_pdf_417\": \"<boolean>\",\n          \"issue_date\": \"<date>\",\n          \"expiry_date\": \"<date>\",\n          \"date_of_birth\": \"<date>\",\n          \"is_selfie_verified\": \"<boolean>\"\n        }\n      }\n    }\n  ],\n  \"page_number\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"total_pages\": \"<integer>\",\n  \"total_results\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "553e51d2-e335-4dce-8b28-a3761a738e0b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "credit-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lender_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"result\": [\n    {\n      \"order_info\": {\n        \"status\": \"<string>\",\n        \"reference_number\": \"<string>\",\n        \"order_asset_number\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"dealer_id\": \"<integer>\",\n        \"lender_id\": \"<integer>\",\n        \"broker_id\": \"<integer>\",\n        \"company_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"contract_term\": \"<integer>\",\n        \"allowed_usage\": \"<integer>\",\n        \"credit_rating\": \"<string>\",\n        \"apr\": \"<number>\",\n        \"estimated_monthly_payment\": \"<number>\",\n        \"annual_usage\": 0,\n        \"due_at_signing\": \"<number>\",\n        \"is_payment_updated\": false,\n        \"selling_price\": \"<number>\",\n        \"down_payment\": \"<number>\",\n        \"down_payment_lease\": \"<number>\",\n        \"tax_amount\": \"<number>\",\n        \"tax_amount_number\": \"<number>\",\n        \"deferred_type\": \"<string>\",\n        \"rv_balloon_percentage\": \"<number>\",\n        \"rv_balloon_value\": \"<number>\",\n        \"balloon_collection\": \"<string>\",\n        \"fp_id\": \"<integer>\",\n        \"vehicle_id\": \"<integer>\",\n        \"msrp\": \"<number>\",\n        \"schedule_option\": \"<string>\",\n        \"asset_usage\": \"<string>\",\n        \"calcuation_method\": \"<string>\",\n        \"order_stage\": \"<string>\",\n        \"finance_type\": \"<string>\",\n        \"order_fees\": [\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          },\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          }\n        ],\n        \"order_options\": [\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_fnI\": [\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_tradein\": {\n          \"year\": \"<integer>\",\n          \"make\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"mileage\": \"<integer>\",\n          \"vin\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"condition\": \"<string>\",\n          \"trade_in_amount\": \"<number>\",\n          \"is_customer_titled\": \"<boolean>\",\n          \"loan_lease_balance\": \"<boolean>\",\n          \"lender_contract_number\": \"<string>\",\n          \"lender_name\": \"<string>\",\n          \"lender_address\": \"<string>\",\n          \"lender_contact_number\": \"<string>\",\n          \"payment_type\": \"<string>\",\n          \"payoff_amount\": \"<number>\",\n          \"lender_id\": \"<integer>\",\n          \"asset_image\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"trade_in_type\": \"<string>\",\n          \"question_answers\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"appointment_details\": {\n          \"id\": \"<integer>\",\n          \"order_id\": \"<integer>\",\n          \"dealer_id\": \"<integer>\",\n          \"customer_id\": \"<integer>\",\n          \"appointment_date\": \"<dateTime>\",\n          \"appointment_type\": \"<string>\",\n          \"appointment_status\": \"<string>\",\n          \"comments\": \"<string>\",\n          \"address_id\": \"<integer>\",\n          \"dealer_code\": \"<string>\",\n          \"address_data\": {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_by\": \"<string>\",\n          \"updated_by\": \"<string>\",\n          \"time_zone\": \"<string>\"\n        },\n        \"finance_amount\": \"<number>\",\n        \"order_asset\": {\n          \"make\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"year_manufacturer\": \"<string>\",\n          \"msrp\": \"<number>\",\n          \"mileage\": \"<integer>\",\n          \"exterior_color\": \"<string>\",\n          \"condition\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"classification\": \"<string>\",\n          \"engine_cylinder\": \"<string>\",\n          \"power_type\": \"<string>\",\n          \"power_figure\": \"<string>\",\n          \"engine_displacement\": \"<string>\",\n          \"fuel_type\": \"<string>\",\n          \"quantity\": \"<string>\",\n          \"unit_price\": \"<string>\",\n          \"unit_tax\": \"<string>\",\n          \"total\": \"<string>\",\n          \"vin\": \"<string>\",\n          \"asset_type\": \"<string>\",\n          \"rv_balloon_amount\": \"<number>\"\n        },\n        \"insurance\": {\n          \"created_by\": \"<string>\",\n          \"order_reference_id\": \"<string>\",\n          \"reference_id\": \"<string>\",\n          \"insurer_name\": \"<string>\",\n          \"agent_phone\": \"<string>\",\n          \"subscription_id\": \"<string>\",\n          \"agent_name\": \"<string>\",\n          \"policy_number\": \"<string>\",\n          \"start_date\": \"<date>\",\n          \"expiration_date\": \"<date>\",\n          \"deductible_comprehensive\": \"<number>\",\n          \"deductible_collision\": \"<number>\",\n          \"identifier\": \"<string>\",\n          \"is_verified\": false,\n          \"insurance_documents\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"insurer_address\": {\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"payment_recieved\": \"<boolean>\",\n        \"base_rate\": \"<number>\",\n        \"rate_type\": \"<string>\",\n        \"commission_type\": \"<string>\",\n        \"margin\": \"<number>\",\n        \"applicable_rate\": \"<number>\",\n        \"invoice_status\": \"<string>\",\n        \"rental_mode\": \"<string>\",\n        \"rental_frequency\": \"<string>\",\n        \"running_id\": \"<string>\",\n        \"order_currency\": \"<string>\",\n        \"commission_amount\": \"<number>\",\n        \"received_security_deposit\": \"<integer>\",\n        \"net_finance_amount\": \"<number>\",\n        \"rebate\": \"<number>\",\n        \"capitalized_cost_reduction\": \"<number>\",\n        \"monthly_deprecation\": \"<number>\",\n        \"tax_on_capitalized_cost_reduction\": \"<number>\",\n        \"monthly_sales_use_tax\": \"<number>\",\n        \"sum_of_fees\": \"<number>\",\n        \"sum_of_periodic_interest\": \"<number>\",\n        \"sum_of_rentals\": \"<number>\",\n        \"total_payables\": \"<number>\",\n        \"non_vatable_amount\": \"<number>\",\n        \"individualized_agreement\": \"<string>\",\n        \"base_residual_type\": \"<integer>\",\n        \"excess_mileage_rate\": \"<number>\",\n        \"asset_rv_amount\": \"<number>\",\n        \"customer_id\": \"<integer>\"\n      },\n      \"customer_info\": {\n        \"prefix\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"middle_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"suffix\": \"<string>\",\n        \"ssn\": \"<string>\",\n        \"mobile_number\": \"<string>\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"<string>\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"<string>\",\n        \"date_of_birth\": \"<date>\",\n        \"meta_data\": \"<object>\",\n        \"stripe_customer_id\": \"<string>\",\n        \"preferred_contact\": \"<string>\",\n        \"reference_id\": \"<string>\",\n        \"external_id\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"email\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"deleted_by\": \"<string>\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"<string>\",\n          \"name\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"employed_since\": \"<date>\",\n          \"occupation\": \"<string>\",\n          \"annual_employment_income\": \"<number>\",\n          \"annual_other_income\": \"<number>\",\n          \"source_of_other_income\": \"<string>\",\n          \"created_at\": \"<dateTime>\",\n          \"created_by\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"updated_by\": \"<string>\",\n          \"deleted_at\": \"<dateTime>\",\n          \"deleted_by\": \"<string>\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\",\n          \"status\": \"<string>\",\n          \"license_number\": \"<string>\",\n          \"is_pdf_417\": \"<boolean>\",\n          \"issue_date\": \"<date>\",\n          \"expiry_date\": \"<date>\",\n          \"date_of_birth\": \"<date>\",\n          \"is_selfie_verified\": \"<boolean>\"\n        }\n      }\n    },\n    {\n      \"order_info\": {\n        \"status\": \"<string>\",\n        \"reference_number\": \"<string>\",\n        \"order_asset_number\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"dealer_id\": \"<integer>\",\n        \"lender_id\": \"<integer>\",\n        \"broker_id\": \"<integer>\",\n        \"company_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"contract_term\": \"<integer>\",\n        \"allowed_usage\": \"<integer>\",\n        \"credit_rating\": \"<string>\",\n        \"apr\": \"<number>\",\n        \"estimated_monthly_payment\": \"<number>\",\n        \"annual_usage\": 0,\n        \"due_at_signing\": \"<number>\",\n        \"is_payment_updated\": false,\n        \"selling_price\": \"<number>\",\n        \"down_payment\": \"<number>\",\n        \"down_payment_lease\": \"<number>\",\n        \"tax_amount\": \"<number>\",\n        \"tax_amount_number\": \"<number>\",\n        \"deferred_type\": \"<string>\",\n        \"rv_balloon_percentage\": \"<number>\",\n        \"rv_balloon_value\": \"<number>\",\n        \"balloon_collection\": \"<string>\",\n        \"fp_id\": \"<integer>\",\n        \"vehicle_id\": \"<integer>\",\n        \"msrp\": \"<number>\",\n        \"schedule_option\": \"<string>\",\n        \"asset_usage\": \"<string>\",\n        \"calcuation_method\": \"<string>\",\n        \"order_stage\": \"<string>\",\n        \"finance_type\": \"<string>\",\n        \"order_fees\": [\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          },\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          }\n        ],\n        \"order_options\": [\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_fnI\": [\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_tradein\": {\n          \"year\": \"<integer>\",\n          \"make\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"mileage\": \"<integer>\",\n          \"vin\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"condition\": \"<string>\",\n          \"trade_in_amount\": \"<number>\",\n          \"is_customer_titled\": \"<boolean>\",\n          \"loan_lease_balance\": \"<boolean>\",\n          \"lender_contract_number\": \"<string>\",\n          \"lender_name\": \"<string>\",\n          \"lender_address\": \"<string>\",\n          \"lender_contact_number\": \"<string>\",\n          \"payment_type\": \"<string>\",\n          \"payoff_amount\": \"<number>\",\n          \"lender_id\": \"<integer>\",\n          \"asset_image\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"trade_in_type\": \"<string>\",\n          \"question_answers\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"appointment_details\": {\n          \"id\": \"<integer>\",\n          \"order_id\": \"<integer>\",\n          \"dealer_id\": \"<integer>\",\n          \"customer_id\": \"<integer>\",\n          \"appointment_date\": \"<dateTime>\",\n          \"appointment_type\": \"<string>\",\n          \"appointment_status\": \"<string>\",\n          \"comments\": \"<string>\",\n          \"address_id\": \"<integer>\",\n          \"dealer_code\": \"<string>\",\n          \"address_data\": {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_by\": \"<string>\",\n          \"updated_by\": \"<string>\",\n          \"time_zone\": \"<string>\"\n        },\n        \"finance_amount\": \"<number>\",\n        \"order_asset\": {\n          \"make\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"year_manufacturer\": \"<string>\",\n          \"msrp\": \"<number>\",\n          \"mileage\": \"<integer>\",\n          \"exterior_color\": \"<string>\",\n          \"condition\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"classification\": \"<string>\",\n          \"engine_cylinder\": \"<string>\",\n          \"power_type\": \"<string>\",\n          \"power_figure\": \"<string>\",\n          \"engine_displacement\": \"<string>\",\n          \"fuel_type\": \"<string>\",\n          \"quantity\": \"<string>\",\n          \"unit_price\": \"<string>\",\n          \"unit_tax\": \"<string>\",\n          \"total\": \"<string>\",\n          \"vin\": \"<string>\",\n          \"asset_type\": \"<string>\",\n          \"rv_balloon_amount\": \"<number>\"\n        },\n        \"insurance\": {\n          \"created_by\": \"<string>\",\n          \"order_reference_id\": \"<string>\",\n          \"reference_id\": \"<string>\",\n          \"insurer_name\": \"<string>\",\n          \"agent_phone\": \"<string>\",\n          \"subscription_id\": \"<string>\",\n          \"agent_name\": \"<string>\",\n          \"policy_number\": \"<string>\",\n          \"start_date\": \"<date>\",\n          \"expiration_date\": \"<date>\",\n          \"deductible_comprehensive\": \"<number>\",\n          \"deductible_collision\": \"<number>\",\n          \"identifier\": \"<string>\",\n          \"is_verified\": false,\n          \"insurance_documents\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"insurer_address\": {\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"payment_recieved\": \"<boolean>\",\n        \"base_rate\": \"<number>\",\n        \"rate_type\": \"<string>\",\n        \"commission_type\": \"<string>\",\n        \"margin\": \"<number>\",\n        \"applicable_rate\": \"<number>\",\n        \"invoice_status\": \"<string>\",\n        \"rental_mode\": \"<string>\",\n        \"rental_frequency\": \"<string>\",\n        \"running_id\": \"<string>\",\n        \"order_currency\": \"<string>\",\n        \"commission_amount\": \"<number>\",\n        \"received_security_deposit\": \"<integer>\",\n        \"net_finance_amount\": \"<number>\",\n        \"rebate\": \"<number>\",\n        \"capitalized_cost_reduction\": \"<number>\",\n        \"monthly_deprecation\": \"<number>\",\n        \"tax_on_capitalized_cost_reduction\": \"<number>\",\n        \"monthly_sales_use_tax\": \"<number>\",\n        \"sum_of_fees\": \"<number>\",\n        \"sum_of_periodic_interest\": \"<number>\",\n        \"sum_of_rentals\": \"<number>\",\n        \"total_payables\": \"<number>\",\n        \"non_vatable_amount\": \"<number>\",\n        \"individualized_agreement\": \"<string>\",\n        \"base_residual_type\": \"<integer>\",\n        \"excess_mileage_rate\": \"<number>\",\n        \"asset_rv_amount\": \"<number>\",\n        \"customer_id\": \"<integer>\"\n      },\n      \"customer_info\": {\n        \"prefix\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"middle_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"suffix\": \"<string>\",\n        \"ssn\": \"<string>\",\n        \"mobile_number\": \"<string>\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"<string>\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"<string>\",\n        \"date_of_birth\": \"<date>\",\n        \"meta_data\": \"<object>\",\n        \"stripe_customer_id\": \"<string>\",\n        \"preferred_contact\": \"<string>\",\n        \"reference_id\": \"<string>\",\n        \"external_id\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"email\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"deleted_by\": \"<string>\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"<string>\",\n          \"name\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"employed_since\": \"<date>\",\n          \"occupation\": \"<string>\",\n          \"annual_employment_income\": \"<number>\",\n          \"annual_other_income\": \"<number>\",\n          \"source_of_other_income\": \"<string>\",\n          \"created_at\": \"<dateTime>\",\n          \"created_by\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"updated_by\": \"<string>\",\n          \"deleted_at\": \"<dateTime>\",\n          \"deleted_by\": \"<string>\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\",\n          \"status\": \"<string>\",\n          \"license_number\": \"<string>\",\n          \"is_pdf_417\": \"<boolean>\",\n          \"issue_date\": \"<date>\",\n          \"expiry_date\": \"<date>\",\n          \"date_of_birth\": \"<date>\",\n          \"is_selfie_verified\": \"<boolean>\"\n        }\n      }\n    }\n  ],\n  \"page_number\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"total_pages\": \"<integer>\",\n  \"total_results\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4b224e6-759b-42d7-b617-6c39c3dd3d9d",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "credit-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lender_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"result\": [\n    {\n      \"order_info\": {\n        \"status\": \"<string>\",\n        \"reference_number\": \"<string>\",\n        \"order_asset_number\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"dealer_id\": \"<integer>\",\n        \"lender_id\": \"<integer>\",\n        \"broker_id\": \"<integer>\",\n        \"company_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"contract_term\": \"<integer>\",\n        \"allowed_usage\": \"<integer>\",\n        \"credit_rating\": \"<string>\",\n        \"apr\": \"<number>\",\n        \"estimated_monthly_payment\": \"<number>\",\n        \"annual_usage\": 0,\n        \"due_at_signing\": \"<number>\",\n        \"is_payment_updated\": false,\n        \"selling_price\": \"<number>\",\n        \"down_payment\": \"<number>\",\n        \"down_payment_lease\": \"<number>\",\n        \"tax_amount\": \"<number>\",\n        \"tax_amount_number\": \"<number>\",\n        \"deferred_type\": \"<string>\",\n        \"rv_balloon_percentage\": \"<number>\",\n        \"rv_balloon_value\": \"<number>\",\n        \"balloon_collection\": \"<string>\",\n        \"fp_id\": \"<integer>\",\n        \"vehicle_id\": \"<integer>\",\n        \"msrp\": \"<number>\",\n        \"schedule_option\": \"<string>\",\n        \"asset_usage\": \"<string>\",\n        \"calcuation_method\": \"<string>\",\n        \"order_stage\": \"<string>\",\n        \"finance_type\": \"<string>\",\n        \"order_fees\": [\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          },\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          }\n        ],\n        \"order_options\": [\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_fnI\": [\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_tradein\": {\n          \"year\": \"<integer>\",\n          \"make\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"mileage\": \"<integer>\",\n          \"vin\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"condition\": \"<string>\",\n          \"trade_in_amount\": \"<number>\",\n          \"is_customer_titled\": \"<boolean>\",\n          \"loan_lease_balance\": \"<boolean>\",\n          \"lender_contract_number\": \"<string>\",\n          \"lender_name\": \"<string>\",\n          \"lender_address\": \"<string>\",\n          \"lender_contact_number\": \"<string>\",\n          \"payment_type\": \"<string>\",\n          \"payoff_amount\": \"<number>\",\n          \"lender_id\": \"<integer>\",\n          \"asset_image\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"trade_in_type\": \"<string>\",\n          \"question_answers\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"appointment_details\": {\n          \"id\": \"<integer>\",\n          \"order_id\": \"<integer>\",\n          \"dealer_id\": \"<integer>\",\n          \"customer_id\": \"<integer>\",\n          \"appointment_date\": \"<dateTime>\",\n          \"appointment_type\": \"<string>\",\n          \"appointment_status\": \"<string>\",\n          \"comments\": \"<string>\",\n          \"address_id\": \"<integer>\",\n          \"dealer_code\": \"<string>\",\n          \"address_data\": {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_by\": \"<string>\",\n          \"updated_by\": \"<string>\",\n          \"time_zone\": \"<string>\"\n        },\n        \"finance_amount\": \"<number>\",\n        \"order_asset\": {\n          \"make\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"year_manufacturer\": \"<string>\",\n          \"msrp\": \"<number>\",\n          \"mileage\": \"<integer>\",\n          \"exterior_color\": \"<string>\",\n          \"condition\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"classification\": \"<string>\",\n          \"engine_cylinder\": \"<string>\",\n          \"power_type\": \"<string>\",\n          \"power_figure\": \"<string>\",\n          \"engine_displacement\": \"<string>\",\n          \"fuel_type\": \"<string>\",\n          \"quantity\": \"<string>\",\n          \"unit_price\": \"<string>\",\n          \"unit_tax\": \"<string>\",\n          \"total\": \"<string>\",\n          \"vin\": \"<string>\",\n          \"asset_type\": \"<string>\",\n          \"rv_balloon_amount\": \"<number>\"\n        },\n        \"insurance\": {\n          \"created_by\": \"<string>\",\n          \"order_reference_id\": \"<string>\",\n          \"reference_id\": \"<string>\",\n          \"insurer_name\": \"<string>\",\n          \"agent_phone\": \"<string>\",\n          \"subscription_id\": \"<string>\",\n          \"agent_name\": \"<string>\",\n          \"policy_number\": \"<string>\",\n          \"start_date\": \"<date>\",\n          \"expiration_date\": \"<date>\",\n          \"deductible_comprehensive\": \"<number>\",\n          \"deductible_collision\": \"<number>\",\n          \"identifier\": \"<string>\",\n          \"is_verified\": false,\n          \"insurance_documents\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"insurer_address\": {\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"payment_recieved\": \"<boolean>\",\n        \"base_rate\": \"<number>\",\n        \"rate_type\": \"<string>\",\n        \"commission_type\": \"<string>\",\n        \"margin\": \"<number>\",\n        \"applicable_rate\": \"<number>\",\n        \"invoice_status\": \"<string>\",\n        \"rental_mode\": \"<string>\",\n        \"rental_frequency\": \"<string>\",\n        \"running_id\": \"<string>\",\n        \"order_currency\": \"<string>\",\n        \"commission_amount\": \"<number>\",\n        \"received_security_deposit\": \"<integer>\",\n        \"net_finance_amount\": \"<number>\",\n        \"rebate\": \"<number>\",\n        \"capitalized_cost_reduction\": \"<number>\",\n        \"monthly_deprecation\": \"<number>\",\n        \"tax_on_capitalized_cost_reduction\": \"<number>\",\n        \"monthly_sales_use_tax\": \"<number>\",\n        \"sum_of_fees\": \"<number>\",\n        \"sum_of_periodic_interest\": \"<number>\",\n        \"sum_of_rentals\": \"<number>\",\n        \"total_payables\": \"<number>\",\n        \"non_vatable_amount\": \"<number>\",\n        \"individualized_agreement\": \"<string>\",\n        \"base_residual_type\": \"<integer>\",\n        \"excess_mileage_rate\": \"<number>\",\n        \"asset_rv_amount\": \"<number>\",\n        \"customer_id\": \"<integer>\"\n      },\n      \"customer_info\": {\n        \"prefix\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"middle_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"suffix\": \"<string>\",\n        \"ssn\": \"<string>\",\n        \"mobile_number\": \"<string>\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"<string>\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"<string>\",\n        \"date_of_birth\": \"<date>\",\n        \"meta_data\": \"<object>\",\n        \"stripe_customer_id\": \"<string>\",\n        \"preferred_contact\": \"<string>\",\n        \"reference_id\": \"<string>\",\n        \"external_id\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"email\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"deleted_by\": \"<string>\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"<string>\",\n          \"name\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"employed_since\": \"<date>\",\n          \"occupation\": \"<string>\",\n          \"annual_employment_income\": \"<number>\",\n          \"annual_other_income\": \"<number>\",\n          \"source_of_other_income\": \"<string>\",\n          \"created_at\": \"<dateTime>\",\n          \"created_by\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"updated_by\": \"<string>\",\n          \"deleted_at\": \"<dateTime>\",\n          \"deleted_by\": \"<string>\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\",\n          \"status\": \"<string>\",\n          \"license_number\": \"<string>\",\n          \"is_pdf_417\": \"<boolean>\",\n          \"issue_date\": \"<date>\",\n          \"expiry_date\": \"<date>\",\n          \"date_of_birth\": \"<date>\",\n          \"is_selfie_verified\": \"<boolean>\"\n        }\n      }\n    },\n    {\n      \"order_info\": {\n        \"status\": \"<string>\",\n        \"reference_number\": \"<string>\",\n        \"order_asset_number\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"dealer_id\": \"<integer>\",\n        \"lender_id\": \"<integer>\",\n        \"broker_id\": \"<integer>\",\n        \"company_id\": \"<integer>\",\n        \"name\": \"<string>\",\n        \"contract_term\": \"<integer>\",\n        \"allowed_usage\": \"<integer>\",\n        \"credit_rating\": \"<string>\",\n        \"apr\": \"<number>\",\n        \"estimated_monthly_payment\": \"<number>\",\n        \"annual_usage\": 0,\n        \"due_at_signing\": \"<number>\",\n        \"is_payment_updated\": false,\n        \"selling_price\": \"<number>\",\n        \"down_payment\": \"<number>\",\n        \"down_payment_lease\": \"<number>\",\n        \"tax_amount\": \"<number>\",\n        \"tax_amount_number\": \"<number>\",\n        \"deferred_type\": \"<string>\",\n        \"rv_balloon_percentage\": \"<number>\",\n        \"rv_balloon_value\": \"<number>\",\n        \"balloon_collection\": \"<string>\",\n        \"fp_id\": \"<integer>\",\n        \"vehicle_id\": \"<integer>\",\n        \"msrp\": \"<number>\",\n        \"schedule_option\": \"<string>\",\n        \"asset_usage\": \"<string>\",\n        \"calcuation_method\": \"<string>\",\n        \"order_stage\": \"<string>\",\n        \"finance_type\": \"<string>\",\n        \"order_fees\": [\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          },\n          {\n            \"dealer_fee_id\": \"<integer>\",\n            \"applied_price\": \"<number>\",\n            \"identifier\": \"<string>\",\n            \"vendor\": \"<string>\",\n            \"fee_type\": \"<string>\"\n          }\n        ],\n        \"order_options\": [\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"option_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_percentage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rv_balloon_value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_fnI\": [\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"applied_price\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"financial_insurance_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"form_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"rate_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mileage\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"term\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"session_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_msp\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"order_tradein\": {\n          \"year\": \"<integer>\",\n          \"make\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"mileage\": \"<integer>\",\n          \"vin\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"condition\": \"<string>\",\n          \"trade_in_amount\": \"<number>\",\n          \"is_customer_titled\": \"<boolean>\",\n          \"loan_lease_balance\": \"<boolean>\",\n          \"lender_contract_number\": \"<string>\",\n          \"lender_name\": \"<string>\",\n          \"lender_address\": \"<string>\",\n          \"lender_contact_number\": \"<string>\",\n          \"payment_type\": \"<string>\",\n          \"payoff_amount\": \"<number>\",\n          \"lender_id\": \"<integer>\",\n          \"asset_image\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"trade_in_type\": \"<string>\",\n          \"question_answers\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        \"appointment_details\": {\n          \"id\": \"<integer>\",\n          \"order_id\": \"<integer>\",\n          \"dealer_id\": \"<integer>\",\n          \"customer_id\": \"<integer>\",\n          \"appointment_date\": \"<dateTime>\",\n          \"appointment_type\": \"<string>\",\n          \"appointment_status\": \"<string>\",\n          \"comments\": \"<string>\",\n          \"address_id\": \"<integer>\",\n          \"dealer_code\": \"<string>\",\n          \"address_data\": {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_by\": \"<string>\",\n          \"updated_by\": \"<string>\",\n          \"time_zone\": \"<string>\"\n        },\n        \"finance_amount\": \"<number>\",\n        \"order_asset\": {\n          \"make\": \"<string>\",\n          \"identifier\": \"<string>\",\n          \"model\": \"<string>\",\n          \"trim\": \"<string>\",\n          \"year_manufacturer\": \"<string>\",\n          \"msrp\": \"<number>\",\n          \"mileage\": \"<integer>\",\n          \"exterior_color\": \"<string>\",\n          \"condition\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"classification\": \"<string>\",\n          \"engine_cylinder\": \"<string>\",\n          \"power_type\": \"<string>\",\n          \"power_figure\": \"<string>\",\n          \"engine_displacement\": \"<string>\",\n          \"fuel_type\": \"<string>\",\n          \"quantity\": \"<string>\",\n          \"unit_price\": \"<string>\",\n          \"unit_tax\": \"<string>\",\n          \"total\": \"<string>\",\n          \"vin\": \"<string>\",\n          \"asset_type\": \"<string>\",\n          \"rv_balloon_amount\": \"<number>\"\n        },\n        \"insurance\": {\n          \"created_by\": \"<string>\",\n          \"order_reference_id\": \"<string>\",\n          \"reference_id\": \"<string>\",\n          \"insurer_name\": \"<string>\",\n          \"agent_phone\": \"<string>\",\n          \"subscription_id\": \"<string>\",\n          \"agent_name\": \"<string>\",\n          \"policy_number\": \"<string>\",\n          \"start_date\": \"<date>\",\n          \"expiration_date\": \"<date>\",\n          \"deductible_comprehensive\": \"<number>\",\n          \"deductible_collision\": \"<number>\",\n          \"identifier\": \"<string>\",\n          \"is_verified\": false,\n          \"insurance_documents\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"insurer_address\": {\n            \"address_line_1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip_code\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"contact_number\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"verified\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"move_in_date\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"is_garaging\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"identifier\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"payment_recieved\": \"<boolean>\",\n        \"base_rate\": \"<number>\",\n        \"rate_type\": \"<string>\",\n        \"commission_type\": \"<string>\",\n        \"margin\": \"<number>\",\n        \"applicable_rate\": \"<number>\",\n        \"invoice_status\": \"<string>\",\n        \"rental_mode\": \"<string>\",\n        \"rental_frequency\": \"<string>\",\n        \"running_id\": \"<string>\",\n        \"order_currency\": \"<string>\",\n        \"commission_amount\": \"<number>\",\n        \"received_security_deposit\": \"<integer>\",\n        \"net_finance_amount\": \"<number>\",\n        \"rebate\": \"<number>\",\n        \"capitalized_cost_reduction\": \"<number>\",\n        \"monthly_deprecation\": \"<number>\",\n        \"tax_on_capitalized_cost_reduction\": \"<number>\",\n        \"monthly_sales_use_tax\": \"<number>\",\n        \"sum_of_fees\": \"<number>\",\n        \"sum_of_periodic_interest\": \"<number>\",\n        \"sum_of_rentals\": \"<number>\",\n        \"total_payables\": \"<number>\",\n        \"non_vatable_amount\": \"<number>\",\n        \"individualized_agreement\": \"<string>\",\n        \"base_residual_type\": \"<integer>\",\n        \"excess_mileage_rate\": \"<number>\",\n        \"asset_rv_amount\": \"<number>\",\n        \"customer_id\": \"<integer>\"\n      },\n      \"customer_info\": {\n        \"prefix\": \"<string>\",\n        \"first_name\": \"<string>\",\n        \"middle_name\": \"<string>\",\n        \"last_name\": \"<string>\",\n        \"suffix\": \"<string>\",\n        \"ssn\": \"<string>\",\n        \"mobile_number\": \"<string>\",\n        \"mobile_number_verified_status\": false,\n        \"home_number\": \"<string>\",\n        \"home_number_verified_status\": false,\n        \"customer_type\": \"<string>\",\n        \"date_of_birth\": \"<date>\",\n        \"meta_data\": \"<object>\",\n        \"stripe_customer_id\": \"<string>\",\n        \"preferred_contact\": \"<string>\",\n        \"reference_id\": \"<string>\",\n        \"external_id\": \"<string>\",\n        \"identifier\": \"<string>\",\n        \"email\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"created_at\": \"<dateTime>\",\n        \"updated_at\": \"<dateTime>\",\n        \"updated_by\": \"<string>\",\n        \"deleted_at\": \"<dateTime>\",\n        \"deleted_by\": \"<string>\",\n        \"customer_addresses\": [\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"address_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address_line_1\": \"<string>\",\n            \"address_line_2\": \"<string>\",\n            \"state_name\": \"<string>\",\n            \"zip_code\": \"<string>\",\n            \"county\": \"<string>\",\n            \"city\": \"<string>\",\n            \"contact_number\": \"<string>\",\n            \"verified\": \"<boolean>\",\n            \"move_in_date\": \"<date>\",\n            \"is_garaging\": false,\n            \"identifier\": \"<string>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"income_info\": {\n          \"employment_type\": \"<string>\",\n          \"name\": \"<string>\",\n          \"phone\": \"<string>\",\n          \"employed_since\": \"<date>\",\n          \"occupation\": \"<string>\",\n          \"annual_employment_income\": \"<number>\",\n          \"annual_other_income\": \"<number>\",\n          \"source_of_other_income\": \"<string>\",\n          \"created_at\": \"<dateTime>\",\n          \"created_by\": \"<string>\",\n          \"updated_at\": \"<dateTime>\",\n          \"updated_by\": \"<string>\",\n          \"deleted_at\": \"<dateTime>\",\n          \"deleted_by\": \"<string>\"\n        },\n        \"payments_info\": [\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          },\n          {\n            \"type\": \"<string>\",\n            \"stripe_payment_method_id\": \"<string>\",\n            \"access_token\": \"<string>\",\n            \"account_id\": \"<string>\",\n            \"Bank_name\": \"<string>\",\n            \"last4\": \"<integer>\",\n            \"default\": \"<boolean>\",\n            \"created_at\": \"<dateTime>\",\n            \"created_by\": \"<string>\",\n            \"updated_at\": \"<dateTime>\",\n            \"updated_by\": \"<string>\",\n            \"deleted_at\": \"<dateTime>\",\n            \"deleted_by\": \"<string>\"\n          }\n        ],\n        \"license_info\": {\n          \"first_name\": \"<string>\",\n          \"last_name\": \"<string>\",\n          \"status\": \"<string>\",\n          \"license_number\": \"<string>\",\n          \"is_pdf_417\": \"<boolean>\",\n          \"issue_date\": \"<date>\",\n          \"expiry_date\": \"<date>\",\n          \"date_of_birth\": \"<date>\",\n          \"is_selfie_verified\": \"<boolean>\"\n        }\n      }\n    }\n  ],\n  \"page_number\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"total_pages\": \"<integer>\",\n  \"total_results\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07e0d02b-5262-4a10-adcc-2b91eb73458d",
+          "name": "Get All Credit Rating",
+          "request": {
+            "name": "Get All Credit Rating",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "credit-ratings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "company_id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1fe734ad-7196-4b63-b034-37b96c28756a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "credit-ratings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "company_id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e265d80-0cf6-44db-93fe-a272ddebbef4",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "credit-ratings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "company_id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9cdd1df2-2879-4cc4-9e49-ffed754a3504",
+    "name": "Lane Credit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

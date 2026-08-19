@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Find API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Find",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Dealer By Tenant Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/dealer/find/by-tenant",
+            "params": [
+              {
+                "name": "tenant_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Dealer By Tenant Id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

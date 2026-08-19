@@ -1,0 +1,688 @@
+{
+  "item": [
+    {
+      "id": "d19922e5-48d8-4627-a3c5-0715fe7e0196",
+      "name": "Order  Stakeholder  Management",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a74b84a6-a387-4e2b-a0c9-49f2aa8356ab",
+          "name": "Get order stakeholder",
+          "request": {
+            "name": "Get order stakeholder",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "stakeholder",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_identifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stakeholder_reference_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "position",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_order",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "afeabfa6-519f-4d73-b59e-f38929a006a0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stakeholder_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"order_identifier\": \"string\",\n    \"stakeholder_reference_id\": \"string\",\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"role\": \"string\",\n    \"position\": \"string\",\n    \"contact_number\": \"string\",\n    \"address_id\": \"string\",\n    \"stakeholder_address\": {\n      \"address_line_1\": \"string\",\n      \"address_line_2\": \"string\",\n      \"state_name\": \"string\",\n      \"zip_code\": \"string\",\n      \"county\": \"string\",\n      \"city\": \"string\",\n      \"contact_number\": \"string\",\n      \"verified\": true,\n      \"move_in_date\": \"2006-05-12\",\n      \"is_garaging\": false,\n      \"identifier\": \"string\",\n      \"address_type\": \"Garaging\"\n    }\n  },\n  {\n    \"identifier\": \"string\",\n    \"order_identifier\": \"string\",\n    \"stakeholder_reference_id\": \"string\",\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"role\": \"string\",\n    \"position\": \"string\",\n    \"contact_number\": \"string\",\n    \"address_id\": \"string\",\n    \"stakeholder_address\": {\n      \"address_line_1\": \"string\",\n      \"address_line_2\": \"string\",\n      \"state_name\": \"string\",\n      \"zip_code\": \"string\",\n      \"county\": \"string\",\n      \"city\": \"string\",\n      \"contact_number\": \"string\",\n      \"verified\": true,\n      \"move_in_date\": \"1948-04-21\",\n      \"is_garaging\": false,\n      \"identifier\": \"string\",\n      \"address_type\": \"Office\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a44c5ecb-02cf-45d4-a777-7ef99e43374c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_identifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stakeholder_reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "position",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sort_order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c2d84a5-ad36-4ab2-9ab2-f43b88bc0e4a",
+          "name": "Create new order stakeholder",
+          "request": {
+            "name": "Create new order stakeholder",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "stakeholder",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7b6dc76f-f16b-46fb-98c8-0791e15c6c33",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce07c287-4dc5-4eff-b292-31621bb4e4fc",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52f48995-6ffa-42a8-a5b4-55f4e990241d",
+          "name": "Update order stakeholder",
+          "request": {
+            "name": "Update order stakeholder",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "stakeholder",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c894d2b-f0e7-4259-9abb-7c93d5d8e148",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cddb39d8-ed32-4b4b-8186-e013ae89b1be",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2df9880-0776-4fb6-94e1-6e081d8543a6",
+          "name": "Update order stakeholder",
+          "request": {
+            "name": "Update order stakeholder",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "stakeholder",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "identifier",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "242f14f0-93f4-46b4-ab77-54e11d2fb88b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e63701c-a2c3-4323-9448-2e8124e72c51",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "stakeholder",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "identifier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"order_identifier\": \"<string>\",\n  \"stakeholder_reference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"position\": \"<string>\",\n  \"contact_number\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"stakeholder_address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\",\n    \"address_type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4f026111-3205-43c8-96f6-9d71614b9d07",
+    "name": "Lane Order  Stakeholder  Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

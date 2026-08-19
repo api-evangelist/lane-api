@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Mileage API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mileage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Contract Allowed Mileages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/contract-allowed-annum-mileage",
+            "headers": [
+              {
+                "name": "company_id",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get All Contract Allowed Mileages"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

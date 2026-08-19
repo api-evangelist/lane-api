@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Signer_role API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Signer_role",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sign document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/by-role/:document_package_identifier/:document_identifier/:signature_id/:signer_role",
+            "params": [
+              {
+                "name": "document_package_identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "document_identifier",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signer_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "date_time_format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "time_zone",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Sign document"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

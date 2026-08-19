@@ -1,0 +1,898 @@
+{
+  "item": [
+    {
+      "id": "85c66765-70b8-448e-ab3d-12882d677b66",
+      "name": "Send",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "767c2977-1c47-4967-8b16-40c8efbeeaa9",
+          "name": "send email to customer",
+          "request": {
+            "name": "send email to customer",
+            "description": {
+              "content": "send email to customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "send-email-to-customer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": \"<string>\",\n  \"email\": \"<email>\",\n  \"email_type\": \"<string>\",\n  \"dealership_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"reference_number\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c14c580-b1a1-48ab-9c2f-e3344a20ed9b",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "send-email-to-customer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"subject\": \"<string>\",\n  \"email\": \"<email>\",\n  \"email_type\": \"<string>\",\n  \"dealership_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"reference_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d2839e8-53a2-4de0-9550-fbea14562841",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "send-email-to-customer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"subject\": \"<string>\",\n  \"email\": \"<email>\",\n  \"email_type\": \"<string>\",\n  \"dealership_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"reference_number\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d620652d-63b2-40c5-9430-088cb6de1865",
+          "name": "send order link",
+          "request": {
+            "name": "send order link",
+            "description": {
+              "content": "send order link",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "send-order-link"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a41ff11d-000b-4c1f-8f21-d81e5d26c605",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "send-order-link"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f604add-74b4-4f0e-818b-801565d427f6",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "send-order-link"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a322543-b476-49c3-a55c-82701f7b132d",
+          "name": "Send Email Notification Through SQS",
+          "request": {
+            "name": "Send Email Notification Through SQS",
+            "description": {
+              "content": "Send Email Notification Through SQS",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "send-notification-email-sqs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_name\": \"<string>\",\n  \"recipients\": [],\n  \"dealer_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"order_reference\": \"<string>\",\n  \"custom_email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3e4a4523-7a51-4adc-9d99-58fa4d179df1",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "send-notification-email-sqs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event_name\": \"<string>\",\n  \"recipients\": [],\n  \"dealer_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"order_reference\": \"<string>\",\n  \"custom_email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "daadaa2e-7e20-4faf-8b90-9a27f425d208",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "send-notification-email-sqs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event_name\": \"<string>\",\n  \"recipients\": [],\n  \"dealer_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"order_reference\": \"<string>\",\n  \"custom_email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17da5afd-7bcd-4699-af77-53f18ebb4e6c",
+          "name": "Send Email Notification",
+          "request": {
+            "name": "Send Email Notification",
+            "description": {
+              "content": "Send Email Notification",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "send-notification-email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_name\": \"<string>\",\n  \"recipients\": [],\n  \"dealer_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"order_reference\": \"<string>\",\n  \"custom_email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ad21811f-178d-44a2-ac79-9abb7192da26",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "send-notification-email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event_name\": \"<string>\",\n  \"recipients\": [],\n  \"dealer_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"order_reference\": \"<string>\",\n  \"custom_email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3aa9fc1a-af09-43d2-873c-9581f3f2aa4f",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "send-notification-email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"event_name\": \"<string>\",\n  \"recipients\": [],\n  \"dealer_id\": \"<integer>\",\n  \"customer_id\": \"<integer>\",\n  \"order_reference\": \"<string>\",\n  \"custom_email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dce0731f-14c5-4270-be00-17ffd1ba797f",
+          "name": "send Email notification",
+          "request": {
+            "name": "send Email notification",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "send-email",
+                ":event_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "event_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"company_id\": \"<integer>\",\n    \"reference_number\": \"<string>\",\n    \"customer_reference_id\": \"<string>\",\n    \"lender_name\": \"<string>\",\n    \"name\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"client_type\": \"<string>\",\n    \"customer_name\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"email_address\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"registration_number\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"years_in_business\": \"<string>\",\n    \"address\": \"<string>\",\n    \"broker_name\": \"<string>\",\n    \"introducer_name\": \"<string>\",\n    \"introducer_email\": \"<string>\",\n    \"introducer_contact\": \"<string>\",\n    \"asset_cost\": \"<string>\",\n    \"deposit_amount\": \"<string>\",\n    \"deposit\": \"<string>\",\n    \"finance_amount\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"advance_payments\": \"<string>\",\n    \"regular_payments\": \"<string>\",\n    \"payment_frequency\": \"<string>\",\n    \"payment_mode\": \"<string>\",\n    \"total_payable\": \"<string>\",\n    \"gross_yield\": \"<string>\",\n    \"net_yield\": \"<string>\",\n    \"apr\": \"<string>\",\n    \"commission_amount\": \"<string>\",\n    \"commission_percentage\": \"<string>\",\n    \"rate\": \"<string>\",\n    \"rate_type\": \"<string>\",\n    \"no_of_advance_payment\": \"<string>\",\n    \"no_of_regular_payments\": \"<string>\",\n    \"flat_rate_excl_commission\": \"<string>\",\n    \"flat_rate_incl_commission\": \"<string>\",\n    \"balloon_payment\": \"<string>\",\n    \"ballon_collection\": \"<string>\",\n    \"vat_treatment\": \"<string>\",\n    \"vat_amount\": \"<string>\",\n    \"vat_number\": \"<string>\",\n    \"vat_deferred_type\": \"<string>\",\n    \"document_fee\": \"<string>\",\n    \"annual_admin_fee\": \"<string>\",\n    \"otp_fee\": \"<string>\",\n    \"product_type\": \"<string>\",\n    \"sum_of_advance_rentals\": \"<string>\",\n    \"sum_of_fees\": \"<string>\",\n    \"sum_of_periodic_interest\": \"<string>\",\n    \"sum_of_rentals\": \"<string>\",\n    \"rental\": \"<string>\",\n    \"total_payables\": \"<string>\",\n    \"term\": \"<string>\",\n    \"processing_date\": \"<string>\",\n    \"fees_info\": [\n      {\n        \"amount\": \"<string>\",\n        \"frequency\": \"<string>\",\n        \"name\": \"<string>\",\n        \"occurence\": \"<string>\"\n      },\n      {\n        \"amount\": \"<string>\",\n        \"frequency\": \"<string>\",\n        \"name\": \"<string>\",\n        \"occurence\": \"<string>\"\n      }\n    ],\n    \"director_details\": [\n      {\n        \"full_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": \"<string>\"\n      },\n      {\n        \"full_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": \"<string>\"\n      }\n    ],\n    \"assets\": [\n      {\n        \"cost\": \"<string>\",\n        \"quantity\": \"<string>\",\n        \"type\": \"<string>\",\n        \"sub_type\": \"<string>\",\n        \"condition\": \"<string>\",\n        \"category\": \"<string>\",\n        \"age\": \"<string>\",\n        \"rv_balloon_amount\": \"<string>\",\n        \"total_cost\": \"<string>\",\n        \"total_rv_balloon_amount\": \"<string>\",\n        \"supplier_name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      {\n        \"cost\": \"<string>\",\n        \"quantity\": \"<string>\",\n        \"type\": \"<string>\",\n        \"sub_type\": \"<string>\",\n        \"condition\": \"<string>\",\n        \"category\": \"<string>\",\n        \"age\": \"<string>\",\n        \"rv_balloon_amount\": \"<string>\",\n        \"total_cost\": \"<string>\",\n        \"total_rv_balloon_amount\": \"<string>\",\n        \"supplier_name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    ],\n    \"credit_documents\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"state\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"state\": \"<string>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"payments\": [\n      {\n        \"payment_from\": \"<string>\",\n        \"payment_to\": \"<string>\",\n        \"amount\": \"<string>\",\n        \"payment_type\": \"<string>\"\n      },\n      {\n        \"payment_from\": \"<string>\",\n        \"payment_to\": \"<string>\",\n        \"amount\": \"<string>\",\n        \"payment_type\": \"<string>\"\n      }\n    ],\n    \"underwriter_comments\": [\n      {\n        \"category\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"created_by\": \"<string>\"\n      },\n      {\n        \"category\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"created_by\": \"<string>\"\n      }\n    ],\n    \"contact_person_name\": \"<string>\",\n    \"contact_person_email\": \"<string>\",\n    \"contact_person_contact\": \"<string>\",\n    \"contact_person_address\": \"<string>\",\n    \"total_rentals_without_balloon\": \"<string>\"\n  },\n  \"source_email\": \"<string>\",\n  \"email\": \"<string>\",\n  \"email_attachment_keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"email_subject\": \"<string>\",\n  \"cc_emails\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bcc_emails\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "167674a1-f015-4070-92da-1b2d6d8d84b7",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "send-email",
+                    ":event_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "event_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"company_id\": \"<integer>\",\n    \"reference_number\": \"<string>\",\n    \"customer_reference_id\": \"<string>\",\n    \"lender_name\": \"<string>\",\n    \"name\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"client_type\": \"<string>\",\n    \"customer_name\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"email_address\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"registration_number\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"years_in_business\": \"<string>\",\n    \"address\": \"<string>\",\n    \"broker_name\": \"<string>\",\n    \"introducer_name\": \"<string>\",\n    \"introducer_email\": \"<string>\",\n    \"introducer_contact\": \"<string>\",\n    \"asset_cost\": \"<string>\",\n    \"deposit_amount\": \"<string>\",\n    \"deposit\": \"<string>\",\n    \"finance_amount\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"advance_payments\": \"<string>\",\n    \"regular_payments\": \"<string>\",\n    \"payment_frequency\": \"<string>\",\n    \"payment_mode\": \"<string>\",\n    \"total_payable\": \"<string>\",\n    \"gross_yield\": \"<string>\",\n    \"net_yield\": \"<string>\",\n    \"apr\": \"<string>\",\n    \"commission_amount\": \"<string>\",\n    \"commission_percentage\": \"<string>\",\n    \"rate\": \"<string>\",\n    \"rate_type\": \"<string>\",\n    \"no_of_advance_payment\": \"<string>\",\n    \"no_of_regular_payments\": \"<string>\",\n    \"flat_rate_excl_commission\": \"<string>\",\n    \"flat_rate_incl_commission\": \"<string>\",\n    \"balloon_payment\": \"<string>\",\n    \"ballon_collection\": \"<string>\",\n    \"vat_treatment\": \"<string>\",\n    \"vat_amount\": \"<string>\",\n    \"vat_number\": \"<string>\",\n    \"vat_deferred_type\": \"<string>\",\n    \"document_fee\": \"<string>\",\n    \"annual_admin_fee\": \"<string>\",\n    \"otp_fee\": \"<string>\",\n    \"product_type\": \"<string>\",\n    \"sum_of_advance_rentals\": \"<string>\",\n    \"sum_of_fees\": \"<string>\",\n    \"sum_of_periodic_interest\": \"<string>\",\n    \"sum_of_rentals\": \"<string>\",\n    \"rental\": \"<string>\",\n    \"total_payables\": \"<string>\",\n    \"term\": \"<string>\",\n    \"processing_date\": \"<string>\",\n    \"fees_info\": [\n      {\n        \"amount\": \"<string>\",\n        \"frequency\": \"<string>\",\n        \"name\": \"<string>\",\n        \"occurence\": \"<string>\"\n      },\n      {\n        \"amount\": \"<string>\",\n        \"frequency\": \"<string>\",\n        \"name\": \"<string>\",\n        \"occurence\": \"<string>\"\n      }\n    ],\n    \"director_details\": [\n      {\n        \"full_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": \"<string>\"\n      },\n      {\n        \"full_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": \"<string>\"\n      }\n    ],\n    \"assets\": [\n      {\n        \"cost\": \"<string>\",\n        \"quantity\": \"<string>\",\n        \"type\": \"<string>\",\n        \"sub_type\": \"<string>\",\n        \"condition\": \"<string>\",\n        \"category\": \"<string>\",\n        \"age\": \"<string>\",\n        \"rv_balloon_amount\": \"<string>\",\n        \"total_cost\": \"<string>\",\n        \"total_rv_balloon_amount\": \"<string>\",\n        \"supplier_name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      {\n        \"cost\": \"<string>\",\n        \"quantity\": \"<string>\",\n        \"type\": \"<string>\",\n        \"sub_type\": \"<string>\",\n        \"condition\": \"<string>\",\n        \"category\": \"<string>\",\n        \"age\": \"<string>\",\n        \"rv_balloon_amount\": \"<string>\",\n        \"total_cost\": \"<string>\",\n        \"total_rv_balloon_amount\": \"<string>\",\n        \"supplier_name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    ],\n    \"credit_documents\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"state\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"state\": \"<string>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"payments\": [\n      {\n        \"payment_from\": \"<string>\",\n        \"payment_to\": \"<string>\",\n        \"amount\": \"<string>\",\n        \"payment_type\": \"<string>\"\n      },\n      {\n        \"payment_from\": \"<string>\",\n        \"payment_to\": \"<string>\",\n        \"amount\": \"<string>\",\n        \"payment_type\": \"<string>\"\n      }\n    ],\n    \"underwriter_comments\": [\n      {\n        \"category\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"created_by\": \"<string>\"\n      },\n      {\n        \"category\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"created_by\": \"<string>\"\n      }\n    ],\n    \"contact_person_name\": \"<string>\",\n    \"contact_person_email\": \"<string>\",\n    \"contact_person_contact\": \"<string>\",\n    \"contact_person_address\": \"<string>\",\n    \"total_rentals_without_balloon\": \"<string>\"\n  },\n  \"source_email\": \"<string>\",\n  \"email\": \"<string>\",\n  \"email_attachment_keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"email_subject\": \"<string>\",\n  \"cc_emails\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bcc_emails\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7288f918-94d9-49a7-8f4f-1ab96b9b542c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "send-email",
+                    ":event_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "event_name",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"company_id\": \"<integer>\",\n    \"reference_number\": \"<string>\",\n    \"customer_reference_id\": \"<string>\",\n    \"lender_name\": \"<string>\",\n    \"name\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"client_type\": \"<string>\",\n    \"customer_name\": \"<string>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"email_address\": \"<string>\",\n    \"id_number\": \"<string>\",\n    \"company_name\": \"<string>\",\n    \"registration_number\": \"<string>\",\n    \"trading_as\": \"<string>\",\n    \"years_in_business\": \"<string>\",\n    \"address\": \"<string>\",\n    \"broker_name\": \"<string>\",\n    \"introducer_name\": \"<string>\",\n    \"introducer_email\": \"<string>\",\n    \"introducer_contact\": \"<string>\",\n    \"asset_cost\": \"<string>\",\n    \"deposit_amount\": \"<string>\",\n    \"deposit\": \"<string>\",\n    \"finance_amount\": \"<string>\",\n    \"finance_type\": \"<string>\",\n    \"advance_payments\": \"<string>\",\n    \"regular_payments\": \"<string>\",\n    \"payment_frequency\": \"<string>\",\n    \"payment_mode\": \"<string>\",\n    \"total_payable\": \"<string>\",\n    \"gross_yield\": \"<string>\",\n    \"net_yield\": \"<string>\",\n    \"apr\": \"<string>\",\n    \"commission_amount\": \"<string>\",\n    \"commission_percentage\": \"<string>\",\n    \"rate\": \"<string>\",\n    \"rate_type\": \"<string>\",\n    \"no_of_advance_payment\": \"<string>\",\n    \"no_of_regular_payments\": \"<string>\",\n    \"flat_rate_excl_commission\": \"<string>\",\n    \"flat_rate_incl_commission\": \"<string>\",\n    \"balloon_payment\": \"<string>\",\n    \"ballon_collection\": \"<string>\",\n    \"vat_treatment\": \"<string>\",\n    \"vat_amount\": \"<string>\",\n    \"vat_number\": \"<string>\",\n    \"vat_deferred_type\": \"<string>\",\n    \"document_fee\": \"<string>\",\n    \"annual_admin_fee\": \"<string>\",\n    \"otp_fee\": \"<string>\",\n    \"product_type\": \"<string>\",\n    \"sum_of_advance_rentals\": \"<string>\",\n    \"sum_of_fees\": \"<string>\",\n    \"sum_of_periodic_interest\": \"<string>\",\n    \"sum_of_rentals\": \"<string>\",\n    \"rental\": \"<string>\",\n    \"total_payables\": \"<string>\",\n    \"term\": \"<string>\",\n    \"processing_date\": \"<string>\",\n    \"fees_info\": [\n      {\n        \"amount\": \"<string>\",\n        \"frequency\": \"<string>\",\n        \"name\": \"<string>\",\n        \"occurence\": \"<string>\"\n      },\n      {\n        \"amount\": \"<string>\",\n        \"frequency\": \"<string>\",\n        \"name\": \"<string>\",\n        \"occurence\": \"<string>\"\n      }\n    ],\n    \"director_details\": [\n      {\n        \"full_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": \"<string>\"\n      },\n      {\n        \"full_name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"contact_number\": \"<string>\",\n        \"address\": \"<string>\"\n      }\n    ],\n    \"assets\": [\n      {\n        \"cost\": \"<string>\",\n        \"quantity\": \"<string>\",\n        \"type\": \"<string>\",\n        \"sub_type\": \"<string>\",\n        \"condition\": \"<string>\",\n        \"category\": \"<string>\",\n        \"age\": \"<string>\",\n        \"rv_balloon_amount\": \"<string>\",\n        \"total_cost\": \"<string>\",\n        \"total_rv_balloon_amount\": \"<string>\",\n        \"supplier_name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      {\n        \"cost\": \"<string>\",\n        \"quantity\": \"<string>\",\n        \"type\": \"<string>\",\n        \"sub_type\": \"<string>\",\n        \"condition\": \"<string>\",\n        \"category\": \"<string>\",\n        \"age\": \"<string>\",\n        \"rv_balloon_amount\": \"<string>\",\n        \"total_cost\": \"<string>\",\n        \"total_rv_balloon_amount\": \"<string>\",\n        \"supplier_name\": \"<string>\",\n        \"description\": \"<string>\"\n      }\n    ],\n    \"credit_documents\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"state\": \"<string>\",\n        \"status\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"state\": \"<string>\",\n        \"status\": \"<string>\"\n      }\n    ],\n    \"payments\": [\n      {\n        \"payment_from\": \"<string>\",\n        \"payment_to\": \"<string>\",\n        \"amount\": \"<string>\",\n        \"payment_type\": \"<string>\"\n      },\n      {\n        \"payment_from\": \"<string>\",\n        \"payment_to\": \"<string>\",\n        \"amount\": \"<string>\",\n        \"payment_type\": \"<string>\"\n      }\n    ],\n    \"underwriter_comments\": [\n      {\n        \"category\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"created_by\": \"<string>\"\n      },\n      {\n        \"category\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"created_by\": \"<string>\"\n      }\n    ],\n    \"contact_person_name\": \"<string>\",\n    \"contact_person_email\": \"<string>\",\n    \"contact_person_contact\": \"<string>\",\n    \"contact_person_address\": \"<string>\",\n    \"total_rentals_without_balloon\": \"<string>\"\n  },\n  \"source_email\": \"<string>\",\n  \"email\": \"<string>\",\n  \"email_attachment_keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"email_subject\": \"<string>\",\n  \"cc_emails\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bcc_emails\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2ab807a0-8546-43d6-a066-3530fb19bcc3",
+    "name": "Lane Send API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

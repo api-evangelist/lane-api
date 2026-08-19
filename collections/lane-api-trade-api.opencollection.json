@@ -1,0 +1,257 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Trade API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Trade",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all the year from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-year/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will get all the year from KBB"
+        },
+        {
+          "info": {
+            "name": "Get all the make from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-make/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will get all the make from KBB"
+        },
+        {
+          "info": {
+            "name": "Get all the models from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-model/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will get all the models from KBB"
+        },
+        {
+          "info": {
+            "name": "Get all the trims from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-trim/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will get all the trims from KBB"
+        },
+        {
+          "info": {
+            "name": "Get vehicle estimation from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-vehicle_value/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will provide vehicle estimation from KBB"
+        },
+        {
+          "info": {
+            "name": "Get vehicle details from KBB",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get-trade-in-vehicle_detail/",
+            "headers": [
+              {
+                "name": "x-service-provider",
+                "value": ""
+              },
+              {
+                "name": "x-dealer-code",
+                "value": ""
+              },
+              {
+                "name": "company-id",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This will give vehicle details from KBB"
+        },
+        {
+          "info": {
+            "name": "Set Trade-in inspection status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/set-trade-in-inspection-status/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inspection_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "This method will set Trade-in inspection status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

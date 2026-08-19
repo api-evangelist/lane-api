@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Agreement API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Agreement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates an order individualized agreement info setup record",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/configure/individualized-agreement",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates an order individualized agreement info setup record"
+        },
+        {
+          "info": {
+            "name": "Get Saved Disclaimer Agreement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement",
+            "params": [
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Saved Disclaimer Agreement"
+        },
+        {
+          "info": {
+            "name": "Create Disclaimer Agreement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create Disclaimer Agreement"
+        },
+        {
+          "info": {
+            "name": "Delete Disclaimer Agreement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement",
+            "params": [
+              {
+                "name": "customer_reference_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "disclaimer_name",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Delete Disclaimer Agreement"
+        },
+        {
+          "info": {
+            "name": "Get Disclaimer Agreement Date Time by Customer ID/Order ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/disclaimer-agreement-datetime",
+            "params": [
+              {
+                "name": "customer_reference_no",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_reference_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Disclaimer Agreement Date Time by Customer ID/Order ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

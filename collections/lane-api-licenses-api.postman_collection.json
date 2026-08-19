@@ -1,0 +1,1156 @@
+{
+  "item": [
+    {
+      "id": "3daa8927-b2c0-4530-83b2-e41b6b843b46",
+      "name": "Licenses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "38c039ae-4de3-45aa-b6ca-d54a33352581",
+          "name": "Get license info record by reference id",
+          "request": {
+            "name": "Get license info record by reference id",
+            "description": {
+              "content": "Get license info record by reference id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "is_presigned_url_required",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "df10a61a-ebb8-4dac-aa91-5aeaf975bc51",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_presigned_url_required",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bf2b17e2-2539-49cf-b1db-c045c9656c7a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_presigned_url_required",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13730f08-206b-45e6-956f-c02e1a09b48e",
+          "name": "Creates license information",
+          "request": {
+            "name": "Creates license information",
+            "description": {
+              "content": "Create license information against customer",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dealer_code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"is_pdf_417\": \"<boolean>\",\n  \"license_number\": \"<string>\",\n  \"issue_date\": \"<date>\",\n  \"expiry_date\": \"<date>\",\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"status\": \"<string>\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"<string>\",\n  \"cropped_front_image\": \"<string>\",\n  \"cropped_back_image\": \"<string>\",\n  \"cropped_selfie_image\": \"<string>\",\n  \"is_selfie_verified\": \"<boolean>\",\n  \"created_by\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"mitek_response\": \"<string>\",\n  \"address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d82f1888-1cef-43be-9a91-47b71e0a32ab",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"is_pdf_417\": \"<boolean>\",\n  \"license_number\": \"<string>\",\n  \"issue_date\": \"<date>\",\n  \"expiry_date\": \"<date>\",\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"status\": \"<string>\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"<string>\",\n  \"cropped_front_image\": \"<string>\",\n  \"cropped_back_image\": \"<string>\",\n  \"cropped_selfie_image\": \"<string>\",\n  \"is_selfie_verified\": \"<boolean>\",\n  \"created_by\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"mitek_response\": \"<string>\",\n  \"address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"date_of_birth\": \"1948-08-17\",\n  \"is_pdf_417\": false,\n  \"license_number\": \"string\",\n  \"issue_date\": \"1955-06-02\",\n  \"expiry_date\": \"1952-07-04\",\n  \"front_image\": \"string\",\n  \"back_image\": \"string\",\n  \"status\": \"string\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"string\",\n  \"cropped_front_image\": \"string\",\n  \"cropped_back_image\": \"string\",\n  \"cropped_selfie_image\": \"string\",\n  \"is_selfie_verified\": true,\n  \"created_by\": \"string\",\n  \"reference_id\": \"string\",\n  \"is_active\": false,\n  \"identifier\": \"string\",\n  \"created_at\": \"1983-08-09T08:29:22.723Z\",\n  \"updated_at\": \"2018-09-17T11:14:51.211Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1963-07-26T12:42:44.984Z\",\n  \"deleted_by\": \"string\",\n  \"address\": {\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": true,\n    \"move_in_date\": \"1963-02-19\",\n    \"is_garaging\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "416fcd6e-c63b-483a-88b1-79d2205a3171",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"is_pdf_417\": \"<boolean>\",\n  \"license_number\": \"<string>\",\n  \"issue_date\": \"<date>\",\n  \"expiry_date\": \"<date>\",\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"status\": \"<string>\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"<string>\",\n  \"cropped_front_image\": \"<string>\",\n  \"cropped_back_image\": \"<string>\",\n  \"cropped_selfie_image\": \"<string>\",\n  \"is_selfie_verified\": \"<boolean>\",\n  \"created_by\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"mitek_response\": \"<string>\",\n  \"address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "802acf02-8bde-4349-b736-c913d4118008",
+          "name": "Delete single license information record",
+          "request": {
+            "name": "Delete single license information record",
+            "description": {
+              "content": "Delete customer license information record of customer record ID",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "621b71ff-bce9-41af-a985-78dcee2cf74f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c79e0537-f69e-43f1-be26-2bcca948bd74",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b875c9c5-5c73-412f-9395-ade1b52760a7",
+          "name": "Updates License Info Record",
+          "request": {
+            "name": "Updates License Info Record",
+            "description": {
+              "content": "Updates a  license info setup record by license id",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "is_presigned_url_required",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "dealer_code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"is_pdf_417\": \"<boolean>\",\n  \"license_number\": \"<string>\",\n  \"issue_date\": \"<date>\",\n  \"expiry_date\": \"<date>\",\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"status\": \"<string>\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"<string>\",\n  \"cropped_front_image\": \"<string>\",\n  \"cropped_back_image\": \"<string>\",\n  \"cropped_selfie_image\": \"<string>\",\n  \"is_selfie_verified\": \"<boolean>\",\n  \"created_by\": \"<string>\",\n  \"mitek_response\": \"<string>\",\n  \"updated_by\": \"<string>\",\n  \"address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9214d141-3a00-4781-826b-e0c9fb3570db",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_presigned_url_required",
+                      "value": "false"
+                    },
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"is_pdf_417\": \"<boolean>\",\n  \"license_number\": \"<string>\",\n  \"issue_date\": \"<date>\",\n  \"expiry_date\": \"<date>\",\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"status\": \"<string>\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"<string>\",\n  \"cropped_front_image\": \"<string>\",\n  \"cropped_back_image\": \"<string>\",\n  \"cropped_selfie_image\": \"<string>\",\n  \"is_selfie_verified\": \"<boolean>\",\n  \"created_by\": \"<string>\",\n  \"mitek_response\": \"<string>\",\n  \"updated_by\": \"<string>\",\n  \"address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"date_of_birth\": \"2021-04-10\",\n  \"is_pdf_417\": false,\n  \"license_number\": \"string\",\n  \"issue_date\": \"1956-01-28\",\n  \"expiry_date\": \"2005-11-30\",\n  \"front_image\": \"string\",\n  \"back_image\": \"string\",\n  \"status\": \"string\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"string\",\n  \"cropped_front_image\": \"string\",\n  \"cropped_back_image\": \"string\",\n  \"cropped_selfie_image\": \"string\",\n  \"is_selfie_verified\": false,\n  \"created_by\": \"string\",\n  \"is_active\": true,\n  \"identifier\": \"string\",\n  \"created_at\": \"1964-04-20T00:56:10.119Z\",\n  \"updated_at\": \"1955-12-11T00:55:19.129Z\",\n  \"updated_by\": \"string\",\n  \"deleted_at\": \"1987-05-03T03:31:02.777Z\",\n  \"deleted_by\": \"string\",\n  \"address\": {\n    \"address_line_1\": \"string\",\n    \"address_line_2\": \"string\",\n    \"state_name\": \"string\",\n    \"zip_code\": \"string\",\n    \"county\": \"string\",\n    \"city\": \"string\",\n    \"contact_number\": \"string\",\n    \"verified\": false,\n    \"move_in_date\": \"2020-11-29\",\n    \"is_garaging\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "497f4f4a-a86d-4ada-8204-16768f317647",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "is_presigned_url_required",
+                      "value": "false"
+                    },
+                    {
+                      "key": "dealer_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"date_of_birth\": \"<date>\",\n  \"is_pdf_417\": \"<boolean>\",\n  \"license_number\": \"<string>\",\n  \"issue_date\": \"<date>\",\n  \"expiry_date\": \"<date>\",\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"status\": \"<string>\",\n  \"call_type\": \"<string>\",\n  \"selfie_image\": \"<string>\",\n  \"cropped_front_image\": \"<string>\",\n  \"cropped_back_image\": \"<string>\",\n  \"cropped_selfie_image\": \"<string>\",\n  \"is_selfie_verified\": \"<boolean>\",\n  \"created_by\": \"<string>\",\n  \"mitek_response\": \"<string>\",\n  \"updated_by\": \"<string>\",\n  \"address\": {\n    \"address_line_1\": \"<string>\",\n    \"address_line_2\": \"<string>\",\n    \"state_name\": \"<string>\",\n    \"zip_code\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"contact_number\": \"<string>\",\n    \"verified\": \"<boolean>\",\n    \"move_in_date\": \"<date>\",\n    \"is_garaging\": false,\n    \"identifier\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd022829-3eef-4c9f-ba50-cfe23d34f1e9",
+          "name": "Get all customer license information history",
+          "request": {
+            "name": "Get all customer license information history",
+            "description": {
+              "content": "Get all customer license information history",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-info-history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_number",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "from_date",
+                  "value": "<string>",
+                  "description": "Format: YYYY-MM-DD"
+                },
+                {
+                  "disabled": false,
+                  "key": "to_date",
+                  "value": "<string>",
+                  "description": "Format: YYYY-MM-DD"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c6ac90c9-9112-4df7-ac5f-f50e94367ba9",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"date_of_birth\": \"1999-06-23\",\n      \"is_pdf_417\": false,\n      \"license_number\": \"string\",\n      \"issue_date\": \"1983-02-14\",\n      \"expiry_date\": \"1971-07-06\",\n      \"front_image\": \"string\",\n      \"back_image\": \"string\",\n      \"status\": \"string\",\n      \"call_type\": \"<string>\",\n      \"selfie_image\": \"string\",\n      \"cropped_front_image\": \"string\",\n      \"cropped_back_image\": \"string\",\n      \"cropped_selfie_image\": \"string\",\n      \"is_selfie_verified\": true,\n      \"created_by\": \"string\",\n      \"reference_id\": \"string\",\n      \"is_active\": false,\n      \"identifier\": \"string\",\n      \"created_at\": \"2023-02-22T14:27:20.608Z\",\n      \"updated_at\": \"1959-05-04T22:43:38.125Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1949-05-19T18:20:03.216Z\",\n      \"deleted_by\": \"string\",\n      \"address\": {\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"1950-08-08\",\n        \"is_garaging\": false\n      }\n    },\n    {\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"date_of_birth\": \"2003-10-22\",\n      \"is_pdf_417\": false,\n      \"license_number\": \"string\",\n      \"issue_date\": \"2023-07-30\",\n      \"expiry_date\": \"2005-10-01\",\n      \"front_image\": \"string\",\n      \"back_image\": \"string\",\n      \"status\": \"string\",\n      \"call_type\": \"<string>\",\n      \"selfie_image\": \"string\",\n      \"cropped_front_image\": \"string\",\n      \"cropped_back_image\": \"string\",\n      \"cropped_selfie_image\": \"string\",\n      \"is_selfie_verified\": true,\n      \"created_by\": \"string\",\n      \"reference_id\": \"string\",\n      \"is_active\": false,\n      \"identifier\": \"string\",\n      \"created_at\": \"2021-03-24T10:07:34.932Z\",\n      \"updated_at\": \"2020-12-06T23:10:42.664Z\",\n      \"updated_by\": \"string\",\n      \"deleted_at\": \"1973-12-02T10:51:47.901Z\",\n      \"deleted_by\": \"string\",\n      \"address\": {\n        \"address_line_1\": \"string\",\n        \"address_line_2\": \"string\",\n        \"state_name\": \"string\",\n        \"zip_code\": \"string\",\n        \"county\": \"string\",\n        \"city\": \"string\",\n        \"contact_number\": \"string\",\n        \"verified\": true,\n        \"move_in_date\": \"1957-02-01\",\n        \"is_garaging\": false\n      }\n    }\n  ],\n  \"page_number\": 6105,\n  \"page_size\": 8509,\n  \"total_pages\": 61,\n  \"total_results\": 9780\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b8e6e965-f4a1-4d3e-8bef-1907d6f82715",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-info-history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_number",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from_date",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "to_date",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa045c90-7c04-4236-ac45-4202837b725b",
+          "name": "License verification through MiTek",
+          "request": {
+            "name": "License verification through MiTek",
+            "description": {
+              "content": "license-verification through MiTek",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "customer",
+                "license-verification"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"dealer_code\": \"<string>\",\n  \"api_version\": \"1.2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2998f763-c797-468c-9b45-21443f74b7e4",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-verification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"dealer_code\": \"<string>\",\n  \"api_version\": \"1.2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c76485f3-2520-4bed-a860-69659f155f3b",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "customer",
+                    "license-verification"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"front_image\": \"<string>\",\n  \"back_image\": \"<string>\",\n  \"customer_id\": \"<string>\",\n  \"dealer_code\": \"<string>\",\n  \"api_version\": \"1.2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9de11e8c-9350-4aa7-8fcb-b93bd899eef0",
+    "name": "Lane Licenses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "64f5b669-7abb-4123-a2d4-34a06c245465",
+      "name": "Disclaimer",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fa85a9c6-3fe8-4df8-9f81-6eb223717dc4",
+          "name": "Get all Disclaimers",
+          "request": {
+            "name": "Get all Disclaimers",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "all-disclaimer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "disclaimer_status",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bb2e9c31-1016-4656-a30e-6b5f54852a65",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-disclaimer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "disclaimer_status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"version\": \"string\",\n    \"name\": \"string\",\n    \"identifier\": \"string\",\n    \"description\": \"string\",\n    \"type\": \"string\",\n    \"applicable_for\": \"string\",\n    \"required_by\": \"string\",\n    \"status\": \"string\",\n    \"change_type\": \"string\",\n    \"created_at\": \"1995-07-21T05:24:50.233Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"2022-12-08T20:33:36.985Z\",\n    \"updated_by\": \"string\",\n    \"effectiveDate\": \"1964-01-28T13:08:52.753Z\",\n    \"meta_data\": {},\n    \"disclaimer_accord\": true\n  },\n  {\n    \"version\": \"string\",\n    \"name\": \"string\",\n    \"identifier\": \"string\",\n    \"description\": \"string\",\n    \"type\": \"string\",\n    \"applicable_for\": \"string\",\n    \"required_by\": \"string\",\n    \"status\": \"string\",\n    \"change_type\": \"string\",\n    \"created_at\": \"1971-01-30T13:05:05.309Z\",\n    \"created_by\": \"string\",\n    \"updated_at\": \"1975-11-03T16:45:41.625Z\",\n    \"updated_by\": \"string\",\n    \"effectiveDate\": \"1974-03-03T04:15:45.109Z\",\n    \"meta_data\": {},\n    \"disclaimer_accord\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "077d72a7-27e2-4306-815b-ee140d41c8eb",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-disclaimer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "disclaimer_status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a15aa3a1-6efa-473e-9681-b72db3843959",
+    "name": "Lane Disclaimer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

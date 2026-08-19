@@ -1,0 +1,1386 @@
+{
+  "item": [
+    {
+      "id": "dba6a80c-2c92-4b34-83df-382077ae0420",
+      "name": "Packages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec5b2cc0-1168-4cb8-b57e-34af73656446",
+          "name": "Get document package by identifier",
+          "request": {
+            "name": "Get document package by identifier",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "document-package"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "package_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fac74880-c5bc-4845-9d79-56e298f72130",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"order_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"type\": \"string\",\n  \"status\": \"string\",\n  \"created_at\": \"1967-01-07T03:09:05.178Z\",\n  \"updated_at\": \"2001-06-08T00:28:03.487Z\",\n  \"documents\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"2006-10-16T02:31:11.078Z\",\n      \"signatures\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 6754,\n          \"y\": 6274,\n          \"x_bound\": 1548,\n          \"y_bound\": 4220,\n          \"width\": 8739,\n          \"height\": 9718,\n          \"page\": 2864,\n          \"date_field_id\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 8717,\n          \"y\": 8685,\n          \"x_bound\": 1891,\n          \"y_bound\": 651,\n          \"width\": 6912,\n          \"height\": 7125,\n          \"page\": 2895,\n          \"date_field_id\": \"string\"\n        }\n      ],\n      \"created_at\": \"2021-11-08T09:05:37.347Z\",\n      \"updated_at\": \"1951-05-30T15:35:40.190Z\",\n      \"generated_document_uri\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"2002-11-04T11:47:29.943Z\",\n      \"signatures\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 4597,\n          \"y\": 2267,\n          \"x_bound\": 9885,\n          \"y_bound\": 3838,\n          \"width\": 2553,\n          \"height\": 9580,\n          \"page\": 3517,\n          \"date_field_id\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 2342,\n          \"y\": 4551,\n          \"x_bound\": 4869,\n          \"y_bound\": 8411,\n          \"width\": 5002,\n          \"height\": 1436,\n          \"page\": 1874,\n          \"date_field_id\": \"string\"\n        }\n      ],\n      \"created_at\": \"1969-01-09T17:53:07.458Z\",\n      \"updated_at\": \"2017-10-30T14:00:00.048Z\",\n      \"generated_document_uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c89d668c-23af-453a-be76-032c0f80ba4f",
+              "name": "Record not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cf2260a-5efe-4119-9031-f7e3b8b368f2",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b55e916-66bb-44aa-b3e1-19e783ca868b",
+          "name": "Create document package",
+          "request": {
+            "name": "Create document package",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "document-package"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "is_product",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"documents\": [\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b338371-a6bb-4999-b941-6f17747ef4da",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "is_product",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"documents\": [\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"order_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"type\": \"string\",\n  \"status\": \"string\",\n  \"created_at\": \"2025-03-26T08:55:02.758Z\",\n  \"updated_at\": \"1975-10-23T00:32:04.030Z\",\n  \"documents\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"1979-01-03T16:04:17.697Z\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ],\n      \"created_at\": \"2011-07-03T11:40:51.163Z\",\n      \"updated_at\": \"1948-07-21T05:07:54.901Z\",\n      \"generated_document_uri\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"1992-10-07T00:19:17.906Z\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ],\n      \"created_at\": \"2011-04-21T05:48:17.312Z\",\n      \"updated_at\": \"2023-12-14T02:15:16.456Z\",\n      \"generated_document_uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76fafead-e1e9-40ee-8800-2ab51d643070",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "is_product",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"documents\": [\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a84c5c7-5c2f-4737-a18c-4119cbc66df5",
+              "name": "Precondition Failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "is_product",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"documents\": [\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6be322de-88f7-4ba7-86b4-7514544ad37d",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "is_product",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"reference_id\": \"<string>\",\n  \"type\": \"<string>\",\n  \"identifier\": \"<string>\",\n  \"documents\": [\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"title\": \"<string>\",\n      \"template\": \"<string>\",\n      \"data\": \"<object>\",\n      \"meta_data\": \"<object>\",\n      \"identifier\": \"<string>\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eedff8a3-fc0a-403a-a665-46217ebfcd24",
+          "name": "Cancel document package and document by identifier",
+          "request": {
+            "name": "Cancel document package and document by identifier",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "document-package"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "package_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "132561d2-0007-4970-99d8-a42b0a4fa7cb",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7ae256f3-c698-4cb0-9258-a823c4c3a36d",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "033eef72-f700-45a0-9db1-a7b1fe8d73fe",
+          "name": "Get document package by reference_id",
+          "request": {
+            "name": "Get document package by reference_id",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "document-package-by-reference-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3efe0399-3f4e-48f0-bc50-c1bf7cf68f82",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"order_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"type\": \"string\",\n  \"status\": \"string\",\n  \"created_at\": \"2025-03-26T08:55:02.758Z\",\n  \"updated_at\": \"1975-10-23T00:32:04.030Z\",\n  \"documents\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"1979-01-03T16:04:17.697Z\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ],\n      \"created_at\": \"2011-07-03T11:40:51.163Z\",\n      \"updated_at\": \"1948-07-21T05:07:54.901Z\",\n      \"generated_document_uri\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"1992-10-07T00:19:17.906Z\",\n      \"signatures\": [\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"type\": \"<string>\",\n          \"status\": \"<string>\",\n          \"signer\": \"<string>\",\n          \"signed_at\": \"<string>\",\n          \"x\": \"<integer>\",\n          \"y\": \"<integer>\",\n          \"x_bound\": \"<integer>\",\n          \"y_bound\": \"<integer>\",\n          \"width\": \"<integer>\",\n          \"height\": \"<integer>\",\n          \"page\": \"<integer>\",\n          \"date_field_id\": \"<string>\"\n        }\n      ],\n      \"created_at\": \"2011-04-21T05:48:17.312Z\",\n      \"updated_at\": \"2023-12-14T02:15:16.456Z\",\n      \"generated_document_uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1f61ec5d-f174-4c40-96d0-1538f2056aa5",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d0600b6-cc76-46ba-bda1-9cfa313749a0",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47aeb6eb-08fc-4aa4-ba1b-0f64029522ef",
+          "name": "Get document package by reference_id",
+          "request": {
+            "name": "Get document package by reference_id",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "all-document-packages-by-reference-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "external_order_id",
+                  "value": "<string>",
+                  "description": "Order Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "document_type",
+                  "value": "<string>",
+                  "description": "Document Type"
+                },
+                {
+                  "disabled": false,
+                  "key": "document_type",
+                  "value": "<string>",
+                  "description": "Document Type"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "357aaf9e-b36b-474a-8d05-c1075ac841fb",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"order_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"created_at\": \"2001-04-26T02:18:22.733Z\",\n    \"updated_at\": \"1964-09-18T04:10:04.789Z\",\n    \"documents\": [\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1974-10-28T10:10:50.940Z\",\n        \"signatures\": [\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          }\n        ],\n        \"created_at\": \"1964-07-27T07:57:57.034Z\",\n        \"updated_at\": \"1978-04-08T12:42:54.075Z\",\n        \"generated_document_uri\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1967-08-07T16:17:21.073Z\",\n        \"signatures\": [\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          }\n        ],\n        \"created_at\": \"1980-12-31T16:36:12.221Z\",\n        \"updated_at\": \"1965-08-18T05:47:24.312Z\",\n        \"generated_document_uri\": \"string\"\n      }\n    ]\n  },\n  {\n    \"identifier\": \"string\",\n    \"order_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"created_at\": \"2020-07-28T12:07:34.111Z\",\n    \"updated_at\": \"2012-01-10T21:38:56.169Z\",\n    \"documents\": [\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1988-09-20T13:31:12.300Z\",\n        \"signatures\": [\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          }\n        ],\n        \"created_at\": \"1986-09-15T03:53:41.208Z\",\n        \"updated_at\": \"2014-03-28T06:37:39.870Z\",\n        \"generated_document_uri\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"2010-05-18T16:28:10.513Z\",\n        \"signatures\": [\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\",\n            \"type\": \"<string>\",\n            \"status\": \"<string>\",\n            \"signer\": \"<string>\",\n            \"signed_at\": \"<string>\",\n            \"x\": \"<integer>\",\n            \"y\": \"<integer>\",\n            \"x_bound\": \"<integer>\",\n            \"y_bound\": \"<integer>\",\n            \"width\": \"<integer>\",\n            \"height\": \"<integer>\",\n            \"page\": \"<integer>\",\n            \"date_field_id\": \"<string>\"\n          }\n        ],\n        \"created_at\": \"2016-10-08T20:10:56.076Z\",\n        \"updated_at\": \"1998-11-30T02:13:16.811Z\",\n        \"generated_document_uri\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "744b31dc-f46d-41a7-b499-54d4f182a8a7",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b89c5abe-0195-487a-a4b2-9352a5e5e249",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7436e292-185d-4481-a73c-6c5e5bebc065",
+          "name": "Get document from document package by identifier",
+          "request": {
+            "name": "Get document from document package by identifier",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "document-package",
+                "document"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "package_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "document_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7db3811e-bf4d-49d4-a0d9-fd5a1b9ceab2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"pdf\": \"string\",\n  \"title\": \"string\",\n  \"template\": \"string\",\n  \"data\": {},\n  \"meta_data\": {},\n  \"status\": \"string\",\n  \"last_viewed_at\": \"1998-04-05T04:32:50.217Z\",\n  \"signatures\": [\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"status\": \"<string>\",\n      \"signer\": \"<string>\",\n      \"signed_at\": \"<string>\",\n      \"x\": \"<integer>\",\n      \"y\": \"<integer>\",\n      \"x_bound\": \"<integer>\",\n      \"y_bound\": \"<integer>\",\n      \"width\": \"<integer>\",\n      \"height\": \"<integer>\",\n      \"page\": \"<integer>\",\n      \"date_field_id\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"type\": \"<string>\",\n      \"status\": \"<string>\",\n      \"signer\": \"<string>\",\n      \"signed_at\": \"<string>\",\n      \"x\": \"<integer>\",\n      \"y\": \"<integer>\",\n      \"x_bound\": \"<integer>\",\n      \"y_bound\": \"<integer>\",\n      \"width\": \"<integer>\",\n      \"height\": \"<integer>\",\n      \"page\": \"<integer>\",\n      \"date_field_id\": \"<string>\"\n    }\n  ],\n  \"created_at\": \"2018-12-03T15:57:15.533Z\",\n  \"updated_at\": \"2021-08-21T12:55:27.497Z\",\n  \"generated_document_uri\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c93198e-f852-465e-85b6-6dbc1166570b",
+              "name": "Record not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ed570f3-782f-477e-b13d-ada91e5d6a2c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package",
+                    "document"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "package_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8b5d0cd5-0360-43f1-84c2-7e278f4b7cf5",
+    "name": "Lane Packages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

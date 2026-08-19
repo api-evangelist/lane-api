@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Get_event_associated_checklist API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get_event_associated_checklist",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "This API helps to evaluate given criteria and retrieve configured checklist(s)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dms-api.netsolapp.io/dms/get_event_associated_checklist/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "If criteria is not given then checklist(s) configured against the given event will be returned.\n    In case criteria is provided, specific checklist(s) that fulfills given criteria will be returned.\n    Criteria is open ended, but must follow this pattern.  ****\n    {\"event_name\": \"string\",\n     \"criteria\": {\n                    \"item1\": \"\",\n                    \"item2\": \"\"\n                }\n} ****"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

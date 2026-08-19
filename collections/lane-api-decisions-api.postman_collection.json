@@ -1,0 +1,519 @@
+{
+  "item": [
+    {
+      "id": "c6143033-6648-4bd7-984c-d0f70f7441fc",
+      "name": "Decisions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "18e6027f-a44f-4f0a-b0eb-10825bbb0add",
+          "name": "Get credit decision",
+          "request": {
+            "name": "Get credit decision",
+            "description": {
+              "content": "Get credit decision",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "credit-decision"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b43696f5-f906-47b9-a1df-2db07874b92e",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b32a6b73-8728-484a-995b-1cd865ca4cd0",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44813ce2-413b-415f-8769-574aee983814",
+          "name": "Add credit decision",
+          "request": {
+            "name": "Add credit decision",
+            "description": {
+              "content": "Add credit decision",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "credit-decision"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"<integer>\",\n  \"decision_code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"response_code\": \"<string>\",\n  \"mapped_code\": \"<string>\",\n  \"stipulation\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba11e71f-ed86-475b-9997-6731c1218ba7",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<integer>\",\n  \"decision_code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"response_code\": \"<string>\",\n  \"mapped_code\": \"<string>\",\n  \"stipulation\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_id\": 8057,\n  \"decision_code\": \"string\",\n  \"description\": \"string\",\n  \"response_code\": \"string\",\n  \"mapped_code\": \"string\",\n  \"created_at\": \"2001-02-11T18:01:42.569Z\",\n  \"updated_at\": \"1997-07-03T13:10:11.828Z\",\n  \"created_by\": \"string\",\n  \"updated_by\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f60f9b5a-8fd4-417e-92df-6747532e940a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "credit-decision"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<integer>\",\n  \"decision_code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"response_code\": \"<string>\",\n  \"mapped_code\": \"<string>\",\n  \"stipulation\": [\n    \"<object>\",\n    \"<object>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3819aa43-3ff3-46f6-9505-a56e9d385342",
+          "name": "Update decision status after receiving decision from credit approver",
+          "request": {
+            "name": "Update decision status after receiving decision from credit approver",
+            "description": {
+              "content": "Update an configured quotation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "update-credit-approver-decision",
+                ":reference_number"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "reference_number",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f8ff623d-3114-4ec2-93ee-6dc9fd614f12",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "update-credit-approver-decision",
+                    ":reference_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference_number",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5237,\n  \"dealer_id\": 1349,\n  \"lender_id\": 564,\n  \"broker_id\": 9305,\n  \"company_id\": 2854,\n  \"name\": \"string\",\n  \"contract_term\": 6891,\n  \"allowed_usage\": 702,\n  \"credit_rating\": \"string\",\n  \"apr\": 8193.209478207042,\n  \"estimated_monthly_payment\": 5064.435816133037,\n  \"annual_usage\": 0,\n  \"due_at_signing\": 6992.930463689135,\n  \"is_payment_updated\": false,\n  \"selling_price\": 9260.041566075843,\n  \"down_payment\": 4385.287261365303,\n  \"down_payment_lease\": 9217.048080403236,\n  \"tax_amount\": 613.2345973359554,\n  \"tax_amount_number\": 5418.999398650075,\n  \"deferred_type\": \"string\",\n  \"rv_balloon_percentage\": 8892.54050771391,\n  \"rv_balloon_value\": 1747.3255371892872,\n  \"balloon_collection\": \"string\",\n  \"fp_id\": 2124,\n  \"vehicle_id\": 5139,\n  \"msrp\": 2812.2386381426436,\n  \"schedule_option\": \"string\",\n  \"asset_usage\": \"string\",\n  \"calcuation_method\": \"string\",\n  \"order_stage\": \"string\",\n  \"finance_type\": \"string\",\n  \"order_fees\": [\n    {\n      \"dealer_fee_id\": 7801,\n      \"applied_price\": 6164.114258984312,\n      \"identifier\": \"string\",\n      \"vendor\": \"string\",\n      \"fee_type\": \"string\"\n    },\n    {\n      \"dealer_fee_id\": 5731,\n      \"applied_price\": 720.7075196838853,\n      \"identifier\": \"string\",\n      \"vendor\": \"string\",\n      \"fee_type\": \"string\"\n    }\n  ],\n  \"order_options\": [\n    {\n      \"option_id\": 9001,\n      \"applied_price\": 2555.931761137622,\n      \"rv_balloon_percentage\": 7079.910848334893,\n      \"identifier\": \"string\",\n      \"rv_balloon_value\": 1736.6140218144853\n    },\n    {\n      \"option_id\": 5671,\n      \"applied_price\": 3561.0262338323128,\n      \"rv_balloon_percentage\": 5495.649854469565,\n      \"identifier\": \"string\",\n      \"rv_balloon_value\": 9376.302692996731\n    }\n  ],\n  \"order_fnI\": [\n    {\n      \"applied_price\": 2942.52006382543,\n      \"financial_insurance_id\": 6320,\n      \"form_id\": 7651,\n      \"rate_id\": 3401,\n      \"mileage\": 94,\n      \"term\": 4590,\n      \"session_id\": \"string\",\n      \"identifier\": \"string\",\n      \"is_msp\": false\n    },\n    {\n      \"applied_price\": 9187.824158239919,\n      \"financial_insurance_id\": 3897,\n      \"form_id\": 3566,\n      \"rate_id\": 7156,\n      \"mileage\": 7981,\n      \"term\": 6428,\n      \"session_id\": \"string\",\n      \"identifier\": \"string\",\n      \"is_msp\": true\n    }\n  ],\n  \"order_tradein\": {\n    \"year\": 1245,\n    \"make\": \"string\",\n    \"model\": \"string\",\n    \"trim\": \"string\",\n    \"mileage\": 8213,\n    \"vin\": \"string\",\n    \"identifier\": \"string\",\n    \"condition\": \"Good\",\n    \"trade_in_amount\": 9481.13897124028,\n    \"is_customer_titled\": false,\n    \"loan_lease_balance\": true,\n    \"lender_contract_number\": \"string\",\n    \"lender_name\": \"string\",\n    \"lender_address\": \"string\",\n    \"lender_contact_number\": \"string\",\n    \"payment_type\": \"Lease\",\n    \"payoff_amount\": 1244.1993950481867,\n    \"lender_id\": 744,\n    \"asset_image\": [\n      \"string\",\n      \"string\"\n    ],\n    \"trade_in_type\": \"Vin\",\n    \"question_answers\": [\n      {\n        \"question\": \"string\",\n        \"answer\": \"string\",\n        \"trade_in_id\": 582\n      },\n      {\n        \"question\": \"string\",\n        \"answer\": \"string\",\n        \"trade_in_id\": 2256\n      }\n    ]\n  },\n  \"appointment_details\": {\n    \"id\": 6044,\n    \"order_id\": 9988,\n    \"dealer_id\": 2808,\n    \"customer_id\": 1050,\n    \"appointment_date\": \"1978-07-27T23:10:17.174Z\",\n    \"appointment_type\": \"string\",\n    \"appointment_status\": \"string\",\n    \"comments\": \"string\",\n    \"address_id\": 5082,\n    \"dealer_code\": \"string\",\n    \"address_data\": {\n      \"address_type\": \"DealerAddress\",\n      \"address_line_1\": \"string\",\n      \"address_line_2\": \"string\",\n      \"state_name\": \"string\",\n      \"zip_code\": \"string\",\n      \"county\": \"string\",\n      \"city\": \"string\",\n      \"contact_number\": \"string\",\n      \"verified\": false,\n      \"move_in_date\": \"1989-10-01\",\n      \"is_garaging\": false,\n      \"identifier\": \"string\",\n      \"id\": 9009\n    },\n    \"created_by\": \"string\",\n    \"updated_by\": \"string\",\n    \"time_zone\": \"string\"\n  },\n  \"finance_amount\": 7815.457192881061,\n  \"order_asset\": {\n    \"make\": \"string\",\n    \"identifier\": \"string\",\n    \"model\": \"string\",\n    \"trim\": \"string\",\n    \"year_manufacturer\": \"string\",\n    \"msrp\": 3192.5040409377216,\n    \"mileage\": 8981,\n    \"exterior_color\": \"string\",\n    \"condition\": [\n      \"string\",\n      \"string\"\n    ],\n    \"classification\": \"string\",\n    \"engine_cylinder\": \"string\",\n    \"power_type\": \"string\",\n    \"power_figure\": \"string\",\n    \"engine_displacement\": \"string\",\n    \"fuel_type\": \"string\",\n    \"quantity\": \"string\",\n    \"unit_price\": \"string\",\n    \"unit_tax\": \"string\",\n    \"total\": \"string\",\n    \"vin\": \"string\",\n    \"asset_type\": \"string\",\n    \"rv_balloon_amount\": 3526.0610549743888\n  },\n  \"insurance\": {\n    \"created_by\": \"string\",\n    \"order_reference_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"insurer_name\": \"string\",\n    \"agent_phone\": \"string\",\n    \"subscription_id\": \"string\",\n    \"agent_name\": \"string\",\n    \"policy_number\": \"string\",\n    \"start_date\": \"1956-05-19\",\n    \"expiration_date\": \"2021-12-21\",\n    \"deductible_comprehensive\": 7195.448361355292,\n    \"deductible_collision\": 8803.394467756036,\n    \"identifier\": \"string\",\n    \"is_verified\": false,\n    \"insurance_documents\": [\n      {\n        \"content_type\": \"string\",\n        \"name\": \"string\",\n        \"file_size\": \"string\",\n        \"document\": \"string\",\n        \"created_by\": \"string\",\n        \"doucment_reference_id\": \"string\"\n      },\n      {\n        \"content_type\": \"string\",\n        \"name\": \"string\",\n        \"file_size\": \"string\",\n        \"document\": \"string\",\n        \"created_by\": \"string\",\n        \"doucment_reference_id\": \"string\"\n      }\n    ],\n    \"insurer_address\": {\n      \"address_line_1\": \"string\",\n      \"address_line_2\": \"string\",\n      \"state_name\": \"string\",\n      \"zip_code\": \"string\",\n      \"county\": \"string\",\n      \"city\": \"string\",\n      \"contact_number\": \"string\",\n      \"verified\": false,\n      \"move_in_date\": \"1963-12-09\",\n      \"is_garaging\": false,\n      \"identifier\": \"string\"\n    }\n  },\n  \"payment_recieved\": false,\n  \"base_rate\": 8082.2238275960735,\n  \"rate_type\": \"string\",\n  \"commission_type\": \"string\",\n  \"margin\": 7208.979254987642,\n  \"applicable_rate\": 2843.481166495743,\n  \"invoice_status\": \"Active\",\n  \"rental_mode\": \"string\",\n  \"rental_frequency\": \"string\",\n  \"running_id\": \"string\",\n  \"order_currency\": \"string\",\n  \"commission_amount\": 8797.271875762168,\n  \"received_security_deposit\": 810,\n  \"net_finance_amount\": 9205.268349536991,\n  \"rebate\": 2480.356476581741,\n  \"capitalized_cost_reduction\": 6287.968311702971,\n  \"monthly_deprecation\": 1498.2877529257755,\n  \"tax_on_capitalized_cost_reduction\": 3530.9549742977565,\n  \"monthly_sales_use_tax\": 9126.5312269537,\n  \"sum_of_fees\": 6765.060618680989,\n  \"sum_of_periodic_interest\": 3099.2688169471603,\n  \"sum_of_rentals\": 4679.85879435062,\n  \"total_payables\": 395.19682994295977,\n  \"non_vatable_amount\": 596.5963621987513,\n  \"individualized_agreement\": \"string\",\n  \"base_residual_type\": 949,\n  \"excess_mileage_rate\": 4363.897065016223,\n  \"asset_rv_amount\": 631.0401155475986\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9604d1ae-521b-4795-a628-09b2d3593776",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "update-credit-approver-decision",
+                    ":reference_number"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "reference_number",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "afa2b6a9-8960-4c15-b740-52a3267fff06",
+    "name": "Lane Decisions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

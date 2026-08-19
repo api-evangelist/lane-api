@@ -1,0 +1,230 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Filter API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filter",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search orders based on filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/configure/order/filter",
+            "params": [
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ref_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finance_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "created_at",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expiry_date",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Search orders based on filters"
+        },
+        {
+          "info": {
+            "name": "Get Inventory Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/inventory/filter",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "internet_price_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "internet_price_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vehicle_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "listing_status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "vin",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mileage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "asset_condition",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year_from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "year_to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_by_price",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_asset_make",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_asset_model",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_asset_trim",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "multiple_asset_condition",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stock_number",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Inventory Data"
+        },
+        {
+          "info": {
+            "name": "Get Financial Insurance Product By Filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dms-api.netsolapp.io/dms/financial-insurances/filter",
+            "params": [
+              {
+                "name": "dealer_code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "is_active",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get Financial Insurance Product By Filter"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

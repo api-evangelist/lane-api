@@ -1,0 +1,810 @@
+{
+  "item": [
+    {
+      "id": "9b561ce1-7ea2-41f1-80f2-eea7dfbafb3c",
+      "name": "Reference",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c740bc26-7f9b-4488-af4c-44568a7005c4",
+          "name": "Get all quotations based on reference number",
+          "request": {
+            "name": "Get all quotations based on reference number",
+            "description": {
+              "content": "Get all quotations based on reference number",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "all-quotation-by-reference-number",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7d10c26b-2e5d-4f02-a3ba-658b8af91f9d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "all-quotation-by-reference-number",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f593969-67be-47c8-a56b-de869ab32dc4",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "all-quotation-by-reference-number",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "914c643e-75c9-4256-8491-cb6cd8549d15",
+          "name": "Get Reference Data By Dealer Code",
+          "request": {
+            "name": "Get Reference Data By Dealer Code",
+            "description": {
+              "content": "This method returns the data of inventory from Configuration By Dealer Code",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "get-reference-data",
+                ":dealer_code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dealer_code",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "52efc3d0-aa99-4ace-ae9e-655f8518eb7c",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "get-reference-data",
+                    ":dealer_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dealer_code",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4eafe4b-6eeb-4d8e-a394-00af4372c626",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "get-reference-data",
+                    ":dealer_code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dealer_code",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6efc7d2b-6636-4c97-b986-e2efe3941273",
+          "name": "Get document package by reference_id",
+          "request": {
+            "name": "Get document package by reference_id",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "document-package-by-reference-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3522900a-feec-41b9-bccd-388c3618ebb3",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"order_id\": \"string\",\n  \"reference_id\": \"string\",\n  \"type\": \"string\",\n  \"status\": \"string\",\n  \"created_at\": \"1956-11-29T18:10:36.701Z\",\n  \"updated_at\": \"2009-01-14T14:15:45.973Z\",\n  \"documents\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"1958-08-31T18:34:47.183Z\",\n      \"signatures\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 57,\n          \"y\": 8595,\n          \"x_bound\": 7143,\n          \"y_bound\": 9039,\n          \"width\": 4600,\n          \"height\": 1428,\n          \"page\": 7,\n          \"date_field_id\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 6872,\n          \"y\": 7431,\n          \"x_bound\": 8809,\n          \"y_bound\": 1052,\n          \"width\": 1248,\n          \"height\": 1946,\n          \"page\": 6983,\n          \"date_field_id\": \"string\"\n        }\n      ],\n      \"created_at\": \"2016-02-06T05:02:52.833Z\",\n      \"updated_at\": \"1989-08-25T11:29:17.143Z\",\n      \"generated_document_uri\": \"string\"\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"template\": \"string\",\n      \"data\": {},\n      \"meta_data\": {},\n      \"status\": \"string\",\n      \"last_viewed_at\": \"1958-10-06T19:58:25.650Z\",\n      \"signatures\": [\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 9012,\n          \"y\": 1191,\n          \"x_bound\": 3503,\n          \"y_bound\": 300,\n          \"width\": 1845,\n          \"height\": 5687,\n          \"page\": 1921,\n          \"date_field_id\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"type\": \"string\",\n          \"status\": \"string\",\n          \"signer\": \"string\",\n          \"signed_at\": \"string\",\n          \"x\": 5749,\n          \"y\": 6612,\n          \"x_bound\": 2186,\n          \"y_bound\": 7569,\n          \"width\": 7240,\n          \"height\": 3709,\n          \"page\": 7122,\n          \"date_field_id\": \"string\"\n        }\n      ],\n      \"created_at\": \"1999-06-01T08:46:02.047Z\",\n      \"updated_at\": \"1949-12-14T16:36:38.542Z\",\n      \"generated_document_uri\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f8a10d54-d66f-4dca-adaa-9bfde0794cf7",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "caee8f3c-4705-4364-bb6c-7b0b43ef7d48",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "document-package-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e308d11-94cd-4a66-ac9e-e0ad050ea193",
+          "name": "Get document package by reference_id",
+          "request": {
+            "name": "Get document package by reference_id",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "configure",
+                "all-document-packages-by-reference-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "external_order_id",
+                  "value": "<string>",
+                  "description": "Order Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "document_type",
+                  "value": "<string>",
+                  "description": "Document Type"
+                },
+                {
+                  "disabled": false,
+                  "key": "document_type",
+                  "value": "<string>",
+                  "description": "Document Type"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4e80fab6-63df-434a-af82-6aab5200959e",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"identifier\": \"string\",\n    \"order_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"created_at\": \"1962-03-07T03:06:43.987Z\",\n    \"updated_at\": \"1995-04-19T03:44:20.451Z\",\n    \"documents\": [\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"2003-11-30T07:15:57.529Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 3272,\n            \"y\": 7822,\n            \"x_bound\": 4885,\n            \"y_bound\": 8639,\n            \"width\": 3519,\n            \"height\": 2781,\n            \"page\": 2880,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 8976,\n            \"y\": 8979,\n            \"x_bound\": 3731,\n            \"y_bound\": 2227,\n            \"width\": 9644,\n            \"height\": 626,\n            \"page\": 6899,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"1953-05-03T12:02:10.685Z\",\n        \"updated_at\": \"2003-12-11T21:14:44.422Z\",\n        \"generated_document_uri\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1949-08-16T22:24:36.718Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 3664,\n            \"y\": 1141,\n            \"x_bound\": 4369,\n            \"y_bound\": 5040,\n            \"width\": 5753,\n            \"height\": 334,\n            \"page\": 2770,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 574,\n            \"y\": 5718,\n            \"x_bound\": 7776,\n            \"y_bound\": 2762,\n            \"width\": 2111,\n            \"height\": 684,\n            \"page\": 4532,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"1965-07-12T15:16:51.467Z\",\n        \"updated_at\": \"1997-10-27T20:52:51.378Z\",\n        \"generated_document_uri\": \"string\"\n      }\n    ]\n  },\n  {\n    \"identifier\": \"string\",\n    \"order_id\": \"string\",\n    \"reference_id\": \"string\",\n    \"type\": \"string\",\n    \"status\": \"string\",\n    \"created_at\": \"1999-11-19T08:24:08.652Z\",\n    \"updated_at\": \"1985-06-23T19:28:11.085Z\",\n    \"documents\": [\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"2000-01-28T18:29:32.752Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 8507,\n            \"y\": 4118,\n            \"x_bound\": 3601,\n            \"y_bound\": 5484,\n            \"width\": 3596,\n            \"height\": 921,\n            \"page\": 1171,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 9232,\n            \"y\": 259,\n            \"x_bound\": 601,\n            \"y_bound\": 4980,\n            \"width\": 1985,\n            \"height\": 9631,\n            \"page\": 2863,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"1964-03-06T15:52:44.679Z\",\n        \"updated_at\": \"2024-11-21T08:04:09.501Z\",\n        \"generated_document_uri\": \"string\"\n      },\n      {\n        \"identifier\": \"string\",\n        \"title\": \"string\",\n        \"template\": \"string\",\n        \"data\": {},\n        \"meta_data\": {},\n        \"status\": \"string\",\n        \"last_viewed_at\": \"1985-02-19T12:58:51.242Z\",\n        \"signatures\": [\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 2711,\n            \"y\": 6638,\n            \"x_bound\": 742,\n            \"y_bound\": 7984,\n            \"width\": 4869,\n            \"height\": 8840,\n            \"page\": 4003,\n            \"date_field_id\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"type\": \"string\",\n            \"status\": \"string\",\n            \"signer\": \"string\",\n            \"signed_at\": \"string\",\n            \"x\": 1132,\n            \"y\": 6809,\n            \"x_bound\": 5490,\n            \"y_bound\": 5876,\n            \"width\": 1601,\n            \"height\": 4946,\n            \"page\": 7534,\n            \"date_field_id\": \"string\"\n          }\n        ],\n        \"created_at\": \"2006-10-04T21:05:39.418Z\",\n        \"updated_at\": \"1955-01-13T02:29:21.229Z\",\n        \"generated_document_uri\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9cfc999a-b547-41b3-b1ef-6c780c941fa8",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8fb12f85-a37d-4990-ae4c-1bca9cc4a1ff",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "configure",
+                    "all-document-packages-by-reference-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "external_order_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "document_type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d3a3c505-c69a-45d5-9f76-a7354bc35edc",
+    "name": "Lane Reference API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

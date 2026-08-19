@@ -1,0 +1,417 @@
+{
+  "item": [
+    {
+      "id": "824c97e4-73e4-4803-b2ed-31b6d67739b0",
+      "name": "Submit",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6738e5ef-4523-45ad-a6ee-4a27350dc7b2",
+          "name": "Update order and re-send deal to lender",
+          "request": {
+            "name": "Update order and re-send deal to lender",
+            "description": {
+              "content": "Update the order and resubmit deal to lenders with deffering existing submission records.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "order",
+                "re-submit",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"company_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"contract_term\": \"<integer>\",\n  \"allowed_usage\": \"<integer>\",\n  \"credit_rating\": \"<string>\",\n  \"apr\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"annual_usage\": 0,\n  \"due_at_signing\": \"<number>\",\n  \"is_payment_updated\": false,\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_lease\": \"<number>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<number>\",\n  \"deferred_type\": \"<string>\",\n  \"rv_balloon_percentage\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"fp_id\": \"<integer>\",\n  \"vehicle_id\": \"<integer>\",\n  \"msrp\": \"<number>\",\n  \"schedule_option\": \"<string>\",\n  \"asset_usage\": \"<string>\",\n  \"calcuation_method\": \"<string>\",\n  \"order_stage\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"order_fees\": [\n    {\n      \"dealer_fee_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"vendor\": \"<string>\",\n      \"fee_type\": \"<string>\"\n    },\n    {\n      \"dealer_fee_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"vendor\": \"<string>\",\n      \"fee_type\": \"<string>\"\n    }\n  ],\n  \"order_options\": [\n    {\n      \"option_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"rv_balloon_percentage\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"rv_balloon_value\": \"<number>\"\n    },\n    {\n      \"option_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"rv_balloon_percentage\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"rv_balloon_value\": \"<number>\"\n    }\n  ],\n  \"order_fnI\": [\n    {\n      \"applied_price\": \"<number>\",\n      \"financial_insurance_id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"rate_id\": \"<integer>\",\n      \"mileage\": \"<integer>\",\n      \"term\": \"<integer>\",\n      \"session_id\": \"<string>\",\n      \"identifier\": \"<string>\",\n      \"is_msp\": \"<boolean>\"\n    },\n    {\n      \"applied_price\": \"<number>\",\n      \"financial_insurance_id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"rate_id\": \"<integer>\",\n      \"mileage\": \"<integer>\",\n      \"term\": \"<integer>\",\n      \"session_id\": \"<string>\",\n      \"identifier\": \"<string>\",\n      \"is_msp\": \"<boolean>\"\n    }\n  ],\n  \"order_tradein\": {\n    \"year\": \"<integer>\",\n    \"make\": \"<string>\",\n    \"model\": \"<string>\",\n    \"trim\": \"<string>\",\n    \"mileage\": \"<integer>\",\n    \"vin\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"trade_in_amount\": \"<number>\",\n    \"is_customer_titled\": \"<boolean>\",\n    \"loan_lease_balance\": \"<boolean>\",\n    \"lender_contract_number\": \"<string>\",\n    \"lender_name\": \"<string>\",\n    \"lender_address\": \"<string>\",\n    \"lender_contact_number\": \"<string>\",\n    \"payment_type\": \"<string>\",\n    \"payoff_amount\": \"<number>\",\n    \"lender_id\": \"<integer>\",\n    \"asset_image\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"trade_in_type\": \"<string>\",\n    \"question_answers\": [\n      {\n        \"question\": \"<string>\",\n        \"answer\": \"<string>\",\n        \"trade_in_id\": \"<integer>\"\n      },\n      {\n        \"question\": \"<string>\",\n        \"answer\": \"<string>\",\n        \"trade_in_id\": \"<integer>\"\n      }\n    ]\n  },\n  \"appointment_details\": {\n    \"id\": \"<integer>\",\n    \"order_id\": \"<integer>\",\n    \"dealer_id\": \"<integer>\",\n    \"customer_id\": \"<integer>\",\n    \"appointment_date\": \"<dateTime>\",\n    \"appointment_type\": \"<string>\",\n    \"appointment_status\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"address_id\": \"<integer>\",\n    \"dealer_code\": \"<string>\",\n    \"address_data\": {\n      \"address_type\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"state_name\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"verified\": \"<boolean>\",\n      \"move_in_date\": \"<date>\",\n      \"is_garaging\": false,\n      \"identifier\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"created_by\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"time_zone\": \"<string>\"\n  },\n  \"finance_amount\": \"<number>\",\n  \"order_asset\": {\n    \"make\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"model\": \"<string>\",\n    \"trim\": \"<string>\",\n    \"year_manufacturer\": \"<string>\",\n    \"msrp\": \"<number>\",\n    \"mileage\": \"<integer>\",\n    \"exterior_color\": \"<string>\",\n    \"condition\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"classification\": \"<string>\",\n    \"engine_cylinder\": \"<string>\",\n    \"power_type\": \"<string>\",\n    \"power_figure\": \"<string>\",\n    \"engine_displacement\": \"<string>\",\n    \"fuel_type\": \"<string>\",\n    \"quantity\": \"<string>\",\n    \"unit_price\": \"<string>\",\n    \"unit_tax\": \"<string>\",\n    \"total\": \"<string>\",\n    \"vin\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"rv_balloon_amount\": \"<number>\"\n  },\n  \"insurance\": {\n    \"created_by\": \"<string>\",\n    \"order_reference_id\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"insurer_name\": \"<string>\",\n    \"agent_phone\": \"<string>\",\n    \"subscription_id\": \"<string>\",\n    \"agent_name\": \"<string>\",\n    \"policy_number\": \"<string>\",\n    \"start_date\": \"<date>\",\n    \"expiration_date\": \"<date>\",\n    \"deductible_comprehensive\": \"<number>\",\n    \"deductible_collision\": \"<number>\",\n    \"identifier\": \"<string>\",\n    \"is_verified\": false,\n    \"insurance_documents\": [\n      {\n        \"content_type\": \"<string>\",\n        \"name\": \"<string>\",\n        \"file_size\": \"<string>\",\n        \"document\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"doucment_reference_id\": \"<string>\"\n      },\n      {\n        \"content_type\": \"<string>\",\n        \"name\": \"<string>\",\n        \"file_size\": \"<string>\",\n        \"document\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"doucment_reference_id\": \"<string>\"\n      }\n    ],\n    \"insurer_address\": {\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"state_name\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"verified\": \"<boolean>\",\n      \"move_in_date\": \"<date>\",\n      \"is_garaging\": false,\n      \"identifier\": \"<string>\"\n    }\n  },\n  \"payment_recieved\": \"<boolean>\",\n  \"base_rate\": \"<number>\",\n  \"rate_type\": \"<string>\",\n  \"commission_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"applicable_rate\": \"<number>\",\n  \"invoice_status\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rental_frequency\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"order_currency\": \"<string>\",\n  \"commission_amount\": \"<number>\",\n  \"received_security_deposit\": \"<integer>\",\n  \"net_finance_amount\": \"<number>\",\n  \"rebate\": \"<number>\",\n  \"capitalized_cost_reduction\": \"<number>\",\n  \"monthly_deprecation\": \"<number>\",\n  \"tax_on_capitalized_cost_reduction\": \"<number>\",\n  \"monthly_sales_use_tax\": \"<number>\",\n  \"sum_of_fees\": \"<number>\",\n  \"sum_of_periodic_interest\": \"<number>\",\n  \"sum_of_rentals\": \"<number>\",\n  \"total_payables\": \"<number>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"individualized_agreement\": \"<string>\",\n  \"base_residual_type\": \"<integer>\",\n  \"excess_mileage_rate\": \"<number>\",\n  \"asset_rv_amount\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "85003023-e572-4a03-85d3-0aa9d804f2a2",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "re-submit",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"company_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"contract_term\": \"<integer>\",\n  \"allowed_usage\": \"<integer>\",\n  \"credit_rating\": \"<string>\",\n  \"apr\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"annual_usage\": 0,\n  \"due_at_signing\": \"<number>\",\n  \"is_payment_updated\": false,\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_lease\": \"<number>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<number>\",\n  \"deferred_type\": \"<string>\",\n  \"rv_balloon_percentage\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"fp_id\": \"<integer>\",\n  \"vehicle_id\": \"<integer>\",\n  \"msrp\": \"<number>\",\n  \"schedule_option\": \"<string>\",\n  \"asset_usage\": \"<string>\",\n  \"calcuation_method\": \"<string>\",\n  \"order_stage\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"order_fees\": [\n    {\n      \"dealer_fee_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"vendor\": \"<string>\",\n      \"fee_type\": \"<string>\"\n    },\n    {\n      \"dealer_fee_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"vendor\": \"<string>\",\n      \"fee_type\": \"<string>\"\n    }\n  ],\n  \"order_options\": [\n    {\n      \"option_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"rv_balloon_percentage\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"rv_balloon_value\": \"<number>\"\n    },\n    {\n      \"option_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"rv_balloon_percentage\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"rv_balloon_value\": \"<number>\"\n    }\n  ],\n  \"order_fnI\": [\n    {\n      \"applied_price\": \"<number>\",\n      \"financial_insurance_id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"rate_id\": \"<integer>\",\n      \"mileage\": \"<integer>\",\n      \"term\": \"<integer>\",\n      \"session_id\": \"<string>\",\n      \"identifier\": \"<string>\",\n      \"is_msp\": \"<boolean>\"\n    },\n    {\n      \"applied_price\": \"<number>\",\n      \"financial_insurance_id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"rate_id\": \"<integer>\",\n      \"mileage\": \"<integer>\",\n      \"term\": \"<integer>\",\n      \"session_id\": \"<string>\",\n      \"identifier\": \"<string>\",\n      \"is_msp\": \"<boolean>\"\n    }\n  ],\n  \"order_tradein\": {\n    \"year\": \"<integer>\",\n    \"make\": \"<string>\",\n    \"model\": \"<string>\",\n    \"trim\": \"<string>\",\n    \"mileage\": \"<integer>\",\n    \"vin\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"trade_in_amount\": \"<number>\",\n    \"is_customer_titled\": \"<boolean>\",\n    \"loan_lease_balance\": \"<boolean>\",\n    \"lender_contract_number\": \"<string>\",\n    \"lender_name\": \"<string>\",\n    \"lender_address\": \"<string>\",\n    \"lender_contact_number\": \"<string>\",\n    \"payment_type\": \"<string>\",\n    \"payoff_amount\": \"<number>\",\n    \"lender_id\": \"<integer>\",\n    \"asset_image\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"trade_in_type\": \"<string>\",\n    \"question_answers\": [\n      {\n        \"question\": \"<string>\",\n        \"answer\": \"<string>\",\n        \"trade_in_id\": \"<integer>\"\n      },\n      {\n        \"question\": \"<string>\",\n        \"answer\": \"<string>\",\n        \"trade_in_id\": \"<integer>\"\n      }\n    ]\n  },\n  \"appointment_details\": {\n    \"id\": \"<integer>\",\n    \"order_id\": \"<integer>\",\n    \"dealer_id\": \"<integer>\",\n    \"customer_id\": \"<integer>\",\n    \"appointment_date\": \"<dateTime>\",\n    \"appointment_type\": \"<string>\",\n    \"appointment_status\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"address_id\": \"<integer>\",\n    \"dealer_code\": \"<string>\",\n    \"address_data\": {\n      \"address_type\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"state_name\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"verified\": \"<boolean>\",\n      \"move_in_date\": \"<date>\",\n      \"is_garaging\": false,\n      \"identifier\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"created_by\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"time_zone\": \"<string>\"\n  },\n  \"finance_amount\": \"<number>\",\n  \"order_asset\": {\n    \"make\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"model\": \"<string>\",\n    \"trim\": \"<string>\",\n    \"year_manufacturer\": \"<string>\",\n    \"msrp\": \"<number>\",\n    \"mileage\": \"<integer>\",\n    \"exterior_color\": \"<string>\",\n    \"condition\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"classification\": \"<string>\",\n    \"engine_cylinder\": \"<string>\",\n    \"power_type\": \"<string>\",\n    \"power_figure\": \"<string>\",\n    \"engine_displacement\": \"<string>\",\n    \"fuel_type\": \"<string>\",\n    \"quantity\": \"<string>\",\n    \"unit_price\": \"<string>\",\n    \"unit_tax\": \"<string>\",\n    \"total\": \"<string>\",\n    \"vin\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"rv_balloon_amount\": \"<number>\"\n  },\n  \"insurance\": {\n    \"created_by\": \"<string>\",\n    \"order_reference_id\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"insurer_name\": \"<string>\",\n    \"agent_phone\": \"<string>\",\n    \"subscription_id\": \"<string>\",\n    \"agent_name\": \"<string>\",\n    \"policy_number\": \"<string>\",\n    \"start_date\": \"<date>\",\n    \"expiration_date\": \"<date>\",\n    \"deductible_comprehensive\": \"<number>\",\n    \"deductible_collision\": \"<number>\",\n    \"identifier\": \"<string>\",\n    \"is_verified\": false,\n    \"insurance_documents\": [\n      {\n        \"content_type\": \"<string>\",\n        \"name\": \"<string>\",\n        \"file_size\": \"<string>\",\n        \"document\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"doucment_reference_id\": \"<string>\"\n      },\n      {\n        \"content_type\": \"<string>\",\n        \"name\": \"<string>\",\n        \"file_size\": \"<string>\",\n        \"document\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"doucment_reference_id\": \"<string>\"\n      }\n    ],\n    \"insurer_address\": {\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"state_name\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"verified\": \"<boolean>\",\n      \"move_in_date\": \"<date>\",\n      \"is_garaging\": false,\n      \"identifier\": \"<string>\"\n    }\n  },\n  \"payment_recieved\": \"<boolean>\",\n  \"base_rate\": \"<number>\",\n  \"rate_type\": \"<string>\",\n  \"commission_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"applicable_rate\": \"<number>\",\n  \"invoice_status\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rental_frequency\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"order_currency\": \"<string>\",\n  \"commission_amount\": \"<number>\",\n  \"received_security_deposit\": \"<integer>\",\n  \"net_finance_amount\": \"<number>\",\n  \"rebate\": \"<number>\",\n  \"capitalized_cost_reduction\": \"<number>\",\n  \"monthly_deprecation\": \"<number>\",\n  \"tax_on_capitalized_cost_reduction\": \"<number>\",\n  \"monthly_sales_use_tax\": \"<number>\",\n  \"sum_of_fees\": \"<number>\",\n  \"sum_of_periodic_interest\": \"<number>\",\n  \"sum_of_rentals\": \"<number>\",\n  \"total_payables\": \"<number>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"individualized_agreement\": \"<string>\",\n  \"base_residual_type\": \"<integer>\",\n  \"excess_mileage_rate\": \"<number>\",\n  \"asset_rv_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a65a99d9-5aad-44f6-b08e-772a2270eca5",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "order",
+                    "re-submit",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"dealer_id\": \"<integer>\",\n  \"lender_id\": \"<integer>\",\n  \"broker_id\": \"<integer>\",\n  \"company_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"contract_term\": \"<integer>\",\n  \"allowed_usage\": \"<integer>\",\n  \"credit_rating\": \"<string>\",\n  \"apr\": \"<number>\",\n  \"estimated_monthly_payment\": \"<number>\",\n  \"annual_usage\": 0,\n  \"due_at_signing\": \"<number>\",\n  \"is_payment_updated\": false,\n  \"selling_price\": \"<number>\",\n  \"down_payment\": \"<number>\",\n  \"down_payment_lease\": \"<number>\",\n  \"tax_amount\": \"<number>\",\n  \"tax_amount_number\": \"<number>\",\n  \"deferred_type\": \"<string>\",\n  \"rv_balloon_percentage\": \"<number>\",\n  \"rv_balloon_value\": \"<number>\",\n  \"balloon_collection\": \"<string>\",\n  \"fp_id\": \"<integer>\",\n  \"vehicle_id\": \"<integer>\",\n  \"msrp\": \"<number>\",\n  \"schedule_option\": \"<string>\",\n  \"asset_usage\": \"<string>\",\n  \"calcuation_method\": \"<string>\",\n  \"order_stage\": \"<string>\",\n  \"finance_type\": \"<string>\",\n  \"order_fees\": [\n    {\n      \"dealer_fee_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"vendor\": \"<string>\",\n      \"fee_type\": \"<string>\"\n    },\n    {\n      \"dealer_fee_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"vendor\": \"<string>\",\n      \"fee_type\": \"<string>\"\n    }\n  ],\n  \"order_options\": [\n    {\n      \"option_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"rv_balloon_percentage\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"rv_balloon_value\": \"<number>\"\n    },\n    {\n      \"option_id\": \"<integer>\",\n      \"applied_price\": \"<number>\",\n      \"rv_balloon_percentage\": \"<number>\",\n      \"identifier\": \"<string>\",\n      \"rv_balloon_value\": \"<number>\"\n    }\n  ],\n  \"order_fnI\": [\n    {\n      \"applied_price\": \"<number>\",\n      \"financial_insurance_id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"rate_id\": \"<integer>\",\n      \"mileage\": \"<integer>\",\n      \"term\": \"<integer>\",\n      \"session_id\": \"<string>\",\n      \"identifier\": \"<string>\",\n      \"is_msp\": \"<boolean>\"\n    },\n    {\n      \"applied_price\": \"<number>\",\n      \"financial_insurance_id\": \"<integer>\",\n      \"form_id\": \"<integer>\",\n      \"rate_id\": \"<integer>\",\n      \"mileage\": \"<integer>\",\n      \"term\": \"<integer>\",\n      \"session_id\": \"<string>\",\n      \"identifier\": \"<string>\",\n      \"is_msp\": \"<boolean>\"\n    }\n  ],\n  \"order_tradein\": {\n    \"year\": \"<integer>\",\n    \"make\": \"<string>\",\n    \"model\": \"<string>\",\n    \"trim\": \"<string>\",\n    \"mileage\": \"<integer>\",\n    \"vin\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"condition\": \"<string>\",\n    \"trade_in_amount\": \"<number>\",\n    \"is_customer_titled\": \"<boolean>\",\n    \"loan_lease_balance\": \"<boolean>\",\n    \"lender_contract_number\": \"<string>\",\n    \"lender_name\": \"<string>\",\n    \"lender_address\": \"<string>\",\n    \"lender_contact_number\": \"<string>\",\n    \"payment_type\": \"<string>\",\n    \"payoff_amount\": \"<number>\",\n    \"lender_id\": \"<integer>\",\n    \"asset_image\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"trade_in_type\": \"<string>\",\n    \"question_answers\": [\n      {\n        \"question\": \"<string>\",\n        \"answer\": \"<string>\",\n        \"trade_in_id\": \"<integer>\"\n      },\n      {\n        \"question\": \"<string>\",\n        \"answer\": \"<string>\",\n        \"trade_in_id\": \"<integer>\"\n      }\n    ]\n  },\n  \"appointment_details\": {\n    \"id\": \"<integer>\",\n    \"order_id\": \"<integer>\",\n    \"dealer_id\": \"<integer>\",\n    \"customer_id\": \"<integer>\",\n    \"appointment_date\": \"<dateTime>\",\n    \"appointment_type\": \"<string>\",\n    \"appointment_status\": \"<string>\",\n    \"comments\": \"<string>\",\n    \"address_id\": \"<integer>\",\n    \"dealer_code\": \"<string>\",\n    \"address_data\": {\n      \"address_type\": \"<string>\",\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"state_name\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"verified\": \"<boolean>\",\n      \"move_in_date\": \"<date>\",\n      \"is_garaging\": false,\n      \"identifier\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"created_by\": \"<string>\",\n    \"updated_by\": \"<string>\",\n    \"time_zone\": \"<string>\"\n  },\n  \"finance_amount\": \"<number>\",\n  \"order_asset\": {\n    \"make\": \"<string>\",\n    \"identifier\": \"<string>\",\n    \"model\": \"<string>\",\n    \"trim\": \"<string>\",\n    \"year_manufacturer\": \"<string>\",\n    \"msrp\": \"<number>\",\n    \"mileage\": \"<integer>\",\n    \"exterior_color\": \"<string>\",\n    \"condition\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"classification\": \"<string>\",\n    \"engine_cylinder\": \"<string>\",\n    \"power_type\": \"<string>\",\n    \"power_figure\": \"<string>\",\n    \"engine_displacement\": \"<string>\",\n    \"fuel_type\": \"<string>\",\n    \"quantity\": \"<string>\",\n    \"unit_price\": \"<string>\",\n    \"unit_tax\": \"<string>\",\n    \"total\": \"<string>\",\n    \"vin\": \"<string>\",\n    \"asset_type\": \"<string>\",\n    \"rv_balloon_amount\": \"<number>\"\n  },\n  \"insurance\": {\n    \"created_by\": \"<string>\",\n    \"order_reference_id\": \"<string>\",\n    \"reference_id\": \"<string>\",\n    \"insurer_name\": \"<string>\",\n    \"agent_phone\": \"<string>\",\n    \"subscription_id\": \"<string>\",\n    \"agent_name\": \"<string>\",\n    \"policy_number\": \"<string>\",\n    \"start_date\": \"<date>\",\n    \"expiration_date\": \"<date>\",\n    \"deductible_comprehensive\": \"<number>\",\n    \"deductible_collision\": \"<number>\",\n    \"identifier\": \"<string>\",\n    \"is_verified\": false,\n    \"insurance_documents\": [\n      {\n        \"content_type\": \"<string>\",\n        \"name\": \"<string>\",\n        \"file_size\": \"<string>\",\n        \"document\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"doucment_reference_id\": \"<string>\"\n      },\n      {\n        \"content_type\": \"<string>\",\n        \"name\": \"<string>\",\n        \"file_size\": \"<string>\",\n        \"document\": \"<string>\",\n        \"created_by\": \"<string>\",\n        \"doucment_reference_id\": \"<string>\"\n      }\n    ],\n    \"insurer_address\": {\n      \"address_line_1\": \"<string>\",\n      \"address_line_2\": \"<string>\",\n      \"state_name\": \"<string>\",\n      \"zip_code\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"contact_number\": \"<string>\",\n      \"verified\": \"<boolean>\",\n      \"move_in_date\": \"<date>\",\n      \"is_garaging\": false,\n      \"identifier\": \"<string>\"\n    }\n  },\n  \"payment_recieved\": \"<boolean>\",\n  \"base_rate\": \"<number>\",\n  \"rate_type\": \"<string>\",\n  \"commission_type\": \"<string>\",\n  \"margin\": \"<number>\",\n  \"applicable_rate\": \"<number>\",\n  \"invoice_status\": \"<string>\",\n  \"rental_mode\": \"<string>\",\n  \"rental_frequency\": \"<string>\",\n  \"running_id\": \"<string>\",\n  \"order_currency\": \"<string>\",\n  \"commission_amount\": \"<number>\",\n  \"received_security_deposit\": \"<integer>\",\n  \"net_finance_amount\": \"<number>\",\n  \"rebate\": \"<number>\",\n  \"capitalized_cost_reduction\": \"<number>\",\n  \"monthly_deprecation\": \"<number>\",\n  \"tax_on_capitalized_cost_reduction\": \"<number>\",\n  \"monthly_sales_use_tax\": \"<number>\",\n  \"sum_of_fees\": \"<number>\",\n  \"sum_of_periodic_interest\": \"<number>\",\n  \"sum_of_rentals\": \"<number>\",\n  \"total_payables\": \"<number>\",\n  \"non_vatable_amount\": \"<number>\",\n  \"individualized_agreement\": \"<string>\",\n  \"base_residual_type\": \"<integer>\",\n  \"excess_mileage_rate\": \"<number>\",\n  \"asset_rv_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f19ad50d-3e0b-4824-b33f-a1a3dcd1603b",
+          "name": "Mock Credit Approver API & Fraud Check",
+          "request": {
+            "name": "Mock Credit Approver API & Fraud Check",
+            "description": {
+              "content": "Mock Request",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "submit-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "reference_number",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lender_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c7cf865-a98c-4559-b9f5-ad4c13abfb6d",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "submit-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lender_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb6c8e45-a746-41aa-99b7-ec1234f77610",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "submit-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "reference_number",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lender_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e41eb9ce-9fd5-4d1e-b0a5-b2a5ca48ac09",
+    "name": "Lane Submit API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

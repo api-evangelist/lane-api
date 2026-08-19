@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "5d081c1d-3e0a-4e96-ad02-4377fddab6ba",
+      "name": "Event_analytic",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "940acaa8-d4e5-42ef-a08b-15733eef2a15",
+          "name": "Create Event",
+          "request": {
+            "name": "Create Event",
+            "description": {},
+            "url": {
+              "path": [
+                "dms",
+                "event_analytic"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"session\": \"<uuid>\",\n  \"user_id\": \"<integer>\",\n  \"slug\": \"<string>\",\n  \"tenant_id\": \"<integer>\",\n  \"dealer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"deal_type\": \"<string>\",\n  \"vin\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_status\": \"<string>\",\n  \"vehicle_year\": \"<string>\",\n  \"event_name\": \"<string>\",\n  \"page_type\": \"<string>\",\n  \"data\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "22caefd9-faff-4b00-8140-808bb1b920d8",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "event_analytic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"session\": \"<uuid>\",\n  \"user_id\": \"<integer>\",\n  \"slug\": \"<string>\",\n  \"tenant_id\": \"<integer>\",\n  \"dealer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"deal_type\": \"<string>\",\n  \"vin\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_status\": \"<string>\",\n  \"vehicle_year\": \"<string>\",\n  \"event_name\": \"<string>\",\n  \"page_type\": \"<string>\",\n  \"data\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6fedad5c-be04-457d-ad05-d2ee0cb5a08a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "event_analytic"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"session\": \"<uuid>\",\n  \"user_id\": \"<integer>\",\n  \"slug\": \"<string>\",\n  \"tenant_id\": \"<integer>\",\n  \"dealer_name\": \"<string>\",\n  \"dealer_id\": \"<integer>\",\n  \"deal_type\": \"<string>\",\n  \"vin\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_status\": \"<string>\",\n  \"vehicle_year\": \"<string>\",\n  \"event_name\": \"<string>\",\n  \"page_type\": \"<string>\",\n  \"data\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a2beecc3-d4e3-455e-88dc-5b00e31362ec",
+    "name": "Lane Event_analytic API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "item": [
+    {
+      "id": "ab0fd638-9337-455e-844c-5fd5433bc5e7",
+      "name": "Order  Calculations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "196b7c9e-9a7a-49fc-88c1-3eba4dc721c1",
+          "name": "Calculate NFA [Net Financed Amount]",
+          "request": {
+            "name": "Calculate NFA [Net Financed Amount]",
+            "description": {
+              "content": "Calculate NFA [Net Financed Amount]",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dms",
+                "quote",
+                "calculate-nfa"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Api-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"trade_in_amount\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bc2895a6-84aa-4189-a633-9b37e20ca4e6",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculate-nfa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"trade_in_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"net_financed_amount\": 3736.131653679258\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b63a94e-e488-4b6e-a028-ded420e1dd70",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dms",
+                    "quote",
+                    "calculate-nfa"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Api-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"per_unit_selling_price\": \"<number>\",\n  \"dealer_id\": \"<integer>\",\n  \"options\": [\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"option_name\": \"<string>\",\n      \"option_amount\": \"<number>\",\n      \"rv_amount_on_option\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"fees\": [\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    },\n    {\n      \"fee_name\": \"<string>\",\n      \"fee_amount\": \"<number>\",\n      \"fee_handling\": \"<string>\",\n      \"is_taxable\": \"<boolean>\",\n      \"tax_in_capital\": true,\n      \"vendor\": \"<string>\"\n    }\n  ],\n  \"fni_products\": [\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    },\n    {\n      \"fni_product_name\": \"<string>\",\n      \"fni_product_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\",\n      \"is_taxable\": false\n    }\n  ],\n  \"taxes\": [\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"tax_name\": \"<string>\",\n      \"tax_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"insurance\": [\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    },\n    {\n      \"insurance_name\": \"<string>\",\n      \"insurance_amount\": \"<number>\",\n      \"amount_handling\": \"<string>\"\n    }\n  ],\n  \"quantity\": \"<integer>\",\n  \"down_payment\": \"<number>\",\n  \"trade_in_amount\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dms-api.netsolapp.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5b48dda6-dfce-4c2f-a6d6-663d68c92f5a",
+    "name": "Lane Order  Calculations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lane offers a feature-rich, end-to-end order management system for asset leasing, loans and credit companies. Our platform covers all aspects, from conducting end-to-end sales to performing dealer and partner-related tasks and marketing-related activities.\n\nContact Support:\n Email: support@netsolapp.io, support@appexnow.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lane Lender_id API",
+    "version": "1.3.43"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lender_id",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update Order Status and Lender Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dms-api.netsolapp.io/dms/order/approve-order-by-lender/:reference_number/:lender_id",
+            "params": [
+              {
+                "name": "reference_number",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lender_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "order_status",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Api-Key",
+              "value": "{{X-Api-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update the order status to approve and replace lender id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
