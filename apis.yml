@@ -16,7 +16,8 @@ apis:
   name: Lane API Add API
   description: The Add API from Lane API — 3 operation(s) for add.
   humanURL: https://docs.netsolapp.io/lane/index.html
-  tags:
+  tags: []
+  tags_raw:
   - Add
   properties:
   - type: OpenAPI
@@ -326,6 +327,8 @@ apis:
   description: The Create_application API from Lane API — 1 operation(s) for create_application.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - CreateApplication
+  tags_raw:
   - Create_application
   properties:
   - type: OpenAPI
@@ -348,6 +351,8 @@ apis:
   description: The Currencies API from Lane API — 1 operation(s) for currencies.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Currency
+  tags_raw:
   - Currencies
   properties:
   - type: OpenAPI
@@ -359,6 +364,8 @@ apis:
   description: The Customer API from Lane API — 4 operation(s) for customer.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Customers
+  tags_raw:
   - Customer
   properties:
   - type: OpenAPI
@@ -436,6 +443,8 @@ apis:
   description: The Deal API from Lane API — 1 operation(s) for deal.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - deal
+  tags_raw:
   - Deal
   properties:
   - type: OpenAPI
@@ -480,6 +489,8 @@ apis:
   description: The Dealer  Management API from Lane API — 1 operation(s) for dealer  management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Dealer Management
+  tags_raw:
   - Dealer  Management
   properties:
   - type: OpenAPI
@@ -558,6 +569,8 @@ apis:
   description: The Dms API from Lane API — 1 operation(s) for dms.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - DMS
+  tags_raw:
   - Dms
   properties:
   - type: OpenAPI
@@ -580,6 +593,8 @@ apis:
   description: The Document  Generation API from Lane API — 1 operation(s) for document  generation.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Document Generation
+  tags_raw:
   - Document  Generation
   properties:
   - type: OpenAPI
@@ -845,7 +860,8 @@ apis:
   description: >-
     The Get  A N  Signed  U R L API from Lane API — 1 operation(s) for get  a n  signed  u r l.
   humanURL: https://docs.netsolapp.io/lane/index.html
-  tags:
+  tags: []
+  tags_raw:
   - Get  A N  Signed  U R L
   properties:
   - type: OpenAPI
@@ -979,6 +995,8 @@ apis:
   description: The Integrations API from Lane API — 3 operation(s) for integrations.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Integration
+  tags_raw:
   - Integrations
   properties:
   - type: OpenAPI
@@ -1034,6 +1052,8 @@ apis:
   description: The Lead- Management API from Lane API — 2 operation(s) for lead- management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Lead Management
+  tags_raw:
   - Lead- Management
   properties:
   - type: OpenAPI
@@ -1110,7 +1130,8 @@ apis:
   name: Lane API Methods API
   description: The Methods API from Lane API — 1 operation(s) for methods.
   humanURL: https://docs.netsolapp.io/lane/index.html
-  tags:
+  tags: []
+  tags_raw:
   - Methods
   properties:
   - type: OpenAPI
@@ -1166,6 +1187,8 @@ apis:
   description: The Notifications API from Lane API — 3 operation(s) for notifications.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Notification
+  tags_raw:
   - Notifications
   properties:
   - type: OpenAPI
@@ -1221,6 +1244,8 @@ apis:
   description: The Order  Management API from Lane API — 23 operation(s) for order  management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Order Management
+  tags_raw:
   - Order  Management
   properties:
   - type: OpenAPI
@@ -1244,6 +1269,8 @@ apis:
   description: The Orders API from Lane API — 4 operation(s) for orders.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -1420,6 +1447,8 @@ apis:
   description: The Quote API from Lane API — 8 operation(s) for quote.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Quotes
+  tags_raw:
   - Quote
   properties:
   - type: OpenAPI
@@ -1652,6 +1681,8 @@ apis:
   description: The State API from Lane API — 1 operation(s) for state.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - States
+  tags_raw:
   - State
   properties:
   - type: OpenAPI
@@ -1674,6 +1705,8 @@ apis:
   description: The Statuses API from Lane API — 1 operation(s) for statuses.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Status
+  tags_raw:
   - Statuses
   properties:
   - type: OpenAPI
@@ -1784,6 +1817,8 @@ apis:
   description: The Trade- In API from Lane API — 4 operation(s) for trade- in.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Trade-In
+  tags_raw:
   - Trade- In
   properties:
   - type: OpenAPI
@@ -1806,6 +1841,8 @@ apis:
   description: The Tradein API from Lane API — 1 operation(s) for tradein.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Trade-In
+  tags_raw:
   - Tradein
   properties:
   - type: OpenAPI
@@ -1883,6 +1920,8 @@ apis:
   description: The Verifications API from Lane API — 1 operation(s) for verifications.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Verification
+  tags_raw:
   - Verifications
   properties:
   - type: OpenAPI
@@ -1916,6 +1955,8 @@ apis:
   description: The Vin API from Lane API — 1 operation(s) for vin.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - VIN
+  tags_raw:
   - Vin
   properties:
   - type: OpenAPI
@@ -1927,6 +1968,8 @@ apis:
   description: The Webhooks API from Lane API — 1 operation(s) for webhooks.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
