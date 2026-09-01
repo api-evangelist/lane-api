@@ -118,6 +118,8 @@ apis:
     The Appointment  Management API from Lane API — 2 operation(s) for appointment  management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Appointment Management
+  tags_raw:
   - Appointment  Management
   properties:
   - type: OpenAPI
@@ -327,7 +329,7 @@ apis:
   description: The Create_application API from Lane API — 1 operation(s) for create_application.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Create_application
+  - CreateApplication
   tags_raw:
   - Create_application
   properties:
@@ -443,7 +445,7 @@ apis:
   description: The Deal API from Lane API — 1 operation(s) for deal.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - deal
+  - Deal
   tags_raw:
   - Deal
   properties:
@@ -489,7 +491,7 @@ apis:
   description: The Dealer  Management API from Lane API — 1 operation(s) for dealer  management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Dealer  Management
+  - Dealer Management
   tags_raw:
   - Dealer  Management
   properties:
@@ -569,7 +571,7 @@ apis:
   description: The Dms API from Lane API — 1 operation(s) for dms.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Dms
+  - DMS
   tags_raw:
   - Dms
   properties:
@@ -593,7 +595,7 @@ apis:
   description: The Document  Generation API from Lane API — 1 operation(s) for document  generation.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Document  Generation
+  - Document Generation
   tags_raw:
   - Document  Generation
   properties:
@@ -1052,7 +1054,7 @@ apis:
   description: The Lead- Management API from Lane API — 2 operation(s) for lead- management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Lead- Management
+  - Lead Management
   tags_raw:
   - Lead- Management
   properties:
@@ -1244,7 +1246,7 @@ apis:
   description: The Order  Management API from Lane API — 23 operation(s) for order  management.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Order  Management
+  - Order Management
   tags_raw:
   - Order  Management
   properties:
@@ -1817,7 +1819,7 @@ apis:
   description: The Trade- In API from Lane API — 4 operation(s) for trade- in.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Trade- In
+  - Trade-In
   tags_raw:
   - Trade- In
   properties:
@@ -1841,7 +1843,7 @@ apis:
   description: The Tradein API from Lane API — 1 operation(s) for tradein.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Tradein
+  - Trade-In
   tags_raw:
   - Tradein
   properties:
@@ -1920,7 +1922,7 @@ apis:
   description: The Verifications API from Lane API — 1 operation(s) for verifications.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
-  - Verifications
+  - Verification
   tags_raw:
   - Verifications
   properties:
