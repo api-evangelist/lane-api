@@ -187,6 +187,8 @@ apis:
   description: The Dealer API from Lane API — 11 operation(s) for dealer.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Dealers
+  tags_raw:
   - Dealer
   properties:
   - type: OpenAPI
@@ -335,6 +337,8 @@ apis:
   description: The Lead API from Lane API — 3 operation(s) for lead.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Leads
+  tags_raw:
   - Lead
   properties:
   - type: OpenAPI
@@ -357,6 +361,8 @@ apis:
   description: The Payment API from Lane API — 4 operation(s) for payment.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Payments
+  tags_raw:
   - Payment
   properties:
   - type: OpenAPI
@@ -561,6 +567,8 @@ apis:
   description: The Vehicle API from Lane API — 4 operation(s) for vehicle.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Vehicles
+  tags_raw:
   - Vehicle
   properties:
   - type: OpenAPI
