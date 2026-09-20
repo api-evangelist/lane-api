@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 16
+edge_count: 18
 edges:
 - tag: Decisions
   spec_file: lane-api-decisions-api-openapi.yml
@@ -44,6 +44,18 @@ edges:
   reason: Full lifecycle handling of sales leads — creation, update and status transition — which is Opportunity
     & Pipeline Management. The vendor describes itself as covering "end-to-end sales", corroborating the
     sales reading.
+- tag: Quote
+  spec_file: lane-api-quote-api-openapi.yml
+  capability_id: BC-410.40
+  capability_id_l1: BC-410
+  capability_name: Quote & Configuration Management
+  confidence: 0.85
+  evidence: POST /dms/quote/create  Create Quote; POST /dms/quote/calculation/multi-assets  Calculate
+    Quotation for Multiple Assets; NFACalculationParams
+  reason: Operations create quotes and compute rentals, net financed amount and monthly impact for asset
+    configurations — pricing and quoting of a deal, i.e. CPQ. Vendor's leasing context does not change
+    that this is the quote capability.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: Affordability
   spec_file: lane-api-affordability-api-openapi.yml
   capability_id: BC-1320.20
@@ -98,6 +110,18 @@ edges:
   reason: 'The surface configures a leasing/finance order: quotation creation and versioning, order fees,
     options, trade-ins. That is configure-price-quote for the deal, i.e. Quote & Configuration Management.
     Some ambiguity because the same surface touches credit origination workflow, hence 0.72.'
+- tag: Address
+  spec_file: lane-api-address-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.7
+  evidence: '"add_customer_address_dms_address_post Create an address", schemas "CustomerUpdateAddressModel,
+    AddressResponseModel, AddressTypesEnum"'
+  reason: Full CRUD plus history over customer address records — maintenance of customer master attributes,
+    i.e. Customer Data Management. Confidence tempered because address handling could also be read as
+    generic reference data.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: Contract
   spec_file: lane-api-contract-api-openapi.yml
   capability_id: BC-1320
