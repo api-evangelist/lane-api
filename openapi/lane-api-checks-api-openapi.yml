@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: 1.3.43
   title: Lane Checks API
@@ -19,7 +19,6 @@ paths:
       tags:
       - Checks
       summary: Check customer, create if does not exist
-      description: Check customer, create if does not exist
       operationId: check_customer_dms_check_customer_by_email_patch
       requestBody:
         content:
@@ -78,188 +77,8 @@ paths:
       security:
       - APIKeyHeader: []
       - OAuth2PasswordBearer: []
-  /dms/customer/fraud-check:
-    post:
-      tags:
-      - Checks
-      summary: Creates personal finance information
-      description: Create personal finance information against customer
-      operationId: add_customer_fraud_check_dms_customer_fraud_check_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/FraudCheckModel'
-        required: true
-      responses:
-        '201':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
-  /dms/affordability-check/:
-    post:
-      tags:
-      - Checks
-      summary: Affordability Check
-      operationId: affordability_check_dms_affordability_check__post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AffordabilityCheckModel'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
-  /dms/affordability-check/monthly-payment-calculation/V2/:
-    post:
-      tags:
-      - Checks
-      summary: Monthly Payment Calculation V2
-      operationId: monthly_payment_calculation_v2_dms_affordability_check_monthly_payment_calculation_V2__post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MonthlyPaymentCalculationModelV2'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
-  /dms/dealer/check-actively-order:
-    get:
-      tags:
-      - Checks
-      summary: Check Dealer actively order
-      description: Check Dealer actively order
-      operationId: check_dealer_order_dms_dealer_check_actively_order_get
-      parameters:
-      - required: true
-        schema:
-          title: Dealer Id
-          type: string
-        name: dealer_id
-        in: query
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
 components:
   schemas:
-    FraudCheckModel:
-      title: FraudCheckModel
-      required:
-      - user_id
-      - order_reference_number
-      - reference_id
-      - dealer_code
-      type: object
-      properties:
-        user_id:
-          title: User Id
-          type: integer
-        order_reference_number:
-          title: Order Reference Number
-          minLength: 1
-          type: string
-          description: Order Reference Id
-        reference_id:
-          title: Reference Id
-          minLength: 1
-          type: string
-          description: Customer Reference Id
-        dealer_code:
-          title: Dealer Code
-          type: string
-    AffordabilityCheckModel:
-      title: AffordabilityCheckModel
-      required:
-      - dealer_code
-      - company_code
-      - lender_code
-      - max_payment
-      - terms
-      type: object
-      properties:
-        dealer_code:
-          title: Dealer Code
-          type: string
-        company_code:
-          title: Company Code
-          type: string
-          description: Company code
-        lender_code:
-          title: Lender Code
-          type: string
-        max_payment:
-          title: Max Payment
-          type: number
-        terms:
-          title: Terms
-          type: integer
-        credit_rating:
-          title: Credit Rating
-          type: string
-        upfront:
-          title: Upfront
-          type: number
-        annual_usage:
-          title: Annual Usage
-          type: integer
-        balloon_payment:
-          title: Balloon Payment
-          type: number
-        trade_in_amount:
-          title: Trade In Amount
-          type: number
-        trade_in_payoff:
-          title: Trade In Payoff
-          type: number
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -381,45 +200,6 @@ components:
           type: integer
         consent:
           title: Consent
-    MonthlyPaymentCalculationModelV2:
-      title: MonthlyPaymentCalculationModelV2
-      required:
-      - asset_make_name
-      - asset_model_name
-      - asset_trim_name
-      - dealer_id
-      - company_id
-      - rental_mode
-      - financed_amount
-      - terms
-      type: object
-      properties:
-        asset_make_name:
-          title: Asset Make Name
-          type: string
-        asset_model_name:
-          title: Asset Model Name
-          type: string
-        asset_trim_name:
-          title: Asset Trim Name
-          type: string
-        dealer_id:
-          title: Dealer Id
-          type: integer
-        company_id:
-          title: Company Id
-          type: integer
-        rental_mode:
-          title: Rental Mode
-          type: string
-        financed_amount:
-          title: Financed Amount
-          type: number
-        terms:
-          title: Terms
-          type: array
-          items:
-            type: integer
     CreateCustomerModel:
       title: CreateCustomerModel
       required:

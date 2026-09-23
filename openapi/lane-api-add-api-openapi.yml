@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: 1.3.43
   title: Lane Add API
@@ -14,51 +14,11 @@ servers:
 tags:
 - name: Add
 paths:
-  /dms/customer/insurance-information/add-document:
-    post:
-      tags:
-      - Add
-      summary: Add insurance document
-      description: Add insurance document
-      operationId: add_insurance_document_dms_customer_insurance_information_add_document_post
-      parameters:
-      - required: true
-        schema:
-          title: Reference Id
-          type: string
-        name: reference_id
-        in: query
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InsuranceDocumentsModel'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema:
-                title: Response Add Insurance Document Dms Customer Insurance Information Add Document Post
-                type: array
-                items:
-                  $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
   /dms/add-payment-details/:
     post:
       tags:
       - Add
       summary: Add Payment Details from dealer side
-      description: Add Payment Details from dealer side
       operationId: add_payment_details_dms_add_payment_details__post
       requestBody:
         content:
@@ -81,75 +41,16 @@ paths:
       security:
       - APIKeyHeader: []
       - OAuth2PasswordBearer: []
-  /dms/insurance/add-insurance:
-    post:
-      tags:
-      - Add
-      summary: Add Insurance
-      description: Storing Transaction id
-      operationId: add_insurance_dms_insurance_add_insurance_post
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InsuranceProviderRequest'
-        required: true
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
 components:
   schemas:
-    InsuranceDocumentsModel:
-      title: InsuranceDocumentsModel
-      required:
-      - content_type
-      - name
-      - file_size
-      type: object
-      properties:
-        document:
-          title: Document
-          type: string
-        content_type:
-          title: Content Type
-          minLength: 1
-          type: string
-          description: 'format: application/pdf, image/png '
-        name:
-          title: Name
-          minLength: 1
-          type: string
-        file_size:
-          title: File Size
-          minLength: 1
-          type: string
-        created_by:
-          title: Created By
-          type: string
-        doucment_reference_id:
-          title: Doucment Reference Id
-          type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
+    PaymentMethodType:
+      title: PaymentMethodType
+      enum:
+      - card
+      - ach_debit
+      - cheque
+      type: string
+      description: An enumeration.
     ValidationError:
       title: ValidationError
       required:
@@ -198,87 +99,15 @@ components:
         order_payment_detail_id:
           title: Order Payment Detail Id
           type: integer
-    InsuranceProviderRequest:
-      title: InsuranceProviderRequest
+    HTTPValidationError:
+      title: HTTPValidationError
       type: object
       properties:
-        order_id:
-          title: Order Id
-          type: string
-          description: Order Reference Id
-        transactionId:
-          title: Transactionid
-          type: string
-          description: Transaction Id
-        carrierName:
-          title: Carriername
-          type: string
-          description: Insurer Name
-        policyExpirationDate:
-          title: Policyexpirationdate
-          type: string
-          description: Expiration Date
-          format: date
-        policyDocumentUrl:
-          title: Policydocumenturl
-          type: string
-          description: Policy Document Url
-        insuranceCardUrl:
-          title: Insurancecardurl
-          type: string
-          description: Insurance Card Url
-        contactNumber:
-          title: Contactnumber
-          type: string
-          description: Contact Number
-        policyNumber:
-          title: Policynumber
-          type: string
-          description: Policy Number
-    InsuranceDocumentsResponseModel:
-      title: InsuranceDocumentsResponseModel
-      type: object
-      properties:
-        document_uri:
-          title: Document Uri
-          type: string
-        content_type:
-          title: Content Type
-          type: string
-        name:
-          title: Name
-          type: string
-        file_size:
-          title: File Size
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-        created_by:
-          title: Created By
-          type: string
-        created_at:
-          title: Created At
-          type: string
-          format: date
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date
-        deleted_by:
-          title: Deleted By
-          type: string
-    PaymentMethodType:
-      title: PaymentMethodType
-      enum:
-      - card
-      - ach_debit
-      - cheque
-      type: string
-      description: An enumeration.
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

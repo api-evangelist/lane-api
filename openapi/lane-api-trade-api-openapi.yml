@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: 1.3.43
   title: Lane Trade API
@@ -332,141 +332,8 @@ paths:
       security:
       - APIKeyHeader: []
       - OAuth2PasswordBearer: []
-  /dms/set-trade-in-inspection-status/{order_id}:
-    patch:
-      tags:
-      - Trade
-      summary: Set Trade-in inspection status
-      description: This method will set Trade-in inspection status
-      operationId: set_trade_in_inspection_status_dms_set_trade_in_inspection_status__order_id__patch
-      parameters:
-      - required: true
-        schema:
-          title: Order Id
-          type: integer
-        name: order_id
-        in: path
-      - required: true
-        schema:
-          $ref: '#/components/schemas/TradeInInspectionStatus'
-        name: inspection_status
-        in: query
-      responses:
-        '200':
-          description: Successful Response
-          content:
-            application/json:
-              schema: {}
-        '422':
-          description: Validation Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/HTTPValidationError'
-      security:
-      - APIKeyHeader: []
-      - OAuth2PasswordBearer: []
 components:
   schemas:
-    TradeInVehicleValue:
-      title: TradeInVehicleValue
-      type: object
-      properties:
-        vehicle_id:
-          title: Vehicle Id
-          type: integer
-          default: 0
-        odometer:
-          title: Odometer
-          type: integer
-          default: 0
-        zip_code:
-          title: Zip Code
-          type: string
-          default: ''
-        vehicle_option_id:
-          title: Vehicle Option Id
-          type: array
-          items:
-            $ref: '#/components/schemas/VehicleOption'
-          default: []
-        start_year:
-          title: Start Year
-          type: integer
-          default: 0
-        end_year:
-          title: End Year
-          type: integer
-          default: 0
-        model_id:
-          title: Model Id
-          type: integer
-          default: 0
-    TradeInYear:
-      title: TradeInYear
-      type: object
-      properties:
-        make_id:
-          title: Make Id
-          type: integer
-          default: 0
-        make_name:
-          title: Make Name
-          type: string
-          default: ''
-        model_id:
-          title: Model Id
-          type: integer
-          default: 0
-        model_name:
-          title: Model Name
-          type: string
-          default: ''
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
-    TradeInInspectionStatus:
-      title: TradeInInspectionStatus
-      enum:
-      - Pending
-      - Completed
-      description: An enumeration.
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    VehicleValuationProviders:
-      title: VehicleValuationProviders
-      enum:
-      - KBB
-      - JDPower
-      type: string
-      description: An enumeration.
     TradeInMake:
       title: TradeInMake
       type: object
@@ -491,40 +358,6 @@ components:
           title: Category Id
           type: integer
           default: 0
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
-    TradeInModel:
-      title: TradeInModel
-      type: object
-      properties:
-        make_id:
-          title: Make Id
-          type: integer
-          default: 0
-        year_id:
-          title: Year Id
-          type: integer
-          default: 0
-        start_year:
-          title: Start Year
-          type: integer
-          default: 0
-        end_year:
-          title: End Year
-          type: integer
-          default: 0
-        category_id:
-          title: Category Id
-          type: integer
-          default: 0
-        model_id:
-          title: Model Id
-          type: integer
-          default: 0
-        make_name:
-          title: Make Name
-          type: string
-          default: ''
         platform_vehicle_type:
           $ref: '#/components/schemas/PlateformVehicleType'
     TradeInVehicleDetail:
@@ -565,6 +398,90 @@ components:
           title: Model Name
           type: string
           default: ''
+    TradeInVehicleValue:
+      title: TradeInVehicleValue
+      type: object
+      properties:
+        vehicle_id:
+          title: Vehicle Id
+          type: integer
+          default: 0
+        odometer:
+          title: Odometer
+          type: integer
+          default: 0
+        zip_code:
+          title: Zip Code
+          type: string
+          default: ''
+        vehicle_option_id:
+          title: Vehicle Option Id
+          type: array
+          items:
+            $ref: '#/components/schemas/VehicleOption'
+          default: []
+        start_year:
+          title: Start Year
+          type: integer
+          default: 0
+        end_year:
+          title: End Year
+          type: integer
+          default: 0
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    VehicleValuationProviders:
+      title: VehicleValuationProviders
+      enum:
+      - KBB
+      - JDPower
+      type: string
+      description: An enumeration.
+    TradeInModel:
+      title: TradeInModel
+      type: object
+      properties:
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        year_id:
+          title: Year Id
+          type: integer
+          default: 0
+        start_year:
+          title: Start Year
+          type: integer
+          default: 0
+        end_year:
+          title: End Year
+          type: integer
+          default: 0
+        category_id:
+          title: Category Id
+          type: integer
+          default: 0
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+        make_name:
+          title: Make Name
+          type: string
+          default: ''
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
     TradeInTrim:
       title: TradeInTrim
       type: object
@@ -591,15 +508,27 @@ components:
           default: ''
         platform_vehicle_type:
           $ref: '#/components/schemas/PlateformVehicleType'
-    VehicleOption:
-      title: VehicleOption
+    ValidationError:
+      title: ValidationError
       required:
-      - vehicleOptionId
+      - loc
+      - msg
+      - type
       type: object
       properties:
-        vehicleOptionId:
-          title: Vehicleoptionid
-          type: integer
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
     PlateformVehicleType:
       title: PlateformVehicleType
       enum:
@@ -609,6 +538,37 @@ components:
       - MotorBike
       type: string
       description: An enumeration.
+    VehicleOption:
+      title: VehicleOption
+      required:
+      - vehicleOptionId
+      type: object
+      properties:
+        vehicleOptionId:
+          title: Vehicleoptionid
+          type: integer
+    TradeInYear:
+      title: TradeInYear
+      type: object
+      properties:
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        make_name:
+          title: Make Name
+          type: string
+          default: ''
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+        model_name:
+          title: Model Name
+          type: string
+          default: ''
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   version: 1.3.43
   title: Lane Inventory API
@@ -19,7 +19,7 @@ paths:
       tags:
       - Inventory
       summary: Get Filtered Inventory
-      description: 'This will get filtered inventory '
+      description: This will get filtered inventory
       operationId: get_filtered_inventory_dms_get_inventory_get
       parameters:
       - required: true
@@ -343,15 +343,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
     ValidationError:
       title: ValidationError
       required:
@@ -373,6 +364,15 @@ components:
         type:
           title: Error Type
           type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey
