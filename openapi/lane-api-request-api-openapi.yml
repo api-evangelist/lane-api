@@ -145,6 +145,15 @@ paths:
                   $ref: '#/components/schemas/RequestResponseModel'
 components:
   schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
     RequestResponseModel:
       title: RequestResponseModel
       type: object
@@ -226,15 +235,6 @@ components:
           title: Last Action Date
           type: string
           format: date-time
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

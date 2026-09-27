@@ -69,33 +69,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    TradeInOptions:
-      title: TradeInOptions
-      required:
-      - platform_vehicle_type
-      type: object
-      properties:
-        platform_vehicle_type:
-          title: Platform Vehicle Type
-          type: string
-        options_filter:
-          $ref: '#/components/schemas/TradeInOptionsFilter'
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    VehicleValuationProviders:
-      title: VehicleValuationProviders
-      enum:
-      - KBB
-      - JDPower
-      type: string
-      description: An enumeration.
     ValidationError:
       title: ValidationError
       required:
@@ -141,6 +114,33 @@ components:
           title: Trimid
           type: integer
           default: 0
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    VehicleValuationProviders:
+      title: VehicleValuationProviders
+      enum:
+      - KBB
+      - JDPower
+      type: string
+      description: An enumeration.
+    TradeInOptions:
+      title: TradeInOptions
+      required:
+      - platform_vehicle_type
+      type: object
+      properties:
+        platform_vehicle_type:
+          title: Platform Vehicle Type
+          type: string
+        options_filter:
+          $ref: '#/components/schemas/TradeInOptionsFilter'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

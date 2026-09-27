@@ -257,6 +257,8 @@ apis:
   description: The Financial API from Lane API — 3 operation(s) for financial.
   humanURL: https://docs.netsolapp.io/lane/index.html
   tags:
+  - Finance
+  tags_raw:
   - Financial
   properties:
   - type: OpenAPI

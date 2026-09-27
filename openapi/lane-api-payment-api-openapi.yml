@@ -88,6 +88,36 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
     CreatePayment:
       title: CreatePayment
       required:
@@ -121,6 +151,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/PaymentMethodType'
           default: card
+    PaymentOption:
+      title: PaymentOption
+      type: object
+      properties:
+        redirect_url:
+          title: Redirect Url
+          type: string
+        payment_method:
+          title: Payment Method
+          type: string
+        card:
+          title: Card
+          type: object
+    PaymentMethodType:
+      title: PaymentMethodType
+      enum:
+      - card
+      - ach_debit
+      - cheque
+      type: string
+      description: An enumeration.
     CreatePaymentResponse:
       title: CreatePaymentResponse
       type: object
@@ -190,57 +241,6 @@ components:
           title: Order Id
           type: string
           description: The merchant order Id.
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    PaymentOption:
-      title: PaymentOption
-      type: object
-      properties:
-        redirect_url:
-          title: Redirect Url
-          type: string
-        payment_method:
-          title: Payment Method
-          type: string
-        card:
-          title: Card
-          type: object
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    PaymentMethodType:
-      title: PaymentMethodType
-      enum:
-      - card
-      - ach_debit
-      - cheque
-      type: string
-      description: An enumeration.
   securitySchemes:
     APIKeyHeader:
       type: apiKey

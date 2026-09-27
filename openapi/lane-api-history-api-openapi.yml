@@ -133,17 +133,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    ComparisonModule:
-      title: ComparisonModule
-      enum:
-      - CustomerProfile
-      - InsuranceInformation
-      - Stipulation
-      - AdditionalDocument
-      - StatusFlag
-      - CustomerAdditionalDocument
-      type: string
-      description: An enumeration.
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -232,6 +221,17 @@ components:
         total_results:
           title: Total Results
           type: integer
+    ComparisonModule:
+      title: ComparisonModule
+      enum:
+      - CustomerProfile
+      - InsuranceInformation
+      - Stipulation
+      - AdditionalDocument
+      - StatusFlag
+      - CustomerAdditionalDocument
+      type: string
+      description: An enumeration.
   securitySchemes:
     APIKeyHeader:
       type: apiKey

@@ -70,51 +70,15 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    Events:
-      title: Events
-      enum:
-      - Customer Verification
-      - Customer Sign up completion
-      - Send Invitation Email
-      - Send Order Link
-      - Credit Application Submission
-      - Credit Application Resubmission
-      - Credit Application Approved
-      - Credit Application Conditioned
-      - Order Cancellation
-      - Order Declined
-      - Order Withdrawn
-      - Payment Successful
-      - Payment Decline
-      - Order Completion
-      - Lead Creation
-      - Asset Inspection Requested
-      - Asset Inspection Completed
-      - Driver License Verification Successful
-      - Driver License Verification Failed
-      - Credit Decision Rejected
-      - Customer Vehicle Pickup/Delivery
-      - Customer Order Created
-      - Customer Order Placed
-      - Car not Available
-      - Lead generation
-      - Order TimeSlots Proposed
-      - Customer Order Availability Confirmed
-      - Generate Compliance Documents
-      - Email Quotation
-      - Email Compliance Documents
-      - Download Quotation
-      - Download Proposal
-      - Email Proposal
-      - Email Proposal to Customer
-      - Customer Order Scheduled
-      - Customer Order Reschedule
-      - Trade in offer rejected
-      - Trade in offer accepted
-      - Trade in offer updated
-      - Availability Confirmed with special price
-      type: string
-      description: An enumeration.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
     EmailSqsModel:
       title: EmailSqsModel
       required:
@@ -161,15 +125,51 @@ components:
         type:
           title: Error Type
           type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
+    Events:
+      title: Events
+      enum:
+      - Customer Verification
+      - Customer Sign up completion
+      - Send Invitation Email
+      - Send Order Link
+      - Credit Application Submission
+      - Credit Application Resubmission
+      - Credit Application Approved
+      - Credit Application Conditioned
+      - Order Cancellation
+      - Order Declined
+      - Order Withdrawn
+      - Payment Successful
+      - Payment Decline
+      - Order Completion
+      - Lead Creation
+      - Asset Inspection Requested
+      - Asset Inspection Completed
+      - Driver License Verification Successful
+      - Driver License Verification Failed
+      - Credit Decision Rejected
+      - Customer Vehicle Pickup/Delivery
+      - Customer Order Created
+      - Customer Order Placed
+      - Car not Available
+      - Lead generation
+      - Order TimeSlots Proposed
+      - Customer Order Availability Confirmed
+      - Generate Compliance Documents
+      - Email Quotation
+      - Email Compliance Documents
+      - Download Quotation
+      - Download Proposal
+      - Email Proposal
+      - Email Proposal to Customer
+      - Customer Order Scheduled
+      - Customer Order Reschedule
+      - Trade in offer rejected
+      - Trade in offer accepted
+      - Trade in offer updated
+      - Availability Confirmed with special price
+      type: string
+      description: An enumeration.
   securitySchemes:
     APIKeyHeader:
       type: apiKey
