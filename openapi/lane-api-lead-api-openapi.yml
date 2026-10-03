@@ -206,22 +206,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    LeadData:
-      title: LeadData
-      type: object
-      properties:
-        vehicle_details:
-          title: Vehicle Details
-          type: object
-          description: Vehicle Details
-        customer_details:
-          title: Customer Details
-          type: object
-          description: Customer Details
-        vehicle_search_criteria:
-          title: Vehicle Search Criteria
-          type: object
-          description: Vehicle Search Criteria
     ValidationError:
       title: ValidationError
       required:
@@ -243,6 +227,31 @@ components:
         type:
           title: Error Type
           type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    LeadData:
+      title: LeadData
+      type: object
+      properties:
+        vehicle_details:
+          title: Vehicle Details
+          type: object
+          description: Vehicle Details
+        customer_details:
+          title: Customer Details
+          type: object
+          description: Customer Details
+        vehicle_search_criteria:
+          title: Vehicle Search Criteria
+          type: object
+          description: Vehicle Search Criteria
     LeadModel:
       title: LeadModel
       type: object
@@ -267,15 +276,6 @@ components:
         reference_id:
           title: Reference Id
           type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

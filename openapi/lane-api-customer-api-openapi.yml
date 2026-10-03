@@ -52,15 +52,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    ResponseModel:
-      title: ResponseModel
-      required:
-      - success
-      type: object
-      properties:
-        success:
-          title: Success
-          type: boolean
     ValidationError:
       title: ValidationError
       required:
@@ -100,6 +91,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
   securitySchemes:
     APIKeyHeader:
       type: apiKey

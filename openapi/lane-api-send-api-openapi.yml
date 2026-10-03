@@ -70,15 +70,27 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    HTTPValidationError:
-      title: HTTPValidationError
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
       type: object
       properties:
-        detail:
-          title: Detail
+        loc:
+          title: Location
           type: array
           items:
-            $ref: '#/components/schemas/ValidationError'
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
     EmailSqsModel:
       title: EmailSqsModel
       required:
@@ -104,27 +116,15 @@ components:
           title: Recipients
           type: array
           items: {}
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
+    HTTPValidationError:
+      title: HTTPValidationError
       type: object
       properties:
-        loc:
-          title: Location
+        detail:
+          title: Detail
           type: array
           items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
+            $ref: '#/components/schemas/ValidationError'
     Events:
       title: Events
       enum:

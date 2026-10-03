@@ -79,6 +79,42 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    CreateCustomerModel:
+      title: CreateCustomerModel
+      required:
+      - dealer_id
+      - email
+      type: object
+      properties:
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer ID for Customer
+        email:
+          title: Email
+          type: string
+          format: email
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -179,42 +215,6 @@ components:
           type: integer
         consent:
           title: Consent
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    CreateCustomerModel:
-      title: CreateCustomerModel
-      required:
-      - dealer_id
-      - email
-      type: object
-      properties:
-        dealer_id:
-          title: Dealer Id
-          type: integer
-          description: Dealer ID for Customer
-        email:
-          title: Email
-          type: string
-          format: email
   securitySchemes:
     APIKeyHeader:
       type: apiKey

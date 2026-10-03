@@ -97,6 +97,27 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
+    PaymentMethodType:
+      title: PaymentMethodType
+      enum:
+      - card
+      - ach_debit
+      - cheque
+      type: string
+      description: An enumeration.
+    PaymentOption:
+      title: PaymentOption
+      type: object
+      properties:
+        redirect_url:
+          title: Redirect Url
+          type: string
+        payment_method:
+          title: Payment Method
+          type: string
+        card:
+          title: Card
+          type: object
     ValidationError:
       title: ValidationError
       required:
@@ -118,60 +139,6 @@ components:
         type:
           title: Error Type
           type: string
-    CreatePayment:
-      title: CreatePayment
-      required:
-      - email
-      - amount
-      - reference_number
-      type: object
-      properties:
-        email:
-          title: Email
-          type: string
-        name:
-          title: Name
-          type: string
-        amount:
-          title: Amount
-          type: number
-        reference_number:
-          title: Reference Number
-          type: string
-        token:
-          title: Token
-          type: string
-        account_id:
-          title: Account Id
-          type: string
-        payment_method_id:
-          title: Payment Method Id
-          type: string
-        payment_method_type:
-          allOf:
-          - $ref: '#/components/schemas/PaymentMethodType'
-          default: card
-    PaymentOption:
-      title: PaymentOption
-      type: object
-      properties:
-        redirect_url:
-          title: Redirect Url
-          type: string
-        payment_method:
-          title: Payment Method
-          type: string
-        card:
-          title: Card
-          type: object
-    PaymentMethodType:
-      title: PaymentMethodType
-      enum:
-      - card
-      - ach_debit
-      - cheque
-      type: string
-      description: An enumeration.
     CreatePaymentResponse:
       title: CreatePaymentResponse
       type: object
@@ -241,6 +208,39 @@ components:
           title: Order Id
           type: string
           description: The merchant order Id.
+    CreatePayment:
+      title: CreatePayment
+      required:
+      - email
+      - amount
+      - reference_number
+      type: object
+      properties:
+        email:
+          title: Email
+          type: string
+        name:
+          title: Name
+          type: string
+        amount:
+          title: Amount
+          type: number
+        reference_number:
+          title: Reference Number
+          type: string
+        token:
+          title: Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        payment_method_id:
+          title: Payment Method Id
+          type: string
+        payment_method_type:
+          allOf:
+          - $ref: '#/components/schemas/PaymentMethodType'
+          default: card
   securitySchemes:
     APIKeyHeader:
       type: apiKey

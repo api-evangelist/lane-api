@@ -2814,32 +2814,21 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    DeleteRequestModel:
-      title: DeleteRequestModel
+    CustomerDocumentReviewModel:
+      title: CustomerDocumentReviewModel
       required:
-      - deleted_by
+      - review_notes
+      - review_status
+      - reviewed_by
       type: object
       properties:
-        deleted_by:
-          title: Deleted By
-          type: string
-    CustomerDocumentReviewPreResponseModel:
-      title: CustomerDocumentReviewPreResponseModel
-      type: object
-      properties:
-        reviewed_by:
-          title: Reviewed By
-          type: string
-        review_date_time:
-          title: Review Date Time
-          type: string
-          description: 'format: YYYY-MM-DD hh:mm:ss'
-          format: date-time
-        review_status:
-          title: Review Status
-          type: string
         review_notes:
           title: Review Notes
+          type: string
+        review_status:
+          $ref: '#/components/schemas/DocumentUploadStatus'
+        reviewed_by:
+          title: Reviewed By
           type: string
         reason:
           title: Reason
@@ -2851,77 +2840,49 @@ components:
           type: string
         identifier:
           title: Identifier
+          minLength: 1
           type: string
-    InsuranceInformationResponseModel:
-      title: InsuranceInformationResponseModel
+    CustomerDocumentUploadStatus:
+      title: CustomerDocumentUploadStatus
+      required:
+      - document_upload_indicator
       type: object
       properties:
-        order_reference_id:
-          title: Order Reference Id
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        insurer_name:
-          title: Insurer Name
-          type: string
-        agent_phone:
-          title: Agent Phone
-          type: string
-        subscription_id:
-          title: Subscription Id
-          type: string
-        agent_name:
-          title: Agent Name
-          type: string
-        policy_number:
-          title: Policy Number
-          type: string
-        start_date:
-          title: Start Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        expiration_date:
-          title: Expiration Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        deductible_comprehensive:
-          title: Deductible Comprehensive
-          type: number
-        deductible_collision:
-          title: Deductible Collision
-          type: number
-        created_by:
-          title: Created By
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        is_verified:
-          title: Is Verified
+        document_upload_indicator:
+          title: Document Upload Indicator
           type: boolean
-          default: false
-        insurance_documents:
-          title: Insurance Documents
-          type: array
-          items:
-            $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
-        insurer_address:
-          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
-        status:
-          $ref: '#/components/schemas/InsuranceDetailStatus'
-        is_active:
-          title: Is Active
-          type: boolean
-        is_deleted:
-          title: Is Deleted
+    CustomerPaymentInfoResponseModel:
+      title: CustomerPaymentInfoResponseModel
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
           type: boolean
         created_at:
           title: Created At
           type: string
           format: date-time
+        created_by:
+          title: Created By
+          type: string
         updated_at:
           title: Updated At
           type: string
@@ -2932,14 +2893,60 @@ components:
         deleted_at:
           title: Deleted At
           type: string
-          format: date
+          format: date-time
         deleted_by:
           title: Deleted By
           type: string
-    InsuranceInformationWithAddressesModel:
-      title: InsuranceInformationWithAddressesModel
+    LicenseInfoPaginationResponse:
+      title: LicenseInfoPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/LicenseInfoResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    PersonalFinanceModel:
+      title: PersonalFinanceModel
       required:
-      - created_by
+      - reference_id
+      type: object
+      properties:
+        residence:
+          title: Residence
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference Id
+    CustomerCommentDiaryResponseModel:
+      title: CustomerCommentDiaryResponseModel
       type: object
       properties:
         order_reference_id:
@@ -2948,56 +2955,96 @@ components:
         reference_id:
           title: Reference Id
           type: string
-        insurer_name:
-          title: Insurer Name
+        category:
+          title: Category
           type: string
-        agent_phone:
-          title: Agent Phone
-          type: string
-        subscription_id:
-          title: Subscription Id
-          type: string
-        agent_name:
-          title: Agent Name
-          type: string
-        policy_number:
-          title: Policy Number
-          type: string
-        start_date:
-          title: Start Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        expiration_date:
-          title: Expiration Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        deductible_comprehensive:
-          title: Deductible Comprehensive
-          type: number
-        deductible_collision:
-          title: Deductible Collision
-          type: number
-        created_by:
-          title: Created By
+        comment:
+          title: Comment
           type: string
         identifier:
           title: Identifier
           type: string
-        is_verified:
-          title: Is Verified
-          type: boolean
-          default: false
-        insurance_documents:
-          title: Insurance Documents
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    InsuranceInfoPaginationResponse:
+      title: InsuranceInfoPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
           type: array
           items:
-            $ref: '#/components/schemas/InsuranceDocumentsModel'
-        insurer_address:
-          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
-    AddressResponseModel:
-      title: AddressResponseModel
+            $ref: '#/components/schemas/InsuranceInformationResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    CustomerCommentDiaryUpdateModel:
+      title: CustomerCommentDiaryUpdateModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        category:
+          title: Category
+          type: string
+        comment:
+          title: Comment
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    CustomerAddressModel:
+      title: CustomerAddressModel
       required:
       - address_type
       type: object
@@ -3048,112 +3095,66 @@ components:
           $ref: '#/components/schemas/AddressTypes'
         identifier:
           title: Identifier
+          minLength: 1
           type: string
-        created_at:
-          title: Created At
+    CustomerAdditionalDocumentModel:
+      title: CustomerAdditionalDocumentModel
+      required:
+      - customer_reference_id
+      - document_type
+      - created_by
+      - content_type
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
           type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
           format: date-time
         created_by:
           title: Created By
           type: string
-        updated_at:
-          title: Updated At
+        document:
+          title: Document
+          type: string
+        comment:
+          title: Comment
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
           type: string
           format: date-time
-        updated_by:
-          title: Updated By
+        document_reference_id:
+          title: Document Reference Id
           type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-    SendCustomerEmailModel:
-      title: SendCustomerEmailModel
-      required:
-      - subject
-      - email
-      - email_type
-      - dealership_name
-      type: object
-      properties:
-        subject:
-          title: Subject
-          type: string
-          description: Subject of Email
-        email:
-          title: Email
-          type: string
-          description: Recipient Email
-          format: email
-        full_name:
-          title: Full Name
-          type: string
-          description: Customer full name
-        email_type:
-          allOf:
-          - $ref: '#/components/schemas/SendEMailCallType'
-          description: allowed values create_customer or create_order
-        reference_number:
-          title: Reference Number
-          type: string
-          description: Reference number
-        dealership_name:
-          title: Dealership Name
-          type: string
-          description: Dealership name
-    CustomerStipulationPaginationResponse:
-      title: CustomerStipulationPaginationResponse
-      type: object
-      properties:
-        result:
-          title: Result
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomerDocumentWithReviewsResponseModel'
-        page_number:
-          title: Page Number
-          type: integer
-        page_size:
-          title: Page Size
-          type: integer
-        total_pages:
-          title: Total Pages
-          type: integer
-        total_results:
-          title: Total Results
-          type: integer
-    CustomerProfileModel:
-      title: CustomerProfileModel
-      type: object
-      properties:
-        customer_profile:
-          $ref: '#/components/schemas/CustomerRequiredEmailModel'
-        customer_addresses:
-          title: Customer Addresses
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomerAddressModel'
-        income_info:
-          $ref: '#/components/schemas/CustomerProfileIncomeInfoModel'
-        customer_license:
-          title: Customer License
-          type: array
-          items:
-            $ref: '#/components/schemas/LisenceInfoWithAdress'
-        customer_insurance:
-          title: Customer Insurance
-          type: array
-          items:
-            $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
     CustomerAddressPreResponseModel:
       title: CustomerAddressPreResponseModel
       required:
@@ -3228,268 +3229,8 @@ components:
         deleted_by:
           title: Deleted By
           type: string
-    Operators:
-      title: Operators
-      enum:
-      - Equals
-      - Not_equals
-      - Less_than
-      - Greater_than
-      - Less_than_and_equal
-      - Greater_than_and_equal
-      - Is_null
-      - Not_null
-      - Contains
-      type: string
-      description: An enumeration.
-    CustomerDocumentStatus:
-      title: CustomerDocumentStatus
-      required:
-      - document_status
-      type: object
-      properties:
-        document_status:
-          $ref: '#/components/schemas/DocumentUploadStatus'
-    CustomerProfilePaginationResponse:
-      title: CustomerProfilePaginationResponse
-      type: object
-      properties:
-        result:
-          title: Result
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomerProfileModelResponse'
-        page_number:
-          title: Page Number
-          type: integer
-        page_size:
-          title: Page Size
-          type: integer
-        total_pages:
-          title: Total Pages
-          type: integer
-        total_results:
-          title: Total Results
-          type: integer
-    AndOr:
-      title: AndOr
-      enum:
-      - And
-      - Or
-      type: string
-      description: An enumeration.
-    CustomerCommentDiaryPaginatedResponseModel:
-      title: CustomerCommentDiaryPaginatedResponseModel
-      type: object
-      properties:
-        result:
-          title: Result
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomerCommentDiaryResponseModel'
-        page_number:
-          title: Page Number
-          type: integer
-        page_size:
-          title: Page Size
-          type: integer
-        total_pages:
-          title: Total Pages
-          type: integer
-        total_results:
-          title: Total Results
-          type: integer
-    EmploymentInfoCreateModelEmpTypeMendatory:
-      title: EmploymentInfoCreateModelEmpTypeMendatory
-      required:
-      - employment_type
-      - reference_id
-      type: object
-      properties:
-        employment_type:
-          title: Employment Type
-          minLength: 1
-          type: string
-          description: Employment type
-        name:
-          title: Name
-          type: string
-          description: Name
-        phone:
-          title: Phone
-          type: string
-          description: Phone
-        employed_since:
-          title: Employed Since
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        occupation:
-          title: Occupation
-          type: string
-          description: Occupation
-        annual_employment_income:
-          title: Annual Employment Income
-          type: number
-          description: Annual employment income
-        annual_other_income:
-          title: Annual Other Income
-          type: number
-          description: Annual other income
-        source_of_other_income:
-          title: Source Of Other Income
-          type: string
-          description: Annual other income
-        reference_id:
-          title: Reference Id
-          minLength: 1
-          type: string
-          description: Reference ID for Employment
-        address:
-          $ref: '#/components/schemas/CustomerAddressModel'
-    CustomerDocumentUploadStatus:
-      title: CustomerDocumentUploadStatus
-      required:
-      - document_upload_indicator
-      type: object
-      properties:
-        document_upload_indicator:
-          title: Document Upload Indicator
-          type: boolean
-    CallType:
-      title: CallType
-      enum:
-      - manual
-      - auto
-      type: string
-      description: An enumeration.
-    LicenseInfoPaginationResponse:
-      title: LicenseInfoPaginationResponse
-      type: object
-      properties:
-        result:
-          title: Result
-          type: array
-          items:
-            $ref: '#/components/schemas/LicenseInfoResponseModel'
-        page_number:
-          title: Page Number
-          type: integer
-        page_size:
-          title: Page Size
-          type: integer
-        total_pages:
-          title: Total Pages
-          type: integer
-        total_results:
-          title: Total Results
-          type: integer
-    PersonalFinanceModel:
-      title: PersonalFinanceModel
-      required:
-      - reference_id
-      type: object
-      properties:
-        residence:
-          title: Residence
-          type: string
-          description: Residence
-        monthly_payment:
-          title: Monthly Payment
-          type: number
-          description: Monthly Payment
-        bankruptcy:
-          title: Bankruptcy
-          type: boolean
-          description: Bankruptcy
-        asset_usage:
-          title: Asset Usage
-          type: boolean
-          description: Asset Usage
-        reference_id:
-          title: Reference Id
-          minLength: 1
-          type: string
-          description: Reference Id
-    LisenceInfoWithAdress:
-      title: LisenceInfoWithAdress
-      type: object
-      properties:
-        first_name:
-          title: First Name
-          type: string
-          description: First name
-        last_name:
-          title: Last Name
-          type: string
-          description: Last name
-        date_of_birth:
-          title: Date Of Birth
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        is_pdf_417:
-          title: Is Pdf 417
-          type: boolean
-        license_number:
-          title: License Number
-          type: string
-          description: license number
-        issue_date:
-          title: Issue Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        expiry_date:
-          title: Expiry Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        front_image:
-          title: Front Image
-          type: string
-          description: license front image
-        back_image:
-          title: Back Image
-          type: string
-          description: license back image
-        status:
-          title: Status
-          type: string
-        call_type:
-          $ref: '#/components/schemas/CallType'
-        selfie_image:
-          title: Selfie Image
-          type: string
-        cropped_front_image:
-          title: Cropped Front Image
-          type: string
-        cropped_back_image:
-          title: Cropped Back Image
-          type: string
-        cropped_selfie_image:
-          title: Cropped Selfie Image
-          type: string
-        is_selfie_verified:
-          title: Is Selfie Verified
-          type: boolean
-        created_by:
-          title: Created By
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        identifier:
-          title: Identifier
-          minLength: 1
-          type: string
-        mitek_response:
-          title: Mitek Response
-          type: string
-        address:
-          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
-    EmploymentInfoUpdateModel:
-      title: EmploymentInfoUpdateModel
+    CustomerProfileIncomeInfoModel:
+      title: CustomerProfileIncomeInfoModel
       type: object
       properties:
         employment_type:
@@ -3525,12 +3266,139 @@ components:
           title: Source Of Other Income
           type: string
           description: Annual other income
-        address:
-          $ref: '#/components/schemas/CustomerUpdateAddressModel'
-    CustomerUpdateAddressModel:
-      title: CustomerUpdateAddressModel
+    CustomerEmploymentInfoPreResponseModel:
+      title: CustomerEmploymentInfoPreResponseModel
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: Employed since
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerRequiredEmailModel:
+      title: CustomerRequiredEmailModel
       required:
-      - address_type
+      - email
+      - created_by
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        external_id:
+          title: External Id
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        email:
+          title: Email
+          type: string
+          format: email
+        created_by:
+          title: Created By
+          type: string
+    AddressBasicModel:
+      title: AddressBasicModel
       type: object
       properties:
         address_line_1:
@@ -3575,8 +3443,6 @@ components:
           type: boolean
           description: Garaging flag
           default: false
-        address_type:
-          $ref: '#/components/schemas/AddressTypes'
     CustomerDocumentWithReviewsResponseModel:
       title: CustomerDocumentWithReviewsResponseModel
       required:
@@ -3671,187 +3537,120 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CustomerDocumentReviewPreResponseModel'
-    CustomerDocumentUpdateModel:
-      title: CustomerDocumentUpdateModel
+    InsuranceInformationUpdateModel:
+      title: InsuranceInformationUpdateModel
       required:
-      - customer_reference_id
-      - content_type
       - updated_by
       type: object
       properties:
-        customer_reference_id:
-          title: Customer Reference Id
+        order_reference_id:
+          title: Order Reference Id
           type: string
-        document:
-          title: Document
+        insurer_name:
+          title: Insurer Name
           type: string
-        document_name:
-          title: Document Name
+        agent_phone:
+          title: Agent Phone
           type: string
-        document_size:
-          title: Document Size
+        subscription_id:
+          title: Subscription Id
           type: string
-        comment:
-          title: Comment
+        agent_name:
+          title: Agent Name
           type: string
-        category:
-          $ref: '#/components/schemas/StipulationCategory'
-        content_type:
-          title: Content Type
+        status:
+          $ref: '#/components/schemas/InsuranceDetailStatus'
+        policy_number:
+          title: Policy Number
           type: string
-        uploaded_by:
-          title: Uploaded By
+        start_date:
+          title: Start Date
           type: string
-        uploaded_at:
-          title: Uploaded At
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
           type: string
-          format: date-time
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
         updated_by:
           title: Updated By
           type: string
-        expires_at:
-          title: Expires At
-          type: string
-          description: 'format: YYYY-MM-DD hh:mm:ss'
-          format: date-time
-        document_reference_id:
-          title: Document Reference Id
-          type: string
-    SortEnum:
-      title: SortEnum
-      enum:
-      - asc
-      - desc
-      type: string
-      description: An enumeration.
-    LicenseVerificationModel:
-      title: LicenseVerificationModel
-      required:
-      - front_image
-      - back_image
-      - customer_id
+        insurer_address:
+          $ref: '#/components/schemas/AddressBasicModel'
+        insurance_documents:
+          title: Insurance Documents
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceDocumentsModel'
+    CustomerCommentDiaryPaginatedResponseModel:
+      title: CustomerCommentDiaryPaginatedResponseModel
       type: object
       properties:
-        front_image:
-          title: Front Image
-          type: string
-        back_image:
-          title: Back Image
-          type: string
-        customer_id:
-          title: Customer Id
-          type: string
-        dealer_code:
-          title: Dealer Code
-          type: string
-        api_version:
-          title: Api Version
-          type: string
-          default: '1.2'
-    SendEMailCallType:
-      title: SendEMailCallType
-      enum:
-      - create_customer
-      - create_order
-      type: string
-      description: An enumeration.
-    StipulationCategory:
-      title: StipulationCategory
-      enum:
-      - STIP
-      - NON_STIP
-      type: string
-      description: An enumeration.
-    InsuranceDetailStatus:
-      title: InsuranceDetailStatus
-      enum:
-      - Verified
-      - Unverified
-      - Expired
-      type: string
-      description: An enumeration.
-    CustomerDocumentModel:
-      title: CustomerDocumentModel
-      required:
-      - customer_reference_id
-      - external_reference_id
-      - document_type
-      - created_by
-      type: object
-      properties:
-        customer_reference_id:
-          title: Customer Reference Id
-          type: string
-        external_reference_id:
-          title: External Reference Id
-          type: string
-        document_type:
-          title: Document Type
-          type: string
-        document_name:
-          title: Document Name
-          type: string
-        reason_by_system:
-          title: Reason By System
-          type: string
-        reason_for_customer:
-          title: Reason For Customer
-          type: string
-        document_upload_indicator:
-          title: Document Upload Indicator
-          type: boolean
-          default: false
-        expires_at:
-          title: Expires At
-          type: string
-          description: 'format: YYYY-MM-DD hh:mm:ss'
-          format: date-time
-        identifier:
-          title: Identifier
-          minLength: 1
-          type: string
-        created_by:
-          title: Created By
-          type: string
-        stipulation_code:
-          title: Stipulation Code
-          type: string
-        comment:
-          title: Comment
-          type: string
-    CustomerPaymentModelTypeMandatory:
-      title: CustomerPaymentModelTypeMandatory
-      required:
-      - type
-      - reference_id
-      type: object
-      properties:
-        type:
-          title: Type
-          minLength: 1
-          type: string
-        stripe_payment_method_id:
-          title: Stripe Payment Method Id
-          type: string
-        access_token:
-          title: Access Token
-          type: string
-        account_id:
-          title: Account Id
-          type: string
-        Bank_name:
-          title: Bank Name
-          type: string
-        last4:
-          title: Last4
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerCommentDiaryResponseModel'
+        page_number:
+          title: Page Number
           type: integer
-        default:
-          title: Default
-          type: boolean
-        reference_id:
-          title: Reference Id
-          minLength: 1
-          type: string
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    DynamicFieldModel:
+      title: DynamicFieldModel
+      enum:
+      - prefix
+      - first_name
+      - middle_name
+      - last_name
+      - full_name
+      - suffix
+      - ssn
+      - identifier
+      - mobile_number
+      - mobile_number_verified_status
+      - home_number
+      - home_number_verified_status
+      - customer_type
+      - date_of_birth
+      - stripe_customer_id
+      - reference_id
+      - email
+      - address_line_1
+      - address_line_2
+      - state_name
+      - zip_code
+      - county
+      - city
+      - contact_number
+      - verified
+      - address_type
+      - license_number
+      - order_identifier
+      - order_status
+      - stock_number
+      - vin
+      - dealer_id
+      type: string
+      description: An enumeration.
     LicenseInfoUpdateResponseModel:
       title: LicenseInfoUpdateResponseModel
       type: object
@@ -3943,303 +3742,31 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/AddressBasicModel'
-    CustomerRequiredEmailModel:
-      title: CustomerRequiredEmailModel
-      required:
-      - email
-      - created_by
-      type: object
-      properties:
-        prefix:
-          title: Prefix
-          type: string
-        first_name:
-          title: First Name
-          type: string
-        middle_name:
-          title: Middle Name
-          type: string
-        last_name:
-          title: Last Name
-          type: string
-        suffix:
-          title: Suffix
-          type: string
-        ssn:
-          title: Ssn
-          type: string
-        mobile_number:
-          title: Mobile Number
-          type: string
-        mobile_number_verified_status:
-          title: Mobile Number Verified Status
-          type: boolean
-          default: false
-        home_number:
-          title: Home Number
-          type: string
-        home_number_verified_status:
-          title: Home Number Verified Status
-          type: boolean
-          default: false
-        customer_type:
-          title: Customer Type
-          type: string
-        date_of_birth:
-          title: Date Of Birth
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        meta_data:
-          title: Meta Data
-          type: object
-        stripe_customer_id:
-          title: Stripe Customer Id
-          type: string
-        preferred_contact:
-          title: Preferred Contact
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        external_id:
-          title: External Id
-          type: string
-        identifier:
-          title: Identifier
-          minLength: 1
-          type: string
-        email:
-          title: Email
-          type: string
-          format: email
-        created_by:
-          title: Created By
-          type: string
-    InsuranceDocumentsModel:
-      title: InsuranceDocumentsModel
-      required:
-      - content_type
-      - name
-      - file_size
-      type: object
-      properties:
-        document:
-          title: Document
-          type: string
-        content_type:
-          title: Content Type
-          minLength: 1
-          type: string
-          description: 'format: application/pdf, image/png '
-        name:
-          title: Name
-          minLength: 1
-          type: string
-        file_size:
-          title: File Size
-          minLength: 1
-          type: string
-        created_by:
-          title: Created By
-          type: string
-        doucment_reference_id:
-          title: Doucment Reference Id
-          type: string
-    CustomerDocumentReviewModel:
-      title: CustomerDocumentReviewModel
-      required:
-      - review_notes
-      - review_status
-      - reviewed_by
-      type: object
-      properties:
-        review_notes:
-          title: Review Notes
-          type: string
-        review_status:
-          $ref: '#/components/schemas/DocumentUploadStatus'
-        reviewed_by:
-          title: Reviewed By
-          type: string
-        reason:
-          title: Reason
-          type: array
-          items:
-            type: string
-        other_reason:
-          title: Other Reason
-          type: string
-        identifier:
-          title: Identifier
-          minLength: 1
-          type: string
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    FilterModel:
-      title: FilterModel
-      required:
-      - field
-      - operator
-      type: object
-      properties:
-        field:
-          $ref: '#/components/schemas/DynamicFieldModel'
-        operator:
-          $ref: '#/components/schemas/Operators'
-        value:
-          title: Value
-        and_or:
-          $ref: '#/components/schemas/AndOr'
-    DynamicFieldModel:
-      title: DynamicFieldModel
+    DocumentUploadStatus:
+      title: DocumentUploadStatus
       enum:
-      - prefix
-      - first_name
-      - middle_name
-      - last_name
-      - full_name
-      - suffix
-      - ssn
-      - identifier
-      - mobile_number
-      - mobile_number_verified_status
-      - home_number
-      - home_number_verified_status
-      - customer_type
-      - date_of_birth
-      - stripe_customer_id
-      - reference_id
-      - email
-      - address_line_1
-      - address_line_2
-      - state_name
-      - zip_code
-      - county
-      - city
-      - contact_number
-      - verified
-      - address_type
-      - license_number
-      - order_identifier
-      - order_status
-      - stock_number
-      - vin
-      - dealer_id
+      - Draft
+      - InProgress
+      - Approved
+      - SoftReject
+      - Reject
       type: string
       description: An enumeration.
-    CustomerCommentDiaryResponseModel:
-      title: CustomerCommentDiaryResponseModel
+    CustomerSignatureUpdateModel:
+      title: CustomerSignatureUpdateModel
       type: object
       properties:
-        order_reference_id:
-          title: Order Reference Id
+        signature_image:
+          title: Signature Image
           type: string
-        reference_id:
-          title: Reference Id
+        initial_image:
+          title: Initial Image
           type: string
-        category:
-          title: Category
-          type: string
-        comment:
-          title: Comment
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        created_by:
-          title: Created By
+        ip:
+          title: Ip
           type: string
         updated_by:
           title: Updated By
-          type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
-    CustomerAddressModel:
-      title: CustomerAddressModel
-      required:
-      - address_type
-      type: object
-      properties:
-        address_line_1:
-          title: Address Line 1
-          type: string
-          description: Address line one
-        address_line_2:
-          title: Address Line 2
-          type: string
-          description: Address line two
-        state_name:
-          title: State Name
-          type: string
-          description: Address state name
-        zip_code:
-          title: Zip Code
-          type: string
-          description: Zip code
-        county:
-          title: County
-          type: string
-          description: Address county
-        city:
-          title: City
-          type: string
-          description: Address city
-        contact_number:
-          title: Contact Number
-          type: string
-          description: Contact number
-        verified:
-          title: Verified
-          type: boolean
-          description: Is Address verified
-        move_in_date:
-          title: Move In Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        is_garaging:
-          title: Is Garaging
-          type: boolean
-          description: Garaging flag
-          default: false
-        address_type:
-          $ref: '#/components/schemas/AddressTypes'
-        identifier:
-          title: Identifier
-          minLength: 1
           type: string
     LicenseInfoResponseModel:
       title: LicenseInfoResponseModel
@@ -4335,27 +3862,144 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/AddressBasicModel'
-    InsuranceInfoPaginationResponse:
-      title: InsuranceInfoPaginationResponse
+    InsuranceInformationResponseModel:
+      title: InsuranceInformationResponseModel
       type: object
       properties:
-        result:
-          title: Result
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        insurer_name:
+          title: Insurer Name
+          type: string
+        agent_phone:
+          title: Agent Phone
+          type: string
+        subscription_id:
+          title: Subscription Id
+          type: string
+        agent_name:
+          title: Agent Name
+          type: string
+        policy_number:
+          title: Policy Number
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        created_by:
+          title: Created By
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
+        insurance_documents:
+          title: Insurance Documents
           type: array
           items:
-            $ref: '#/components/schemas/InsuranceInformationResponseModel'
-        page_number:
-          title: Page Number
+            $ref: '#/components/schemas/InsuranceDocumentsResponseModel'
+        insurer_address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+        status:
+          $ref: '#/components/schemas/InsuranceDetailStatus'
+        is_active:
+          title: Is Active
+          type: boolean
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerDocumentReviewPreResponseModel:
+      title: CustomerDocumentReviewPreResponseModel
+      type: object
+      properties:
+        reviewed_by:
+          title: Reviewed By
+          type: string
+        review_date_time:
+          title: Review Date Time
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        review_status:
+          title: Review Status
+          type: string
+        review_notes:
+          title: Review Notes
+          type: string
+        reason:
+          title: Reason
+          type: array
+          items:
+            type: string
+        other_reason:
+          title: Other Reason
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    FraudCheckModel:
+      title: FraudCheckModel
+      required:
+      - user_id
+      - order_reference_number
+      - reference_id
+      - dealer_code
+      type: object
+      properties:
+        user_id:
+          title: User Id
           type: integer
-        page_size:
-          title: Page Size
-          type: integer
-        total_pages:
-          title: Total Pages
-          type: integer
-        total_results:
-          title: Total Results
-          type: integer
+        order_reference_number:
+          title: Order Reference Number
+          minLength: 1
+          type: string
+          description: Order Reference Id
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Customer Reference Id
+        dealer_code:
+          title: Dealer Code
+          type: string
     CustomerProfileModelResponseWithDisclaimer:
       title: CustomerProfileModelResponseWithDisclaimer
       type: object
@@ -4461,6 +4105,884 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DisclaimerAcceptanceModel'
+    CustomerStipulationPaginationResponse:
+      title: CustomerStipulationPaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerDocumentWithReviewsResponseModel'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    SortByEnum:
+      title: SortByEnum
+      enum:
+      - updated_at
+      - created_at
+      - full_name
+      - first_name
+      - email
+      - date_of_birth
+      - mobile_number
+      - state
+      - reference_id
+      - license_no
+      - identifier
+      - order_identifier
+      - order_status
+      - vin
+      - dealer_id
+      - order_updated_at
+      type: string
+      description: An enumeration.
+    Operators:
+      title: Operators
+      enum:
+      - Equals
+      - Not_equals
+      - Less_than
+      - Greater_than
+      - Less_than_and_equal
+      - Greater_than_and_equal
+      - Is_null
+      - Not_null
+      - Contains
+      type: string
+      description: An enumeration.
+    CustomerProfilePaginationResponse:
+      title: CustomerProfilePaginationResponse
+      type: object
+      properties:
+        result:
+          title: Result
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerProfileModelResponse'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    CustomerPersonalFinanceResponseModel:
+      title: CustomerPersonalFinanceResponseModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        residence:
+          title: Residence
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference Id
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    SortEnum:
+      title: SortEnum
+      enum:
+      - asc
+      - desc
+      type: string
+      description: An enumeration.
+    LicenseVerificationModel:
+      title: LicenseVerificationModel
+      required:
+      - front_image
+      - back_image
+      - customer_id
+      type: object
+      properties:
+        front_image:
+          title: Front Image
+          type: string
+        back_image:
+          title: Back Image
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        dealer_code:
+          title: Dealer Code
+          type: string
+        api_version:
+          title: Api Version
+          type: string
+          default: '1.2'
+    CustomerPaymentModelTypeMandatory:
+      title: CustomerPaymentModelTypeMandatory
+      required:
+      - type
+      - reference_id
+      type: object
+      properties:
+        type:
+          title: Type
+          minLength: 1
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+    CustomerPaymentInformationResponseModel:
+      title: CustomerPaymentInformationResponseModel
+      required:
+      - reference_id
+      type: object
+      properties:
+        type:
+          title: Type
+          type: string
+        stripe_payment_method_id:
+          title: Stripe Payment Method Id
+          type: string
+        access_token:
+          title: Access Token
+          type: string
+        account_id:
+          title: Account Id
+          type: string
+        Bank_name:
+          title: Bank Name
+          type: string
+        last4:
+          title: Last4
+          type: integer
+        default:
+          title: Default
+          type: boolean
+        reference_id:
+          title: Reference Id
+          type: string
+          description: Reference Id
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    InsuranceDocumentsModel:
+      title: InsuranceDocumentsModel
+      required:
+      - content_type
+      - name
+      - file_size
+      type: object
+      properties:
+        document:
+          title: Document
+          type: string
+        content_type:
+          title: Content Type
+          minLength: 1
+          type: string
+          description: 'format: application/pdf, image/png '
+        name:
+          title: Name
+          minLength: 1
+          type: string
+        file_size:
+          title: File Size
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        doucment_reference_id:
+          title: Doucment Reference Id
+          type: string
+    CustomerUpdateModel:
+      title: CustomerUpdateModel
+      required:
+      - updated_by
+      type: object
+      properties:
+        prefix:
+          title: Prefix
+          type: string
+        first_name:
+          title: First Name
+          type: string
+        middle_name:
+          title: Middle Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        suffix:
+          title: Suffix
+          type: string
+        ssn:
+          title: Ssn
+          type: string
+        mobile_number:
+          title: Mobile Number
+          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+          default: false
+        home_number:
+          title: Home Number
+          type: string
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+          default: false
+        customer_type:
+          title: Customer Type
+          type: string
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        meta_data:
+          title: Meta Data
+          type: object
+        stripe_customer_id:
+          title: Stripe Customer Id
+          type: string
+        preferred_contact:
+          title: Preferred Contact
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+    AddressResponseModel:
+      title: AddressResponseModel
+      required:
+      - address_type
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+        identifier:
+          title: Identifier
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+    PersonalFinanceUpdateModel:
+      title: PersonalFinanceUpdateModel
+      type: object
+      properties:
+        residence:
+          title: Residence
+          minLength: 1
+          type: string
+          description: Residence
+        monthly_payment:
+          title: Monthly Payment
+          type: number
+          description: Monthly Payment
+        bankruptcy:
+          title: Bankruptcy
+          type: boolean
+          description: Bankruptcy
+        asset_usage:
+          title: Asset Usage
+          type: boolean
+          description: Asset Usage
+    CallType:
+      title: CallType
+      enum:
+      - manual
+      - auto
+      type: string
+      description: An enumeration.
+    CustomerDeleteModel:
+      title: CustomerDeleteModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+    DeleteRequestModel:
+      title: DeleteRequestModel
+      required:
+      - deleted_by
+      type: object
+      properties:
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerSignatureModel:
+      title: CustomerSignatureModel
+      type: object
+      properties:
+        signature_image:
+          title: Signature Image
+          type: string
+        initial_image:
+          title: Initial Image
+          type: string
+        ip:
+          title: Ip
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: integer
+    LisenceInfoWithAdress:
+      title: LisenceInfoWithAdress
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        mitek_response:
+          title: Mitek Response
+          type: string
+        address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    CustomerDocumentUpdateModel:
+      title: CustomerDocumentUpdateModel
+      required:
+      - customer_reference_id
+      - content_type
+      - updated_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        document:
+          title: Document
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_size:
+          title: Document Size
+          type: string
+        comment:
+          title: Comment
+          type: string
+        category:
+          $ref: '#/components/schemas/StipulationCategory'
+        content_type:
+          title: Content Type
+          type: string
+        uploaded_by:
+          title: Uploaded By
+          type: string
+        uploaded_at:
+          title: Uploaded At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        document_reference_id:
+          title: Document Reference Id
+          type: string
+    AddressTypes:
+      title: AddressTypes
+      enum:
+      - Mailing
+      - Invoice
+      - Office
+      - Garaging
+      - DealerAddress
+      - DrivingLicense
+      - Billing
+      - InsuranceAddress
+      - Residential
+      - Employment
+      type: string
+      description: An enumeration.
+    SendEMailCallType:
+      title: SendEMailCallType
+      enum:
+      - create_customer
+      - create_order
+      type: string
+      description: An enumeration.
+    CustomerSignatureResponseModel:
+      title: CustomerSignatureResponseModel
+      type: object
+      properties:
+        signature_image:
+          title: Signature Image
+          type: string
+        initial_image:
+          title: Initial Image
+          type: string
+        ip:
+          title: Ip
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        updated_by:
+          title: Updated By
+          type: string
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date-time
+        deleted_by:
+          title: Deleted By
+          type: string
+    CustomerStatusFlagResponseModel:
+      title: CustomerStatusFlagResponseModel
+      type: object
+      properties:
+        reference_id:
+          title: Reference Id
+          type: string
+        flag_name:
+          title: Flag Name
+          type: string
+        category:
+          title: Category
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+    FilterModel:
+      title: FilterModel
+      required:
+      - field
+      - operator
+      type: object
+      properties:
+        field:
+          $ref: '#/components/schemas/DynamicFieldModel'
+        operator:
+          $ref: '#/components/schemas/Operators'
+        value:
+          title: Value
+        and_or:
+          $ref: '#/components/schemas/AndOr'
+    CustomerAddressWithoutAddressTypeModel:
+      title: CustomerAddressWithoutAddressTypeModel
+      type: object
+      properties:
+        address_line_1:
+          title: Address Line 1
+          type: string
+          description: Address line one
+        address_line_2:
+          title: Address Line 2
+          type: string
+          description: Address line two
+        state_name:
+          title: State Name
+          type: string
+          description: Address state name
+        zip_code:
+          title: Zip Code
+          type: string
+          description: Zip code
+        county:
+          title: County
+          type: string
+          description: Address county
+        city:
+          title: City
+          type: string
+          description: Address city
+        contact_number:
+          title: Contact Number
+          type: string
+          description: Contact number
+        verified:
+          title: Verified
+          type: boolean
+          description: Is Address verified
+        move_in_date:
+          title: Move In Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+          description: Garaging flag
+          default: false
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+    LisenceInfoUpdateModel:
+      title: LisenceInfoUpdateModel
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+          description: First name
+        last_name:
+          title: Last Name
+          type: string
+          description: Last name
+        date_of_birth:
+          title: Date Of Birth
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        is_pdf_417:
+          title: Is Pdf 417
+          type: boolean
+        license_number:
+          title: License Number
+          type: string
+          description: license number
+        issue_date:
+          title: Issue Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiry_date:
+          title: Expiry Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        front_image:
+          title: Front Image
+          type: string
+          description: license front image
+        back_image:
+          title: Back Image
+          type: string
+          description: license back image
+        status:
+          title: Status
+          type: string
+        call_type:
+          $ref: '#/components/schemas/CallType'
+        selfie_image:
+          title: Selfie Image
+          type: string
+        cropped_front_image:
+          title: Cropped Front Image
+          type: string
+        cropped_back_image:
+          title: Cropped Back Image
+          type: string
+        cropped_selfie_image:
+          title: Cropped Selfie Image
+          type: string
+        is_selfie_verified:
+          title: Is Selfie Verified
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        mitek_response:
+          title: Mitek Response
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
+        address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    AndOr:
+      title: AndOr
+      enum:
+      - And
+      - Or
+      type: string
+      description: An enumeration.
+    InsuranceDetailStatus:
+      title: InsuranceDetailStatus
+      enum:
+      - Verified
+      - Unverified
+      - Expired
+      type: string
+      description: An enumeration.
+    InsuranceDocumentsResponseModel:
+      title: InsuranceDocumentsResponseModel
+      type: object
+      properties:
+        document_uri:
+          title: Document Uri
+          type: string
+        content_type:
+          title: Content Type
+          type: string
+        name:
+          title: Name
+          type: string
+        file_size:
+          title: File Size
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        created_by:
+          title: Created By
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date
+        deleted_at:
+          title: Deleted At
+          type: string
+          format: date
+        deleted_by:
+          title: Deleted By
+          type: string
     CustomerDocumentReviewResponseModel:
       title: CustomerDocumentReviewResponseModel
       type: object
@@ -4493,6 +5015,15 @@ components:
         document_identifier:
           title: Document Identifier
           type: string
+    ResponseModel:
+      title: ResponseModel
+      required:
+      - success
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
     EmploymentInfoResponseModel:
       title: EmploymentInfoResponseModel
       type: object
@@ -4556,8 +5087,8 @@ components:
           type: string
         address:
           $ref: '#/components/schemas/AddressResponseModel'
-    CustomerEmploymentInfoPreResponseModel:
-      title: CustomerEmploymentInfoPreResponseModel
+    EmploymentInfoUpdateModel:
+      title: EmploymentInfoUpdateModel
       type: object
       properties:
         employment_type:
@@ -4593,319 +5124,20 @@ components:
           title: Source Of Other Income
           type: string
           description: Annual other income
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        created_by:
-          title: Created By
-          type: string
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        updated_by:
-          title: Updated By
-          type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
-    HTTPValidationError:
-      title: HTTPValidationError
+        address:
+          $ref: '#/components/schemas/CustomerUpdateAddressModel'
+    CustomersParamsModel:
+      title: CustomersParamsModel
+      required:
+      - reference_ids
       type: object
       properties:
-        detail:
-          title: Detail
+        reference_ids:
+          title: Reference Ids
           type: array
           items:
-            $ref: '#/components/schemas/ValidationError'
-    CustomerStatusFlagResponseModel:
-      title: CustomerStatusFlagResponseModel
-      type: object
-      properties:
-        reference_id:
-          title: Reference Id
-          type: string
-        flag_name:
-          title: Flag Name
-          type: string
-        category:
-          title: Category
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        created_by:
-          title: Created By
-          type: string
-        updated_by:
-          title: Updated By
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-        is_deleted:
-          title: Is Deleted
-          type: boolean
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-    CustomerAddressWithoutAddressTypeModel:
-      title: CustomerAddressWithoutAddressTypeModel
-      type: object
-      properties:
-        address_line_1:
-          title: Address Line 1
-          type: string
-          description: Address line one
-        address_line_2:
-          title: Address Line 2
-          type: string
-          description: Address line two
-        state_name:
-          title: State Name
-          type: string
-          description: Address state name
-        zip_code:
-          title: Zip Code
-          type: string
-          description: Zip code
-        county:
-          title: County
-          type: string
-          description: Address county
-        city:
-          title: City
-          type: string
-          description: Address city
-        contact_number:
-          title: Contact Number
-          type: string
-          description: Contact number
-        verified:
-          title: Verified
-          type: boolean
-          description: Is Address verified
-        move_in_date:
-          title: Move In Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        is_garaging:
-          title: Is Garaging
-          type: boolean
-          description: Garaging flag
-          default: false
-        identifier:
-          title: Identifier
-          minLength: 1
-          type: string
-    DisclaimerAcceptanceModel:
-      title: DisclaimerAcceptanceModel
-      type: object
-      properties:
-        order_reference_id:
-          title: Order Reference Id
-          type: string
-        customer_reference_id:
-          title: Customer Reference Id
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        disclaimer_name:
-          title: Disclaimer Name
-          type: string
-        disclaimer_version:
-          title: Disclaimer Version
-          type: string
-        disclaimer_details:
-          title: Disclaimer Details
-          type: string
-        disclaimer_acceptance_date:
-          title: Disclaimer Acceptance Date
-          type: string
-          format: date-time
-    SortByEnum:
-      title: SortByEnum
-      enum:
-      - updated_at
-      - created_at
-      - full_name
-      - first_name
-      - email
-      - date_of_birth
-      - mobile_number
-      - state
-      - reference_id
-      - license_no
-      - identifier
-      - order_identifier
-      - order_status
-      - vin
-      - dealer_id
-      - order_updated_at
-      type: string
-      description: An enumeration.
-    CustomerPaymentInformationResponseModel:
-      title: CustomerPaymentInformationResponseModel
-      required:
-      - reference_id
-      type: object
-      properties:
-        type:
-          title: Type
-          type: string
-        stripe_payment_method_id:
-          title: Stripe Payment Method Id
-          type: string
-        access_token:
-          title: Access Token
-          type: string
-        account_id:
-          title: Account Id
-          type: string
-        Bank_name:
-          title: Bank Name
-          type: string
-        last4:
-          title: Last4
-          type: integer
-        default:
-          title: Default
-          type: boolean
-        reference_id:
-          title: Reference Id
-          type: string
-          description: Reference Id
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        created_by:
-          title: Created By
-          type: string
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        updated_by:
-          title: Updated By
-          type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
-    ResponseModel:
-      title: ResponseModel
-      required:
-      - success
-      type: object
-      properties:
-        success:
-          title: Success
-          type: boolean
-    CustomerCommentDiaryModel:
-      title: CustomerCommentDiaryModel
-      required:
-      - category
-      - comment
-      type: object
-      properties:
-        order_reference_id:
-          title: Order Reference Id
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        category:
-          title: Category
-          minLength: 1
-          type: string
-        comment:
-          title: Comment
-          minLength: 1
-          type: string
-        identifier:
-          title: Identifier
-          minLength: 1
-          type: string
-        created_by:
-          title: Created By
-          type: string
-    AddressTypes:
-      title: AddressTypes
-      enum:
-      - Mailing
-      - Invoice
-      - Office
-      - Garaging
-      - DealerAddress
-      - DrivingLicense
-      - Billing
-      - InsuranceAddress
-      - Residential
-      - Employment
-      type: string
-      description: An enumeration.
-    CustomerPaymentInfoResponseModel:
-      title: CustomerPaymentInfoResponseModel
-      type: object
-      properties:
-        type:
-          title: Type
-          type: string
-        stripe_payment_method_id:
-          title: Stripe Payment Method Id
-          type: string
-        access_token:
-          title: Access Token
-          type: string
-        account_id:
-          title: Account Id
-          type: string
-        Bank_name:
-          title: Bank Name
-          type: string
-        last4:
-          title: Last4
-          type: integer
-        default:
-          title: Default
-          type: boolean
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        created_by:
-          title: Created By
-          type: string
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        updated_by:
-          title: Updated By
-          type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
+            type: string
+          description: Reference IDs of the customers to be returned
     CustomerDocumentResponseModel:
       title: CustomerDocumentResponseModel
       type: object
@@ -4993,267 +5225,6 @@ components:
         stipulation_code:
           title: Stipulation Code
           type: string
-    CustomerDeleteModel:
-      title: CustomerDeleteModel
-      required:
-      - success
-      type: object
-      properties:
-        success:
-          title: Success
-          type: boolean
-    SignatureCustomerDocument:
-      title: SignatureCustomerDocument
-      required:
-      - document_url
-      - document_name
-      - customer_id
-      - identifier
-      type: object
-      properties:
-        document_url:
-          title: Document Url
-          type: string
-        document_name:
-          title: Document Name
-          type: string
-        customer_id:
-          title: Customer Id
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-    FraudCheckModel:
-      title: FraudCheckModel
-      required:
-      - user_id
-      - order_reference_number
-      - reference_id
-      - dealer_code
-      type: object
-      properties:
-        user_id:
-          title: User Id
-          type: integer
-        order_reference_number:
-          title: Order Reference Number
-          minLength: 1
-          type: string
-          description: Order Reference Id
-        reference_id:
-          title: Reference Id
-          minLength: 1
-          type: string
-          description: Customer Reference Id
-        dealer_code:
-          title: Dealer Code
-          type: string
-    PersonalFinanceUpdateModel:
-      title: PersonalFinanceUpdateModel
-      type: object
-      properties:
-        residence:
-          title: Residence
-          minLength: 1
-          type: string
-          description: Residence
-        monthly_payment:
-          title: Monthly Payment
-          type: number
-          description: Monthly Payment
-        bankruptcy:
-          title: Bankruptcy
-          type: boolean
-          description: Bankruptcy
-        asset_usage:
-          title: Asset Usage
-          type: boolean
-          description: Asset Usage
-    LisenceInfoUpdateModel:
-      title: LisenceInfoUpdateModel
-      type: object
-      properties:
-        first_name:
-          title: First Name
-          type: string
-          description: First name
-        last_name:
-          title: Last Name
-          type: string
-          description: Last name
-        date_of_birth:
-          title: Date Of Birth
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        is_pdf_417:
-          title: Is Pdf 417
-          type: boolean
-        license_number:
-          title: License Number
-          type: string
-          description: license number
-        issue_date:
-          title: Issue Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        expiry_date:
-          title: Expiry Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        front_image:
-          title: Front Image
-          type: string
-          description: license front image
-        back_image:
-          title: Back Image
-          type: string
-          description: license back image
-        status:
-          title: Status
-          type: string
-        call_type:
-          $ref: '#/components/schemas/CallType'
-        selfie_image:
-          title: Selfie Image
-          type: string
-        cropped_front_image:
-          title: Cropped Front Image
-          type: string
-        cropped_back_image:
-          title: Cropped Back Image
-          type: string
-        cropped_selfie_image:
-          title: Cropped Selfie Image
-          type: string
-        is_selfie_verified:
-          title: Is Selfie Verified
-          type: boolean
-        created_by:
-          title: Created By
-          type: string
-        mitek_response:
-          title: Mitek Response
-          type: string
-        updated_by:
-          title: Updated By
-          type: string
-        address:
-          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
-    CustomerSignatureModel:
-      title: CustomerSignatureModel
-      type: object
-      properties:
-        signature_image:
-          title: Signature Image
-          type: string
-        initial_image:
-          title: Initial Image
-          type: string
-        ip:
-          title: Ip
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        dealer_id:
-          title: Dealer Id
-          type: integer
-    CustomerProfileIncomeInfoModel:
-      title: CustomerProfileIncomeInfoModel
-      type: object
-      properties:
-        employment_type:
-          title: Employment Type
-          type: string
-          description: Employment type
-        name:
-          title: Name
-          type: string
-          description: Name
-        phone:
-          title: Phone
-          type: string
-          description: Phone
-        employed_since:
-          title: Employed Since
-          type: string
-          description: Employed since
-          format: date
-        occupation:
-          title: Occupation
-          type: string
-          description: Occupation
-        annual_employment_income:
-          title: Annual Employment Income
-          type: number
-          description: Annual employment income
-        annual_other_income:
-          title: Annual Other Income
-          type: number
-          description: Annual other income
-        source_of_other_income:
-          title: Source Of Other Income
-          type: string
-          description: Annual other income
-    InsuranceInformationUpdateModel:
-      title: InsuranceInformationUpdateModel
-      required:
-      - updated_by
-      type: object
-      properties:
-        order_reference_id:
-          title: Order Reference Id
-          type: string
-        insurer_name:
-          title: Insurer Name
-          type: string
-        agent_phone:
-          title: Agent Phone
-          type: string
-        subscription_id:
-          title: Subscription Id
-          type: string
-        agent_name:
-          title: Agent Name
-          type: string
-        status:
-          $ref: '#/components/schemas/InsuranceDetailStatus'
-        policy_number:
-          title: Policy Number
-          type: string
-        start_date:
-          title: Start Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        expiration_date:
-          title: Expiration Date
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        deductible_comprehensive:
-          title: Deductible Comprehensive
-          type: number
-        deductible_collision:
-          title: Deductible Collision
-          type: number
-        is_verified:
-          title: Is Verified
-          type: boolean
-          default: false
-        updated_by:
-          title: Updated By
-          type: string
-        insurer_address:
-          $ref: '#/components/schemas/AddressBasicModel'
-        insurance_documents:
-          title: Insurance Documents
-          type: array
-          items:
-            $ref: '#/components/schemas/InsuranceDocumentsModel'
     LicenseInfoCustomerResponseModel:
       title: LicenseInfoCustomerResponseModel
       type: object
@@ -5291,144 +5262,72 @@ components:
         is_selfie_verified:
           title: Is Selfie Verified
           type: boolean
-    CustomerSignatureUpdateModel:
-      title: CustomerSignatureUpdateModel
-      type: object
-      properties:
-        signature_image:
-          title: Signature Image
-          type: string
-        initial_image:
-          title: Initial Image
-          type: string
-        ip:
-          title: Ip
-          type: string
-        updated_by:
-          title: Updated By
-          type: string
-    CustomerStatusFlagModel:
-      title: CustomerStatusFlagModel
+    SendCustomerEmailModel:
+      title: SendCustomerEmailModel
       required:
-      - reference_id
-      - flag_name
-      - category
-      - created_by
+      - subject
+      - email
+      - email_type
+      - dealership_name
       type: object
       properties:
-        reference_id:
-          title: Reference Id
+        subject:
+          title: Subject
           type: string
-        flag_name:
-          title: Flag Name
-          minLength: 1
+          description: Subject of Email
+        email:
+          title: Email
           type: string
-        category:
-          title: Category
-          minLength: 1
+          description: Recipient Email
+          format: email
+        full_name:
+          title: Full Name
           type: string
-        identifier:
-          title: Identifier
-          minLength: 1
+          description: Customer full name
+        email_type:
+          allOf:
+          - $ref: '#/components/schemas/SendEMailCallType'
+          description: allowed values create_customer or create_order
+        reference_number:
+          title: Reference Number
           type: string
-        created_by:
-          title: Created By
+          description: Reference number
+        dealership_name:
+          title: Dealership Name
           type: string
-    CustomerSignatureResponseModel:
-      title: CustomerSignatureResponseModel
+          description: Dealership name
+    HTTPValidationError:
+      title: HTTPValidationError
       type: object
       properties:
-        signature_image:
-          title: Signature Image
-          type: string
-        initial_image:
-          title: Initial Image
-          type: string
-        ip:
-          title: Ip
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        dealer_id:
-          title: Dealer Id
-          type: integer
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        updated_by:
-          title: Updated By
-          type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
-    CustomerUpdateModel:
-      title: CustomerUpdateModel
-      required:
-      - updated_by
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    CustomerProfileModel:
+      title: CustomerProfileModel
       type: object
       properties:
-        prefix:
-          title: Prefix
-          type: string
-        first_name:
-          title: First Name
-          type: string
-        middle_name:
-          title: Middle Name
-          type: string
-        last_name:
-          title: Last Name
-          type: string
-        suffix:
-          title: Suffix
-          type: string
-        ssn:
-          title: Ssn
-          type: string
-        mobile_number:
-          title: Mobile Number
-          type: string
-        mobile_number_verified_status:
-          title: Mobile Number Verified Status
-          type: boolean
-          default: false
-        home_number:
-          title: Home Number
-          type: string
-        home_number_verified_status:
-          title: Home Number Verified Status
-          type: boolean
-          default: false
-        customer_type:
-          title: Customer Type
-          type: string
-        date_of_birth:
-          title: Date Of Birth
-          type: string
-          description: 'format: YYYY-MM-DD'
-          format: date
-        meta_data:
-          title: Meta Data
-          type: object
-        stripe_customer_id:
-          title: Stripe Customer Id
-          type: string
-        preferred_contact:
-          title: Preferred Contact
-          type: string
-        updated_by:
-          title: Updated By
-          type: string
+        customer_profile:
+          $ref: '#/components/schemas/CustomerRequiredEmailModel'
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerProfileIncomeInfoModel'
+        customer_license:
+          title: Customer License
+          type: array
+          items:
+            $ref: '#/components/schemas/LisenceInfoWithAdress'
+        customer_insurance:
+          title: Customer Insurance
+          type: array
+          items:
+            $ref: '#/components/schemas/InsuranceInformationWithAddressesModel'
     CustomerDocumentUpdateDMSModel:
       title: CustomerDocumentUpdateDMSModel
       required:
@@ -5500,109 +5399,41 @@ components:
           title: Document Upload Indicator
           type: boolean
           default: false
-    CustomerAdditionalDocumentModel:
-      title: CustomerAdditionalDocumentModel
+    CustomerStatusFlagModel:
+      title: CustomerStatusFlagModel
       required:
-      - customer_reference_id
-      - document_type
+      - reference_id
+      - flag_name
+      - category
       - created_by
-      - content_type
       type: object
       properties:
-        customer_reference_id:
-          title: Customer Reference Id
+        reference_id:
+          title: Reference Id
           type: string
-        external_reference_id:
-          title: External Reference Id
+        flag_name:
+          title: Flag Name
+          minLength: 1
           type: string
-        document_type:
-          title: Document Type
+        category:
+          title: Category
+          minLength: 1
           type: string
-        document_name:
-          title: Document Name
+        identifier:
+          title: Identifier
+          minLength: 1
           type: string
-        reason_by_system:
-          title: Reason By System
-          type: string
-        reason_for_customer:
-          title: Reason For Customer
-          type: string
-        document_upload_indicator:
-          title: Document Upload Indicator
-          type: boolean
-          default: false
-        expires_at:
-          title: Expires At
-          type: string
-          description: 'format: YYYY-MM-DD hh:mm:ss'
-          format: date-time
         created_by:
           title: Created By
           type: string
-        document:
-          title: Document
-          type: string
-        comment:
-          title: Comment
-          type: string
-        content_type:
-          title: Content Type
-          type: string
-        uploaded_by:
-          title: Uploaded By
-          type: string
-        uploaded_at:
-          title: Uploaded At
-          type: string
-          format: date-time
-        document_reference_id:
-          title: Document Reference Id
-          type: string
-    CustomerPersonalFinanceResponseModel:
-      title: CustomerPersonalFinanceResponseModel
+    CustomerDocumentStatus:
+      title: CustomerDocumentStatus
       required:
-      - reference_id
+      - document_status
       type: object
       properties:
-        residence:
-          title: Residence
-          type: string
-          description: Residence
-        monthly_payment:
-          title: Monthly Payment
-          type: number
-          description: Monthly Payment
-        bankruptcy:
-          title: Bankruptcy
-          type: boolean
-          description: Bankruptcy
-        asset_usage:
-          title: Asset Usage
-          type: boolean
-          description: Asset Usage
-        reference_id:
-          title: Reference Id
-          minLength: 1
-          type: string
-          description: Reference Id
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        updated_by:
-          title: Updated By
-          type: string
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date-time
-        deleted_by:
-          title: Deleted By
-          type: string
+        document_status:
+          $ref: '#/components/schemas/DocumentUploadStatus'
     CustomerProfileModelResponse:
       title: CustomerProfileModelResponse
       type: object
@@ -5703,95 +5534,91 @@ components:
             $ref: '#/components/schemas/CustomerPaymentInfoResponseModel'
         license_info:
           $ref: '#/components/schemas/LicenseInfoCustomerResponseModel'
-    InsuranceDocumentsResponseModel:
-      title: InsuranceDocumentsResponseModel
-      type: object
-      properties:
-        document_uri:
-          title: Document Uri
-          type: string
-        content_type:
-          title: Content Type
-          type: string
-        name:
-          title: Name
-          type: string
-        file_size:
-          title: File Size
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-        created_by:
-          title: Created By
-          type: string
-        created_at:
-          title: Created At
-          type: string
-          format: date
-        deleted_at:
-          title: Deleted At
-          type: string
-          format: date
-        deleted_by:
-          title: Deleted By
-          type: string
-    CustomersParamsModel:
-      title: CustomersParamsModel
+    InsuranceInformationWithAddressesModel:
+      title: InsuranceInformationWithAddressesModel
       required:
-      - reference_ids
-      type: object
-      properties:
-        reference_ids:
-          title: Reference Ids
-          type: array
-          items:
-            type: string
-          description: Reference IDs of the customers to be returned
-    DocumentUploadStatus:
-      title: DocumentUploadStatus
-      enum:
-      - Draft
-      - InProgress
-      - Approved
-      - SoftReject
-      - Reject
-      type: string
-      description: An enumeration.
-    CustomerCommentDiaryUpdateModel:
-      title: CustomerCommentDiaryUpdateModel
+      - created_by
       type: object
       properties:
         order_reference_id:
           title: Order Reference Id
           type: string
-        category:
-          title: Category
+        reference_id:
+          title: Reference Id
           type: string
-        comment:
-          title: Comment
+        insurer_name:
+          title: Insurer Name
           type: string
-        updated_by:
-          title: Updated By
+        agent_phone:
+          title: Agent Phone
           type: string
-    CustomerProfileUpdateModel:
-      title: CustomerProfileUpdateModel
-      type: object
-      properties:
-        customer_profile:
-          $ref: '#/components/schemas/CustomerUpdateModel'
-        customer_addresses:
-          title: Customer Addresses
+        subscription_id:
+          title: Subscription Id
+          type: string
+        agent_name:
+          title: Agent Name
+          type: string
+        policy_number:
+          title: Policy Number
+          type: string
+        start_date:
+          title: Start Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        expiration_date:
+          title: Expiration Date
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+          type: number
+        deductible_collision:
+          title: Deductible Collision
+          type: number
+        created_by:
+          title: Created By
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        is_verified:
+          title: Is Verified
+          type: boolean
+          default: false
+        insurance_documents:
+          title: Insurance Documents
           type: array
           items:
-            $ref: '#/components/schemas/CustomerAddressModel'
-        income_info:
-          $ref: '#/components/schemas/CustomerProfileIncomeInfoModel'
-    AddressBasicModel:
-      title: AddressBasicModel
+            $ref: '#/components/schemas/InsuranceDocumentsModel'
+        insurer_address:
+          $ref: '#/components/schemas/CustomerAddressWithoutAddressTypeModel'
+    SignatureCustomerDocument:
+      title: SignatureCustomerDocument
+      required:
+      - document_url
+      - document_name
+      - customer_id
+      - identifier
+      type: object
+      properties:
+        document_url:
+          title: Document Url
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        customer_id:
+          title: Customer Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+    CustomerUpdateAddressModel:
+      title: CustomerUpdateAddressModel
+      required:
+      - address_type
       type: object
       properties:
         address_line_1:
@@ -5836,6 +5663,179 @@ components:
           type: boolean
           description: Garaging flag
           default: false
+        address_type:
+          $ref: '#/components/schemas/AddressTypes'
+    CustomerProfileUpdateModel:
+      title: CustomerProfileUpdateModel
+      type: object
+      properties:
+        customer_profile:
+          $ref: '#/components/schemas/CustomerUpdateModel'
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerAddressModel'
+        income_info:
+          $ref: '#/components/schemas/CustomerProfileIncomeInfoModel'
+    StipulationCategory:
+      title: StipulationCategory
+      enum:
+      - STIP
+      - NON_STIP
+      type: string
+      description: An enumeration.
+    DisclaimerAcceptanceModel:
+      title: DisclaimerAcceptanceModel
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        identifier:
+          title: Identifier
+          type: string
+        disclaimer_name:
+          title: Disclaimer Name
+          type: string
+        disclaimer_version:
+          title: Disclaimer Version
+          type: string
+        disclaimer_details:
+          title: Disclaimer Details
+          type: string
+        disclaimer_acceptance_date:
+          title: Disclaimer Acceptance Date
+          type: string
+          format: date-time
+    EmploymentInfoCreateModelEmpTypeMendatory:
+      title: EmploymentInfoCreateModelEmpTypeMendatory
+      required:
+      - employment_type
+      - reference_id
+      type: object
+      properties:
+        employment_type:
+          title: Employment Type
+          minLength: 1
+          type: string
+          description: Employment type
+        name:
+          title: Name
+          type: string
+          description: Name
+        phone:
+          title: Phone
+          type: string
+          description: Phone
+        employed_since:
+          title: Employed Since
+          type: string
+          description: 'format: YYYY-MM-DD'
+          format: date
+        occupation:
+          title: Occupation
+          type: string
+          description: Occupation
+        annual_employment_income:
+          title: Annual Employment Income
+          type: number
+          description: Annual employment income
+        annual_other_income:
+          title: Annual Other Income
+          type: number
+          description: Annual other income
+        source_of_other_income:
+          title: Source Of Other Income
+          type: string
+          description: Annual other income
+        reference_id:
+          title: Reference Id
+          minLength: 1
+          type: string
+          description: Reference ID for Employment
+        address:
+          $ref: '#/components/schemas/CustomerAddressModel'
+    CustomerCommentDiaryModel:
+      title: CustomerCommentDiaryModel
+      required:
+      - category
+      - comment
+      type: object
+      properties:
+        order_reference_id:
+          title: Order Reference Id
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        category:
+          title: Category
+          minLength: 1
+          type: string
+        comment:
+          title: Comment
+          minLength: 1
+          type: string
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+    CustomerDocumentModel:
+      title: CustomerDocumentModel
+      required:
+      - customer_reference_id
+      - external_reference_id
+      - document_type
+      - created_by
+      type: object
+      properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        document_type:
+          title: Document Type
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        reason_by_system:
+          title: Reason By System
+          type: string
+        reason_for_customer:
+          title: Reason For Customer
+          type: string
+        document_upload_indicator:
+          title: Document Upload Indicator
+          type: boolean
+          default: false
+        expires_at:
+          title: Expires At
+          type: string
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        identifier:
+          title: Identifier
+          minLength: 1
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        comment:
+          title: Comment
+          type: string
   securitySchemes:
     APIKeyHeader:
       type: apiKey
