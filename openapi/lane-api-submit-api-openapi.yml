@@ -51,6 +51,18 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    submitOrderRequest:
+      title: submitOrderRequest
+      required:
+      - lender_ids
+      type: object
+      properties:
+        lender_ids:
+          title: Lender Ids
+          type: array
+          items:
+            type: integer
+          description: list of lender ids the order will be submitted to
     ValidationError:
       title: ValidationError
       required:
@@ -81,18 +93,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
-    submitOrderRequest:
-      title: submitOrderRequest
-      required:
-      - lender_ids
-      type: object
-      properties:
-        lender_ids:
-          title: Lender Ids
-          type: array
-          items:
-            type: integer
-          description: list of lender ids the order will be submitted to
   securitySchemes:
     APIKeyHeader:
       type: apiKey

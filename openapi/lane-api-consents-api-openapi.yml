@@ -157,6 +157,15 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    DeleteConsentModel:
+      title: DeleteConsentModel
+      required:
+      - consent_id
+      type: object
+      properties:
+        consent_id:
+          title: Consent Id
+          type: integer
     ValidationError:
       title: ValidationError
       required:
@@ -207,15 +216,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
-    DeleteConsentModel:
-      title: DeleteConsentModel
-      required:
-      - consent_id
-      type: object
-      properties:
-        consent_id:
-          title: Consent Id
-          type: integer
   securitySchemes:
     APIKeyHeader:
       type: apiKey

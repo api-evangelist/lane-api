@@ -130,6 +130,15 @@ components:
           type: array
           items:
             type: integer
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
     AffordabilityCheckModel:
       title: AffordabilityCheckModel
       required:
@@ -174,15 +183,6 @@ components:
         trade_in_payoff:
           title: Trade In Payoff
           type: number
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

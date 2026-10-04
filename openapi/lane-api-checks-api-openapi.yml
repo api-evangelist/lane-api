@@ -100,30 +100,6 @@ components:
         type:
           title: Error Type
           type: string
-    CreateCustomerModel:
-      title: CreateCustomerModel
-      required:
-      - dealer_id
-      - email
-      type: object
-      properties:
-        dealer_id:
-          title: Dealer Id
-          type: integer
-          description: Dealer ID for Customer
-        email:
-          title: Email
-          type: string
-          format: email
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
     CustomerProfileModelResponseWithID:
       title: CustomerProfileModelResponseWithID
       type: object
@@ -215,6 +191,30 @@ components:
           type: integer
         consent:
           title: Consent
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    CreateCustomerModel:
+      title: CreateCustomerModel
+      required:
+      - dealer_id
+      - email
+      type: object
+      properties:
+        dealer_id:
+          title: Dealer Id
+          type: integer
+          description: Dealer ID for Customer
+        email:
+          title: Email
+          type: string
+          format: email
   securitySchemes:
     APIKeyHeader:
       type: apiKey

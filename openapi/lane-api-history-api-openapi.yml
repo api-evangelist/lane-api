@@ -133,36 +133,27 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    HistoryPaginationResponse:
-      title: HistoryPaginationResponse
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
       type: object
       properties:
-        results:
-          title: Results
+        loc:
+          title: Location
           type: array
           items:
-            $ref: '#/components/schemas/HistoryResponseDetail'
-        page_number:
-          title: Page Number
-          type: integer
-        page_size:
-          title: Page Size
-          type: integer
-        total_pages:
-          title: Total Pages
-          type: integer
-        total_results:
-          title: Total Results
-          type: integer
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
     ComparisonModule:
       title: ComparisonModule
       enum:
@@ -211,27 +202,36 @@ components:
         module_type:
           title: Module Type
           type: string
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
+    HistoryPaginationResponse:
+      title: HistoryPaginationResponse
       type: object
       properties:
-        loc:
-          title: Location
+        results:
+          title: Results
           type: array
           items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
+            $ref: '#/components/schemas/HistoryResponseDetail'
+        page_number:
+          title: Page Number
+          type: integer
+        page_size:
+          title: Page Size
+          type: integer
+        total_pages:
+          title: Total Pages
+          type: integer
+        total_results:
+          title: Total Results
+          type: integer
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

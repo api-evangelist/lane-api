@@ -157,30 +157,6 @@ components:
         type:
           title: Error Type
           type: string
-    ThemeBuilderPatchModel:
-      title: ThemeBuilderPatchModel
-      type: object
-      properties:
-        id:
-          title: Id
-          type: integer
-          description: Primary ID of Theme Builder
-        stylesheet:
-          title: Stylesheet
-          type: string
-          description: Stylesheet of Theme Builder Class
-        darkmode_stylesheet:
-          title: Darkmode Stylesheet
-          type: string
-          description: Darkmode Stylesheet of Theme Builder
-        favicon:
-          title: Favicon
-          type: string
-          description: favicon of Theme Builder
-        logo:
-          title: Logo
-          type: string
-          description: logo of Theme Builder
     ThemeBuilderModel:
       title: ThemeBuilderModel
       required:
@@ -212,6 +188,30 @@ components:
           type: string
           description: Email of logged in user
           format: email
+    ThemeBuilderPatchModel:
+      title: ThemeBuilderPatchModel
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+          description: Primary ID of Theme Builder
+        stylesheet:
+          title: Stylesheet
+          type: string
+          description: Stylesheet of Theme Builder Class
+        darkmode_stylesheet:
+          title: Darkmode Stylesheet
+          type: string
+          description: Darkmode Stylesheet of Theme Builder
+        favicon:
+          title: Favicon
+          type: string
+          description: favicon of Theme Builder
+        logo:
+          title: Logo
+          type: string
+          description: logo of Theme Builder
     HTTPValidationError:
       title: HTTPValidationError
       type: object

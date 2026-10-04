@@ -87,6 +87,127 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    ExternalOrderMapper:
+      title: ExternalOrderMapper
+      type: object
+      properties:
+        orders:
+          title: Orders
+          type: array
+          items:
+            $ref: '#/components/schemas/ExternalOrder'
+        totalPages:
+          title: Totalpages
+          type: integer
+        count:
+          title: Count
+          type: integer
+    InternalOrderFee:
+      title: InternalOrderFee
+      required:
+      - lender_id
+      - applied_price
+      - created_at
+      - dealer_fee_id
+      - dealer_id
+      - id
+      - identifier
+      - is_active
+      - is_deleted
+      - order_id
+      - updated_at
+      - fee_name
+      type: object
+      properties:
+        lender_id:
+          title: Lender Id
+          type: integer
+        applied_price:
+          title: Applied Price
+          type: number
+        created_at:
+          title: Created At
+          type: string
+        dealer_fee_id:
+          title: Dealer Fee Id
+          type: integer
+        dealer_id:
+          title: Dealer Id
+          type: integer
+        id:
+          title: Id
+          type: integer
+        identifier:
+          title: Identifier
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        order_id:
+          title: Order Id
+          type: integer
+        updated_at:
+          title: Updated At
+          type: string
+        fee_name:
+          title: Fee Name
+          type: string
+    InternalVehicleDetails:
+      title: InternalVehicleDetails
+      required:
+      - model
+      - make
+      - year
+      - trim_description
+      - stock_number
+      - vin
+      type: object
+      properties:
+        model:
+          title: Model
+          type: string
+        make:
+          title: Make
+          type: string
+        year:
+          title: Year
+          type: string
+        vehicle_display_name:
+          title: Vehicle Display Name
+        trim_description:
+          title: Trim Description
+          type: string
+        stock_number:
+          title: Stock Number
+          type: string
+        vin:
+          title: Vin
+          type: string
+    DealerAddress:
+      title: DealerAddress
+      type: object
+      properties:
+        address1:
+          title: Address1
+          type: string
+        address2:
+          title: Address2
+          type: string
+        city:
+          title: City
+          type: string
+        state:
+          title: State
+          type: string
+        zip:
+          title: Zip
+          type: string
+        addressType:
+          title: Addresstype
+          type: string
     ExternalOrder:
       title: ExternalOrder
       type: object
@@ -169,489 +290,6 @@ components:
         otozCustomerId:
           title: Otozcustomerid
           type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    InternalVehicleDetails:
-      title: InternalVehicleDetails
-      required:
-      - model
-      - make
-      - year
-      - trim_description
-      - stock_number
-      - vin
-      type: object
-      properties:
-        model:
-          title: Model
-          type: string
-        make:
-          title: Make
-          type: string
-        year:
-          title: Year
-          type: string
-        vehicle_display_name:
-          title: Vehicle Display Name
-        trim_description:
-          title: Trim Description
-          type: string
-        stock_number:
-          title: Stock Number
-          type: string
-        vin:
-          title: Vin
-          type: string
-    InternalInsuranceInformation:
-      title: InternalInsuranceInformation
-      required:
-      - order_reference_id
-      - key_id
-      - updated_at
-      - identifier
-      - policy_number
-      - created_by
-      - customer_id
-      - expiration_date
-      - insurer_name
-      - insurance_address
-      - status
-      - created_at
-      - is_deleted
-      - agent_name
-      - is_active
-      - id
-      type: object
-      properties:
-        order_reference_id:
-          title: Order Reference Id
-          type: string
-        subscription_id:
-          title: Subscription Id
-        key_id:
-          title: Key Id
-          type: integer
-        updated_at:
-          title: Updated At
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        policy_number:
-          title: Policy Number
-          type: string
-        created_by:
-          title: Created By
-          type: string
-        customer_id:
-          title: Customer Id
-          type: integer
-        expiration_date:
-          title: Expiration Date
-          type: string
-        updated_by:
-          title: Updated By
-        insurer_name:
-          title: Insurer Name
-          type: string
-        deductible_comprehensive:
-          title: Deductible Comprehensive
-        deleted_at:
-          title: Deleted At
-        insurance_address:
-          title: Insurance Address
-          type: integer
-        deductible_collision:
-          title: Deductible Collision
-        deleted_by:
-          title: Deleted By
-        status:
-          title: Status
-          type: string
-        insurance_documents:
-          title: Insurance Documents
-        created_at:
-          title: Created At
-          type: string
-        is_deleted:
-          title: Is Deleted
-          type: boolean
-        agent_name:
-          title: Agent Name
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-        id:
-          title: Id
-          type: integer
-        agent_phone:
-          title: Agent Phone
-        parent_id:
-          title: Parent Id
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    InternalOrderTradein:
-      title: InternalOrderTradein
-      required:
-      - year
-      - is_customer_titled
-      - asset_image
-      - created_at
-      - make
-      - loan_lease_balance
-      - order_id
-      - model
-      - lender_id
-      - trim
-      - identifier
-      - updated_at
-      - mileage
-      - is_active
-      - vin
-      - is_deleted
-      - condition
-      - id
-      - trade_in_amount
-      - payoff_amount
-      type: object
-      properties:
-        year:
-          title: Year
-          type: integer
-        is_customer_titled:
-          title: Is Customer Titled
-          type: boolean
-        asset_image:
-          title: Asset Image
-          type: array
-          items:
-            type: string
-        created_at:
-          title: Created At
-          type: string
-        make:
-          title: Make
-          type: string
-        loan_lease_balance:
-          title: Loan Lease Balance
-          type: boolean
-        order_id:
-          title: Order Id
-          type: integer
-        model:
-          title: Model
-          type: string
-        lender_contract_number:
-          title: Lender Contract Number
-        lender_id:
-          title: Lender Id
-          type: integer
-        trim:
-          title: Trim
-          type: string
-        lender_name:
-          title: Lender Name
-        identifier:
-          title: Identifier
-          type: string
-        updated_at:
-          title: Updated At
-          type: string
-        mileage:
-          title: Mileage
-          type: integer
-        lender_address:
-          title: Lender Address
-        is_active:
-          title: Is Active
-          type: boolean
-        vin:
-          title: Vin
-          type: string
-        lender_contact_number:
-          title: Lender Contact Number
-        is_deleted:
-          title: Is Deleted
-          type: boolean
-        condition:
-          title: Condition
-          type: string
-        payment_type:
-          title: Payment Type
-        id:
-          title: Id
-          type: integer
-        trade_in_amount:
-          title: Trade In Amount
-          type: integer
-        payoff_amount:
-          title: Payoff Amount
-          type: integer
-    OrderItem:
-      title: OrderItem
-      type: object
-      properties:
-        id:
-          title: Id
-          type: integer
-        productId:
-          title: Productid
-          type: string
-        type:
-          title: Type
-          type: string
-        metadata:
-          $ref: '#/components/schemas/OrderItemMetadata'
-    ExternalOrderMapper:
-      title: ExternalOrderMapper
-      type: object
-      properties:
-        orders:
-          title: Orders
-          type: array
-          items:
-            $ref: '#/components/schemas/ExternalOrder'
-        totalPages:
-          title: Totalpages
-          type: integer
-        count:
-          title: Count
-          type: integer
-    OrderItemMetadata:
-      title: OrderItemMetadata
-      type: object
-      properties:
-        vin:
-          title: Vin
-          type: string
-        make:
-          title: Make
-          type: string
-        term:
-          title: Term
-          type: string
-        trim:
-          title: Trim
-          type: string
-        year:
-          title: Year
-          type: string
-        model:
-          title: Model
-          type: string
-        engine:
-          title: Engine
-          type: string
-        bodyType:
-          title: Bodytype
-          type: string
-        fuelType:
-          title: Fueltype
-          type: string
-        stockType:
-          title: Stocktype
-          type: string
-        storeName:
-          title: Storename
-          type: string
-        drivetrain:
-          title: Drivetrain
-          type: string
-        downPayment:
-          title: Downpayment
-          type: string
-        fuelEconomy:
-          title: Fueleconomy
-          type: string
-        stockNumber:
-          title: Stocknumber
-          type: string
-        exteriorColor:
-          title: Exteriorcolor
-          type: string
-        interiorColor:
-          title: Interiorcolor
-          type: string
-        milesPerMonth:
-          title: Milespermonth
-          type: string
-        vehicleImages:
-          title: Vehicleimages
-          type: array
-          items:
-            type: string
-        installedOptions:
-          title: Installedoptions
-          type: array
-          items:
-            type: string
-        transmissionType:
-          title: Transmissiontype
-          type: string
-        odometerAtOrderCreation:
-          title: Odometeratordercreation
-          type: integer
-    InternalCustomerInfo:
-      title: InternalCustomerInfo
-      required:
-      - last_name
-      - created_at
-      - is_deleted
-      - mobile_number
-      - reference_id
-      - id
-      - identifier
-      - ssn
-      - key_id
-      - updated_at
-      - email
-      - is_active
-      - updated_by
-      - first_name
-      - mobile_number_verified_status
-      - home_number_verified_status
-      - customer_addresses
-      - customer_license
-      type: object
-      properties:
-        deleted_by:
-          title: Deleted By
-        last_name:
-          title: Last Name
-          type: string
-        customer_type:
-          title: Customer Type
-        created_at:
-          title: Created At
-          type: string
-        is_deleted:
-          title: Is Deleted
-          type: boolean
-        mobile_number:
-          title: Mobile Number
-          type: string
-        reference_id:
-          title: Reference Id
-          type: string
-        id:
-          title: Id
-          type: integer
-        home_number:
-          title: Home Number
-        date_of_birth:
-          title: Date Of Birth
-        identifier:
-          title: Identifier
-          type: string
-        ssn:
-          title: Ssn
-          type: string
-        key_id:
-          title: Key Id
-          type: integer
-        updated_at:
-          title: Updated At
-          type: string
-        prefix:
-          title: Prefix
-        email:
-          title: Email
-          type: string
-        created_by:
-          title: Created By
-        suffix:
-          title: Suffix
-        stripe_customer_id:
-          title: Stripe Customer Id
-        is_active:
-          title: Is Active
-          type: boolean
-        updated_by:
-          title: Updated By
-          type: string
-        first_name:
-          title: First Name
-          type: string
-        mobile_number_verified_status:
-          title: Mobile Number Verified Status
-          type: boolean
-        meta_data:
-          title: Meta Data
-        deleted_at:
-          title: Deleted At
-        middle_name:
-          title: Middle Name
-        home_number_verified_status:
-          title: Home Number Verified Status
-          type: boolean
-        parent_id:
-          title: Parent Id
-        customer_addresses:
-          title: Customer Addresses
-          type: array
-          items:
-            $ref: '#/components/schemas/InternalCustomerAddress'
-        customer_license:
-          title: Customer License
-          type: array
-          items:
-            $ref: '#/components/schemas/InternalCustomerLicenseItem'
-    InternalDocument:
-      title: InternalDocument
-      required:
-      - identifier
-      - document_name
-      - document_raw_url
-      - document_signed_url
-      - is_fni_doc
-      - is_verified
-      type: object
-      properties:
-        identifier:
-          title: Identifier
-          type: string
-        document_name:
-          title: Document Name
-          type: string
-        document_raw_url:
-          title: Document Raw Url
-          type: string
-        document_signed_url:
-          title: Document Signed Url
-          type: string
-        is_fni_doc:
-          title: Is Fni Doc
-          type: boolean
-        is_verified:
-          title: Is Verified
-          type: boolean
     InternalOrderModel:
       title: InternalOrderModel
       required:
@@ -902,6 +540,103 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InternalDocument'
+    InternalOrderTradein:
+      title: InternalOrderTradein
+      required:
+      - year
+      - is_customer_titled
+      - asset_image
+      - created_at
+      - make
+      - loan_lease_balance
+      - order_id
+      - model
+      - lender_id
+      - trim
+      - identifier
+      - updated_at
+      - mileage
+      - is_active
+      - vin
+      - is_deleted
+      - condition
+      - id
+      - trade_in_amount
+      - payoff_amount
+      type: object
+      properties:
+        year:
+          title: Year
+          type: integer
+        is_customer_titled:
+          title: Is Customer Titled
+          type: boolean
+        asset_image:
+          title: Asset Image
+          type: array
+          items:
+            type: string
+        created_at:
+          title: Created At
+          type: string
+        make:
+          title: Make
+          type: string
+        loan_lease_balance:
+          title: Loan Lease Balance
+          type: boolean
+        order_id:
+          title: Order Id
+          type: integer
+        model:
+          title: Model
+          type: string
+        lender_contract_number:
+          title: Lender Contract Number
+        lender_id:
+          title: Lender Id
+          type: integer
+        trim:
+          title: Trim
+          type: string
+        lender_name:
+          title: Lender Name
+        identifier:
+          title: Identifier
+          type: string
+        updated_at:
+          title: Updated At
+          type: string
+        mileage:
+          title: Mileage
+          type: integer
+        lender_address:
+          title: Lender Address
+        is_active:
+          title: Is Active
+          type: boolean
+        vin:
+          title: Vin
+          type: string
+        lender_contact_number:
+          title: Lender Contact Number
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        condition:
+          title: Condition
+          type: string
+        payment_type:
+          title: Payment Type
+        id:
+          title: Id
+          type: integer
+        trade_in_amount:
+          title: Trade In Amount
+          type: integer
+        payoff_amount:
+          title: Payoff Amount
+          type: integer
     InternalAppointmentDetails:
       title: InternalAppointmentDetails
       required:
@@ -951,128 +686,214 @@ components:
           type: string
         address:
           title: Address
-    InternalCustomerAddress:
-      title: InternalCustomerAddress
-      required:
-      - address_type
-      - customer_id
-      - state_name
-      - key_id
-      - is_active
-      - is_deleted
-      - created_at
-      - id
-      - identifier
-      - is_garaging
-      - updated_at
+    OrderItemMetadata:
+      title: OrderItemMetadata
       type: object
       properties:
-        created_by:
-          title: Created By
+        vin:
+          title: Vin
           type: string
-        address_line_2:
-          title: Address Line 2
+        make:
+          title: Make
           type: string
-        verified:
-          title: Verified
-          type: boolean
-        updated_by:
-          title: Updated By
+        term:
+          title: Term
           type: string
-        state_id:
-          title: State Id
-        address_type:
-          title: Address Type
+        trim:
+          title: Trim
           type: string
-        customer_id:
-          title: Customer Id
+        year:
+          title: Year
+          type: string
+        model:
+          title: Model
+          type: string
+        engine:
+          title: Engine
+          type: string
+        bodyType:
+          title: Bodytype
+          type: string
+        fuelType:
+          title: Fueltype
+          type: string
+        stockType:
+          title: Stocktype
+          type: string
+        storeName:
+          title: Storename
+          type: string
+        drivetrain:
+          title: Drivetrain
+          type: string
+        downPayment:
+          title: Downpayment
+          type: string
+        fuelEconomy:
+          title: Fueleconomy
+          type: string
+        stockNumber:
+          title: Stocknumber
+          type: string
+        exteriorColor:
+          title: Exteriorcolor
+          type: string
+        interiorColor:
+          title: Interiorcolor
+          type: string
+        milesPerMonth:
+          title: Milespermonth
+          type: string
+        vehicleImages:
+          title: Vehicleimages
+          type: array
+          items:
+            type: string
+        installedOptions:
+          title: Installedoptions
+          type: array
+          items:
+            type: string
+        transmissionType:
+          title: Transmissiontype
+          type: string
+        odometerAtOrderCreation:
+          title: Odometeratordercreation
           type: integer
-        deleted_at:
-          title: Deleted At
-        state_name:
-          title: State Name
+    InternalDocument:
+      title: InternalDocument
+      required:
+      - identifier
+      - document_name
+      - document_raw_url
+      - document_signed_url
+      - is_fni_doc
+      - is_verified
+      type: object
+      properties:
+        identifier:
+          title: Identifier
+          type: string
+        document_name:
+          title: Document Name
+          type: string
+        document_raw_url:
+          title: Document Raw Url
+          type: string
+        document_signed_url:
+          title: Document Signed Url
+          type: string
+        is_fni_doc:
+          title: Is Fni Doc
+          type: boolean
+        is_verified:
+          title: Is Verified
+          type: boolean
+    InternalCustomerInfo:
+      title: InternalCustomerInfo
+      required:
+      - last_name
+      - created_at
+      - is_deleted
+      - mobile_number
+      - reference_id
+      - id
+      - identifier
+      - ssn
+      - key_id
+      - updated_at
+      - email
+      - is_active
+      - updated_by
+      - first_name
+      - mobile_number_verified_status
+      - home_number_verified_status
+      - customer_addresses
+      - customer_license
+      type: object
+      properties:
+        deleted_by:
+          title: Deleted By
+        last_name:
+          title: Last Name
+          type: string
+        customer_type:
+          title: Customer Type
+        created_at:
+          title: Created At
+          type: string
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        mobile_number:
+          title: Mobile Number
+          type: string
+        reference_id:
+          title: Reference Id
+          type: string
+        id:
+          title: Id
+          type: integer
+        home_number:
+          title: Home Number
+        date_of_birth:
+          title: Date Of Birth
+        identifier:
+          title: Identifier
+          type: string
+        ssn:
+          title: Ssn
           type: string
         key_id:
           title: Key Id
           type: integer
-        category_identifier:
-          title: Category Identifier
-        deleted_by:
-          title: Deleted By
-        zip_code:
-          title: Zip Code
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-        parent_id:
-          title: Parent Id
-        is_deleted:
-          title: Is Deleted
-          type: boolean
-        county:
-          title: County
-          type: string
-        country_id:
-          title: Country Id
-        history_id:
-          title: History Id
-        created_at:
-          title: Created At
-          type: string
-        id:
-          title: Id
-          type: integer
-        city:
-          title: City
-          type: string
-        field5:
-          title: Field5
-        move_in_date:
-          title: Move In Date
-          type: string
-        identifier:
-          title: Identifier
-          type: string
-        contact_number:
-          title: Contact Number
-        field6:
-          title: Field6
-        is_garaging:
-          title: Is Garaging
-          type: boolean
         updated_at:
           title: Updated At
           type: string
-        address_line_1:
-          title: Address Line 1
+        prefix:
+          title: Prefix
+        email:
+          title: Email
           type: string
-        lender_id:
-          title: Lender Id
-    Fulfillment:
-      title: Fulfillment
-      type: object
-      properties:
-        id:
-          title: Id
+        created_by:
+          title: Created By
+        suffix:
+          title: Suffix
+        stripe_customer_id:
+          title: Stripe Customer Id
+        is_active:
+          title: Is Active
+          type: boolean
+        updated_by:
+          title: Updated By
           type: string
-        type:
-          title: Type
+        first_name:
+          title: First Name
           type: string
-        hyperionId:
-          title: Hyperionid
-          type: string
-        dealerName:
-          title: Dealername
-          type: string
-        dealerAddress:
-          $ref: '#/components/schemas/DealerAddress'
-        vehicleAvailableAfter:
-          title: Vehicleavailableafter
-          type: string
-        customerReceivedVehicleAt:
-          title: Customerreceivedvehicleat
-          type: string
+        mobile_number_verified_status:
+          title: Mobile Number Verified Status
+          type: boolean
+        meta_data:
+          title: Meta Data
+        deleted_at:
+          title: Deleted At
+        middle_name:
+          title: Middle Name
+        home_number_verified_status:
+          title: Home Number Verified Status
+          type: boolean
+        parent_id:
+          title: Parent Id
+        customer_addresses:
+          title: Customer Addresses
+          type: array
+          items:
+            $ref: '#/components/schemas/InternalCustomerAddress'
+        customer_license:
+          title: Customer License
+          type: array
+          items:
+            $ref: '#/components/schemas/InternalCustomerLicenseItem'
     ExternalKeys:
       title: ExternalKeys
       type: object
@@ -1180,81 +1001,260 @@ components:
         status:
           title: Status
           type: string
-    InternalOrderFee:
-      title: InternalOrderFee
+    InternalInsuranceInformation:
+      title: InternalInsuranceInformation
       required:
-      - lender_id
-      - applied_price
-      - created_at
-      - dealer_fee_id
-      - dealer_id
-      - id
-      - identifier
-      - is_active
-      - is_deleted
-      - order_id
+      - order_reference_id
+      - key_id
       - updated_at
-      - fee_name
+      - identifier
+      - policy_number
+      - created_by
+      - customer_id
+      - expiration_date
+      - insurer_name
+      - insurance_address
+      - status
+      - created_at
+      - is_deleted
+      - agent_name
+      - is_active
+      - id
       type: object
       properties:
-        lender_id:
-          title: Lender Id
-          type: integer
-        applied_price:
-          title: Applied Price
-          type: number
-        created_at:
-          title: Created At
+        order_reference_id:
+          title: Order Reference Id
           type: string
-        dealer_fee_id:
-          title: Dealer Fee Id
-          type: integer
-        dealer_id:
-          title: Dealer Id
-          type: integer
-        id:
-          title: Id
-          type: integer
-        identifier:
-          title: Identifier
-          type: string
-        is_active:
-          title: Is Active
-          type: boolean
-        is_deleted:
-          title: Is Deleted
-          type: boolean
-        order_id:
-          title: Order Id
+        subscription_id:
+          title: Subscription Id
+        key_id:
+          title: Key Id
           type: integer
         updated_at:
           title: Updated At
           type: string
-        fee_name:
-          title: Fee Name
+        identifier:
+          title: Identifier
           type: string
-    DealerAddress:
-      title: DealerAddress
+        policy_number:
+          title: Policy Number
+          type: string
+        created_by:
+          title: Created By
+          type: string
+        customer_id:
+          title: Customer Id
+          type: integer
+        expiration_date:
+          title: Expiration Date
+          type: string
+        updated_by:
+          title: Updated By
+        insurer_name:
+          title: Insurer Name
+          type: string
+        deductible_comprehensive:
+          title: Deductible Comprehensive
+        deleted_at:
+          title: Deleted At
+        insurance_address:
+          title: Insurance Address
+          type: integer
+        deductible_collision:
+          title: Deductible Collision
+        deleted_by:
+          title: Deleted By
+        status:
+          title: Status
+          type: string
+        insurance_documents:
+          title: Insurance Documents
+        created_at:
+          title: Created At
+          type: string
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        agent_name:
+          title: Agent Name
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        id:
+          title: Id
+          type: integer
+        agent_phone:
+          title: Agent Phone
+        parent_id:
+          title: Parent Id
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
       type: object
       properties:
-        address1:
-          title: Address1
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
           type: string
-        address2:
-          title: Address2
+        type:
+          title: Error Type
           type: string
+    OrderItem:
+      title: OrderItem
+      type: object
+      properties:
+        id:
+          title: Id
+          type: integer
+        productId:
+          title: Productid
+          type: string
+        type:
+          title: Type
+          type: string
+        metadata:
+          $ref: '#/components/schemas/OrderItemMetadata'
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    Fulfillment:
+      title: Fulfillment
+      type: object
+      properties:
+        id:
+          title: Id
+          type: string
+        type:
+          title: Type
+          type: string
+        hyperionId:
+          title: Hyperionid
+          type: string
+        dealerName:
+          title: Dealername
+          type: string
+        dealerAddress:
+          $ref: '#/components/schemas/DealerAddress'
+        vehicleAvailableAfter:
+          title: Vehicleavailableafter
+          type: string
+        customerReceivedVehicleAt:
+          title: Customerreceivedvehicleat
+          type: string
+    InternalCustomerAddress:
+      title: InternalCustomerAddress
+      required:
+      - address_type
+      - customer_id
+      - state_name
+      - key_id
+      - is_active
+      - is_deleted
+      - created_at
+      - id
+      - identifier
+      - is_garaging
+      - updated_at
+      type: object
+      properties:
+        created_by:
+          title: Created By
+          type: string
+        address_line_2:
+          title: Address Line 2
+          type: string
+        verified:
+          title: Verified
+          type: boolean
+        updated_by:
+          title: Updated By
+          type: string
+        state_id:
+          title: State Id
+        address_type:
+          title: Address Type
+          type: string
+        customer_id:
+          title: Customer Id
+          type: integer
+        deleted_at:
+          title: Deleted At
+        state_name:
+          title: State Name
+          type: string
+        key_id:
+          title: Key Id
+          type: integer
+        category_identifier:
+          title: Category Identifier
+        deleted_by:
+          title: Deleted By
+        zip_code:
+          title: Zip Code
+          type: string
+        is_active:
+          title: Is Active
+          type: boolean
+        parent_id:
+          title: Parent Id
+        is_deleted:
+          title: Is Deleted
+          type: boolean
+        county:
+          title: County
+          type: string
+        country_id:
+          title: Country Id
+        history_id:
+          title: History Id
+        created_at:
+          title: Created At
+          type: string
+        id:
+          title: Id
+          type: integer
         city:
           title: City
           type: string
-        state:
-          title: State
+        field5:
+          title: Field5
+        move_in_date:
+          title: Move In Date
           type: string
-        zip:
-          title: Zip
+        identifier:
+          title: Identifier
           type: string
-        addressType:
-          title: Addresstype
+        contact_number:
+          title: Contact Number
+        field6:
+          title: Field6
+        is_garaging:
+          title: Is Garaging
+          type: boolean
+        updated_at:
+          title: Updated At
           type: string
+        address_line_1:
+          title: Address Line 1
+          type: string
+        lender_id:
+          title: Lender Id
   securitySchemes:
     APIKeyHeader:
       type: apiKey

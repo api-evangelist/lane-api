@@ -236,6 +236,27 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
     StipulationFulfillmentModel:
       title: StipulationFulfillmentModel
       type: object
@@ -258,57 +279,67 @@ components:
         applied_on:
           title: Applied On
           type: string
-    FinancialStipulationModel:
-      title: FinancialStipulationModel
-      required:
-      - customer_reference_id
-      - external_reference_id
-      - financial_stip_type
-      - condition
-      - stipulation_code
+    StipulationResponseModel:
+      title: StipulationResponseModel
       type: object
       properties:
-        customer_reference_id:
-          title: Customer Reference Id
-          type: string
-        external_reference_id:
-          title: External Reference Id
-          type: string
-        financial_stip_type:
-          title: Financial Stip Type
-          type: string
-        condition:
-          title: Condition
-          type: string
         stipulation_code:
           title: Stipulation Code
-          maxLength: 5
           type: string
-        reason_by_system:
-          title: Reason By System
+        stipulation_type:
+          title: Stipulation Type
           type: string
-        reason_for_customer:
-          title: Reason For Customer
+        parameter:
+          title: Parameter
           type: string
-        fulfilled:
-          title: Fulfilled
-          type: boolean
-          default: false
         description:
           title: Description
           type: string
-        expires_at:
-          title: Expires At
+        document_code:
+          title: Document Code
           type: string
-          description: 'format: YYYY-MM-DD hh:mm:ss'
-          format: date-time
-        identifier:
-          title: Identifier
-          minLength: 1
+        assignee:
+          title: Assignee
           type: string
-        key_id:
-          title: Key Id
+        lender_id:
+          title: Lender Id
           type: integer
+    StipulationFulfillmentResponseModel:
+      title: StipulationFulfillmentResponseModel
+      type: object
+      properties:
+        stipulation_id:
+          title: Stipulation Id
+          type: string
+        stipulation_code:
+          title: Stipulation Code
+          type: string
+        document_upload:
+          title: Document Upload
+          type: string
+        stipulation_type:
+          title: Stipulation Type
+          type: string
+        verification_indicator:
+          title: Verification Indicator
+          type: boolean
+        applied_on:
+          title: Applied On
+          type: string
+        created_at:
+          title: Created At
+          type: string
+          format: date-time
+        updated_at:
+          title: Updated At
+          type: string
+          format: date-time
+        created_by:
+          title: Created By
+          type: string
+        updated_by:
+          title: Updated By
+          type: string
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -386,88 +417,57 @@ components:
         identifier:
           title: Identifier
           type: string
-    StipulationResponseModel:
-      title: StipulationResponseModel
+    FinancialStipulationModel:
+      title: FinancialStipulationModel
+      required:
+      - customer_reference_id
+      - external_reference_id
+      - financial_stip_type
+      - condition
+      - stipulation_code
       type: object
       properties:
+        customer_reference_id:
+          title: Customer Reference Id
+          type: string
+        external_reference_id:
+          title: External Reference Id
+          type: string
+        financial_stip_type:
+          title: Financial Stip Type
+          type: string
+        condition:
+          title: Condition
+          type: string
         stipulation_code:
           title: Stipulation Code
+          maxLength: 5
           type: string
-        stipulation_type:
-          title: Stipulation Type
+        reason_by_system:
+          title: Reason By System
           type: string
-        parameter:
-          title: Parameter
+        reason_for_customer:
+          title: Reason For Customer
           type: string
+        fulfilled:
+          title: Fulfilled
+          type: boolean
+          default: false
         description:
           title: Description
           type: string
-        document_code:
-          title: Document Code
+        expires_at:
+          title: Expires At
           type: string
-        assignee:
-          title: Assignee
+          description: 'format: YYYY-MM-DD hh:mm:ss'
+          format: date-time
+        identifier:
+          title: Identifier
+          minLength: 1
           type: string
-        lender_id:
-          title: Lender Id
+        key_id:
+          title: Key Id
           type: integer
-    StipulationFulfillmentResponseModel:
-      title: StipulationFulfillmentResponseModel
-      type: object
-      properties:
-        stipulation_id:
-          title: Stipulation Id
-          type: string
-        stipulation_code:
-          title: Stipulation Code
-          type: string
-        document_upload:
-          title: Document Upload
-          type: string
-        stipulation_type:
-          title: Stipulation Type
-          type: string
-        verification_indicator:
-          title: Verification Indicator
-          type: boolean
-        applied_on:
-          title: Applied On
-          type: string
-        created_at:
-          title: Created At
-          type: string
-          format: date-time
-        updated_at:
-          title: Updated At
-          type: string
-          format: date-time
-        created_by:
-          title: Created By
-          type: string
-        updated_by:
-          title: Updated By
-          type: string
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
   securitySchemes:
     APIKeyHeader:
       type: apiKey

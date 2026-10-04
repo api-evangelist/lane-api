@@ -334,88 +334,43 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    TradeInYear:
-      title: TradeInYear
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
       type: object
       properties:
-        make_id:
-          title: Make Id
-          type: integer
-          default: 0
-        make_name:
-          title: Make Name
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
           type: string
-          default: ''
-        model_id:
-          title: Model Id
-          type: integer
-          default: 0
-        model_name:
-          title: Model Name
+        type:
+          title: Error Type
           type: string
-          default: ''
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
-    TradeInTrim:
-      title: TradeInTrim
-      type: object
-      properties:
-        trim_id:
-          title: Trim Id
-          type: integer
-          default: 0
-        year_id:
-          title: Year Id
-          type: integer
-          default: 0
-        make_id:
-          title: Make Id
-          type: integer
-          default: 0
-        model_id:
-          title: Model Id
-          type: integer
-          default: 0
-        model_year_id:
-          title: Model Year Id
-          type: string
-          default: ''
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
-    TradeInModel:
-      title: TradeInModel
-      type: object
-      properties:
-        make_id:
-          title: Make Id
-          type: integer
-          default: 0
-        year_id:
-          title: Year Id
-          type: integer
-          default: 0
-        start_year:
-          title: Start Year
-          type: integer
-          default: 0
-        end_year:
-          title: End Year
-          type: integer
-          default: 0
-        category_id:
-          title: Category Id
-          type: integer
-          default: 0
-        model_id:
-          title: Model Id
-          type: integer
-          default: 0
-        make_name:
-          title: Make Name
-          type: string
-          default: ''
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
+    VehicleValuationProviders:
+      title: VehicleValuationProviders
+      enum:
+      - KBB
+      - JDPower
+      type: string
+      description: An enumeration.
+    PlateformVehicleType:
+      title: PlateformVehicleType
+      enum:
+      - Car
+      - NewCar
+      - UsedCar
+      - MotorBike
+      type: string
+      description: An enumeration.
     TradeInVehicleValue:
       title: TradeInVehicleValue
       type: object
@@ -450,15 +405,132 @@ components:
           title: Model Id
           type: integer
           default: 0
-    PlateformVehicleType:
-      title: PlateformVehicleType
-      enum:
-      - Car
-      - NewCar
-      - UsedCar
-      - MotorBike
-      type: string
-      description: An enumeration.
+    TradeInModel:
+      title: TradeInModel
+      type: object
+      properties:
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        year_id:
+          title: Year Id
+          type: integer
+          default: 0
+        start_year:
+          title: Start Year
+          type: integer
+          default: 0
+        end_year:
+          title: End Year
+          type: integer
+          default: 0
+        category_id:
+          title: Category Id
+          type: integer
+          default: 0
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+        make_name:
+          title: Make Name
+          type: string
+          default: ''
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    TradeInYear:
+      title: TradeInYear
+      type: object
+      properties:
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        make_name:
+          title: Make Name
+          type: string
+          default: ''
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+        model_name:
+          title: Model Name
+          type: string
+          default: ''
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
+    TradeInMake:
+      title: TradeInMake
+      type: object
+      properties:
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        year_id:
+          title: Year Id
+          type: integer
+          default: 0
+        start_year:
+          title: Start Year
+          type: integer
+          default: 0
+        end_year:
+          title: End Year
+          type: integer
+          default: 0
+        category_id:
+          title: Category Id
+          type: integer
+          default: 0
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
+    TradeInTrim:
+      title: TradeInTrim
+      type: object
+      properties:
+        trim_id:
+          title: Trim Id
+          type: integer
+          default: 0
+        year_id:
+          title: Year Id
+          type: integer
+          default: 0
+        make_id:
+          title: Make Id
+          type: integer
+          default: 0
+        model_id:
+          title: Model Id
+          type: integer
+          default: 0
+        model_year_id:
+          title: Model Year Id
+          type: string
+          default: ''
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
+    VehicleOption:
+      title: VehicleOption
+      required:
+      - vehicleOptionId
+      type: object
+      properties:
+        vehicleOptionId:
+          title: Vehicleoptionid
+          type: integer
     TradeInVehicleDetail:
       title: TradeInVehicleDetail
       type: object
@@ -497,78 +569,6 @@ components:
           title: Model Name
           type: string
           default: ''
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    VehicleOption:
-      title: VehicleOption
-      required:
-      - vehicleOptionId
-      type: object
-      properties:
-        vehicleOptionId:
-          title: Vehicleoptionid
-          type: integer
-    VehicleValuationProviders:
-      title: VehicleValuationProviders
-      enum:
-      - KBB
-      - JDPower
-      type: string
-      description: An enumeration.
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    TradeInMake:
-      title: TradeInMake
-      type: object
-      properties:
-        make_id:
-          title: Make Id
-          type: integer
-          default: 0
-        year_id:
-          title: Year Id
-          type: integer
-          default: 0
-        start_year:
-          title: Start Year
-          type: integer
-          default: 0
-        end_year:
-          title: End Year
-          type: integer
-          default: 0
-        category_id:
-          title: Category Id
-          type: integer
-          default: 0
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

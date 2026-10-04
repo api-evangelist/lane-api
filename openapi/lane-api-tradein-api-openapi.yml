@@ -69,6 +69,54 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    VehicleValuationProviders:
+      title: VehicleValuationProviders
+      enum:
+      - KBB
+      - JDPower
+      type: string
+      description: An enumeration.
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    TradeInOptions:
+      title: TradeInOptions
+      required:
+      - platform_vehicle_type
+      type: object
+      properties:
+        platform_vehicle_type:
+          title: Platform Vehicle Type
+          type: string
+        options_filter:
+          $ref: '#/components/schemas/TradeInOptionsFilter'
     TradeInOptionsFilter:
       title: TradeInOptionsFilter
       type: object
@@ -93,54 +141,6 @@ components:
           title: Trimid
           type: integer
           default: 0
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    TradeInOptions:
-      title: TradeInOptions
-      required:
-      - platform_vehicle_type
-      type: object
-      properties:
-        platform_vehicle_type:
-          title: Platform Vehicle Type
-          type: string
-        options_filter:
-          $ref: '#/components/schemas/TradeInOptionsFilter'
-    VehicleValuationProviders:
-      title: VehicleValuationProviders
-      enum:
-      - KBB
-      - JDPower
-      type: string
-      description: An enumeration.
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
   securitySchemes:
     APIKeyHeader:
       type: apiKey
