@@ -4,6 +4,7 @@ generated_by: planning/capability-mapping/scripts/classify_capabilities.py
 model: claude-opus-5
 frame:
 - Banking & Capital Markets
+- Software & Technology
 min_confidence: 0.7
 capability_model:
   source: https://github.com/vincentmakes/turbo-ea-capabilities
@@ -11,7 +12,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 18
+edge_count: 19
 edges:
 - tag: Decisions
   spec_file: lane-api-decisions-api-openapi.yml
@@ -88,6 +89,16 @@ edges:
   reason: Operations submit and re-submit a finance deal to a lender and invoke credit approval, which
     is credit application intake and origination workflow for asset leasing/loans rather than generic
     order entry.
+- tag: Quotation
+  spec_file: lane-api-quotation-api-openapi.yml
+  capability_id: BC-410.40
+  capability_id_l1: BC-410
+  capability_name: Quote & Configuration Management
+  confidence: 0.75
+  evidence: GET /dms/all-quotation-by-reference-number/ "Get all quotations based on reference number"
+    within an "end-to-end order management system for asset leasing, loans and credit companies"
+  reason: Retrieval of sales quotations in a lead-to-order/dealer sales platform maps to quote management.
+    Only one operation, so some uncertainty about breadth, but the quoting semantics are explicit.
 - tag: Approve
   spec_file: lane-api-approve-api-openapi.yml
   capability_id: BC-1320.20
