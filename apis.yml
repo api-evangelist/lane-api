@@ -634,6 +634,12 @@ maintainers:
     email: kin@apievangelist.com
 specificationVersion: '0.23'
 common:
+- type: Plans
+  url: plans/lane-api-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/lane-api-rate-limits.yml
+- type: FinOps
+  url: finops/lane-api-finops.yml
 - type: CapabilityMap
   url: capabilities/lane-api-capability-edges.yml
   name: Lane API Business Capability Map
