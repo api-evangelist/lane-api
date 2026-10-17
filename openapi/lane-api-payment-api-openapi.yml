@@ -88,27 +88,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
     CreatePayment:
       title: CreatePayment
       required:
@@ -142,15 +121,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/PaymentMethodType'
           default: card
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
     CreatePaymentResponse:
       title: CreatePaymentResponse
       type: object
@@ -220,6 +190,44 @@ components:
           title: Order Id
           type: string
           description: The merchant order Id.
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    PaymentMethodType:
+      title: PaymentMethodType
+      enum:
+      - card
+      - ach_debit
+      - cheque
+      type: string
+      description: An enumeration.
     PaymentOption:
       title: PaymentOption
       type: object
@@ -233,14 +241,6 @@ components:
         card:
           title: Card
           type: object
-    PaymentMethodType:
-      title: PaymentMethodType
-      enum:
-      - card
-      - ach_debit
-      - cheque
-      type: string
-      description: An enumeration.
   securitySchemes:
     APIKeyHeader:
       type: apiKey

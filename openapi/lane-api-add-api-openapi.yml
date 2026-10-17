@@ -43,6 +43,42 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    AddPaymentDetails:
+      title: AddPaymentDetails
+      required:
+      - amount
+      - reference_number
+      type: object
+      properties:
+        amount:
+          title: Amount
+          type: number
+        reference_number:
+          title: Reference Number
+          type: string
+        payment_method_type:
+          allOf:
+          - $ref: '#/components/schemas/PaymentMethodType'
+          default: cheque
+        cheque_number:
+          title: Cheque Number
+          type: string
+        payment_date:
+          title: Payment Date
+          type: string
+          format: date-time
+        order_payment_detail_id:
+          title: Order Payment Detail Id
+          type: integer
     PaymentMethodType:
       title: PaymentMethodType
       enum:
@@ -72,42 +108,6 @@ components:
         type:
           title: Error Type
           type: string
-    AddPaymentDetails:
-      title: AddPaymentDetails
-      required:
-      - amount
-      - reference_number
-      type: object
-      properties:
-        amount:
-          title: Amount
-          type: number
-        reference_number:
-          title: Reference Number
-          type: string
-        payment_method_type:
-          allOf:
-          - $ref: '#/components/schemas/PaymentMethodType'
-          default: cheque
-        cheque_number:
-          title: Cheque Number
-          type: string
-        payment_date:
-          title: Payment Date
-          type: string
-          format: date-time
-        order_payment_detail_id:
-          title: Order Payment Detail Id
-          type: integer
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey

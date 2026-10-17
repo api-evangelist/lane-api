@@ -206,43 +206,6 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
-    ValidationError:
-      title: ValidationError
-      required:
-      - loc
-      - msg
-      - type
-      type: object
-      properties:
-        loc:
-          title: Location
-          type: array
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-        msg:
-          title: Message
-          type: string
-        type:
-          title: Error Type
-          type: string
-    LeadData:
-      title: LeadData
-      type: object
-      properties:
-        vehicle_details:
-          title: Vehicle Details
-          type: object
-          description: Vehicle Details
-        customer_details:
-          title: Customer Details
-          type: object
-          description: Customer Details
-        vehicle_search_criteria:
-          title: Vehicle Search Criteria
-          type: object
-          description: Vehicle Search Criteria
     LeadModel:
       title: LeadModel
       type: object
@@ -266,6 +229,43 @@ components:
           type: string
         reference_id:
           title: Reference Id
+          type: string
+    LeadData:
+      title: LeadData
+      type: object
+      properties:
+        vehicle_details:
+          title: Vehicle Details
+          type: object
+          description: Vehicle Details
+        customer_details:
+          title: Customer Details
+          type: object
+          description: Customer Details
+        vehicle_search_criteria:
+          title: Vehicle Search Criteria
+          type: object
+          description: Vehicle Search Criteria
+    ValidationError:
+      title: ValidationError
+      required:
+      - loc
+      - msg
+      - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
           type: string
     HTTPValidationError:
       title: HTTPValidationError

@@ -140,6 +140,32 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    TradeInDecodeVin:
+      title: TradeInDecodeVin
+      type: object
+      properties:
+        platform_vehicle_type:
+          $ref: '#/components/schemas/PlateformVehicleType'
+        vin:
+          title: Vin
+          type: string
+          default: ''
+        option_filter:
+          $ref: '#/components/schemas/OptionFilterType'
+    OptionFilterType:
+      title: OptionFilterType
+      enum:
+      - All
+      - DecodedOnly
+      type: string
+      description: An enumeration.
+    VehicleValuationProviders:
+      title: VehicleValuationProviders
+      enum:
+      - KBB
+      - JDPower
+      type: string
+      description: An enumeration.
     ValidationError:
       title: ValidationError
       required:
@@ -161,41 +187,6 @@ components:
         type:
           title: Error Type
           type: string
-    VehicleValuationProviders:
-      title: VehicleValuationProviders
-      enum:
-      - KBB
-      - JDPower
-      type: string
-      description: An enumeration.
-    OptionFilterType:
-      title: OptionFilterType
-      enum:
-      - All
-      - DecodedOnly
-      type: string
-      description: An enumeration.
-    TradeInDecodeVin:
-      title: TradeInDecodeVin
-      type: object
-      properties:
-        platform_vehicle_type:
-          $ref: '#/components/schemas/PlateformVehicleType'
-        vin:
-          title: Vin
-          type: string
-          default: ''
-        option_filter:
-          $ref: '#/components/schemas/OptionFilterType'
-    PlateformVehicleType:
-      title: PlateformVehicleType
-      enum:
-      - Car
-      - NewCar
-      - UsedCar
-      - MotorBike
-      type: string
-      description: An enumeration.
     HTTPValidationError:
       title: HTTPValidationError
       type: object
@@ -205,6 +196,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ValidationError'
+    PlateformVehicleType:
+      title: PlateformVehicleType
+      enum:
+      - Car
+      - NewCar
+      - UsedCar
+      - MotorBike
+      type: string
+      description: An enumeration.
   securitySchemes:
     APIKeyHeader:
       type: apiKey

@@ -52,6 +52,15 @@ paths:
       - OAuth2PasswordBearer: []
 components:
   schemas:
+    DeleteRequestModel:
+      title: DeleteRequestModel
+      required:
+      - deleted_by
+      type: object
+      properties:
+        deleted_by:
+          title: Deleted By
+          type: string
     ValidationError:
       title: ValidationError
       required:
@@ -73,24 +82,6 @@ components:
         type:
           title: Error Type
           type: string
-    DeleteRequestModel:
-      title: DeleteRequestModel
-      required:
-      - deleted_by
-      type: object
-      properties:
-        deleted_by:
-          title: Deleted By
-          type: string
-    HTTPValidationError:
-      title: HTTPValidationError
-      type: object
-      properties:
-        detail:
-          title: Detail
-          type: array
-          items:
-            $ref: '#/components/schemas/ValidationError'
     ResponseModel:
       title: ResponseModel
       required:
@@ -100,6 +91,15 @@ components:
         success:
           title: Success
           type: boolean
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
   securitySchemes:
     APIKeyHeader:
       type: apiKey
